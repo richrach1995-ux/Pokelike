@@ -1,0 +1,610 @@
+[
+ {
+  "id": "chest_aehrenweg",
+  "locationId": "loc_aehrenweg",
+  "itemIds": [
+   "bannmet"
+  ],
+  "goldAmount": 120,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_nebelmoor",
+  "locationId": "loc_nebelmoor",
+  "itemIds": [
+   "weisheitsmet"
+  ],
+  "goldAmount": 120,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_steinpfad",
+  "locationId": "loc_steinpfad",
+  "itemIds": [
+   "bannmet"
+  ],
+  "goldAmount": 120,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_kuestenweg",
+  "locationId": "loc_kuestenweg",
+  "itemIds": [
+   "allheilkraut"
+  ],
+  "goldAmount": 120,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_rabenschlucht",
+  "locationId": "loc_rabenschlucht",
+  "itemIds": [
+   "nervenharz"
+  ],
+  "goldAmount": 120,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_grabhuegel_von_alt_eik",
+  "locationId": "loc_grabhuegel_von_alt_eik",
+  "itemIds": [
+   "rune_lesser_thunder",
+   "pilz_nifl"
+  ],
+  "goldAmount": 400,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_verlassene_muehle",
+  "locationId": "loc_verlassene_muehle",
+  "itemIds": [
+   "rune_lesser_light",
+   "erz_silber"
+  ],
+  "goldAmount": 400,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_versunkene_kammer",
+  "locationId": "loc_versunkene_kammer",
+  "itemIds": [
+   "stein_erz"
+  ],
+  "goldAmount": 2000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_silberpfad",
+  "locationId": "loc_silberpfad",
+  "itemIds": [
+   "klarheitstee"
+  ],
+  "goldAmount": 240,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_daemmerlichtung",
+  "locationId": "loc_daemmerlichtung",
+  "itemIds": [
+   "elixier_meister"
+  ],
+  "goldAmount": 240,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_prismensteig",
+  "locationId": "loc_prismensteig",
+  "itemIds": [
+   "lebensflamme"
+  ],
+  "goldAmount": 240,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_lerchenwiese",
+  "locationId": "loc_lerchenwiese",
+  "itemIds": [
+   "lebensfunke"
+  ],
+  "goldAmount": 240,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_spiegelgrotte",
+  "locationId": "loc_spiegelgrotte",
+  "itemIds": [
+   "rune_rune",
+   "holz_esche"
+  ],
+  "goldAmount": 800,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_turm_der_sphaeren",
+  "locationId": "loc_turm_der_sphaeren",
+  "itemIds": [
+   "stein_geist",
+   "schuppe_wyrm"
+  ],
+  "goldAmount": 800,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_hinter_dem_regenbogen",
+  "locationId": "loc_hinter_dem_regenbogen",
+  "itemIds": [
+   "rune_lesser_nature"
+  ],
+  "goldAmount": 4000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_aehrenmark",
+  "locationId": "loc_aehrenmark",
+  "itemIds": [
+   "elixier_meister"
+  ],
+  "goldAmount": 360,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_nebelaue",
+  "locationId": "loc_nebelaue",
+  "itemIds": [
+   "elixier_meister"
+  ],
+  "goldAmount": 360,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_seidrpfad",
+  "locationId": "loc_seidrpfad",
+  "itemIds": [
+   "balsam_brand"
+  ],
+  "goldAmount": 360,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_schilfufer",
+  "locationId": "loc_schilfufer",
+  "itemIds": [
+   "kraftmet"
+  ],
+  "goldAmount": 360,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_wurzelgrotte",
+  "locationId": "loc_wurzelgrotte",
+  "itemIds": [
+   "rune_greater_shadow",
+   "asche_welt"
+  ],
+  "goldAmount": 1200,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_schilfhoehle",
+  "locationId": "loc_schilfhoehle",
+  "itemIds": [
+   "rune_greater_ice",
+   "erz_gold"
+  ],
+  "goldAmount": 1200,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_verborgener_weiher",
+  "locationId": "loc_verborgener_weiher",
+  "itemIds": [
+   "rune_lesser_shadow"
+  ],
+  "goldAmount": 6000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_windgrat",
+  "locationId": "loc_windgrat",
+  "itemIds": [
+   "balsam_gift"
+  ],
+  "goldAmount": 480,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_gletscherzunge",
+  "locationId": "loc_gletscherzunge",
+  "itemIds": [
+   "allheilkraut"
+  ],
+  "goldAmount": 480,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_steinbruch",
+  "locationId": "loc_steinbruch",
+  "itemIds": [
+   "lebensmet"
+  ],
+  "goldAmount": 480,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_hochpass",
+  "locationId": "loc_hochpass",
+  "itemIds": [
+   "kraftmet"
+  ],
+  "goldAmount": 480,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_bergfausts_hoehle",
+  "locationId": "loc_bergfausts_hoehle",
+  "itemIds": [
+   "rune_spirit",
+   "leder_wolf"
+  ],
+  "goldAmount": 1600,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_eiskathedrale",
+  "locationId": "loc_eiskathedrale",
+  "itemIds": [
+   "rune_greater_earth",
+   "erz_sternenstahl"
+  ],
+  "goldAmount": 1600,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_spalte_im_grat",
+  "locationId": "loc_spalte_im_grat",
+  "itemIds": [
+   "rune_lesser_chaos"
+  ],
+  "goldAmount": 8000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_erzstollen",
+  "locationId": "loc_erzstollen",
+  "itemIds": [
+   "lebensfunke"
+  ],
+  "goldAmount": 600,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_schachtweg",
+  "locationId": "loc_schachtweg",
+  "itemIds": [
+   "aether_klein"
+  ],
+  "goldAmount": 600,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_aderngang",
+  "locationId": "loc_aderngang",
+  "itemIds": [
+   "nervenharz"
+  ],
+  "goldAmount": 600,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_alte_esse",
+  "locationId": "loc_alte_esse",
+  "itemIds": [
+   "rune_greater_water",
+   "asche_welt"
+  ],
+  "goldAmount": 2000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_runenschmiede",
+  "locationId": "loc_runenschmiede",
+  "itemIds": [
+   "rune_greater_water",
+   "knochen_draug"
+  ],
+  "goldAmount": 2000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_vergessene_kammer",
+  "locationId": "loc_vergessene_kammer",
+  "itemIds": [
+   "stein_fels"
+  ],
+  "goldAmount": 10000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_lavastrom",
+  "locationId": "loc_lavastrom",
+  "itemIds": [
+   "kraftmet"
+  ],
+  "goldAmount": 720,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_rauchsteig",
+  "locationId": "loc_rauchsteig",
+  "itemIds": [
+   "aether_klein"
+  ],
+  "goldAmount": 720,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_basaltweg",
+  "locationId": "loc_basaltweg",
+  "itemIds": [
+   "elixier"
+  ],
+  "goldAmount": 720,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_surtwacht_feste",
+  "locationId": "loc_surtwacht_feste",
+  "itemIds": [
+   "rune_lesser_metal",
+   "feder_walkuere"
+  ],
+  "goldAmount": 2400,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_glutschlund",
+  "locationId": "loc_glutschlund",
+  "itemIds": [
+   "rune_fire",
+   "kristall_frost"
+  ],
+  "goldAmount": 2400,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_kammer_unter_der_asche",
+  "locationId": "loc_kammer_unter_der_asche",
+  "itemIds": [
+   "stein_rune"
+  ],
+  "goldAmount": 12000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_nebelweg",
+  "locationId": "loc_nebelweg",
+  "itemIds": [
+   "lebensfunke"
+  ],
+  "goldAmount": 840,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_firnfeld",
+  "locationId": "loc_firnfeld",
+  "itemIds": [
+   "balsam_gift"
+  ],
+  "goldAmount": 840,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_kaeltegrat",
+  "locationId": "loc_kaeltegrat",
+  "itemIds": [
+   "elixier"
+  ],
+  "goldAmount": 840,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_brunnentiefe",
+  "locationId": "loc_brunnentiefe",
+  "itemIds": [
+   "stein_blitz",
+   "holz_esche"
+  ],
+  "goldAmount": 2800,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_nagwyrm_nest",
+  "locationId": "loc_nagwyrm_nest",
+  "itemIds": [
+   "rune_lesser_water",
+   "schuppe_wyrm"
+  ],
+  "goldAmount": 2800,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_unter_dem_eis",
+  "locationId": "loc_unter_dem_eis",
+  "itemIds": [
+   "stein_chaos"
+  ],
+  "goldAmount": 14000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_modersteig",
+  "locationId": "loc_modersteig",
+  "itemIds": [
+   "aether_klein"
+  ],
+  "goldAmount": 960,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_schattenmoor",
+  "locationId": "loc_schattenmoor",
+  "itemIds": [
+   "verband"
+  ],
+  "goldAmount": 960,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_rabenfeld",
+  "locationId": "loc_rabenfeld",
+  "itemIds": [
+   "verband"
+  ],
+  "goldAmount": 960,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_halle_der_ungezaehlten",
+  "locationId": "loc_halle_der_ungezaehlten",
+  "itemIds": [
+   "rune_shadow",
+   "scherbe_glyphe"
+  ],
+  "goldAmount": 3200,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_garmwacht_tor",
+  "locationId": "loc_garmwacht_tor",
+  "itemIds": [
+   "rune_greater_fire",
+   "harz_muspel"
+  ],
+  "goldAmount": 3200,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_zweite_halle",
+  "locationId": "loc_zweite_halle",
+  "itemIds": [
+   "rune_water"
+  ],
+  "goldAmount": 16000,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_bifroeststeig",
+  "locationId": "loc_bifroeststeig",
+  "itemIds": [
+   "windmet"
+  ],
+  "goldAmount": 1080,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_wolkenmark",
+  "locationId": "loc_wolkenmark",
+  "itemIds": [
+   "tauwasser"
+  ],
+  "goldAmount": 1080,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_speerfeld",
+  "locationId": "loc_speerfeld",
+  "itemIds": [
+   "weckruf"
+  ],
+  "goldAmount": 1080,
+  "isHidden": false,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_hallen_der_gefallenen",
+  "locationId": "loc_hallen_der_gefallenen",
+  "itemIds": [
+   "stein_glanz",
+   "horn_jotun"
+  ],
+  "goldAmount": 3600,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_sturmwacht_turm",
+  "locationId": "loc_sturmwacht_turm",
+  "itemIds": [
+   "rune_divine",
+   "erz_sternenstahl"
+  ],
+  "goldAmount": 3600,
+  "isHidden": true,
+  "respawnsDaily": false
+ },
+ {
+  "id": "chest_odrmunds_auge",
+  "locationId": "loc_odrmunds_auge",
+  "itemIds": [
+   "rune_greater_wind"
+  ],
+  "goldAmount": 18000,
+  "isHidden": true,
+  "respawnsDaily": false
+ }
+]

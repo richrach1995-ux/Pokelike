@@ -1,0 +1,5660 @@
+[
+ {
+  "id": "q_main_0_ankunft",
+  "nameKey": "q_main_0_ankunft_name",
+  "summaryKey": "q_main_0_ankunft_summary",
+  "descriptionKey": "q_main_0_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_0_a_o1",
+    "descriptionKey": "q_main_0_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_wanderrast",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_0_a_o2",
+    "descriptionKey": "q_main_0_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_seeress_vala",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 500
+   },
+   {
+    "type": "Experience",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 0
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_0_ankunft_done"
+  ],
+  "chapter": 0,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_0_spur"
+ },
+ {
+  "id": "q_main_0_spur",
+  "nameKey": "q_main_0_spur_name",
+  "summaryKey": "q_main_0_spur_summary",
+  "descriptionKey": "q_main_0_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_0_b_o1",
+    "descriptionKey": "q_main_0_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_0_b_o2",
+    "descriptionKey": "q_main_0_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "glutwelp",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 500
+   },
+   {
+    "type": "Experience",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 0
+  },
+  "prerequisiteQuestIds": [
+   "q_main_0_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_0_spur_done"
+  ],
+  "chapter": 0,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_0_verlies"
+ },
+ {
+  "id": "q_main_0_verlies",
+  "nameKey": "q_main_0_verlies_name",
+  "summaryKey": "q_main_0_verlies_summary",
+  "descriptionKey": "q_main_0_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_0_c_o1",
+    "descriptionKey": "q_main_0_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_grabhuegel_von_alt_eik",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_0_c_o2",
+    "descriptionKey": "q_main_0_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_midgard_heartlands_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 500
+   },
+   {
+    "type": "Experience",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 0
+  },
+  "prerequisiteQuestIds": [
+   "q_main_0_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_0_verlies_done"
+  ],
+  "chapter": 0,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_0_rune"
+ },
+ {
+  "id": "q_main_0_rune",
+  "nameKey": "q_main_0_rune_name",
+  "summaryKey": "q_main_0_rune_summary",
+  "descriptionKey": "q_main_0_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_0_d_o1",
+    "descriptionKey": "q_main_0_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_hain_der_ersten_rune",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_0_d_o2",
+    "descriptionKey": "q_main_0_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 500
+   },
+   {
+    "type": "Experience",
+    "amount": 800
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_0_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 0
+  },
+  "prerequisiteQuestIds": [
+   "q_main_0_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_0_rune_done"
+  ],
+  "chapter": 0,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_1_ankunft",
+  "nameKey": "q_main_1_ankunft_name",
+  "summaryKey": "q_main_1_ankunft_summary",
+  "descriptionKey": "q_main_1_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_1_a_o1",
+    "descriptionKey": "q_main_1_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_wanderrast",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_1_a_o2",
+    "descriptionKey": "q_main_1_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_seeress_vala",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1000
+   },
+   {
+    "type": "Experience",
+    "amount": 1600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_1_ankunft_done"
+  ],
+  "chapter": 1,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_1_spur"
+ },
+ {
+  "id": "q_main_1_spur",
+  "nameKey": "q_main_1_spur_name",
+  "summaryKey": "q_main_1_spur_summary",
+  "descriptionKey": "q_main_1_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_1_b_o1",
+    "descriptionKey": "q_main_1_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_1_b_o2",
+    "descriptionKey": "q_main_1_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "glutwelp",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1000
+   },
+   {
+    "type": "Experience",
+    "amount": 1600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [
+   "q_main_1_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_1_spur_done"
+  ],
+  "chapter": 1,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_1_verlies"
+ },
+ {
+  "id": "q_main_1_verlies",
+  "nameKey": "q_main_1_verlies_name",
+  "summaryKey": "q_main_1_verlies_summary",
+  "descriptionKey": "q_main_1_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_1_c_o1",
+    "descriptionKey": "q_main_1_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_grabhuegel_von_alt_eik",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_1_c_o2",
+    "descriptionKey": "q_main_1_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_midgard_heartlands_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1000
+   },
+   {
+    "type": "Experience",
+    "amount": 1600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [
+   "q_main_1_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_1_verlies_done"
+  ],
+  "chapter": 1,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": "q_main_1_rune"
+ },
+ {
+  "id": "q_main_1_rune",
+  "nameKey": "q_main_1_rune_name",
+  "summaryKey": "q_main_1_rune_summary",
+  "descriptionKey": "q_main_1_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_1_d_o1",
+    "descriptionKey": "q_main_1_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_hain_der_ersten_rune",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_1_d_o2",
+    "descriptionKey": "q_main_1_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1000
+   },
+   {
+    "type": "Experience",
+    "amount": 1600
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_1_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [
+   "q_main_1_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_1_rune_done"
+  ],
+  "chapter": 1,
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 2,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_2_ankunft",
+  "nameKey": "q_main_2_ankunft_name",
+  "summaryKey": "q_main_2_ankunft_summary",
+  "descriptionKey": "q_main_2_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_2_a_o1",
+    "descriptionKey": "q_main_2_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_glanzhall",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_2_a_o2",
+    "descriptionKey": "q_main_2_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_alf_lioss",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1500
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_2_ankunft_done"
+  ],
+  "chapter": 2,
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alf_lioss",
+  "recommendedLevel": 12,
+  "nextQuestId": "q_main_2_spur"
+ },
+ {
+  "id": "q_main_2_spur",
+  "nameKey": "q_main_2_spur_name",
+  "summaryKey": "q_main_2_spur_summary",
+  "descriptionKey": "q_main_2_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_2_b_o1",
+    "descriptionKey": "q_main_2_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_2_b_o2",
+    "descriptionKey": "q_main_2_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "lichtwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1500
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [
+   "q_main_2_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_2_spur_done"
+  ],
+  "chapter": 2,
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alf_lioss",
+  "recommendedLevel": 12,
+  "nextQuestId": "q_main_2_verlies"
+ },
+ {
+  "id": "q_main_2_verlies",
+  "nameKey": "q_main_2_verlies_name",
+  "summaryKey": "q_main_2_verlies_summary",
+  "descriptionKey": "q_main_2_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_2_c_o1",
+    "descriptionKey": "q_main_2_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_spiegelgrotte",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_2_c_o2",
+    "descriptionKey": "q_main_2_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_alfheim_prismwoods_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1500
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [
+   "q_main_2_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_2_verlies_done"
+  ],
+  "chapter": 2,
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alf_lioss",
+  "recommendedLevel": 12,
+  "nextQuestId": "q_main_2_rune"
+ },
+ {
+  "id": "q_main_2_rune",
+  "nameKey": "q_main_2_rune_name",
+  "summaryKey": "q_main_2_rune_summary",
+  "descriptionKey": "q_main_2_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_2_d_o1",
+    "descriptionKey": "q_main_2_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_lichtkreis",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_2_d_o2",
+    "descriptionKey": "q_main_2_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1500
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_2_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [
+   "q_main_2_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_2_rune_done"
+  ],
+  "chapter": 2,
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alf_lioss",
+  "recommendedLevel": 12,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_3_ankunft",
+  "nameKey": "q_main_3_ankunft_name",
+  "summaryKey": "q_main_3_ankunft_summary",
+  "descriptionKey": "q_main_3_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_3_a_o1",
+    "descriptionKey": "q_main_3_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_saatheim",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_3_a_o2",
+    "descriptionKey": "q_main_3_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_vanir_gerdis",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2000
+   },
+   {
+    "type": "Experience",
+    "amount": 3200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_3_ankunft_done"
+  ],
+  "chapter": 3,
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanir_gerdis",
+  "recommendedLevel": 20,
+  "nextQuestId": "q_main_3_spur"
+ },
+ {
+  "id": "q_main_3_spur",
+  "nameKey": "q_main_3_spur_name",
+  "summaryKey": "q_main_3_spur_summary",
+  "descriptionKey": "q_main_3_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_3_b_o1",
+    "descriptionKey": "q_main_3_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_3_b_o2",
+    "descriptionKey": "q_main_3_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "saatgeist",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2000
+   },
+   {
+    "type": "Experience",
+    "amount": 3200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [
+   "q_main_3_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_3_spur_done"
+  ],
+  "chapter": 3,
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanir_gerdis",
+  "recommendedLevel": 20,
+  "nextQuestId": "q_main_3_verlies"
+ },
+ {
+  "id": "q_main_3_verlies",
+  "nameKey": "q_main_3_verlies_name",
+  "summaryKey": "q_main_3_verlies_summary",
+  "descriptionKey": "q_main_3_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_3_c_o1",
+    "descriptionKey": "q_main_3_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_wurzelgrotte",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_3_c_o2",
+    "descriptionKey": "q_main_3_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_vanaheim_marches_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2000
+   },
+   {
+    "type": "Experience",
+    "amount": 3200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [
+   "q_main_3_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_3_verlies_done"
+  ],
+  "chapter": 3,
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanir_gerdis",
+  "recommendedLevel": 20,
+  "nextQuestId": "q_main_3_rune"
+ },
+ {
+  "id": "q_main_3_rune",
+  "nameKey": "q_main_3_rune_name",
+  "summaryKey": "q_main_3_rune_summary",
+  "descriptionKey": "q_main_3_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_3_d_o1",
+    "descriptionKey": "q_main_3_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_erntestein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_3_d_o2",
+    "descriptionKey": "q_main_3_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2000
+   },
+   {
+    "type": "Experience",
+    "amount": 3200
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_3_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [
+   "q_main_3_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_3_rune_done"
+  ],
+  "chapter": 3,
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanir_gerdis",
+  "recommendedLevel": 20,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_4_ankunft",
+  "nameKey": "q_main_4_ankunft_name",
+  "summaryKey": "q_main_4_ankunft_summary",
+  "descriptionKey": "q_main_4_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_4_a_o1",
+    "descriptionKey": "q_main_4_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_trollmark",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_4_a_o2",
+    "descriptionKey": "q_main_4_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_jotun_beira",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2500
+   },
+   {
+    "type": "Experience",
+    "amount": 4000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_4_ankunft_done"
+  ],
+  "chapter": 4,
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotun_beira",
+  "recommendedLevel": 30,
+  "nextQuestId": "q_main_4_spur"
+ },
+ {
+  "id": "q_main_4_spur",
+  "nameKey": "q_main_4_spur_name",
+  "summaryKey": "q_main_4_spur_summary",
+  "descriptionKey": "q_main_4_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_4_b_o1",
+    "descriptionKey": "q_main_4_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_4_b_o2",
+    "descriptionKey": "q_main_4_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "frostwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2500
+   },
+   {
+    "type": "Experience",
+    "amount": 4000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "prerequisiteQuestIds": [
+   "q_main_4_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_4_spur_done"
+  ],
+  "chapter": 4,
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotun_beira",
+  "recommendedLevel": 30,
+  "nextQuestId": "q_main_4_verlies"
+ },
+ {
+  "id": "q_main_4_verlies",
+  "nameKey": "q_main_4_verlies_name",
+  "summaryKey": "q_main_4_verlies_summary",
+  "descriptionKey": "q_main_4_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_4_c_o1",
+    "descriptionKey": "q_main_4_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_bergfausts_hoehle",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_4_c_o2",
+    "descriptionKey": "q_main_4_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_jotunheim_ridges_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2500
+   },
+   {
+    "type": "Experience",
+    "amount": 4000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "prerequisiteQuestIds": [
+   "q_main_4_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_4_verlies_done"
+  ],
+  "chapter": 4,
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotun_beira",
+  "recommendedLevel": 30,
+  "nextQuestId": "q_main_4_rune"
+ },
+ {
+  "id": "q_main_4_rune",
+  "nameKey": "q_main_4_rune_name",
+  "summaryKey": "q_main_4_rune_summary",
+  "descriptionKey": "q_main_4_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_4_d_o1",
+    "descriptionKey": "q_main_4_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_urhornstein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_4_d_o2",
+    "descriptionKey": "q_main_4_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2500
+   },
+   {
+    "type": "Experience",
+    "amount": 4000
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_4_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "prerequisiteQuestIds": [
+   "q_main_4_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_4_rune_done"
+  ],
+  "chapter": 4,
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotun_beira",
+  "recommendedLevel": 30,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_5_ankunft",
+  "nameKey": "q_main_5_ankunft_name",
+  "summaryKey": "q_main_5_ankunft_summary",
+  "descriptionKey": "q_main_5_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_5_a_o1",
+    "descriptionKey": "q_main_5_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_ambosshall",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_5_a_o2",
+    "descriptionKey": "q_main_5_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_smith_dvalin",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3000
+   },
+   {
+    "type": "Experience",
+    "amount": 4800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_5_ankunft_done"
+  ],
+  "chapter": 5,
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_smith_dvalin",
+  "recommendedLevel": 38,
+  "nextQuestId": "q_main_5_spur"
+ },
+ {
+  "id": "q_main_5_spur",
+  "nameKey": "q_main_5_spur_name",
+  "summaryKey": "q_main_5_spur_summary",
+  "descriptionKey": "q_main_5_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_5_b_o1",
+    "descriptionKey": "q_main_5_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_5_b_o2",
+    "descriptionKey": "q_main_5_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "erzwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3000
+   },
+   {
+    "type": "Experience",
+    "amount": 4800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "prerequisiteQuestIds": [
+   "q_main_5_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_5_spur_done"
+  ],
+  "chapter": 5,
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_smith_dvalin",
+  "recommendedLevel": 38,
+  "nextQuestId": "q_main_5_verlies"
+ },
+ {
+  "id": "q_main_5_verlies",
+  "nameKey": "q_main_5_verlies_name",
+  "summaryKey": "q_main_5_verlies_summary",
+  "descriptionKey": "q_main_5_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_5_c_o1",
+    "descriptionKey": "q_main_5_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_alte_esse",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_5_c_o2",
+    "descriptionKey": "q_main_5_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_svartalfheim_deeps_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3000
+   },
+   {
+    "type": "Experience",
+    "amount": 4800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "prerequisiteQuestIds": [
+   "q_main_5_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_5_verlies_done"
+  ],
+  "chapter": 5,
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_smith_dvalin",
+  "recommendedLevel": 38,
+  "nextQuestId": "q_main_5_rune"
+ },
+ {
+  "id": "q_main_5_rune",
+  "nameKey": "q_main_5_rune_name",
+  "summaryKey": "q_main_5_rune_summary",
+  "descriptionKey": "q_main_5_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_5_d_o1",
+    "descriptionKey": "q_main_5_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_erster_amboss",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_5_d_o2",
+    "descriptionKey": "q_main_5_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3000
+   },
+   {
+    "type": "Experience",
+    "amount": 4800
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_5_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "prerequisiteQuestIds": [
+   "q_main_5_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_5_rune_done"
+  ],
+  "chapter": 5,
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_smith_dvalin",
+  "recommendedLevel": 38,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_6_ankunft",
+  "nameKey": "q_main_6_ankunft_name",
+  "summaryKey": "q_main_6_ankunft_summary",
+  "descriptionKey": "q_main_6_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_6_a_o1",
+    "descriptionKey": "q_main_6_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_aschenhort",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_6_a_o2",
+    "descriptionKey": "q_main_6_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_muspel_eldra",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3500
+   },
+   {
+    "type": "Experience",
+    "amount": 5600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_6_ankunft_done"
+  ],
+  "chapter": 6,
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspel_eldra",
+  "recommendedLevel": 46,
+  "nextQuestId": "q_main_6_spur"
+ },
+ {
+  "id": "q_main_6_spur",
+  "nameKey": "q_main_6_spur_name",
+  "summaryKey": "q_main_6_spur_summary",
+  "descriptionKey": "q_main_6_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_6_b_o1",
+    "descriptionKey": "q_main_6_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_6_b_o2",
+    "descriptionKey": "q_main_6_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "funkenwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3500
+   },
+   {
+    "type": "Experience",
+    "amount": 5600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "prerequisiteQuestIds": [
+   "q_main_6_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_6_spur_done"
+  ],
+  "chapter": 6,
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspel_eldra",
+  "recommendedLevel": 46,
+  "nextQuestId": "q_main_6_verlies"
+ },
+ {
+  "id": "q_main_6_verlies",
+  "nameKey": "q_main_6_verlies_name",
+  "summaryKey": "q_main_6_verlies_summary",
+  "descriptionKey": "q_main_6_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_6_c_o1",
+    "descriptionKey": "q_main_6_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_surtwacht_feste",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_6_c_o2",
+    "descriptionKey": "q_main_6_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_muspelheim_emberfields_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3500
+   },
+   {
+    "type": "Experience",
+    "amount": 5600
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "prerequisiteQuestIds": [
+   "q_main_6_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_6_verlies_done"
+  ],
+  "chapter": 6,
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspel_eldra",
+  "recommendedLevel": 46,
+  "nextQuestId": "q_main_6_rune"
+ },
+ {
+  "id": "q_main_6_rune",
+  "nameKey": "q_main_6_rune_name",
+  "summaryKey": "q_main_6_rune_summary",
+  "descriptionKey": "q_main_6_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_6_d_o1",
+    "descriptionKey": "q_main_6_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_funkenaltar",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_6_d_o2",
+    "descriptionKey": "q_main_6_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 3500
+   },
+   {
+    "type": "Experience",
+    "amount": 5600
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_6_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "prerequisiteQuestIds": [
+   "q_main_6_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_6_rune_done"
+  ],
+  "chapter": 6,
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspel_eldra",
+  "recommendedLevel": 46,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_7_ankunft",
+  "nameKey": "q_main_7_ankunft_name",
+  "summaryKey": "q_main_7_ankunft_summary",
+  "descriptionKey": "q_main_7_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_7_a_o1",
+    "descriptionKey": "q_main_7_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_reifhall",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_7_a_o2",
+    "descriptionKey": "q_main_7_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_niflheim_halla_0",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4000
+   },
+   {
+    "type": "Experience",
+    "amount": 6400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_7_ankunft_done"
+  ],
+  "chapter": 7,
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_halla_0",
+  "recommendedLevel": 54,
+  "nextQuestId": "q_main_7_spur"
+ },
+ {
+  "id": "q_main_7_spur",
+  "nameKey": "q_main_7_spur_name",
+  "summaryKey": "q_main_7_spur_summary",
+  "descriptionKey": "q_main_7_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_7_b_o1",
+    "descriptionKey": "q_main_7_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_7_b_o2",
+    "descriptionKey": "q_main_7_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "nebelwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4000
+   },
+   {
+    "type": "Experience",
+    "amount": 6400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "prerequisiteQuestIds": [
+   "q_main_7_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_7_spur_done"
+  ],
+  "chapter": 7,
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_halla_0",
+  "recommendedLevel": 54,
+  "nextQuestId": "q_main_7_verlies"
+ },
+ {
+  "id": "q_main_7_verlies",
+  "nameKey": "q_main_7_verlies_name",
+  "summaryKey": "q_main_7_verlies_summary",
+  "descriptionKey": "q_main_7_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_7_c_o1",
+    "descriptionKey": "q_main_7_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_brunnentiefe",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_7_c_o2",
+    "descriptionKey": "q_main_7_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_niflheim_mistwastes_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4000
+   },
+   {
+    "type": "Experience",
+    "amount": 6400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "prerequisiteQuestIds": [
+   "q_main_7_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_7_verlies_done"
+  ],
+  "chapter": 7,
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_halla_0",
+  "recommendedLevel": 54,
+  "nextQuestId": "q_main_7_rune"
+ },
+ {
+  "id": "q_main_7_rune",
+  "nameKey": "q_main_7_rune_name",
+  "summaryKey": "q_main_7_rune_summary",
+  "descriptionKey": "q_main_7_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_7_d_o1",
+    "descriptionKey": "q_main_7_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_stiller_ring",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_7_d_o2",
+    "descriptionKey": "q_main_7_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4000
+   },
+   {
+    "type": "Experience",
+    "amount": 6400
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_7_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "prerequisiteQuestIds": [
+   "q_main_7_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_7_rune_done"
+  ],
+  "chapter": 7,
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_halla_0",
+  "recommendedLevel": 54,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_8_ankunft",
+  "nameKey": "q_main_8_ankunft_name",
+  "summaryKey": "q_main_8_ankunft_summary",
+  "descriptionKey": "q_main_8_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_8_a_o1",
+    "descriptionKey": "q_main_8_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_grabrast",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_8_a_o2",
+    "descriptionKey": "q_main_8_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_cult_grimnir",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4500
+   },
+   {
+    "type": "Experience",
+    "amount": 7200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_8_ankunft_done"
+  ],
+  "chapter": 8,
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_grimnir",
+  "recommendedLevel": 62,
+  "nextQuestId": "q_main_8_spur"
+ },
+ {
+  "id": "q_main_8_spur",
+  "nameKey": "q_main_8_spur_name",
+  "summaryKey": "q_main_8_spur_summary",
+  "descriptionKey": "q_main_8_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_8_b_o1",
+    "descriptionKey": "q_main_8_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_8_b_o2",
+    "descriptionKey": "q_main_8_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "draugwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4500
+   },
+   {
+    "type": "Experience",
+    "amount": 7200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "prerequisiteQuestIds": [
+   "q_main_8_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_8_spur_done"
+  ],
+  "chapter": 8,
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_grimnir",
+  "recommendedLevel": 62,
+  "nextQuestId": "q_main_8_verlies"
+ },
+ {
+  "id": "q_main_8_verlies",
+  "nameKey": "q_main_8_verlies_name",
+  "summaryKey": "q_main_8_verlies_summary",
+  "descriptionKey": "q_main_8_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_8_c_o1",
+    "descriptionKey": "q_main_8_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_halle_der_ungezaehlten",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_8_c_o2",
+    "descriptionKey": "q_main_8_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_helheim_deathmarches_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4500
+   },
+   {
+    "type": "Experience",
+    "amount": 7200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "prerequisiteQuestIds": [
+   "q_main_8_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_8_verlies_done"
+  ],
+  "chapter": 8,
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_grimnir",
+  "recommendedLevel": 62,
+  "nextQuestId": "q_main_8_rune"
+ },
+ {
+  "id": "q_main_8_rune",
+  "nameKey": "q_main_8_rune_name",
+  "summaryKey": "q_main_8_rune_summary",
+  "descriptionKey": "q_main_8_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_8_d_o1",
+    "descriptionKey": "q_main_8_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_ruhestein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_8_d_o2",
+    "descriptionKey": "q_main_8_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 4500
+   },
+   {
+    "type": "Experience",
+    "amount": 7200
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_8_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "prerequisiteQuestIds": [
+   "q_main_8_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_8_rune_done"
+  ],
+  "chapter": 8,
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_grimnir",
+  "recommendedLevel": 62,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_main_9_ankunft",
+  "nameKey": "q_main_9_ankunft_name",
+  "summaryKey": "q_main_9_ankunft_summary",
+  "descriptionKey": "q_main_9_ankunft_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_9_a_o1",
+    "descriptionKey": "q_main_9_a_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_gladsheim_vorhof",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_9_a_o2",
+    "descriptionKey": "q_main_9_a_o2_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_valkyrie_sigrdrifa",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Experience",
+    "amount": 8000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 9
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_9_ankunft_done"
+  ],
+  "chapter": 9,
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_valkyrie_sigrdrifa",
+  "recommendedLevel": 70,
+  "nextQuestId": "q_main_9_spur"
+ },
+ {
+  "id": "q_main_9_spur",
+  "nameKey": "q_main_9_spur_name",
+  "summaryKey": "q_main_9_spur_summary",
+  "descriptionKey": "q_main_9_spur_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_9_b_o1",
+    "descriptionKey": "q_main_9_b_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   },
+   {
+    "id": "q_main_9_b_o2",
+    "descriptionKey": "q_main_9_b_o2_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "lichtfunke",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Experience",
+    "amount": 8000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 9
+  },
+  "prerequisiteQuestIds": [
+   "q_main_9_ankunft"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_9_spur_done"
+  ],
+  "chapter": 9,
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_valkyrie_sigrdrifa",
+  "recommendedLevel": 70,
+  "nextQuestId": "q_main_9_verlies"
+ },
+ {
+  "id": "q_main_9_verlies",
+  "nameKey": "q_main_9_verlies_name",
+  "summaryKey": "q_main_9_verlies_summary",
+  "descriptionKey": "q_main_9_verlies_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_9_c_o1",
+    "descriptionKey": "q_main_9_c_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": "loc_hallen_der_gefallenen",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_9_c_o2",
+    "descriptionKey": "q_main_9_c_o2_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "boss_asgard_goldenheights_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Experience",
+    "amount": 8000
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 9
+  },
+  "prerequisiteQuestIds": [
+   "q_main_9_spur"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_9_verlies_done"
+  ],
+  "chapter": 9,
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_valkyrie_sigrdrifa",
+  "recommendedLevel": 70,
+  "nextQuestId": "q_main_9_rune"
+ },
+ {
+  "id": "q_main_9_rune",
+  "nameKey": "q_main_9_rune_name",
+  "summaryKey": "q_main_9_rune_summary",
+  "descriptionKey": "q_main_9_rune_desc",
+  "category": "MAIN",
+  "objectives": [
+   {
+    "id": "q_main_9_d_o1",
+    "descriptionKey": "q_main_9_d_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_thing_der_asen",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_main_9_d_o2",
+    "descriptionKey": "q_main_9_d_o2_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Experience",
+    "amount": 8000
+   },
+   {
+    "type": "StoryFlag",
+    "flag": "chapter_9_complete"
+   },
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 60
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 9
+  },
+  "prerequisiteQuestIds": [
+   "q_main_9_verlies"
+  ],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [
+   "q_main_9_rune_done"
+  ],
+  "chapter": 9,
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_valkyrie_sigrdrifa",
+  "recommendedLevel": 70,
+  "nextQuestId": null
+ },
+ {
+  "id": "q_side_midgard_heartlands_jagd",
+  "nameKey": "q_side_midgard_heartlands_jagd_name",
+  "summaryKey": "q_side_midgard_heartlands_jagd_summary",
+  "descriptionKey": "q_side_midgard_heartlands_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_midgard_heartlands_jagd_o1",
+    "descriptionKey": "q_side_midgard_heartlands_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "glutjarl",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 220
+   },
+   {
+    "type": "Experience",
+    "amount": 300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_seeress_vala",
+  "recommendedLevel": 4
+ },
+ {
+  "id": "q_side_midgard_heartlands_sammeln",
+  "nameKey": "q_side_midgard_heartlands_sammeln_name",
+  "summaryKey": "q_side_midgard_heartlands_sammeln_summary",
+  "descriptionKey": "q_side_midgard_heartlands_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_midgard_heartlands_sammeln_o1",
+    "descriptionKey": "q_side_midgard_heartlands_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 220
+   },
+   {
+    "type": "Experience",
+    "amount": 300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_warden_hrafn",
+  "recommendedLevel": 4
+ },
+ {
+  "id": "q_side_midgard_heartlands_botengang",
+  "nameKey": "q_side_midgard_heartlands_botengang_name",
+  "summaryKey": "q_side_midgard_heartlands_botengang_summary",
+  "descriptionKey": "q_side_midgard_heartlands_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_midgard_heartlands_botengang_o1",
+    "descriptionKey": "q_side_midgard_heartlands_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_seeress_vala",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 220
+   },
+   {
+    "type": "Experience",
+    "amount": 300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_midgard_astrid_0",
+  "recommendedLevel": 4
+ },
+ {
+  "id": "q_side_midgard_heartlands_fang",
+  "nameKey": "q_side_midgard_heartlands_fang_name",
+  "summaryKey": "q_side_midgard_heartlands_fang_summary",
+  "descriptionKey": "q_side_midgard_heartlands_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_midgard_heartlands_fang_o1",
+    "descriptionKey": "q_side_midgard_heartlands_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "hainhorn",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 220
+   },
+   {
+    "type": "Experience",
+    "amount": 300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_midgard_bjorn_1",
+  "recommendedLevel": 4
+ },
+ {
+  "id": "q_side_midgard_heartlands_pruefung",
+  "nameKey": "q_side_midgard_heartlands_pruefung_name",
+  "summaryKey": "q_side_midgard_heartlands_pruefung_summary",
+  "descriptionKey": "q_side_midgard_heartlands_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_midgard_heartlands_pruefung_o1",
+    "descriptionKey": "q_side_midgard_heartlands_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 220
+   },
+   {
+    "type": "Experience",
+    "amount": 300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "giverNpcId": "npc_midgard_dagny_2",
+  "recommendedLevel": 4
+ },
+ {
+  "id": "q_side_alfheim_prismwoods_jagd",
+  "nameKey": "q_side_alfheim_prismwoods_jagd_name",
+  "summaryKey": "q_side_alfheim_prismwoods_jagd_summary",
+  "descriptionKey": "q_side_alfheim_prismwoods_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_alfheim_prismwoods_jagd_o1",
+    "descriptionKey": "q_side_alfheim_prismwoods_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "dagrun",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 660
+   },
+   {
+    "type": "Experience",
+    "amount": 900
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alf_lioss",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_side_alfheim_prismwoods_sammeln",
+  "nameKey": "q_side_alfheim_prismwoods_sammeln_name",
+  "summaryKey": "q_side_alfheim_prismwoods_sammeln_summary",
+  "descriptionKey": "q_side_alfheim_prismwoods_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_alfheim_prismwoods_sammeln_o1",
+    "descriptionKey": "q_side_alfheim_prismwoods_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 660
+   },
+   {
+    "type": "Experience",
+    "amount": 900
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alfheim_magnhild_0",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_side_alfheim_prismwoods_botengang",
+  "nameKey": "q_side_alfheim_prismwoods_botengang_name",
+  "summaryKey": "q_side_alfheim_prismwoods_botengang_summary",
+  "descriptionKey": "q_side_alfheim_prismwoods_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_alfheim_prismwoods_botengang_o1",
+    "descriptionKey": "q_side_alfheim_prismwoods_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_alfheim_njal_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 660
+   },
+   {
+    "type": "Experience",
+    "amount": 900
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alfheim_njal_1",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_side_alfheim_prismwoods_fang",
+  "nameKey": "q_side_alfheim_prismwoods_fang_name",
+  "summaryKey": "q_side_alfheim_prismwoods_fang_summary",
+  "descriptionKey": "q_side_alfheim_prismwoods_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_alfheim_prismwoods_fang_o1",
+    "descriptionKey": "q_side_alfheim_prismwoods_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "mondblume",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 660
+   },
+   {
+    "type": "Experience",
+    "amount": 900
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alfheim_orm_2",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_side_alfheim_prismwoods_pruefung",
+  "nameKey": "q_side_alfheim_prismwoods_pruefung_name",
+  "summaryKey": "q_side_alfheim_prismwoods_pruefung_summary",
+  "descriptionKey": "q_side_alfheim_prismwoods_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_alfheim_prismwoods_pruefung_o1",
+    "descriptionKey": "q_side_alfheim_prismwoods_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 660
+   },
+   {
+    "type": "Experience",
+    "amount": 900
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "giverNpcId": "npc_alfheim_ragna_3",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_side_vanaheim_marches_jagd",
+  "nameKey": "q_side_vanaheim_marches_jagd_name",
+  "summaryKey": "q_side_vanaheim_marches_jagd_summary",
+  "descriptionKey": "q_side_vanaheim_marches_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_vanaheim_marches_jagd_o1",
+    "descriptionKey": "q_side_vanaheim_marches_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "erntemutter",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 880
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanir_gerdis",
+  "recommendedLevel": 22
+ },
+ {
+  "id": "q_side_vanaheim_marches_sammeln",
+  "nameKey": "q_side_vanaheim_marches_sammeln_name",
+  "summaryKey": "q_side_vanaheim_marches_sammeln_summary",
+  "descriptionKey": "q_side_vanaheim_marches_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_vanaheim_marches_sammeln_o1",
+    "descriptionKey": "q_side_vanaheim_marches_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 880
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanaheim_dagr_0",
+  "recommendedLevel": 22
+ },
+ {
+  "id": "q_side_vanaheim_marches_botengang",
+  "nameKey": "q_side_vanaheim_marches_botengang_name",
+  "summaryKey": "q_side_vanaheim_marches_botengang_summary",
+  "descriptionKey": "q_side_vanaheim_marches_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_vanaheim_marches_botengang_o1",
+    "descriptionKey": "q_side_vanaheim_marches_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_vanaheim_egil_1",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 880
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanaheim_egil_1",
+  "recommendedLevel": 22
+ },
+ {
+  "id": "q_side_vanaheim_marches_fang",
+  "nameKey": "q_side_vanaheim_marches_fang_name",
+  "summaryKey": "q_side_vanaheim_marches_fang_summary",
+  "descriptionKey": "q_side_vanaheim_marches_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_vanaheim_marches_fang_o1",
+    "descriptionKey": "q_side_vanaheim_marches_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "ardvin",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 880
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanaheim_frode_2",
+  "recommendedLevel": 22
+ },
+ {
+  "id": "q_side_vanaheim_marches_pruefung",
+  "nameKey": "q_side_vanaheim_marches_pruefung_name",
+  "summaryKey": "q_side_vanaheim_marches_pruefung_summary",
+  "descriptionKey": "q_side_vanaheim_marches_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_vanaheim_marches_pruefung_o1",
+    "descriptionKey": "q_side_vanaheim_marches_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 880
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "giverNpcId": "npc_vanaheim_gudrun_3",
+  "recommendedLevel": 22
+ },
+ {
+  "id": "q_side_jotunheim_ridges_jagd",
+  "nameKey": "q_side_jotunheim_ridges_jagd_name",
+  "summaryKey": "q_side_jotunheim_ridges_jagd_summary",
+  "descriptionKey": "q_side_jotunheim_ridges_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_jotunheim_ridges_jagd_o1",
+    "descriptionKey": "q_side_jotunheim_ridges_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "urstier",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1320
+   },
+   {
+    "type": "Experience",
+    "amount": 1800
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotun_beira",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_side_jotunheim_ridges_sammeln",
+  "nameKey": "q_side_jotunheim_ridges_sammeln_name",
+  "summaryKey": "q_side_jotunheim_ridges_sammeln_summary",
+  "descriptionKey": "q_side_jotunheim_ridges_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_jotunheim_ridges_sammeln_o1",
+    "descriptionKey": "q_side_jotunheim_ridges_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1320
+   },
+   {
+    "type": "Experience",
+    "amount": 1800
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotunheim_ragnvald_0",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_side_jotunheim_ridges_botengang",
+  "nameKey": "q_side_jotunheim_ridges_botengang_name",
+  "summaryKey": "q_side_jotunheim_ridges_botengang_summary",
+  "descriptionKey": "q_side_jotunheim_ridges_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_jotunheim_ridges_botengang_o1",
+    "descriptionKey": "q_side_jotunheim_ridges_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_jotun_beira",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1320
+   },
+   {
+    "type": "Experience",
+    "amount": 1800
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotunheim_solveig_1",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_side_jotunheim_ridges_fang",
+  "nameKey": "q_side_jotunheim_ridges_fang_name",
+  "summaryKey": "q_side_jotunheim_ridges_fang_summary",
+  "descriptionKey": "q_side_jotunheim_ridges_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_jotunheim_ridges_fang_o1",
+    "descriptionKey": "q_side_jotunheim_ridges_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "eiszapfling",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1320
+   },
+   {
+    "type": "Experience",
+    "amount": 1800
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotunheim_thora_2",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_side_jotunheim_ridges_pruefung",
+  "nameKey": "q_side_jotunheim_ridges_pruefung_name",
+  "summaryKey": "q_side_jotunheim_ridges_pruefung_summary",
+  "descriptionKey": "q_side_jotunheim_ridges_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_jotunheim_ridges_pruefung_o1",
+    "descriptionKey": "q_side_jotunheim_ridges_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1320
+   },
+   {
+    "type": "Experience",
+    "amount": 1800
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "giverNpcId": "npc_jotunheim_ulf_3",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_side_svartalfheim_deeps_jagd",
+  "nameKey": "q_side_svartalfheim_deeps_jagd_name",
+  "summaryKey": "q_side_svartalfheim_deeps_jagd_summary",
+  "descriptionKey": "q_side_svartalfheim_deeps_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_svartalfheim_deeps_jagd_o1",
+    "descriptionKey": "q_side_svartalfheim_deeps_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "goldpanzer",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1540
+   },
+   {
+    "type": "Experience",
+    "amount": 2100
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_smith_dvalin",
+  "recommendedLevel": 40
+ },
+ {
+  "id": "q_side_svartalfheim_deeps_sammeln",
+  "nameKey": "q_side_svartalfheim_deeps_sammeln_name",
+  "summaryKey": "q_side_svartalfheim_deeps_sammeln_summary",
+  "descriptionKey": "q_side_svartalfheim_deeps_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_svartalfheim_deeps_sammeln_o1",
+    "descriptionKey": "q_side_svartalfheim_deeps_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1540
+   },
+   {
+    "type": "Experience",
+    "amount": 2100
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_svartalfheim_grimr_0",
+  "recommendedLevel": 40
+ },
+ {
+  "id": "q_side_svartalfheim_deeps_botengang",
+  "nameKey": "q_side_svartalfheim_deeps_botengang_name",
+  "summaryKey": "q_side_svartalfheim_deeps_botengang_summary",
+  "descriptionKey": "q_side_svartalfheim_deeps_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_svartalfheim_deeps_botengang_o1",
+    "descriptionKey": "q_side_svartalfheim_deeps_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_svartalfheim_rannveig_8",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1540
+   },
+   {
+    "type": "Experience",
+    "amount": 2100
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_svartalfheim_hedin_1",
+  "recommendedLevel": 40
+ },
+ {
+  "id": "q_side_svartalfheim_deeps_fang",
+  "nameKey": "q_side_svartalfheim_deeps_fang_name",
+  "summaryKey": "q_side_svartalfheim_deeps_fang_summary",
+  "descriptionKey": "q_side_svartalfheim_deeps_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_svartalfheim_deeps_fang_o1",
+    "descriptionKey": "q_side_svartalfheim_deeps_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "essenfunke",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1540
+   },
+   {
+    "type": "Experience",
+    "amount": 2100
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_svartalfheim_iva_2",
+  "recommendedLevel": 40
+ },
+ {
+  "id": "q_side_svartalfheim_deeps_pruefung",
+  "nameKey": "q_side_svartalfheim_deeps_pruefung_name",
+  "summaryKey": "q_side_svartalfheim_deeps_pruefung_summary",
+  "descriptionKey": "q_side_svartalfheim_deeps_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_svartalfheim_deeps_pruefung_o1",
+    "descriptionKey": "q_side_svartalfheim_deeps_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1540
+   },
+   {
+    "type": "Experience",
+    "amount": 2100
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "giverNpcId": "npc_svartalfheim_kolbein_3",
+  "recommendedLevel": 40
+ },
+ {
+  "id": "q_side_muspelheim_emberfields_jagd",
+  "nameKey": "q_side_muspelheim_emberfields_jagd_name",
+  "summaryKey": "q_side_muspelheim_emberfields_jagd_summary",
+  "descriptionKey": "q_side_muspelheim_emberfields_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_muspelheim_emberfields_jagd_o1",
+    "descriptionKey": "q_side_muspelheim_emberfields_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "aschenvogel",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1760
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspel_eldra",
+  "recommendedLevel": 48
+ },
+ {
+  "id": "q_side_muspelheim_emberfields_sammeln",
+  "nameKey": "q_side_muspelheim_emberfields_sammeln_name",
+  "summaryKey": "q_side_muspelheim_emberfields_sammeln_summary",
+  "descriptionKey": "q_side_muspelheim_emberfields_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_muspelheim_emberfields_sammeln_o1",
+    "descriptionKey": "q_side_muspelheim_emberfields_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1760
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspelheim_vebjorn_0",
+  "recommendedLevel": 48
+ },
+ {
+  "id": "q_side_muspelheim_emberfields_botengang",
+  "nameKey": "q_side_muspelheim_emberfields_botengang_name",
+  "summaryKey": "q_side_muspelheim_emberfields_botengang_summary",
+  "descriptionKey": "q_side_muspelheim_emberfields_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_muspelheim_emberfields_botengang_o1",
+    "descriptionKey": "q_side_muspelheim_emberfields_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_muspelheim_bjorn_6",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1760
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspelheim_ylfa_1",
+  "recommendedLevel": 48
+ },
+ {
+  "id": "q_side_muspelheim_emberfields_fang",
+  "nameKey": "q_side_muspelheim_emberfields_fang_name",
+  "summaryKey": "q_side_muspelheim_emberfields_fang_summary",
+  "descriptionKey": "q_side_muspelheim_emberfields_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_muspelheim_emberfields_fang_o1",
+    "descriptionKey": "q_side_muspelheim_emberfields_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "hoellenspuerer",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1760
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspelheim_arnbjorg_2",
+  "recommendedLevel": 48
+ },
+ {
+  "id": "q_side_muspelheim_emberfields_pruefung",
+  "nameKey": "q_side_muspelheim_emberfields_pruefung_name",
+  "summaryKey": "q_side_muspelheim_emberfields_pruefung_summary",
+  "descriptionKey": "q_side_muspelheim_emberfields_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_muspelheim_emberfields_pruefung_o1",
+    "descriptionKey": "q_side_muspelheim_emberfields_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 1760
+   },
+   {
+    "type": "Experience",
+    "amount": 2400
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "giverNpcId": "npc_muspelheim_bersi_3",
+  "recommendedLevel": 48
+ },
+ {
+  "id": "q_side_niflheim_mistwastes_jagd",
+  "nameKey": "q_side_niflheim_mistwastes_jagd_name",
+  "summaryKey": "q_side_niflheim_mistwastes_jagd_summary",
+  "descriptionKey": "q_side_niflheim_mistwastes_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_niflheim_mistwastes_jagd_o1",
+    "descriptionKey": "q_side_niflheim_mistwastes_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "nidschuppe",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2200
+   },
+   {
+    "type": "Experience",
+    "amount": 3000
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_halla_0",
+  "recommendedLevel": 56
+ },
+ {
+  "id": "q_side_niflheim_mistwastes_sammeln",
+  "nameKey": "q_side_niflheim_mistwastes_sammeln_name",
+  "summaryKey": "q_side_niflheim_mistwastes_sammeln_summary",
+  "descriptionKey": "q_side_niflheim_mistwastes_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_niflheim_mistwastes_sammeln_o1",
+    "descriptionKey": "q_side_niflheim_mistwastes_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2200
+   },
+   {
+    "type": "Experience",
+    "amount": 3000
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_ingvar_1",
+  "recommendedLevel": 56
+ },
+ {
+  "id": "q_side_niflheim_mistwastes_botengang",
+  "nameKey": "q_side_niflheim_mistwastes_botengang_name",
+  "summaryKey": "q_side_niflheim_mistwastes_botengang_summary",
+  "descriptionKey": "q_side_niflheim_mistwastes_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_niflheim_mistwastes_botengang_o1",
+    "descriptionKey": "q_side_niflheim_mistwastes_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_niflheim_liv_4",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2200
+   },
+   {
+    "type": "Experience",
+    "amount": 3000
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_jorunn_2",
+  "recommendedLevel": 56
+ },
+ {
+  "id": "q_side_niflheim_mistwastes_fang",
+  "nameKey": "q_side_niflheim_mistwastes_fang_name",
+  "summaryKey": "q_side_niflheim_mistwastes_fang_summary",
+  "descriptionKey": "q_side_niflheim_mistwastes_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_niflheim_mistwastes_fang_o1",
+    "descriptionKey": "q_side_niflheim_mistwastes_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "nebelwicht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2200
+   },
+   {
+    "type": "Experience",
+    "amount": 3000
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_kettil_3",
+  "recommendedLevel": 56
+ },
+ {
+  "id": "q_side_niflheim_mistwastes_pruefung",
+  "nameKey": "q_side_niflheim_mistwastes_pruefung_name",
+  "summaryKey": "q_side_niflheim_mistwastes_pruefung_summary",
+  "descriptionKey": "q_side_niflheim_mistwastes_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_niflheim_mistwastes_pruefung_o1",
+    "descriptionKey": "q_side_niflheim_mistwastes_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2200
+   },
+   {
+    "type": "Experience",
+    "amount": 3000
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "giverNpcId": "npc_niflheim_liv_4",
+  "recommendedLevel": 56
+ },
+ {
+  "id": "q_side_helheim_deathmarches_jagd",
+  "nameKey": "q_side_helheim_deathmarches_jagd_name",
+  "summaryKey": "q_side_helheim_deathmarches_jagd_summary",
+  "descriptionKey": "q_side_helheim_deathmarches_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_helheim_deathmarches_jagd_o1",
+    "descriptionKey": "q_side_helheim_deathmarches_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "halbschemen",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2420
+   },
+   {
+    "type": "Experience",
+    "amount": 3300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_grimnir",
+  "recommendedLevel": 64
+ },
+ {
+  "id": "q_side_helheim_deathmarches_sammeln",
+  "nameKey": "q_side_helheim_deathmarches_sammeln_name",
+  "summaryKey": "q_side_helheim_deathmarches_sammeln_summary",
+  "descriptionKey": "q_side_helheim_deathmarches_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_helheim_deathmarches_sammeln_o1",
+    "descriptionKey": "q_side_helheim_deathmarches_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2420
+   },
+   {
+    "type": "Experience",
+    "amount": 3300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_cult_saga",
+  "recommendedLevel": 64
+ },
+ {
+  "id": "q_side_helheim_deathmarches_botengang",
+  "nameKey": "q_side_helheim_deathmarches_botengang_name",
+  "summaryKey": "q_side_helheim_deathmarches_botengang_summary",
+  "descriptionKey": "q_side_helheim_deathmarches_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_helheim_deathmarches_botengang_o1",
+    "descriptionKey": "q_side_helheim_deathmarches_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_hel_modgud",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2420
+   },
+   {
+    "type": "Experience",
+    "amount": 3300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_hel_modgud",
+  "recommendedLevel": 64
+ },
+ {
+  "id": "q_side_helheim_deathmarches_fang",
+  "nameKey": "q_side_helheim_deathmarches_fang_name",
+  "summaryKey": "q_side_helheim_deathmarches_fang_summary",
+  "descriptionKey": "q_side_helheim_deathmarches_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_helheim_deathmarches_fang_o1",
+    "descriptionKey": "q_side_helheim_deathmarches_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "knochenwacht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2420
+   },
+   {
+    "type": "Experience",
+    "amount": 3300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_helheim_unn_0",
+  "recommendedLevel": 64
+ },
+ {
+  "id": "q_side_helheim_deathmarches_pruefung",
+  "nameKey": "q_side_helheim_deathmarches_pruefung_name",
+  "summaryKey": "q_side_helheim_deathmarches_pruefung_summary",
+  "descriptionKey": "q_side_helheim_deathmarches_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_helheim_deathmarches_pruefung_o1",
+    "descriptionKey": "q_side_helheim_deathmarches_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2420
+   },
+   {
+    "type": "Experience",
+    "amount": 3300
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "giverNpcId": "npc_helheim_vigdis_1",
+  "recommendedLevel": 64
+ },
+ {
+  "id": "q_side_asgard_goldenheights_jagd",
+  "nameKey": "q_side_asgard_goldenheights_jagd_name",
+  "summaryKey": "q_side_asgard_goldenheights_jagd_summary",
+  "descriptionKey": "q_side_asgard_goldenheights_jagd_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_asgard_goldenheights_jagd_o1",
+    "descriptionKey": "q_side_asgard_goldenheights_jagd_o1_desc",
+    "type": "DEFEAT_SPECIES",
+    "targetId": "einherjer",
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2640
+   },
+   {
+    "type": "Experience",
+    "amount": 3600
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_valkyrie_sigrdrifa",
+  "recommendedLevel": 72
+ },
+ {
+  "id": "q_side_asgard_goldenheights_sammeln",
+  "nameKey": "q_side_asgard_goldenheights_sammeln_name",
+  "summaryKey": "q_side_asgard_goldenheights_sammeln_summary",
+  "descriptionKey": "q_side_asgard_goldenheights_sammeln_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_asgard_goldenheights_sammeln_o1",
+    "descriptionKey": "q_side_asgard_goldenheights_sammeln_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "erz_eisen",
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2640
+   },
+   {
+    "type": "Experience",
+    "amount": 3600
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_aesir_bragr",
+  "recommendedLevel": 72
+ },
+ {
+  "id": "q_side_asgard_goldenheights_botengang",
+  "nameKey": "q_side_asgard_goldenheights_botengang_name",
+  "summaryKey": "q_side_asgard_goldenheights_botengang_summary",
+  "descriptionKey": "q_side_asgard_goldenheights_botengang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_asgard_goldenheights_botengang_o1",
+    "descriptionKey": "q_side_asgard_goldenheights_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": "npc_asgard_leif_2",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2640
+   },
+   {
+    "type": "Experience",
+    "amount": 3600
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_asgard_jarl_0",
+  "recommendedLevel": 72
+ },
+ {
+  "id": "q_side_asgard_goldenheights_fang",
+  "nameKey": "q_side_asgard_goldenheights_fang_name",
+  "summaryKey": "q_side_asgard_goldenheights_fang_summary",
+  "descriptionKey": "q_side_asgard_goldenheights_fang_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_asgard_goldenheights_fang_o1",
+    "descriptionKey": "q_side_asgard_goldenheights_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": "speerschemen",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2640
+   },
+   {
+    "type": "Experience",
+    "amount": 3600
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_asgard_kari_1",
+  "recommendedLevel": 72
+ },
+ {
+  "id": "q_side_asgard_goldenheights_pruefung",
+  "nameKey": "q_side_asgard_goldenheights_pruefung_name",
+  "summaryKey": "q_side_asgard_goldenheights_pruefung_summary",
+  "descriptionKey": "q_side_asgard_goldenheights_pruefung_desc",
+  "category": "SIDE",
+  "objectives": [
+   {
+    "id": "q_side_asgard_goldenheights_pruefung_o1",
+    "descriptionKey": "q_side_asgard_goldenheights_pruefung_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 10,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 2640
+   },
+   {
+    "type": "Experience",
+    "amount": 3600
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "giverNpcId": "npc_asgard_leif_2",
+  "recommendedLevel": 72
+ },
+ {
+  "id": "q_faction_fac_runewardens_aufnahme",
+  "nameKey": "q_faction_fac_runewardens_aufnahme_name",
+  "summaryKey": "q_faction_fac_runewardens_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_runewardens_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_runewardens_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_runewardens_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_runewardens",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_runewardens_dienst",
+  "nameKey": "q_faction_fac_runewardens_dienst_name",
+  "summaryKey": "q_faction_fac_runewardens_dienst_summary",
+  "descriptionKey": "q_faction_fac_runewardens_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_runewardens_dienst_o1",
+    "descriptionKey": "q_faction_fac_runewardens_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_runewardens",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_runewardens_treue",
+  "nameKey": "q_faction_fac_runewardens_treue_name",
+  "summaryKey": "q_faction_fac_runewardens_treue_summary",
+  "descriptionKey": "q_faction_fac_runewardens_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_runewardens_treue_o1",
+    "descriptionKey": "q_faction_fac_runewardens_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_runewardens",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_runewardens",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_faction_fac_valkyries_aufnahme",
+  "nameKey": "q_faction_fac_valkyries_aufnahme_name",
+  "summaryKey": "q_faction_fac_valkyries_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_valkyries_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_valkyries_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_valkyries_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_valkyries",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_valkyries",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_valkyries_dienst",
+  "nameKey": "q_faction_fac_valkyries_dienst_name",
+  "summaryKey": "q_faction_fac_valkyries_dienst_summary",
+  "descriptionKey": "q_faction_fac_valkyries_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_valkyries_dienst_o1",
+    "descriptionKey": "q_faction_fac_valkyries_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_valkyries",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_valkyries",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_valkyries_treue",
+  "nameKey": "q_faction_fac_valkyries_treue_name",
+  "summaryKey": "q_faction_fac_valkyries_treue_summary",
+  "descriptionKey": "q_faction_fac_valkyries_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_valkyries_treue_o1",
+    "descriptionKey": "q_faction_fac_valkyries_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_valkyries",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_valkyries",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_faction_fac_chaoscult_aufnahme",
+  "nameKey": "q_faction_fac_chaoscult_aufnahme_name",
+  "summaryKey": "q_faction_fac_chaoscult_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_chaoscult_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_chaoscult_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_chaoscult_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_chaoscult",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_chaoscult",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_chaoscult_dienst",
+  "nameKey": "q_faction_fac_chaoscult_dienst_name",
+  "summaryKey": "q_faction_fac_chaoscult_dienst_summary",
+  "descriptionKey": "q_faction_fac_chaoscult_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_chaoscult_dienst_o1",
+    "descriptionKey": "q_faction_fac_chaoscult_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_chaoscult",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_chaoscult",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_chaoscult_treue",
+  "nameKey": "q_faction_fac_chaoscult_treue_name",
+  "summaryKey": "q_faction_fac_chaoscult_treue_summary",
+  "descriptionKey": "q_faction_fac_chaoscult_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_chaoscult_treue_o1",
+    "descriptionKey": "q_faction_fac_chaoscult_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_chaoscult",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_chaoscult",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_faction_fac_dwarves_aufnahme",
+  "nameKey": "q_faction_fac_dwarves_aufnahme_name",
+  "summaryKey": "q_faction_fac_dwarves_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_dwarves_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_dwarves_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_dwarves_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_dwarves",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_dwarves",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_dwarves_dienst",
+  "nameKey": "q_faction_fac_dwarves_dienst_name",
+  "summaryKey": "q_faction_fac_dwarves_dienst_summary",
+  "descriptionKey": "q_faction_fac_dwarves_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_dwarves_dienst_o1",
+    "descriptionKey": "q_faction_fac_dwarves_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_dwarves",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_dwarves",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_dwarves_treue",
+  "nameKey": "q_faction_fac_dwarves_treue_name",
+  "summaryKey": "q_faction_fac_dwarves_treue_summary",
+  "descriptionKey": "q_faction_fac_dwarves_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_dwarves_treue_o1",
+    "descriptionKey": "q_faction_fac_dwarves_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_dwarves",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_dwarves",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_faction_fac_vanir_aufnahme",
+  "nameKey": "q_faction_fac_vanir_aufnahme_name",
+  "summaryKey": "q_faction_fac_vanir_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_vanir_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_vanir_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_vanir_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_vanir",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_vanir",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_vanir_dienst",
+  "nameKey": "q_faction_fac_vanir_dienst_name",
+  "summaryKey": "q_faction_fac_vanir_dienst_summary",
+  "descriptionKey": "q_faction_fac_vanir_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_vanir_dienst_o1",
+    "descriptionKey": "q_faction_fac_vanir_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_vanir",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_vanir",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_vanir_treue",
+  "nameKey": "q_faction_fac_vanir_treue_name",
+  "summaryKey": "q_faction_fac_vanir_treue_summary",
+  "descriptionKey": "q_faction_fac_vanir_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_vanir_treue_o1",
+    "descriptionKey": "q_faction_fac_vanir_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_vanir",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_vanir",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_faction_fac_aesir_aufnahme",
+  "nameKey": "q_faction_fac_aesir_aufnahme_name",
+  "summaryKey": "q_faction_fac_aesir_aufnahme_summary",
+  "descriptionKey": "q_faction_fac_aesir_aufnahme_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_aesir_aufnahme_o1",
+    "descriptionKey": "q_faction_fac_aesir_aufnahme_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 8,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_aesir",
+    "amount": 40
+   },
+   {
+    "type": "Gold",
+    "amount": 400
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_aesir",
+  "factionReputationDelta": 40
+ },
+ {
+  "id": "q_faction_fac_aesir_dienst",
+  "nameKey": "q_faction_fac_aesir_dienst_name",
+  "summaryKey": "q_faction_fac_aesir_dienst_summary",
+  "descriptionKey": "q_faction_fac_aesir_dienst_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_aesir_dienst_o1",
+    "descriptionKey": "q_faction_fac_aesir_dienst_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": "splitter_rune",
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_aesir",
+    "amount": 70
+   },
+   {
+    "type": "Gold",
+    "amount": 800
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_aesir",
+  "factionReputationDelta": 70
+ },
+ {
+  "id": "q_faction_fac_aesir_treue",
+  "nameKey": "q_faction_fac_aesir_treue_name",
+  "summaryKey": "q_faction_fac_aesir_treue_summary",
+  "descriptionKey": "q_faction_fac_aesir_treue_desc",
+  "category": "FACTION",
+  "objectives": [
+   {
+    "id": "q_faction_fac_aesir_treue_o1",
+    "descriptionKey": "q_faction_fac_aesir_treue_o1_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Reputation",
+    "factionId": "fac_aesir",
+    "amount": 140
+   },
+   {
+    "type": "Gold",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "factionId": "fac_aesir",
+  "factionReputationDelta": 140
+ },
+ {
+  "id": "q_daily_jagd",
+  "nameKey": "q_daily_jagd_name",
+  "summaryKey": "q_daily_jagd_summary",
+  "descriptionKey": "q_daily_jagd_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_jagd_o1",
+    "descriptionKey": "q_daily_jagd_o1_desc",
+    "type": "WIN_BATTLES",
+    "targetId": null,
+    "requiredCount": 5,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_fang",
+  "nameKey": "q_daily_fang_name",
+  "summaryKey": "q_daily_fang_summary",
+  "descriptionKey": "q_daily_fang_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_fang_o1",
+    "descriptionKey": "q_daily_fang_o1_desc",
+    "type": "CAPTURE_SPECIES",
+    "targetId": null,
+    "requiredCount": 2,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_ernte",
+  "nameKey": "q_daily_ernte_name",
+  "summaryKey": "q_daily_ernte_summary",
+  "descriptionKey": "q_daily_ernte_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_ernte_o1",
+    "descriptionKey": "q_daily_ernte_o1_desc",
+    "type": "COLLECT_ITEM",
+    "targetId": null,
+    "requiredCount": 6,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_schmiede",
+  "nameKey": "q_daily_schmiede_name",
+  "summaryKey": "q_daily_schmiede_summary",
+  "descriptionKey": "q_daily_schmiede_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_schmiede_o1",
+    "descriptionKey": "q_daily_schmiede_o1_desc",
+    "type": "CRAFT_ITEM",
+    "targetId": null,
+    "requiredCount": 2,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_brut",
+  "nameKey": "q_daily_brut_name",
+  "summaryKey": "q_daily_brut_summary",
+  "descriptionKey": "q_daily_brut_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_brut_o1",
+    "descriptionKey": "q_daily_brut_o1_desc",
+    "type": "HATCH_EGG",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_verlies",
+  "nameKey": "q_daily_verlies_name",
+  "summaryKey": "q_daily_verlies_summary",
+  "descriptionKey": "q_daily_verlies_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_verlies_o1",
+    "descriptionKey": "q_daily_verlies_o1_desc",
+    "type": "COMPLETE_DUNGEON",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_botengang",
+  "nameKey": "q_daily_botengang_name",
+  "summaryKey": "q_daily_botengang_summary",
+  "descriptionKey": "q_daily_botengang_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_botengang_o1",
+    "descriptionKey": "q_daily_botengang_o1_desc",
+    "type": "TALK_TO_NPC",
+    "targetId": null,
+    "requiredCount": 3,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_wanderung",
+  "nameKey": "q_daily_wanderung_name",
+  "summaryKey": "q_daily_wanderung_summary",
+  "descriptionKey": "q_daily_wanderung_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_wanderung_o1",
+    "descriptionKey": "q_daily_wanderung_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": null,
+    "requiredCount": 3,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_entwicklung",
+  "nameKey": "q_daily_entwicklung_name",
+  "summaryKey": "q_daily_entwicklung_summary",
+  "descriptionKey": "q_daily_entwicklung_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_entwicklung_o1",
+    "descriptionKey": "q_daily_entwicklung_o1_desc",
+    "type": "EVOLVE_MONSTER",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_daily_rune",
+  "nameKey": "q_daily_rune_name",
+  "summaryKey": "q_daily_rune_summary",
+  "descriptionKey": "q_daily_rune_desc",
+  "category": "DAILY",
+  "objectives": [
+   {
+    "id": "q_daily_rune_o1",
+    "descriptionKey": "q_daily_rune_o1_desc",
+    "type": "BIND_RUNE",
+    "targetId": null,
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 900
+   },
+   {
+    "type": "Experience",
+    "amount": 1200
+   }
+  ],
+  "prerequisite": {
+   "type": "None"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": true,
+  "isHidden": false,
+  "grantsStoryFlags": []
+ },
+ {
+  "id": "q_legend_jorwyrm",
+  "nameKey": "q_legend_jorwyrm_name",
+  "summaryKey": "q_legend_jorwyrm_summary",
+  "descriptionKey": "q_legend_jorwyrm_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_jorwyrm_o1",
+    "descriptionKey": "q_legend_jorwyrm_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_hain_der_ersten_rune",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_jorwyrm_o2",
+    "descriptionKey": "q_legend_jorwyrm_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_jorwyrm_o3",
+    "descriptionKey": "q_legend_jorwyrm_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_jorwyrm",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands",
+  "recommendedLevel": 14
+ },
+ {
+  "id": "q_legend_dagrun",
+  "nameKey": "q_legend_dagrun_name",
+  "summaryKey": "q_legend_dagrun_summary",
+  "descriptionKey": "q_legend_dagrun_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_dagrun_o1",
+    "descriptionKey": "q_legend_dagrun_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_lichtkreis",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_dagrun_o2",
+    "descriptionKey": "q_legend_dagrun_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_dagrun_o3",
+    "descriptionKey": "q_legend_dagrun_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_dagrun",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 1
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods",
+  "recommendedLevel": 24
+ },
+ {
+  "id": "q_legend_ardvin",
+  "nameKey": "q_legend_ardvin_name",
+  "summaryKey": "q_legend_ardvin_summary",
+  "descriptionKey": "q_legend_ardvin_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_ardvin_o1",
+    "descriptionKey": "q_legend_ardvin_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_erntestein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_ardvin_o2",
+    "descriptionKey": "q_legend_ardvin_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_ardvin_o3",
+    "descriptionKey": "q_legend_ardvin_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_ardvin",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches",
+  "recommendedLevel": 32
+ },
+ {
+  "id": "q_legend_bergrimm",
+  "nameKey": "q_legend_bergrimm_name",
+  "summaryKey": "q_legend_bergrimm_summary",
+  "descriptionKey": "q_legend_bergrimm_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_bergrimm_o1",
+    "descriptionKey": "q_legend_bergrimm_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_urhornstein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_bergrimm_o2",
+    "descriptionKey": "q_legend_bergrimm_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_bergrimm_o3",
+    "descriptionKey": "q_legend_bergrimm_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_bergrimm",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges",
+  "recommendedLevel": 42
+ },
+ {
+  "id": "q_legend_dvalgrim",
+  "nameKey": "q_legend_dvalgrim_name",
+  "summaryKey": "q_legend_dvalgrim_summary",
+  "descriptionKey": "q_legend_dvalgrim_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_dvalgrim_o1",
+    "descriptionKey": "q_legend_dvalgrim_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_erster_amboss",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_dvalgrim_o2",
+    "descriptionKey": "q_legend_dvalgrim_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_dvalgrim_o3",
+    "descriptionKey": "q_legend_dvalgrim_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_dvalgrim",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps",
+  "recommendedLevel": 50
+ },
+ {
+  "id": "q_legend_surtwacht",
+  "nameKey": "q_legend_surtwacht_name",
+  "summaryKey": "q_legend_surtwacht_summary",
+  "descriptionKey": "q_legend_surtwacht_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_surtwacht_o1",
+    "descriptionKey": "q_legend_surtwacht_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_funkenaltar",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_surtwacht_o2",
+    "descriptionKey": "q_legend_surtwacht_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_surtwacht_o3",
+    "descriptionKey": "q_legend_surtwacht_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_surtwacht",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields",
+  "recommendedLevel": 58
+ },
+ {
+  "id": "q_legend_hrimthar",
+  "nameKey": "q_legend_hrimthar_name",
+  "summaryKey": "q_legend_hrimthar_summary",
+  "descriptionKey": "q_legend_hrimthar_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_hrimthar_o1",
+    "descriptionKey": "q_legend_hrimthar_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_stiller_ring",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_hrimthar_o2",
+    "descriptionKey": "q_legend_hrimthar_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_hrimthar_o3",
+    "descriptionKey": "q_legend_hrimthar_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_hrimthar",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes",
+  "recommendedLevel": 66
+ },
+ {
+  "id": "q_legend_helvarn",
+  "nameKey": "q_legend_helvarn_name",
+  "summaryKey": "q_legend_helvarn_summary",
+  "descriptionKey": "q_legend_helvarn_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_helvarn_o1",
+    "descriptionKey": "q_legend_helvarn_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_ruhestein",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_helvarn_o2",
+    "descriptionKey": "q_legend_helvarn_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_helvarn_o3",
+    "descriptionKey": "q_legend_helvarn_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_helvarn",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches",
+  "recommendedLevel": 74
+ },
+ {
+  "id": "q_legend_odrmund",
+  "nameKey": "q_legend_odrmund_name",
+  "summaryKey": "q_legend_odrmund_summary",
+  "descriptionKey": "q_legend_odrmund_desc",
+  "category": "LEGENDARY",
+  "objectives": [
+   {
+    "id": "q_legend_odrmund_o1",
+    "descriptionKey": "q_legend_odrmund_o1_desc",
+    "type": "REACH_LOCATION",
+    "targetId": "loc_thing_der_asen",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_odrmund_o2",
+    "descriptionKey": "q_legend_odrmund_o2_desc",
+    "type": "SURVIVE_TURNS",
+    "targetId": "10",
+    "requiredCount": 1,
+    "optional": false
+   },
+   {
+    "id": "q_legend_odrmund_o3",
+    "descriptionKey": "q_legend_odrmund_o3_desc",
+    "type": "DEFEAT_BOSS",
+    "targetId": "legend_odrmund",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Experience",
+    "amount": 12000
+   },
+   {
+    "type": "UnlockTitle",
+    "titleId": "titel_bezwinger"
+   }
+  ],
+  "prerequisite": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": false,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights",
+  "recommendedLevel": 85
+ },
+ {
+  "id": "q_secret_midgard_heartlands",
+  "nameKey": "q_secret_midgard_heartlands_name",
+  "summaryKey": "q_secret_midgard_heartlands_summary",
+  "descriptionKey": "q_secret_midgard_heartlands_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_midgard_heartlands_o1",
+    "descriptionKey": "q_secret_midgard_heartlands_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_midgard_heartlands",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "midgard_heartlands"
+ },
+ {
+  "id": "q_secret_alfheim_prismwoods",
+  "nameKey": "q_secret_alfheim_prismwoods_name",
+  "summaryKey": "q_secret_alfheim_prismwoods_summary",
+  "descriptionKey": "q_secret_alfheim_prismwoods_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_alfheim_prismwoods_o1",
+    "descriptionKey": "q_secret_alfheim_prismwoods_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_alfheim_prismwoods",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "alfheim_prismwoods"
+ },
+ {
+  "id": "q_secret_vanaheim_marches",
+  "nameKey": "q_secret_vanaheim_marches_name",
+  "summaryKey": "q_secret_vanaheim_marches_summary",
+  "descriptionKey": "q_secret_vanaheim_marches_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_vanaheim_marches_o1",
+    "descriptionKey": "q_secret_vanaheim_marches_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_vanaheim_marches",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "vanaheim_marches"
+ },
+ {
+  "id": "q_secret_jotunheim_ridges",
+  "nameKey": "q_secret_jotunheim_ridges_name",
+  "summaryKey": "q_secret_jotunheim_ridges_summary",
+  "descriptionKey": "q_secret_jotunheim_ridges_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_jotunheim_ridges_o1",
+    "descriptionKey": "q_secret_jotunheim_ridges_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_jotunheim_ridges",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "jotunheim_ridges"
+ },
+ {
+  "id": "q_secret_svartalfheim_deeps",
+  "nameKey": "q_secret_svartalfheim_deeps_name",
+  "summaryKey": "q_secret_svartalfheim_deeps_summary",
+  "descriptionKey": "q_secret_svartalfheim_deeps_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_svartalfheim_deeps_o1",
+    "descriptionKey": "q_secret_svartalfheim_deeps_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_svartalfheim_deeps",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "svartalfheim_deeps"
+ },
+ {
+  "id": "q_secret_muspelheim_emberfields",
+  "nameKey": "q_secret_muspelheim_emberfields_name",
+  "summaryKey": "q_secret_muspelheim_emberfields_summary",
+  "descriptionKey": "q_secret_muspelheim_emberfields_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_muspelheim_emberfields_o1",
+    "descriptionKey": "q_secret_muspelheim_emberfields_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_muspelheim_emberfields",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "muspelheim_emberfields"
+ },
+ {
+  "id": "q_secret_niflheim_mistwastes",
+  "nameKey": "q_secret_niflheim_mistwastes_name",
+  "summaryKey": "q_secret_niflheim_mistwastes_summary",
+  "descriptionKey": "q_secret_niflheim_mistwastes_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_niflheim_mistwastes_o1",
+    "descriptionKey": "q_secret_niflheim_mistwastes_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_niflheim_mistwastes",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "niflheim_mistwastes"
+ },
+ {
+  "id": "q_secret_helheim_deathmarches",
+  "nameKey": "q_secret_helheim_deathmarches_name",
+  "summaryKey": "q_secret_helheim_deathmarches_summary",
+  "descriptionKey": "q_secret_helheim_deathmarches_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_helheim_deathmarches_o1",
+    "descriptionKey": "q_secret_helheim_deathmarches_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_helheim_deathmarches",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "helheim_deathmarches"
+ },
+ {
+  "id": "q_secret_asgard_goldenheights",
+  "nameKey": "q_secret_asgard_goldenheights_name",
+  "summaryKey": "q_secret_asgard_goldenheights_summary",
+  "descriptionKey": "q_secret_asgard_goldenheights_desc",
+  "category": "SECRET",
+  "objectives": [
+   {
+    "id": "q_secret_asgard_goldenheights_o1",
+    "descriptionKey": "q_secret_asgard_goldenheights_o1_desc",
+    "type": "DISCOVER_SECRET",
+    "targetId": "secret_asgard_goldenheights",
+    "requiredCount": 1,
+    "optional": false
+   }
+  ],
+  "rewards": [
+   {
+    "type": "Gold",
+    "amount": 5000
+   },
+   {
+    "type": "Items",
+    "itemIds": {
+     "staub_stern": 3
+    }
+   }
+  ],
+  "prerequisite": {
+   "type": "KeyItem",
+   "itemId": "schluessel_nornenkompass"
+  },
+  "prerequisiteQuestIds": [],
+  "repeatable": false,
+  "isHidden": true,
+  "grantsStoryFlags": [],
+  "regionId": "asgard_goldenheights"
+ }
+]

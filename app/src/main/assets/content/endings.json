@@ -1,0 +1,56 @@
+[
+ {
+  "id": "ending_renewal",
+  "titleKey": "ending_renewal_title",
+  "descriptionKey": "ending_renewal_desc",
+  "cutsceneId": "cs_ending_renewal",
+  "requiredFlags": [
+   "chapter_9_complete"
+  ],
+  "forbiddenFlags": [],
+  "requiresAllRunes": true,
+  "priority": 100,
+  "minFactionStanding": {},
+  "minMoralScore": 20
+ },
+ {
+  "id": "ending_binding",
+  "titleKey": "ending_binding_title",
+  "descriptionKey": "ending_binding_desc",
+  "cutsceneId": "cs_ending_binding",
+  "requiredFlags": [
+   "chapter_9_complete"
+  ],
+  "forbiddenFlags": [],
+  "requiresAllRunes": false,
+  "priority": 80,
+  "minFactionStanding": {}
+ },
+ {
+  "id": "ending_breach",
+  "titleKey": "ending_breach_title",
+  "descriptionKey": "ending_breach_desc",
+  "cutsceneId": "cs_ending_breach",
+  "requiredFlags": [
+   "chapter_9_complete"
+  ],
+  "forbiddenFlags": [],
+  "requiresAllRunes": false,
+  "priority": 90,
+  "minFactionStanding": {},
+  "maxMoralScore": -30
+ },
+ {
+  "id": "ending_warden",
+  "titleKey": "ending_warden_title",
+  "descriptionKey": "ending_warden_desc",
+  "cutsceneId": "cs_ending_warden",
+  "requiredFlags": [
+   "chapter_9_complete"
+  ],
+  "forbiddenFlags": [],
+  "requiresAllRunes": false,
+  "priority": 10,
+  "minFactionStanding": {}
+ }
+]

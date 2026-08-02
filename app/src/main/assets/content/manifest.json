@@ -1,0 +1,31 @@
+{
+ "schemaVersion": 1,
+ "generator": "tools/contentgen/build.py",
+ "counts": {
+  "moves": 310,
+  "abilities": 42,
+  "monsters": 255,
+  "items": 161,
+  "recipes": 73,
+  "talents": 9,
+  "titles": 16,
+  "achievements": 27,
+  "regions": 9,
+  "encounters": 50,
+  "shops": 19,
+  "chests": 59,
+  "factions": 6,
+  "npcs": 111,
+  "trainers": 33,
+  "dialogues": 111,
+  "chapters": 10,
+  "quests": 131,
+  "cutscenes": 24,
+  "endings": 4
+ },
+ "stringCount": 4479,
+ "languages": [
+  "de",
+  "en"
+ ]
+}

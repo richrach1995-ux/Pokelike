@@ -1,0 +1,162 @@
+[
+ {
+  "id": "titel_wanderer",
+  "nameKey": "titel_wanderer_name",
+  "descriptionKey": "titel_wanderer_desc",
+  "unlockConditionKey": "titel_wanderer_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 1
+ },
+ {
+  "id": "titel_runenwaechter",
+  "nameKey": "titel_runenwaechter_name",
+  "descriptionKey": "titel_runenwaechter_desc",
+  "unlockConditionKey": "titel_runenwaechter_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 5,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_faenger",
+  "nameKey": "titel_faenger_name",
+  "descriptionKey": "titel_faenger_desc",
+  "unlockConditionKey": "titel_faenger_cond",
+  "captureBonusPercent": 5,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_sammler",
+  "nameKey": "titel_sammler_name",
+  "descriptionKey": "titel_sammler_desc",
+  "unlockConditionKey": "titel_sammler_cond",
+  "captureBonusPercent": 10,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_chronist",
+  "nameKey": "titel_chronist_name",
+  "descriptionKey": "titel_chronist_desc",
+  "unlockConditionKey": "titel_chronist_cond",
+  "captureBonusPercent": 20,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 10,
+  "rarityTier": 3
+ },
+ {
+  "id": "titel_schimmerjaeger",
+  "nameKey": "titel_schimmerjaeger_name",
+  "descriptionKey": "titel_schimmerjaeger_desc",
+  "unlockConditionKey": "titel_schimmerjaeger_cond",
+  "captureBonusPercent": 15,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_haendler",
+  "nameKey": "titel_haendler_name",
+  "descriptionKey": "titel_haendler_desc",
+  "unlockConditionKey": "titel_haendler_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 15,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_schmied",
+  "nameKey": "titel_schmied_name",
+  "descriptionKey": "titel_schmied_desc",
+  "unlockConditionKey": "titel_schmied_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 10,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_zuechter",
+  "nameKey": "titel_zuechter_name",
+  "descriptionKey": "titel_zuechter_desc",
+  "unlockConditionKey": "titel_zuechter_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 1
+ },
+ {
+  "id": "titel_bezwinger",
+  "nameKey": "titel_bezwinger_name",
+  "descriptionKey": "titel_bezwinger_desc",
+  "unlockConditionKey": "titel_bezwinger_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 15,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_walkuerenfreund",
+  "nameKey": "titel_walkuerenfreund_name",
+  "descriptionKey": "titel_walkuerenfreund_desc",
+  "unlockConditionKey": "titel_walkuerenfreund_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 0,
+  "rarityTier": 1
+ },
+ {
+  "id": "titel_zwergenfreund",
+  "nameKey": "titel_zwergenfreund_name",
+  "descriptionKey": "titel_zwergenfreund_desc",
+  "unlockConditionKey": "titel_zwergenfreund_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 10,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_chaosbrecher",
+  "nameKey": "titel_chaosbrecher_name",
+  "descriptionKey": "titel_chaosbrecher_desc",
+  "unlockConditionKey": "titel_chaosbrecher_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 10,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_endlos",
+  "nameKey": "titel_endlos_name",
+  "descriptionKey": "titel_endlos_desc",
+  "unlockConditionKey": "titel_endlos_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 20,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_turniersieger",
+  "nameKey": "titel_turniersieger_name",
+  "descriptionKey": "titel_turniersieger_desc",
+  "unlockConditionKey": "titel_turniersieger_cond",
+  "captureBonusPercent": 0,
+  "goldBonusPercent": 20,
+  "experienceBonusPercent": 0,
+  "rarityTier": 2
+ },
+ {
+  "id": "titel_ragnarok",
+  "nameKey": "titel_ragnarok_name",
+  "descriptionKey": "titel_ragnarok_desc",
+  "unlockConditionKey": "titel_ragnarok_cond",
+  "captureBonusPercent": 10,
+  "goldBonusPercent": 0,
+  "experienceBonusPercent": 25,
+  "rarityTier": 3
+ }
+]

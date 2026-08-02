@@ -1,0 +1,991 @@
+[
+ {
+  "id": "team_npc_warden_hrafn",
+  "npcId": "npc_warden_hrafn",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "bergwaechter",
+    "level": 8,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "schattenpirsch",
+    "level": 9,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "haingeweih",
+    "level": 10,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "glutjarl",
+    "level": 11,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 300,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_warden_hrafn_intro",
+  "defeatDialogueNodeId": "team_npc_warden_hrafn_defeat",
+  "victoryDialogueNodeId": "team_npc_warden_hrafn_victory"
+ },
+ {
+  "id": "team_npc_valkyrie_sigrdrifa",
+  "npcId": "npc_valkyrie_sigrdrifa",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "asenbote",
+    "level": 76,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "ewigkrieger",
+    "level": 77,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "ewigkrieger",
+    "level": 78,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "donnerbock",
+    "level": 79,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 4500,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_valkyrie_sigrdrifa_intro",
+  "defeatDialogueNodeId": "team_npc_valkyrie_sigrdrifa_defeat",
+  "victoryDialogueNodeId": "team_npc_valkyrie_sigrdrifa_victory"
+ },
+ {
+  "id": "team_npc_cult_grimnir",
+  "npcId": "npc_cult_grimnir",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "hallenwart",
+    "level": 68,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "garmwacht",
+    "level": 69,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "garmwacht",
+    "level": 70,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "modernschlange",
+    "level": 71,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 3900,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_cult_grimnir_intro",
+  "defeatDialogueNodeId": "team_npc_cult_grimnir_defeat",
+  "victoryDialogueNodeId": "team_npc_cult_grimnir_victory"
+ },
+ {
+  "id": "team_npc_cult_saga",
+  "npcId": "npc_cult_saga",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "seelennebel",
+    "level": 68,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "seelennebel",
+    "level": 69,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "seelennebel",
+    "level": 70,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "garmwacht",
+    "level": 71,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 3900,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_cult_saga_intro",
+  "defeatDialogueNodeId": "team_npc_cult_saga_defeat",
+  "victoryDialogueNodeId": "team_npc_cult_saga_victory"
+ },
+ {
+  "id": "team_npc_jotun_beira",
+  "npcId": "npc_jotun_beira",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "eiskoloss",
+    "level": 36,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "winterjaeger",
+    "level": 37,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "eiskoloss",
+    "level": 38,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "sturmschwinge",
+    "level": 39,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 2100,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_jotun_beira_intro",
+  "defeatDialogueNodeId": "team_npc_jotun_beira_defeat",
+  "victoryDialogueNodeId": "team_npc_jotun_beira_victory"
+ },
+ {
+  "id": "team_npc_muspel_eldra",
+  "npcId": "npc_muspel_eldra",
+  "aiProfile": "MASTERFUL",
+  "members": [
+   {
+    "speciesId": "basaltkoloss",
+    "level": 52,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "weltenriss",
+    "level": 53,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "weltenriss",
+    "level": 54,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "muspelgeist",
+    "level": 55,
+    "geneQuality": 25,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 3000,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_muspel_eldra_intro",
+  "defeatDialogueNodeId": "team_npc_muspel_eldra_defeat",
+  "victoryDialogueNodeId": "team_npc_muspel_eldra_victory"
+ },
+ {
+  "id": "team_npc_midgard_bjorn_1",
+  "npcId": "npc_midgard_bjorn_1",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "wiesensprung",
+    "level": 4,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 90,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_midgard_bjorn_1_intro",
+  "defeatDialogueNodeId": "team_npc_midgard_bjorn_1_defeat",
+  "victoryDialogueNodeId": "team_npc_midgard_bjorn_1_victory"
+ },
+ {
+  "id": "team_npc_midgard_gunnar_5",
+  "npcId": "npc_midgard_gunnar_5",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "stromotter",
+    "level": 4,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "stromotter",
+    "level": 5,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 90,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_midgard_gunnar_5_intro",
+  "defeatDialogueNodeId": "team_npc_midgard_gunnar_5_defeat",
+  "victoryDialogueNodeId": "team_npc_midgard_gunnar_5_victory"
+ },
+ {
+  "id": "team_npc_midgard_kettil_9",
+  "npcId": "npc_midgard_kettil_9",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "hofwaechter",
+    "level": 4,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "hainhorn",
+    "level": 5,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "rabenbote",
+    "level": 6,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 90,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_midgard_kettil_9_intro",
+  "defeatDialogueNodeId": "team_npc_midgard_kettil_9_defeat",
+  "victoryDialogueNodeId": "team_npc_midgard_kettil_9_victory"
+ },
+ {
+  "id": "team_npc_alfheim_njal_1",
+  "npcId": "npc_alfheim_njal_1",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "daemmerreh",
+    "level": 14,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "level": 15,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 270,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_alfheim_njal_1_intro",
+  "defeatDialogueNodeId": "team_npc_alfheim_njal_1_defeat",
+  "victoryDialogueNodeId": "team_npc_alfheim_njal_1_victory"
+ },
+ {
+  "id": "team_npc_alfheim_torsten_5",
+  "npcId": "npc_alfheim_torsten_5",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "prismafalter",
+    "level": 14,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "level": 15,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 270,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_alfheim_torsten_5_intro",
+  "defeatDialogueNodeId": "team_npc_alfheim_torsten_5_defeat",
+  "victoryDialogueNodeId": "team_npc_alfheim_torsten_5_victory"
+ },
+ {
+  "id": "team_npc_alfheim_alfr_9",
+  "npcId": "npc_alfheim_alfr_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "sphaerenklang",
+    "level": 14,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 270,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_alfheim_alfr_9_intro",
+  "defeatDialogueNodeId": "team_npc_alfheim_alfr_9_defeat",
+  "victoryDialogueNodeId": "team_npc_alfheim_alfr_9_victory"
+ },
+ {
+  "id": "team_npc_vanaheim_egil_1",
+  "npcId": "npc_vanaheim_egil_1",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "wahrflamme",
+    "level": 22,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "bluetenherz",
+    "level": 23,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "level": 24,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 450,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_vanaheim_egil_1_intro",
+  "defeatDialogueNodeId": "team_npc_vanaheim_egil_1_defeat",
+  "victoryDialogueNodeId": "team_npc_vanaheim_egil_1_victory"
+ },
+ {
+  "id": "team_npc_vanaheim_ingrid_5",
+  "npcId": "npc_vanaheim_ingrid_5",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "sonnenfuchs",
+    "level": 22,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "goldborste",
+    "level": 23,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 450,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_vanaheim_ingrid_5_intro",
+  "defeatDialogueNodeId": "team_npc_vanaheim_ingrid_5_defeat",
+  "victoryDialogueNodeId": "team_npc_vanaheim_ingrid_5_victory"
+ },
+ {
+  "id": "team_npc_vanaheim_nanna_9",
+  "npcId": "npc_vanaheim_nanna_9",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "wahrflamme",
+    "level": 22,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "wahrflamme",
+    "level": 23,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 450,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_vanaheim_nanna_9_intro",
+  "defeatDialogueNodeId": "team_npc_vanaheim_nanna_9_defeat",
+  "victoryDialogueNodeId": "team_npc_vanaheim_nanna_9_victory"
+ },
+ {
+  "id": "team_npc_jotunheim_solveig_1",
+  "npcId": "npc_jotunheim_solveig_1",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "eiszahn",
+    "level": 32,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "felstroll",
+    "level": 33,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 630,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_jotunheim_solveig_1_intro",
+  "defeatDialogueNodeId": "team_npc_jotunheim_solveig_1_defeat",
+  "victoryDialogueNodeId": "team_npc_jotunheim_solveig_1_victory"
+ },
+ {
+  "id": "team_npc_jotunheim_yrsa_5",
+  "npcId": "npc_jotunheim_yrsa_5",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "wetteradler",
+    "level": 32,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "eiszahn",
+    "level": 33,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "felstroll",
+    "level": 34,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 630,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_jotunheim_yrsa_5_intro",
+  "defeatDialogueNodeId": "team_npc_jotunheim_yrsa_5_defeat",
+  "victoryDialogueNodeId": "team_npc_jotunheim_yrsa_5_victory"
+ },
+ {
+  "id": "team_npc_jotunheim_eldgrim_9",
+  "npcId": "npc_jotunheim_eldgrim_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "eiszahn",
+    "level": 32,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "eiszahn",
+    "level": 33,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "felstroll",
+    "level": 34,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 630,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_jotunheim_eldgrim_9_intro",
+  "defeatDialogueNodeId": "team_npc_jotunheim_eldgrim_9_defeat",
+  "victoryDialogueNodeId": "team_npc_jotunheim_eldgrim_9_victory"
+ },
+ {
+  "id": "team_npc_svartalfheim_hedin_1",
+  "npcId": "npc_svartalfheim_hedin_1",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "eisenpuppe",
+    "level": 40,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 720,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_svartalfheim_hedin_1_intro",
+  "defeatDialogueNodeId": "team_npc_svartalfheim_hedin_1_defeat",
+  "victoryDialogueNodeId": "team_npc_svartalfheim_hedin_1_victory"
+ },
+ {
+  "id": "team_npc_svartalfheim_mardoll_5",
+  "npcId": "npc_svartalfheim_mardoll_5",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "runenritzer",
+    "level": 40,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 720,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_svartalfheim_mardoll_5_intro",
+  "defeatDialogueNodeId": "team_npc_svartalfheim_mardoll_5_defeat",
+  "victoryDialogueNodeId": "team_npc_svartalfheim_mardoll_5_victory"
+ },
+ {
+  "id": "team_npc_svartalfheim_skuli_9",
+  "npcId": "npc_svartalfheim_skuli_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "tiefpfote",
+    "level": 40,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "essengeist",
+    "level": 41,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "tiefenflatterer",
+    "level": 42,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 720,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_svartalfheim_skuli_9_intro",
+  "defeatDialogueNodeId": "team_npc_svartalfheim_skuli_9_defeat",
+  "victoryDialogueNodeId": "team_npc_svartalfheim_skuli_9_victory"
+ },
+ {
+  "id": "team_npc_muspelheim_ylfa_1",
+  "npcId": "npc_muspelheim_ylfa_1",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "flammengeist",
+    "level": 48,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "hoellenspuerer",
+    "level": 49,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 900,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_muspelheim_ylfa_1_intro",
+  "defeatDialogueNodeId": "team_npc_muspelheim_ylfa_1_defeat",
+  "victoryDialogueNodeId": "team_npc_muspelheim_ylfa_1_victory"
+ },
+ {
+  "id": "team_npc_muspelheim_astrid_5",
+  "npcId": "npc_muspelheim_astrid_5",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "basaltwacht",
+    "level": 48,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "brandspinne",
+    "level": 49,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 900,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_muspelheim_astrid_5_intro",
+  "defeatDialogueNodeId": "team_npc_muspelheim_astrid_5_defeat",
+  "victoryDialogueNodeId": "team_npc_muspelheim_astrid_5_victory"
+ },
+ {
+  "id": "team_npc_muspelheim_frida_9",
+  "npcId": "npc_muspelheim_frida_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "aschgeist",
+    "level": 48,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "flammenklinge",
+    "level": 49,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "feuerriss",
+    "level": 50,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 900,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_muspelheim_frida_9_intro",
+  "defeatDialogueNodeId": "team_npc_muspelheim_frida_9_defeat",
+  "victoryDialogueNodeId": "team_npc_muspelheim_frida_9_victory"
+ },
+ {
+  "id": "team_npc_niflheim_ingvar_1",
+  "npcId": "npc_niflheim_ingvar_1",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "schneesprung",
+    "level": 56,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "schneesprung",
+    "level": 57,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 990,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_niflheim_ingvar_1_intro",
+  "defeatDialogueNodeId": "team_npc_niflheim_ingvar_1_defeat",
+  "victoryDialogueNodeId": "team_npc_niflheim_ingvar_1_victory"
+ },
+ {
+  "id": "team_npc_niflheim_magnhild_5",
+  "npcId": "npc_niflheim_magnhild_5",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "nidwyrm",
+    "level": 56,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "kaeltesturm",
+    "level": 57,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 990,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_niflheim_magnhild_5_intro",
+  "defeatDialogueNodeId": "team_npc_niflheim_magnhild_5_defeat",
+  "victoryDialogueNodeId": "team_npc_niflheim_magnhild_5_victory"
+ },
+ {
+  "id": "team_npc_niflheim_sigrun_9",
+  "npcId": "npc_niflheim_sigrun_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "frostschlange",
+    "level": 56,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "frostholz",
+    "level": 57,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "frostholz",
+    "level": 58,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 990,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_niflheim_sigrun_9_intro",
+  "defeatDialogueNodeId": "team_npc_niflheim_sigrun_9_defeat",
+  "victoryDialogueNodeId": "team_npc_niflheim_sigrun_9_victory"
+ },
+ {
+  "id": "team_npc_helheim_vigdis_1",
+  "npcId": "npc_helheim_vigdis_1",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "grabhund",
+    "level": 64,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1170,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_helheim_vigdis_1_intro",
+  "defeatDialogueNodeId": "team_npc_helheim_vigdis_1_defeat",
+  "victoryDialogueNodeId": "team_npc_helheim_vigdis_1_victory"
+ },
+ {
+  "id": "team_npc_helheim_dagr_5",
+  "npcId": "npc_helheim_dagr_5",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "zwiegestalt",
+    "level": 64,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1170,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_helheim_dagr_5_intro",
+  "defeatDialogueNodeId": "team_npc_helheim_dagr_5_defeat",
+  "victoryDialogueNodeId": "team_npc_helheim_dagr_5_victory"
+ },
+ {
+  "id": "team_npc_helheim_hakon_9",
+  "npcId": "npc_helheim_hakon_9",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "grabhund",
+    "level": 64,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "grablicht",
+    "level": 65,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1170,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_helheim_hakon_9_intro",
+  "defeatDialogueNodeId": "team_npc_helheim_hakon_9_defeat",
+  "victoryDialogueNodeId": "team_npc_helheim_hakon_9_victory"
+ },
+ {
+  "id": "team_npc_asgard_kari_1",
+  "npcId": "npc_asgard_kari_1",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "speergeist",
+    "level": 72,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "metgeist",
+    "level": 73,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "himmelsbock",
+    "level": 74,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1350,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_asgard_kari_1_intro",
+  "defeatDialogueNodeId": "team_npc_asgard_kari_1_defeat",
+  "victoryDialogueNodeId": "team_npc_asgard_kari_1_victory"
+ },
+ {
+  "id": "team_npc_asgard_ragnvald_5",
+  "npcId": "npc_asgard_ragnvald_5",
+  "aiProfile": "INSTINCTIVE",
+  "members": [
+   {
+    "speciesId": "brueckenwart",
+    "level": 72,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "schildgeist",
+    "level": 73,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   },
+   {
+    "speciesId": "einherjer",
+    "level": 74,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1350,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_asgard_ragnvald_5_intro",
+  "defeatDialogueNodeId": "team_npc_asgard_ragnvald_5_defeat",
+  "victoryDialogueNodeId": "team_npc_asgard_ragnvald_5_victory"
+ },
+ {
+  "id": "team_npc_asgard_vali_9",
+  "npcId": "npc_asgard_vali_9",
+  "aiProfile": "TACTICAL",
+  "members": [
+   {
+    "speciesId": "glanzbote",
+    "level": 72,
+    "geneQuality": 12,
+    "isShiny": false,
+    "moveIds": []
+   }
+  ],
+  "rewardGold": 1350,
+  "rewardItemIds": [],
+  "rematchLevelBonus": 5,
+  "introDialogueNodeId": "team_npc_asgard_vali_9_intro",
+  "defeatDialogueNodeId": "team_npc_asgard_vali_9_defeat",
+  "victoryDialogueNodeId": "team_npc_asgard_vali_9_victory"
+ }
+]

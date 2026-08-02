@@ -1,0 +1,674 @@
+[
+ {
+  "id": "cs_chapter_0_open",
+  "titleKey": "cs_chapter_0_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_0_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_0_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_0_close",
+  "titleKey": "cs_chapter_0_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_0_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_0_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_1_open",
+  "titleKey": "cs_chapter_1_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_1_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_1_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_1_close",
+  "titleKey": "cs_chapter_1_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_1_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_1_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_2_open",
+  "titleKey": "cs_chapter_2_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_2_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_2_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_2_close",
+  "titleKey": "cs_chapter_2_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_2_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_2_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_3_open",
+  "titleKey": "cs_chapter_3_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_3_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_3_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_3_close",
+  "titleKey": "cs_chapter_3_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_3_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_3_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_4_open",
+  "titleKey": "cs_chapter_4_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_4_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_4_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_4_close",
+  "titleKey": "cs_chapter_4_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_4_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_4_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_5_open",
+  "titleKey": "cs_chapter_5_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_5_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_5_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_5_close",
+  "titleKey": "cs_chapter_5_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_5_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_5_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_6_open",
+  "titleKey": "cs_chapter_6_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_6_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_6_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_6_close",
+  "titleKey": "cs_chapter_6_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_6_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_6_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_7_open",
+  "titleKey": "cs_chapter_7_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_7_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_7_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_7_close",
+  "titleKey": "cs_chapter_7_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_7_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_7_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_8_open",
+  "titleKey": "cs_chapter_8_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_8_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_8_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_8_close",
+  "titleKey": "cs_chapter_8_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_8_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_8_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_9_open",
+  "titleKey": "cs_chapter_9_open_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_9_open_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_9_open_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_chapter_9_close",
+  "titleKey": "cs_chapter_9_close_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_9_close_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_chapter_9_close_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_ending_renewal",
+  "titleKey": "cs_ending_renewal_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_renewal_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_renewal_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_ending_binding",
+  "titleKey": "cs_ending_binding_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_binding_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_binding_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_ending_breach",
+  "titleKey": "cs_ending_breach_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_breach_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_breach_line2",
+    "durationMs": 3400
+   }
+  ]
+ },
+ {
+  "id": "cs_ending_warden",
+  "titleKey": "cs_ending_warden_title",
+  "musicKey": "bgm_story",
+  "skippable": true,
+  "beats": [
+   {
+    "type": "ChangeMusic",
+    "musicKey": "bgm_story",
+    "fadeMs": 900
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_warden_line1",
+    "durationMs": 4200
+   },
+   {
+    "type": "ScreenEffect",
+    "effect": "rune_flash",
+    "durationMs": 700
+   },
+   {
+    "type": "Narration",
+    "textKey": "cs_ending_warden_line2",
+    "durationMs": 3400
+   }
+  ]
+ }
+]

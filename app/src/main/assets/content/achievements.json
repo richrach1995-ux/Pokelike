@@ -1,0 +1,272 @@
+[
+ {
+  "id": "ach_first_step",
+  "nameKey": "ach_first_step_name",
+  "descriptionKey": "ach_first_step_desc",
+  "iconKey": "ic_ach_first_step",
+  "category": "STORY",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_first_catch",
+  "nameKey": "ach_first_catch_name",
+  "descriptionKey": "ach_first_catch_desc",
+  "iconKey": "ic_ach_first_catch",
+  "category": "COLLECTION",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_catch_10",
+  "nameKey": "ach_catch_10_name",
+  "descriptionKey": "ach_catch_10_desc",
+  "iconKey": "ic_ach_catch_10",
+  "category": "COLLECTION",
+  "progressTarget": 10,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_catch_50",
+  "nameKey": "ach_catch_50_name",
+  "descriptionKey": "ach_catch_50_desc",
+  "iconKey": "ic_ach_catch_50",
+  "category": "COLLECTION",
+  "progressTarget": 50,
+  "hidden": false,
+  "points": 25
+ },
+ {
+  "id": "ach_catch_150",
+  "nameKey": "ach_catch_150_name",
+  "descriptionKey": "ach_catch_150_desc",
+  "iconKey": "ic_ach_catch_150",
+  "category": "COLLECTION",
+  "progressTarget": 150,
+  "hidden": false,
+  "points": 50
+ },
+ {
+  "id": "ach_dex_complete",
+  "nameKey": "ach_dex_complete_name",
+  "descriptionKey": "ach_dex_complete_desc",
+  "iconKey": "ic_ach_dex_complete",
+  "category": "COLLECTION",
+  "progressTarget": 250,
+  "hidden": false,
+  "points": 50
+ },
+ {
+  "id": "ach_shiny_first",
+  "nameKey": "ach_shiny_first_name",
+  "descriptionKey": "ach_shiny_first_desc",
+  "iconKey": "ic_ach_shiny_first",
+  "category": "COLLECTION",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_shiny_10",
+  "nameKey": "ach_shiny_10_name",
+  "descriptionKey": "ach_shiny_10_desc",
+  "iconKey": "ic_ach_shiny_10",
+  "category": "COLLECTION",
+  "progressTarget": 10,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_battles_100",
+  "nameKey": "ach_battles_100_name",
+  "descriptionKey": "ach_battles_100_desc",
+  "iconKey": "ic_ach_battles_100",
+  "category": "BATTLE",
+  "progressTarget": 100,
+  "hidden": false,
+  "points": 25
+ },
+ {
+  "id": "ach_battles_1000",
+  "nameKey": "ach_battles_1000_name",
+  "descriptionKey": "ach_battles_1000_desc",
+  "iconKey": "ic_ach_battles_1000",
+  "category": "BATTLE",
+  "progressTarget": 1000,
+  "hidden": false,
+  "points": 50
+ },
+ {
+  "id": "ach_crit_500",
+  "nameKey": "ach_crit_500_name",
+  "descriptionKey": "ach_crit_500_desc",
+  "iconKey": "ic_ach_crit_500",
+  "category": "BATTLE",
+  "progressTarget": 500,
+  "hidden": false,
+  "points": 50
+ },
+ {
+  "id": "ach_boss_all",
+  "nameKey": "ach_boss_all_name",
+  "descriptionKey": "ach_boss_all_desc",
+  "iconKey": "ic_ach_boss_all",
+  "category": "BATTLE",
+  "progressTarget": 9,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_eggs_10",
+  "nameKey": "ach_eggs_10_name",
+  "descriptionKey": "ach_eggs_10_desc",
+  "iconKey": "ic_ach_eggs_10",
+  "category": "BREEDING",
+  "progressTarget": 10,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_eggs_50",
+  "nameKey": "ach_eggs_50_name",
+  "descriptionKey": "ach_eggs_50_desc",
+  "iconKey": "ic_ach_eggs_50",
+  "category": "BREEDING",
+  "progressTarget": 50,
+  "hidden": false,
+  "points": 25
+ },
+ {
+  "id": "ach_hybrid",
+  "nameKey": "ach_hybrid_name",
+  "descriptionKey": "ach_hybrid_desc",
+  "iconKey": "ic_ach_hybrid",
+  "category": "BREEDING",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_perfect_genes",
+  "nameKey": "ach_perfect_genes_name",
+  "descriptionKey": "ach_perfect_genes_desc",
+  "iconKey": "ic_ach_perfect_genes",
+  "category": "BREEDING",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_worlds_all",
+  "nameKey": "ach_worlds_all_name",
+  "descriptionKey": "ach_worlds_all_desc",
+  "iconKey": "ic_ach_worlds_all",
+  "category": "EXPLORATION",
+  "progressTarget": 9,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_secrets_9",
+  "nameKey": "ach_secrets_9_name",
+  "descriptionKey": "ach_secrets_9_desc",
+  "iconKey": "ic_ach_secrets_9",
+  "category": "EXPLORATION",
+  "progressTarget": 9,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_steps_100k",
+  "nameKey": "ach_steps_100k_name",
+  "descriptionKey": "ach_steps_100k_desc",
+  "iconKey": "ic_ach_steps_100k",
+  "category": "EXPLORATION",
+  "progressTarget": 100000,
+  "hidden": false,
+  "points": 50
+ },
+ {
+  "id": "ach_craft_100",
+  "nameKey": "ach_craft_100_name",
+  "descriptionKey": "ach_craft_100_desc",
+  "iconKey": "ic_ach_craft_100",
+  "category": "CRAFTING",
+  "progressTarget": 100,
+  "hidden": false,
+  "points": 25
+ },
+ {
+  "id": "ach_craft_legendary",
+  "nameKey": "ach_craft_legendary_name",
+  "descriptionKey": "ach_craft_legendary_desc",
+  "iconKey": "ic_ach_craft_legendary",
+  "category": "CRAFTING",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_level_100",
+  "nameKey": "ach_level_100_name",
+  "descriptionKey": "ach_level_100_desc",
+  "iconKey": "ic_ach_level_100",
+  "category": "MASTERY",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_endless_50",
+  "nameKey": "ach_endless_50_name",
+  "descriptionKey": "ach_endless_50_desc",
+  "iconKey": "ic_ach_endless_50",
+  "category": "MASTERY",
+  "progressTarget": 50,
+  "hidden": false,
+  "points": 25
+ },
+ {
+  "id": "ach_tournament",
+  "nameKey": "ach_tournament_name",
+  "descriptionKey": "ach_tournament_desc",
+  "iconKey": "ic_ach_tournament",
+  "category": "MASTERY",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_new_game_plus",
+  "nameKey": "ach_new_game_plus_name",
+  "descriptionKey": "ach_new_game_plus_desc",
+  "iconKey": "ic_ach_new_game_plus",
+  "category": "MASTERY",
+  "progressTarget": 1,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_all_endings",
+  "nameKey": "ach_all_endings_name",
+  "descriptionKey": "ach_all_endings_desc",
+  "iconKey": "ic_ach_all_endings",
+  "category": "STORY",
+  "progressTarget": 4,
+  "hidden": false,
+  "points": 10
+ },
+ {
+  "id": "ach_quests_50",
+  "nameKey": "ach_quests_50_name",
+  "descriptionKey": "ach_quests_50_desc",
+  "iconKey": "ic_ach_quests_50",
+  "category": "STORY",
+  "progressTarget": 50,
+  "hidden": false,
+  "points": 25
+ }
+]

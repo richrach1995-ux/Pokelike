@@ -1,0 +1,2870 @@
+[
+ {
+  "id": "npc_seeress_vala",
+  "nameKey": "npc_seeress_vala_name",
+  "titleKey": "npc_seeress_vala_title",
+  "descriptionKey": "npc_seeress_vala_desc",
+  "roles": [
+   "QUEST_GIVER",
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_wanderrast",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_npc_seeress_vala",
+  "spriteKey": "spr_npc_seeress_vala",
+  "factionId": "fac_runewardens",
+  "dialogueTreeIds": [
+   "dlg_npc_seeress_vala"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_seeress_vala_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_warden_hrafn",
+  "nameKey": "npc_warden_hrafn_name",
+  "titleKey": "npc_warden_hrafn_title",
+  "descriptionKey": "npc_warden_hrafn_desc",
+  "roles": [
+   "QUEST_GIVER",
+   "TRAINER"
+  ],
+  "locationId": "loc_eschenfurt",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_npc_warden_hrafn",
+  "spriteKey": "spr_npc_warden_hrafn",
+  "factionId": "fac_runewardens",
+  "dialogueTreeIds": [
+   "dlg_npc_warden_hrafn"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": true,
+  "loreKeys": [
+   "npc_warden_hrafn_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_warden_hrafn"
+ },
+ {
+  "id": "npc_valkyrie_sigrdrifa",
+  "nameKey": "npc_valkyrie_sigrdrifa_name",
+  "titleKey": "npc_valkyrie_sigrdrifa_title",
+  "descriptionKey": "npc_valkyrie_sigrdrifa_desc",
+  "roles": [
+   "TRAINER",
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_walstatt",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_npc_valkyrie_sigrdrifa",
+  "spriteKey": "spr_npc_valkyrie_sigrdrifa",
+  "factionId": "fac_valkyries",
+  "dialogueTreeIds": [
+   "dlg_npc_valkyrie_sigrdrifa"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": true,
+  "loreKeys": [
+   "npc_valkyrie_sigrdrifa_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_valkyrie_sigrdrifa"
+ },
+ {
+  "id": "npc_smith_dvalin",
+  "nameKey": "npc_smith_dvalin_name",
+  "titleKey": "npc_smith_dvalin_title",
+  "descriptionKey": "npc_smith_dvalin_desc",
+  "roles": [
+   "SMITH",
+   "MERCHANT"
+  ],
+  "locationId": "loc_ambosshall",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_npc_smith_dvalin",
+  "spriteKey": "spr_npc_smith_dvalin",
+  "factionId": "fac_dwarves",
+  "dialogueTreeIds": [
+   "dlg_npc_smith_dvalin"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_smith_dvalin_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanir_gerdis",
+  "nameKey": "npc_vanir_gerdis_name",
+  "titleKey": "npc_vanir_gerdis_title",
+  "descriptionKey": "npc_vanir_gerdis_desc",
+  "roles": [
+   "QUEST_GIVER",
+   "HEALER"
+  ],
+  "locationId": "loc_saatheim",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_npc_vanir_gerdis",
+  "spriteKey": "spr_npc_vanir_gerdis",
+  "factionId": "fac_vanir",
+  "dialogueTreeIds": [
+   "dlg_npc_vanir_gerdis"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_vanir_gerdis_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_cult_grimnir",
+  "nameKey": "npc_cult_grimnir_name",
+  "titleKey": "npc_cult_grimnir_title",
+  "descriptionKey": "npc_cult_grimnir_desc",
+  "roles": [
+   "ANTAGONIST",
+   "TRAINER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_npc_cult_grimnir",
+  "spriteKey": "spr_npc_cult_grimnir",
+  "factionId": "fac_chaoscult",
+  "dialogueTreeIds": [
+   "dlg_npc_cult_grimnir"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": true,
+  "loreKeys": [
+   "npc_cult_grimnir_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_cult_grimnir"
+ },
+ {
+  "id": "npc_cult_saga",
+  "nameKey": "npc_cult_saga_name",
+  "titleKey": "npc_cult_saga_title",
+  "descriptionKey": "npc_cult_saga_desc",
+  "roles": [
+   "ANTAGONIST",
+   "COMPANION"
+  ],
+  "locationId": "loc_grabrast",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_npc_cult_saga",
+  "spriteKey": "spr_npc_cult_saga",
+  "factionId": "fac_chaoscult",
+  "dialogueTreeIds": [
+   "dlg_npc_cult_saga"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_cult_saga_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_cult_saga"
+ },
+ {
+  "id": "npc_alf_lioss",
+  "nameKey": "npc_alf_lioss_name",
+  "titleKey": "npc_alf_lioss_title",
+  "descriptionKey": "npc_alf_lioss_desc",
+  "roles": [
+   "QUEST_GIVER",
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_glanzhall",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_npc_alf_lioss",
+  "spriteKey": "spr_npc_alf_lioss",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alf_lioss"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_alf_lioss_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotun_beira",
+  "nameKey": "npc_jotun_beira_name",
+  "titleKey": "npc_jotun_beira_title",
+  "descriptionKey": "npc_jotun_beira_desc",
+  "roles": [
+   "QUEST_GIVER",
+   "TRAINER"
+  ],
+  "locationId": "loc_trollmark",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_npc_jotun_beira",
+  "spriteKey": "spr_npc_jotun_beira",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotun_beira"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": true,
+  "loreKeys": [
+   "npc_jotun_beira_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_jotun_beira"
+ },
+ {
+  "id": "npc_hel_modgud",
+  "nameKey": "npc_hel_modgud_name",
+  "titleKey": "npc_hel_modgud_title",
+  "descriptionKey": "npc_hel_modgud_desc",
+  "roles": [
+   "GUARD",
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_npc_hel_modgud",
+  "spriteKey": "spr_npc_hel_modgud",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_hel_modgud"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_hel_modgud_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_aesir_bragr",
+  "nameKey": "npc_aesir_bragr_name",
+  "titleKey": "npc_aesir_bragr_title",
+  "descriptionKey": "npc_aesir_bragr_desc",
+  "roles": [
+   "DEITY",
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_gladsheim_vorhof",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_npc_aesir_bragr",
+  "spriteKey": "spr_npc_aesir_bragr",
+  "factionId": "fac_aesir",
+  "dialogueTreeIds": [
+   "dlg_npc_aesir_bragr"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": false,
+  "loreKeys": [
+   "npc_aesir_bragr_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspel_eldra",
+  "nameKey": "npc_muspel_eldra_name",
+  "titleKey": "npc_muspel_eldra_title",
+  "descriptionKey": "npc_muspel_eldra_desc",
+  "roles": [
+   "LORE_KEEPER",
+   "TRAINER"
+  ],
+  "locationId": "loc_aschenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_npc_muspel_eldra",
+  "spriteKey": "spr_npc_muspel_eldra",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspel_eldra"
+  ],
+  "questIds": [],
+  "isStoryCritical": true,
+  "rematchable": true,
+  "loreKeys": [
+   "npc_muspel_eldra_desc"
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_muspel_eldra"
+ },
+ {
+  "id": "npc_midgard_astrid_0",
+  "nameKey": "npc_midgard_astrid_0_name",
+  "titleKey": "npc_midgard_astrid_0_title",
+  "descriptionKey": "npc_midgard_astrid_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_wanderrast",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_astrid_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_wanderrast"
+ },
+ {
+  "id": "npc_midgard_bjorn_1",
+  "nameKey": "npc_midgard_bjorn_1_name",
+  "titleKey": "npc_midgard_bjorn_1_title",
+  "descriptionKey": "npc_midgard_bjorn_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_eschenfurt",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_bjorn_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_midgard_bjorn_1"
+ },
+ {
+  "id": "npc_midgard_dagny_2",
+  "nameKey": "npc_midgard_dagny_2_name",
+  "titleKey": "npc_midgard_dagny_2_title",
+  "descriptionKey": "npc_midgard_dagny_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_saltvik",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_dagny_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_eirik_3",
+  "nameKey": "npc_midgard_eirik_3_name",
+  "titleKey": "npc_midgard_eirik_3_title",
+  "descriptionKey": "npc_midgard_eirik_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_hain_der_ersten_rune",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_eirik_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_frida_4",
+  "nameKey": "npc_midgard_frida_4_name",
+  "titleKey": "npc_midgard_frida_4_title",
+  "descriptionKey": "npc_midgard_frida_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_wanderrast",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_frida_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_gunnar_5",
+  "nameKey": "npc_midgard_gunnar_5_name",
+  "titleKey": "npc_midgard_gunnar_5_title",
+  "descriptionKey": "npc_midgard_gunnar_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_eschenfurt",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_gunnar_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_midgard_gunnar_5"
+ },
+ {
+  "id": "npc_midgard_halla_6",
+  "nameKey": "npc_midgard_halla_6_name",
+  "titleKey": "npc_midgard_halla_6_title",
+  "descriptionKey": "npc_midgard_halla_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_saltvik",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_halla_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_ingvar_7",
+  "nameKey": "npc_midgard_ingvar_7_name",
+  "titleKey": "npc_midgard_ingvar_7_title",
+  "descriptionKey": "npc_midgard_ingvar_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_hain_der_ersten_rune",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_ingvar_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_jorunn_8",
+  "nameKey": "npc_midgard_jorunn_8_name",
+  "titleKey": "npc_midgard_jorunn_8_title",
+  "descriptionKey": "npc_midgard_jorunn_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_wanderrast",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_jorunn_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_midgard_kettil_9",
+  "nameKey": "npc_midgard_kettil_9_name",
+  "titleKey": "npc_midgard_kettil_9_title",
+  "descriptionKey": "npc_midgard_kettil_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_eschenfurt",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_kettil_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_midgard_kettil_9"
+ },
+ {
+  "id": "npc_midgard_liv_10",
+  "nameKey": "npc_midgard_liv_10_name",
+  "titleKey": "npc_midgard_liv_10_title",
+  "descriptionKey": "npc_midgard_liv_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_saltvik",
+  "regionId": "midgard_heartlands",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_midgard_liv_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_magnhild_0",
+  "nameKey": "npc_alfheim_magnhild_0_name",
+  "titleKey": "npc_alfheim_magnhild_0_title",
+  "descriptionKey": "npc_alfheim_magnhild_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_glanzhall",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_magnhild_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_glanzhall"
+ },
+ {
+  "id": "npc_alfheim_njal_1",
+  "nameKey": "npc_alfheim_njal_1_name",
+  "titleKey": "npc_alfheim_njal_1_title",
+  "descriptionKey": "npc_alfheim_njal_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_tauhof",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_njal_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_alfheim_njal_1"
+ },
+ {
+  "id": "npc_alfheim_orm_2",
+  "nameKey": "npc_alfheim_orm_2_name",
+  "titleKey": "npc_alfheim_orm_2_title",
+  "descriptionKey": "npc_alfheim_orm_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_lichtkreis",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_orm_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_ragna_3",
+  "nameKey": "npc_alfheim_ragna_3_name",
+  "titleKey": "npc_alfheim_ragna_3_title",
+  "descriptionKey": "npc_alfheim_ragna_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_glanzhall",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_ragna_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_sigrun_4",
+  "nameKey": "npc_alfheim_sigrun_4_name",
+  "titleKey": "npc_alfheim_sigrun_4_title",
+  "descriptionKey": "npc_alfheim_sigrun_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_tauhof",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_sigrun_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_torsten_5",
+  "nameKey": "npc_alfheim_torsten_5_name",
+  "titleKey": "npc_alfheim_torsten_5_title",
+  "descriptionKey": "npc_alfheim_torsten_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_lichtkreis",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_torsten_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_alfheim_torsten_5"
+ },
+ {
+  "id": "npc_alfheim_unn_6",
+  "nameKey": "npc_alfheim_unn_6_name",
+  "titleKey": "npc_alfheim_unn_6_title",
+  "descriptionKey": "npc_alfheim_unn_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_glanzhall",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_unn_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_vigdis_7",
+  "nameKey": "npc_alfheim_vigdis_7_name",
+  "titleKey": "npc_alfheim_vigdis_7_title",
+  "descriptionKey": "npc_alfheim_vigdis_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_tauhof",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_vigdis_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_ylva_8",
+  "nameKey": "npc_alfheim_ylva_8_name",
+  "titleKey": "npc_alfheim_ylva_8_title",
+  "descriptionKey": "npc_alfheim_ylva_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_lichtkreis",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_ylva_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_alfheim_alfr_9",
+  "nameKey": "npc_alfheim_alfr_9_name",
+  "titleKey": "npc_alfheim_alfr_9_title",
+  "descriptionKey": "npc_alfheim_alfr_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_glanzhall",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_alfr_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_alfheim_alfr_9"
+ },
+ {
+  "id": "npc_alfheim_brynja_10",
+  "nameKey": "npc_alfheim_brynja_10_name",
+  "titleKey": "npc_alfheim_brynja_10_title",
+  "descriptionKey": "npc_alfheim_brynja_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_tauhof",
+  "regionId": "alfheim_prismwoods",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_alfheim_brynja_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_dagr_0",
+  "nameKey": "npc_vanaheim_dagr_0_name",
+  "titleKey": "npc_vanaheim_dagr_0_title",
+  "descriptionKey": "npc_vanaheim_dagr_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_saatheim",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_dagr_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_saatheim"
+ },
+ {
+  "id": "npc_vanaheim_egil_1",
+  "nameKey": "npc_vanaheim_egil_1_name",
+  "titleKey": "npc_vanaheim_egil_1_title",
+  "descriptionKey": "npc_vanaheim_egil_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_metquell",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_egil_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_vanaheim_egil_1"
+ },
+ {
+  "id": "npc_vanaheim_frode_2",
+  "nameKey": "npc_vanaheim_frode_2_name",
+  "titleKey": "npc_vanaheim_frode_2_title",
+  "descriptionKey": "npc_vanaheim_frode_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_erntestein",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_frode_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_gudrun_3",
+  "nameKey": "npc_vanaheim_gudrun_3_name",
+  "titleKey": "npc_vanaheim_gudrun_3_title",
+  "descriptionKey": "npc_vanaheim_gudrun_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_saatheim",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_gudrun_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_hakon_4",
+  "nameKey": "npc_vanaheim_hakon_4_name",
+  "titleKey": "npc_vanaheim_hakon_4_title",
+  "descriptionKey": "npc_vanaheim_hakon_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_metquell",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_hakon_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_ingrid_5",
+  "nameKey": "npc_vanaheim_ingrid_5_name",
+  "titleKey": "npc_vanaheim_ingrid_5_title",
+  "descriptionKey": "npc_vanaheim_ingrid_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_erntestein",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_ingrid_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_vanaheim_ingrid_5"
+ },
+ {
+  "id": "npc_vanaheim_jarl_6",
+  "nameKey": "npc_vanaheim_jarl_6_name",
+  "titleKey": "npc_vanaheim_jarl_6_title",
+  "descriptionKey": "npc_vanaheim_jarl_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_saatheim",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_jarl_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_kari_7",
+  "nameKey": "npc_vanaheim_kari_7_name",
+  "titleKey": "npc_vanaheim_kari_7_title",
+  "descriptionKey": "npc_vanaheim_kari_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_metquell",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_kari_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_leif_8",
+  "nameKey": "npc_vanaheim_leif_8_name",
+  "titleKey": "npc_vanaheim_leif_8_title",
+  "descriptionKey": "npc_vanaheim_leif_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_erntestein",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_leif_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_vanaheim_nanna_9",
+  "nameKey": "npc_vanaheim_nanna_9_name",
+  "titleKey": "npc_vanaheim_nanna_9_title",
+  "descriptionKey": "npc_vanaheim_nanna_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_saatheim",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_nanna_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_vanaheim_nanna_9"
+ },
+ {
+  "id": "npc_vanaheim_oddr_10",
+  "nameKey": "npc_vanaheim_oddr_10_name",
+  "titleKey": "npc_vanaheim_oddr_10_title",
+  "descriptionKey": "npc_vanaheim_oddr_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_metquell",
+  "regionId": "vanaheim_marches",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_vanaheim_oddr_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_ragnvald_0",
+  "nameKey": "npc_jotunheim_ragnvald_0_name",
+  "titleKey": "npc_jotunheim_ragnvald_0_title",
+  "descriptionKey": "npc_jotunheim_ragnvald_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_trollmark",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_ragnvald_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_trollmark"
+ },
+ {
+  "id": "npc_jotunheim_solveig_1",
+  "nameKey": "npc_jotunheim_solveig_1_name",
+  "titleKey": "npc_jotunheim_solveig_1_title",
+  "descriptionKey": "npc_jotunheim_solveig_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_riesenfurt",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_solveig_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_jotunheim_solveig_1"
+ },
+ {
+  "id": "npc_jotunheim_thora_2",
+  "nameKey": "npc_jotunheim_thora_2_name",
+  "titleKey": "npc_jotunheim_thora_2_title",
+  "descriptionKey": "npc_jotunheim_thora_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_urhornstein",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_thora_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_ulf_3",
+  "nameKey": "npc_jotunheim_ulf_3_name",
+  "titleKey": "npc_jotunheim_ulf_3_title",
+  "descriptionKey": "npc_jotunheim_ulf_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_trollmark",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_ulf_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_vali_4",
+  "nameKey": "npc_jotunheim_vali_4_name",
+  "titleKey": "npc_jotunheim_vali_4_title",
+  "descriptionKey": "npc_jotunheim_vali_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_riesenfurt",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_vali_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_yrsa_5",
+  "nameKey": "npc_jotunheim_yrsa_5_name",
+  "titleKey": "npc_jotunheim_yrsa_5_title",
+  "descriptionKey": "npc_jotunheim_yrsa_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_urhornstein",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_yrsa_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_jotunheim_yrsa_5"
+ },
+ {
+  "id": "npc_jotunheim_aslaug_6",
+  "nameKey": "npc_jotunheim_aslaug_6_name",
+  "titleKey": "npc_jotunheim_aslaug_6_title",
+  "descriptionKey": "npc_jotunheim_aslaug_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_trollmark",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_aslaug_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_birk_7",
+  "nameKey": "npc_jotunheim_birk_7_name",
+  "titleKey": "npc_jotunheim_birk_7_title",
+  "descriptionKey": "npc_jotunheim_birk_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_riesenfurt",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_birk_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_dis_8",
+  "nameKey": "npc_jotunheim_dis_8_name",
+  "titleKey": "npc_jotunheim_dis_8_title",
+  "descriptionKey": "npc_jotunheim_dis_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_urhornstein",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_dis_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_jotunheim_eldgrim_9",
+  "nameKey": "npc_jotunheim_eldgrim_9_name",
+  "titleKey": "npc_jotunheim_eldgrim_9_title",
+  "descriptionKey": "npc_jotunheim_eldgrim_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_trollmark",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_eldgrim_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_jotunheim_eldgrim_9"
+ },
+ {
+  "id": "npc_jotunheim_fenja_10",
+  "nameKey": "npc_jotunheim_fenja_10_name",
+  "titleKey": "npc_jotunheim_fenja_10_title",
+  "descriptionKey": "npc_jotunheim_fenja_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_riesenfurt",
+  "regionId": "jotunheim_ridges",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_jotunheim_fenja_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_grimr_0",
+  "nameKey": "npc_svartalfheim_grimr_0_name",
+  "titleKey": "npc_svartalfheim_grimr_0_title",
+  "descriptionKey": "npc_svartalfheim_grimr_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_ambosshall",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_grimr_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_ambosshall"
+ },
+ {
+  "id": "npc_svartalfheim_hedin_1",
+  "nameKey": "npc_svartalfheim_hedin_1_name",
+  "titleKey": "npc_svartalfheim_hedin_1_title",
+  "descriptionKey": "npc_svartalfheim_hedin_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_goldgrund",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_hedin_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_svartalfheim_hedin_1"
+ },
+ {
+  "id": "npc_svartalfheim_iva_2",
+  "nameKey": "npc_svartalfheim_iva_2_name",
+  "titleKey": "npc_svartalfheim_iva_2_title",
+  "descriptionKey": "npc_svartalfheim_iva_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_erster_amboss",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_iva_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_kolbein_3",
+  "nameKey": "npc_svartalfheim_kolbein_3_name",
+  "titleKey": "npc_svartalfheim_kolbein_3_title",
+  "descriptionKey": "npc_svartalfheim_kolbein_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_ambosshall",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_kolbein_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_lodin_4",
+  "nameKey": "npc_svartalfheim_lodin_4_name",
+  "titleKey": "npc_svartalfheim_lodin_4_title",
+  "descriptionKey": "npc_svartalfheim_lodin_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_goldgrund",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_lodin_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_mardoll_5",
+  "nameKey": "npc_svartalfheim_mardoll_5_name",
+  "titleKey": "npc_svartalfheim_mardoll_5_title",
+  "descriptionKey": "npc_svartalfheim_mardoll_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_erster_amboss",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_mardoll_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_svartalfheim_mardoll_5"
+ },
+ {
+  "id": "npc_svartalfheim_njord_6",
+  "nameKey": "npc_svartalfheim_njord_6_name",
+  "titleKey": "npc_svartalfheim_njord_6_title",
+  "descriptionKey": "npc_svartalfheim_njord_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_ambosshall",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_njord_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_ottar_7",
+  "nameKey": "npc_svartalfheim_ottar_7_name",
+  "titleKey": "npc_svartalfheim_ottar_7_title",
+  "descriptionKey": "npc_svartalfheim_ottar_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_goldgrund",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_ottar_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_rannveig_8",
+  "nameKey": "npc_svartalfheim_rannveig_8_name",
+  "titleKey": "npc_svartalfheim_rannveig_8_title",
+  "descriptionKey": "npc_svartalfheim_rannveig_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_erster_amboss",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_rannveig_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_svartalfheim_skuli_9",
+  "nameKey": "npc_svartalfheim_skuli_9_name",
+  "titleKey": "npc_svartalfheim_skuli_9_title",
+  "descriptionKey": "npc_svartalfheim_skuli_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_ambosshall",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_skuli_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_svartalfheim_skuli_9"
+ },
+ {
+  "id": "npc_svartalfheim_tove_10",
+  "nameKey": "npc_svartalfheim_tove_10_name",
+  "titleKey": "npc_svartalfheim_tove_10_title",
+  "descriptionKey": "npc_svartalfheim_tove_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_goldgrund",
+  "regionId": "svartalfheim_deeps",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_svartalfheim_tove_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_vebjorn_0",
+  "nameKey": "npc_muspelheim_vebjorn_0_name",
+  "titleKey": "npc_muspelheim_vebjorn_0_title",
+  "descriptionKey": "npc_muspelheim_vebjorn_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_aschenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_vebjorn_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_aschenhort"
+ },
+ {
+  "id": "npc_muspelheim_ylfa_1",
+  "nameKey": "npc_muspelheim_ylfa_1_name",
+  "titleKey": "npc_muspelheim_ylfa_1_title",
+  "descriptionKey": "npc_muspelheim_ylfa_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_schlackenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_ylfa_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_muspelheim_ylfa_1"
+ },
+ {
+  "id": "npc_muspelheim_arnbjorg_2",
+  "nameKey": "npc_muspelheim_arnbjorg_2_name",
+  "titleKey": "npc_muspelheim_arnbjorg_2_title",
+  "descriptionKey": "npc_muspelheim_arnbjorg_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_funkenaltar",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_arnbjorg_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_bersi_3",
+  "nameKey": "npc_muspelheim_bersi_3_name",
+  "titleKey": "npc_muspelheim_bersi_3_title",
+  "descriptionKey": "npc_muspelheim_bersi_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_aschenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_bersi_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_dagfinn_4",
+  "nameKey": "npc_muspelheim_dagfinn_4_name",
+  "titleKey": "npc_muspelheim_dagfinn_4_title",
+  "descriptionKey": "npc_muspelheim_dagfinn_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_schlackenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_dagfinn_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_astrid_5",
+  "nameKey": "npc_muspelheim_astrid_5_name",
+  "titleKey": "npc_muspelheim_astrid_5_title",
+  "descriptionKey": "npc_muspelheim_astrid_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_funkenaltar",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_astrid_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_muspelheim_astrid_5"
+ },
+ {
+  "id": "npc_muspelheim_bjorn_6",
+  "nameKey": "npc_muspelheim_bjorn_6_name",
+  "titleKey": "npc_muspelheim_bjorn_6_title",
+  "descriptionKey": "npc_muspelheim_bjorn_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_aschenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_bjorn_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_dagny_7",
+  "nameKey": "npc_muspelheim_dagny_7_name",
+  "titleKey": "npc_muspelheim_dagny_7_title",
+  "descriptionKey": "npc_muspelheim_dagny_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_schlackenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_dagny_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_eirik_8",
+  "nameKey": "npc_muspelheim_eirik_8_name",
+  "titleKey": "npc_muspelheim_eirik_8_title",
+  "descriptionKey": "npc_muspelheim_eirik_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_funkenaltar",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_eirik_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_muspelheim_frida_9",
+  "nameKey": "npc_muspelheim_frida_9_name",
+  "titleKey": "npc_muspelheim_frida_9_title",
+  "descriptionKey": "npc_muspelheim_frida_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_aschenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_frida_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_muspelheim_frida_9"
+ },
+ {
+  "id": "npc_muspelheim_gunnar_10",
+  "nameKey": "npc_muspelheim_gunnar_10_name",
+  "titleKey": "npc_muspelheim_gunnar_10_title",
+  "descriptionKey": "npc_muspelheim_gunnar_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_schlackenhort",
+  "regionId": "muspelheim_emberfields",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_muspelheim_gunnar_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_halla_0",
+  "nameKey": "npc_niflheim_halla_0_name",
+  "titleKey": "npc_niflheim_halla_0_title",
+  "descriptionKey": "npc_niflheim_halla_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_reifhall",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_halla_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_reifhall"
+ },
+ {
+  "id": "npc_niflheim_ingvar_1",
+  "nameKey": "npc_niflheim_ingvar_1_name",
+  "titleKey": "npc_niflheim_ingvar_1_title",
+  "descriptionKey": "npc_niflheim_ingvar_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_brunnenrast",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_ingvar_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_niflheim_ingvar_1"
+ },
+ {
+  "id": "npc_niflheim_jorunn_2",
+  "nameKey": "npc_niflheim_jorunn_2_name",
+  "titleKey": "npc_niflheim_jorunn_2_title",
+  "descriptionKey": "npc_niflheim_jorunn_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_stiller_ring",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_jorunn_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_kettil_3",
+  "nameKey": "npc_niflheim_kettil_3_name",
+  "titleKey": "npc_niflheim_kettil_3_title",
+  "descriptionKey": "npc_niflheim_kettil_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_reifhall",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_kettil_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_liv_4",
+  "nameKey": "npc_niflheim_liv_4_name",
+  "titleKey": "npc_niflheim_liv_4_title",
+  "descriptionKey": "npc_niflheim_liv_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_brunnenrast",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_liv_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_magnhild_5",
+  "nameKey": "npc_niflheim_magnhild_5_name",
+  "titleKey": "npc_niflheim_magnhild_5_title",
+  "descriptionKey": "npc_niflheim_magnhild_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_stiller_ring",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_magnhild_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_niflheim_magnhild_5"
+ },
+ {
+  "id": "npc_niflheim_njal_6",
+  "nameKey": "npc_niflheim_njal_6_name",
+  "titleKey": "npc_niflheim_njal_6_title",
+  "descriptionKey": "npc_niflheim_njal_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_reifhall",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_njal_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_orm_7",
+  "nameKey": "npc_niflheim_orm_7_name",
+  "titleKey": "npc_niflheim_orm_7_title",
+  "descriptionKey": "npc_niflheim_orm_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_brunnenrast",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_orm_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_ragna_8",
+  "nameKey": "npc_niflheim_ragna_8_name",
+  "titleKey": "npc_niflheim_ragna_8_title",
+  "descriptionKey": "npc_niflheim_ragna_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_stiller_ring",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_ragna_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_niflheim_sigrun_9",
+  "nameKey": "npc_niflheim_sigrun_9_name",
+  "titleKey": "npc_niflheim_sigrun_9_title",
+  "descriptionKey": "npc_niflheim_sigrun_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_reifhall",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_sigrun_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_niflheim_sigrun_9"
+ },
+ {
+  "id": "npc_niflheim_torsten_10",
+  "nameKey": "npc_niflheim_torsten_10_name",
+  "titleKey": "npc_niflheim_torsten_10_title",
+  "descriptionKey": "npc_niflheim_torsten_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_brunnenrast",
+  "regionId": "niflheim_mistwastes",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_niflheim_torsten_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_unn_0",
+  "nameKey": "npc_helheim_unn_0_name",
+  "titleKey": "npc_helheim_unn_0_title",
+  "descriptionKey": "npc_helheim_unn_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_grabrast",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_unn_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_grabrast"
+ },
+ {
+  "id": "npc_helheim_vigdis_1",
+  "nameKey": "npc_helheim_vigdis_1_name",
+  "titleKey": "npc_helheim_vigdis_1_title",
+  "descriptionKey": "npc_helheim_vigdis_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_vigdis_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_helheim_vigdis_1"
+ },
+ {
+  "id": "npc_helheim_ylva_2",
+  "nameKey": "npc_helheim_ylva_2_name",
+  "titleKey": "npc_helheim_ylva_2_title",
+  "descriptionKey": "npc_helheim_ylva_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_ruhestein",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_ylva_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_alfr_3",
+  "nameKey": "npc_helheim_alfr_3_name",
+  "titleKey": "npc_helheim_alfr_3_title",
+  "descriptionKey": "npc_helheim_alfr_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_grabrast",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_alfr_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_brynja_4",
+  "nameKey": "npc_helheim_brynja_4_name",
+  "titleKey": "npc_helheim_brynja_4_title",
+  "descriptionKey": "npc_helheim_brynja_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_brynja_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_dagr_5",
+  "nameKey": "npc_helheim_dagr_5_name",
+  "titleKey": "npc_helheim_dagr_5_title",
+  "descriptionKey": "npc_helheim_dagr_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_ruhestein",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_dagr_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_helheim_dagr_5"
+ },
+ {
+  "id": "npc_helheim_egil_6",
+  "nameKey": "npc_helheim_egil_6_name",
+  "titleKey": "npc_helheim_egil_6_title",
+  "descriptionKey": "npc_helheim_egil_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_grabrast",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_egil_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_frode_7",
+  "nameKey": "npc_helheim_frode_7_name",
+  "titleKey": "npc_helheim_frode_7_title",
+  "descriptionKey": "npc_helheim_frode_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_frode_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_gudrun_8",
+  "nameKey": "npc_helheim_gudrun_8_name",
+  "titleKey": "npc_helheim_gudrun_8_title",
+  "descriptionKey": "npc_helheim_gudrun_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_ruhestein",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_gudrun_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_helheim_hakon_9",
+  "nameKey": "npc_helheim_hakon_9_name",
+  "titleKey": "npc_helheim_hakon_9_title",
+  "descriptionKey": "npc_helheim_hakon_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_grabrast",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_hakon_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_helheim_hakon_9"
+ },
+ {
+  "id": "npc_helheim_ingrid_10",
+  "nameKey": "npc_helheim_ingrid_10_name",
+  "titleKey": "npc_helheim_ingrid_10_title",
+  "descriptionKey": "npc_helheim_ingrid_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_hallentor",
+  "regionId": "helheim_deathmarches",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_helheim_ingrid_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_jarl_0",
+  "nameKey": "npc_asgard_jarl_0_name",
+  "titleKey": "npc_asgard_jarl_0_title",
+  "descriptionKey": "npc_asgard_jarl_0_desc",
+  "roles": [
+   "MERCHANT"
+  ],
+  "locationId": "loc_gladsheim_vorhof",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_merchant",
+  "spriteKey": "spr_generic_merchant",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_jarl_0"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "shopId": "shop_gladsheim_vorhof"
+ },
+ {
+  "id": "npc_asgard_kari_1",
+  "nameKey": "npc_asgard_kari_1_name",
+  "titleKey": "npc_asgard_kari_1_title",
+  "descriptionKey": "npc_asgard_kari_1_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_walstatt",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_kari_1"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_asgard_kari_1"
+ },
+ {
+  "id": "npc_asgard_leif_2",
+  "nameKey": "npc_asgard_leif_2_name",
+  "titleKey": "npc_asgard_leif_2_title",
+  "descriptionKey": "npc_asgard_leif_2_desc",
+  "roles": [
+   "QUEST_GIVER"
+  ],
+  "locationId": "loc_thing_der_asen",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_quest_giver",
+  "spriteKey": "spr_generic_quest_giver",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_leif_2"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_nanna_3",
+  "nameKey": "npc_asgard_nanna_3_name",
+  "titleKey": "npc_asgard_nanna_3_title",
+  "descriptionKey": "npc_asgard_nanna_3_desc",
+  "roles": [
+   "LORE_KEEPER"
+  ],
+  "locationId": "loc_gladsheim_vorhof",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_lore_keeper",
+  "spriteKey": "spr_generic_lore_keeper",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_nanna_3"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_oddr_4",
+  "nameKey": "npc_asgard_oddr_4_name",
+  "titleKey": "npc_asgard_oddr_4_title",
+  "descriptionKey": "npc_asgard_oddr_4_desc",
+  "roles": [
+   "HEALER"
+  ],
+  "locationId": "loc_walstatt",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_healer",
+  "spriteKey": "spr_generic_healer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_oddr_4"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_ragnvald_5",
+  "nameKey": "npc_asgard_ragnvald_5_name",
+  "titleKey": "npc_asgard_ragnvald_5_title",
+  "descriptionKey": "npc_asgard_ragnvald_5_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_thing_der_asen",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_ragnvald_5"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_asgard_ragnvald_5"
+ },
+ {
+  "id": "npc_asgard_solveig_6",
+  "nameKey": "npc_asgard_solveig_6_name",
+  "titleKey": "npc_asgard_solveig_6_title",
+  "descriptionKey": "npc_asgard_solveig_6_desc",
+  "roles": [
+   "SMITH"
+  ],
+  "locationId": "loc_gladsheim_vorhof",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_smith",
+  "spriteKey": "spr_generic_smith",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_solveig_6"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_thora_7",
+  "nameKey": "npc_asgard_thora_7_name",
+  "titleKey": "npc_asgard_thora_7_title",
+  "descriptionKey": "npc_asgard_thora_7_desc",
+  "roles": [
+   "BREEDER"
+  ],
+  "locationId": "loc_walstatt",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_breeder",
+  "spriteKey": "spr_generic_breeder",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_thora_7"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_ulf_8",
+  "nameKey": "npc_asgard_ulf_8_name",
+  "titleKey": "npc_asgard_ulf_8_title",
+  "descriptionKey": "npc_asgard_ulf_8_desc",
+  "roles": [
+   "TUTOR"
+  ],
+  "locationId": "loc_thing_der_asen",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_tutor",
+  "spriteKey": "spr_generic_tutor",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_ulf_8"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ },
+ {
+  "id": "npc_asgard_vali_9",
+  "nameKey": "npc_asgard_vali_9_name",
+  "titleKey": "npc_asgard_vali_9_title",
+  "descriptionKey": "npc_asgard_vali_9_desc",
+  "roles": [
+   "TRAINER"
+  ],
+  "locationId": "loc_gladsheim_vorhof",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_trainer",
+  "spriteKey": "spr_generic_trainer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_vali_9"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [],
+  "isStoryCritical": false,
+  "rematchable": true,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "trainerTeamId": "team_npc_asgard_vali_9"
+ },
+ {
+  "id": "npc_asgard_yrsa_10",
+  "nameKey": "npc_asgard_yrsa_10_name",
+  "titleKey": "npc_asgard_yrsa_10_title",
+  "descriptionKey": "npc_asgard_yrsa_10_desc",
+  "roles": [
+   "WANDERER"
+  ],
+  "locationId": "loc_walstatt",
+  "regionId": "asgard_goldenheights",
+  "portraitKey": "portrait_generic_wanderer",
+  "spriteKey": "spr_generic_wanderer",
+  "factionId": null,
+  "dialogueTreeIds": [
+   "dlg_npc_asgard_yrsa_10"
+  ],
+  "questIds": [],
+  "appearsDuringPhases": [
+   "NIGHT",
+   "DUSK"
+  ],
+  "isStoryCritical": false,
+  "rematchable": false,
+  "loreKeys": [],
+  "unlockRequirement": {
+   "type": "None"
+  }
+ }
+]

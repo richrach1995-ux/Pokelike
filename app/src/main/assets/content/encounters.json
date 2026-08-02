@@ -1,0 +1,6198 @@
+[
+ {
+  "id": "enc_aehrenweg",
+  "entries": [
+   {
+    "speciesId": "weidling",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "dorfkatze",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feldhopser",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hofwaechter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hugimund",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "schattenpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "fjordherr",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_nebelmoor",
+  "entries": [
+   {
+    "speciesId": "moosling",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bachotter",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hofwelpe",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinkauz",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brandungsbulle",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hainhorn",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "ulmenhueter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "dorfkatze",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "fjordherr",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_steinpfad",
+  "entries": [
+   {
+    "speciesId": "dorfkatze",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinkauz",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "moosling",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hofwaechter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "bachotter",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_kuestenweg",
+  "entries": [
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feldhopser",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "dorfkatze",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinkauz",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wiesensprung",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutfang",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hainhorn",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_rabenschlucht",
+  "entries": [
+   {
+    "speciesId": "wellenrobbe",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinkauz",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wanderkraehe",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutfang",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_grabhuegel_von_alt_eik",
+  "entries": [
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bachotter",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "weidling",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "moosling",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wiesensprung",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "felsaug",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "stromotter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hugimund",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "fjordherr",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "glutfang",
+    "minLevel": 12,
+    "maxLevel": 16,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_verlassene_muehle",
+  "entries": [
+   {
+    "speciesId": "wellenrobbe",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "dorfkatze",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wanderkraehe",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutwelp",
+    "minLevel": 2,
+    "maxLevel": 5,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "ulmenhueter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hofwaechter",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "felsaug",
+    "minLevel": 5,
+    "maxLevel": 12,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergwaechter",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eschenwart",
+    "minLevel": 11,
+    "maxLevel": 14,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nachtpirsch",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "fjordherr",
+    "minLevel": 3,
+    "maxLevel": 13,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "haingeweih",
+    "minLevel": 12,
+    "maxLevel": 16,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_silberpfad",
+  "entries": [
+   {
+    "speciesId": "silberspross",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerlerche",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glanzfalter",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondblume",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondkrone",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "harfenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tauperle",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_daemmerlichtung",
+  "entries": [
+   {
+    "speciesId": "tauperle",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "harfenklang",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondblume",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerkitz",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondbluete",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismafalter",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondkrone",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tauperle",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_prismensteig",
+  "entries": [
+   {
+    "speciesId": "harfenklang",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tauperle",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerkitz",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "silberspross",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "morgenlerche",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismafuerst",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "prismasplitter",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tauperle",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_lerchenwiese",
+  "entries": [
+   {
+    "speciesId": "tauperle",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtwicht",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondblume",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerlerche",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "morgenlerche",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "silberbirke",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondbluete",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismawaechter",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "silberwart",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "harfenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_spiegelgrotte",
+  "entries": [
+   {
+    "speciesId": "tauperle",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerkitz",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glanzfalter",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerlerche",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "mondbluete",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismafalter",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtelf",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "prismasplitter",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "harfenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "lichtelf",
+    "minLevel": 22,
+    "maxLevel": 26,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_turm_der_sphaeren",
+  "entries": [
+   {
+    "speciesId": "daemmerlerche",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerkitz",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "silberspross",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glanzfalter",
+    "minLevel": 12,
+    "maxLevel": 15,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "morgenlerche",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "daemmerreh",
+    "minLevel": 15,
+    "maxLevel": 22,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "silberwart",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "daemmerreh",
+    "minLevel": 21,
+    "maxLevel": 24,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tautaenzer",
+    "minLevel": 13,
+    "maxLevel": 23,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "sphaerenklang",
+    "minLevel": 22,
+    "maxLevel": 26,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_aehrenmark",
+  "entries": [
+   {
+    "speciesId": "honigsumme",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldfuchs",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "saatgeist",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metbraue",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldborste",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrkaetzchen",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrpanther",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrpanther",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_nebelaue",
+  "entries": [
+   {
+    "speciesId": "bluetenwicht",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "saatgeist",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metbraue",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bluetenherz",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "goldeber",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_seidrpfad",
+  "entries": [
+   {
+    "speciesId": "honigsumme",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "saatgeist",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aehrengeist",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "stromnymphe",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrpanther",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "bluetenkoenigin",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "flussmutter",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_schilfufer",
+  "entries": [
+   {
+    "speciesId": "bluetenwicht",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "honigsumme",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bluetenherz",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldborste",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrkaetzchen",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrflamme",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrkaetzchen",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_wurzelgrotte",
+  "entries": [
+   {
+    "speciesId": "goldfuchs",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bluetenwicht",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "honigsumme",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldborste",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "bluetenkoenigin",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrpanther",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "flussmutter",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "aehrengeist",
+    "minLevel": 30,
+    "maxLevel": 34,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_schilfhoehle",
+  "entries": [
+   {
+    "speciesId": "bluetenwicht",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "saatgeist",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "borstenferkel",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "quellnymphe",
+    "minLevel": 20,
+    "maxLevel": 23,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldborste",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bluetenherz",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metbraue",
+    "minLevel": 23,
+    "maxLevel": 30,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "freyfuchs",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sonnenhirsch",
+    "minLevel": 29,
+    "maxLevel": 32,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seidrkatze",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "flussmutter",
+    "minLevel": 21,
+    "maxLevel": 31,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "stromnymphe",
+    "minLevel": 30,
+    "maxLevel": 34,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_windgrat",
+  "entries": [
+   {
+    "speciesId": "steinfaust",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "winterwelpe",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "sturmadler",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "felstroll",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "boeengeist",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eiszahn",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erdwurm",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "orkangeist",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "winterwelpe",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_gletscherzunge",
+  "entries": [
+   {
+    "speciesId": "steinfaust",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eiszapfling",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "boeenwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "geroelltroll",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eiszahn",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostriese",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabwurm",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergfaust",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "sturmschwinge",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "winterwolf",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_steinbruch",
+  "entries": [
+   {
+    "speciesId": "urrind",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "boeenwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinfaust",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "felstroll",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "boeengeist",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wetteradler",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "winterjaeger",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "urhorn",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_hochpass",
+  "entries": [
+   {
+    "speciesId": "sturmadler",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "winterwelpe",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "geroelltroll",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabwurm",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eiszahn",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wetteradler",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "orkangeist",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "winterjaeger",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "winterwelpe",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_bergfausts_hoehle",
+  "entries": [
+   {
+    "speciesId": "geroelltroll",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "urrind",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "winterwelpe",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabwurm",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostriese",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wetteradler",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "bergfaust",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "grabwurm",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "winterwolf",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "bergtroll",
+    "minLevel": 40,
+    "maxLevel": 44,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_eiskathedrale",
+  "entries": [
+   {
+    "speciesId": "boeenwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostwicht",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "steinfaust",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "urrind",
+    "minLevel": 30,
+    "maxLevel": 33,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "wetteradler",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "felstroll",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "urstier",
+    "minLevel": 33,
+    "maxLevel": 40,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "orkangeist",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "grabwurm",
+    "minLevel": 39,
+    "maxLevel": 42,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "frostriese",
+    "minLevel": 31,
+    "maxLevel": 41,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "felstroll",
+    "minLevel": 40,
+    "maxLevel": 44,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_erzstollen",
+  "entries": [
+   {
+    "speciesId": "grabpfote",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erzwicht",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essenfunke",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essenglut",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essengeist",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aderkristall",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schluchtwaechter",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eisengolem",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "tiefenflatterer",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "grubenfisch",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_schachtweg",
+  "entries": [
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "adersplitter",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefenflosse",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essenfunke",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefpfote",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grubenfisch",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefenflatterer",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "runenritzer",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "ritzwicht",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "tiefenflatterer",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "grubenfisch",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_aderngang",
+  "entries": [
+   {
+    "speciesId": "essenfunke",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erzwicht",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldkaefer",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabpfote",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eisenpuppe",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "runenritzer",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefpfote",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aderkristall",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eisengolem",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "schluchtwaechter",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_alte_esse",
+  "entries": [
+   {
+    "speciesId": "tiefenflosse",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "adersplitter",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erzwicht",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "eisenpuppe",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essenglut",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "essengeist",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schmiedeherr",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "eisengolem",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "tiefenflosse",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "essenglut",
+    "minLevel": 48,
+    "maxLevel": 52,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_runenschmiede",
+  "entries": [
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nagelpuppe",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefenflosse",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabpfote",
+    "minLevel": 38,
+    "maxLevel": 41,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldpanzer",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aderkristall",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "tiefenflatterer",
+    "minLevel": 41,
+    "maxLevel": 48,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aderkristall",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "essengeist",
+    "minLevel": 47,
+    "maxLevel": 50,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "schachtflatterer",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "schluchtwaechter",
+    "minLevel": 39,
+    "maxLevel": 49,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "grubenfisch",
+    "minLevel": 48,
+    "maxLevel": 52,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_lavastrom",
+  "entries": [
+   {
+    "speciesId": "lavaschreiter",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "funkenwicht",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutmolch",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "rauchschemen",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "ascheschwinge",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "hoellenspuerer",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "magmaschreiter",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feuerklinge",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "flammenklinge",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "glutriss",
+    "minLevel": 47,
+    "maxLevel": 57,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_rauchsteig",
+  "entries": [
+   {
+    "speciesId": "glutmolch",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutspuerer",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "rauchschemen",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "funkenwicht",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "magmaschreiter",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brandspinne",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "flammengeist",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feuerklinge",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "brandspinne",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "glutriss",
+    "minLevel": 47,
+    "maxLevel": 57,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_basaltweg",
+  "entries": [
+   {
+    "speciesId": "funkenwicht",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "rauchschemen",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutmolch",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutspuerer",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "flammengeist",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lavamolch",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "magmaschreiter",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brandspinne",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "magmaschreiter",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "feuerriss",
+    "minLevel": 47,
+    "maxLevel": 57,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_surtwacht_feste",
+  "entries": [
+   {
+    "speciesId": "lavaschreiter",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "rauchschemen",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutmolch",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schlackenstein",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "flammenklinge",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aschgeist",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feuerriss",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutspinne",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "feuerriss",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "aschgeist",
+    "minLevel": 47,
+    "maxLevel": 57,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "hoellenspuerer",
+    "minLevel": 56,
+    "maxLevel": 60,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_glutschlund",
+  "entries": [
+   {
+    "speciesId": "rauchschemen",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutmolch",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glutspuerer",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "funkenwicht",
+    "minLevel": 46,
+    "maxLevel": 49,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "feuerriss",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "flammenklinge",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "basaltwacht",
+    "minLevel": 49,
+    "maxLevel": 56,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "aschenweberin",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "feuerriss",
+    "minLevel": 55,
+    "maxLevel": 58,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "aschgeist",
+    "minLevel": 47,
+    "maxLevel": 57,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "aschgeist",
+    "minLevel": 56,
+    "maxLevel": 60,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_nebelweg",
+  "entries": [
+   {
+    "speciesId": "frostnatter",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "reifling",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "kaeltehauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "quellhauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nebelgeist",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "reifwolf",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nagwyrm",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "quellhauch",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_firnfeld",
+  "entries": [
+   {
+    "speciesId": "kaeltehauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "reifling",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nebelkauz",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schneehopser",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostholz",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "reifwolf",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nagwyrm",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nebelwicht",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_kaeltegrat",
+  "entries": [
+   {
+    "speciesId": "quellhauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "firnsplitter",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "totholz",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "reifling",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brunnengeist",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "kaeltesturm",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "brunnengeist",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "kaeltehauch",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_brunnentiefe",
+  "entries": [
+   {
+    "speciesId": "kaeltehauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostnatter",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schneehopser",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "totholz",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brunnengeist",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schneesprung",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "firnkoloss",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nebeleule",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "firnhopser",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "frostholz",
+    "minLevel": 64,
+    "maxLevel": 68,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_nagwyrm_nest",
+  "entries": [
+   {
+    "speciesId": "quellhauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "totholz",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nebelwicht",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "kaeltehauch",
+    "minLevel": 54,
+    "maxLevel": 57,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "frostholz",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brunnengeist",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nidwyrm",
+    "minLevel": 57,
+    "maxLevel": 64,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "nidschuppe",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "frostschlange",
+    "minLevel": 63,
+    "maxLevel": 66,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nidschuppe",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "kaeltesturm",
+    "minLevel": 55,
+    "maxLevel": 65,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "firnkristall",
+    "minLevel": 64,
+    "maxLevel": 68,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_modersteig",
+  "entries": [
+   {
+    "speciesId": "irrlicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "modernatter",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "leichenrabe",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "draugwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "zwiegestalt",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabhund",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "zwiegestalt",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "halbschemen",
+    "minLevel": 63,
+    "maxLevel": 73,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_schattenmoor",
+  "entries": [
+   {
+    "speciesId": "leichenrabe",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "totennebel",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "knochenwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "irrlicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabhund",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "zwiegestalt",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "modernschlange",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seelennebel",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "irrlicht",
+    "minLevel": 63,
+    "maxLevel": 73,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_rabenfeld",
+  "entries": [
+   {
+    "speciesId": "knochenwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "modernatter",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "leichenrabe",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "irrlicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "todesrabe",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "draugkrieger",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "garmwacht",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "nottvar",
+    "minLevel": 63,
+    "maxLevel": 73,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_halle_der_ungezaehlten",
+  "entries": [
+   {
+    "speciesId": "totennebel",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "knochenwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "draugwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "modernatter",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "draugkrieger",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "knochenwacht",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "seelenlicht",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "fluchherr",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "knochenwicht",
+    "minLevel": 63,
+    "maxLevel": 73,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "todesrabe",
+    "minLevel": 72,
+    "maxLevel": 76,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_garmwacht_tor",
+  "entries": [
+   {
+    "speciesId": "draugwicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "irrlicht",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grabwelpe",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "leichenrabe",
+    "minLevel": 62,
+    "maxLevel": 65,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "grablicht",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "fluchgeist",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "knochenwacht",
+    "minLevel": 65,
+    "maxLevel": 72,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "halbschemen",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "seelenlicht",
+    "minLevel": 71,
+    "maxLevel": 74,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "knochenfuerst",
+    "minLevel": 63,
+    "maxLevel": 73,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "todesrabe",
+    "minLevel": 72,
+    "maxLevel": 76,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_bifroeststeig",
+  "entries": [
+   {
+    "speciesId": "metfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metgeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erinnerungsrabe",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "speergeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "speerschemen",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "speersplitter",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "erinnerungsrabe",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "thrudvang",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_wolkenmark",
+  "entries": [
+   {
+    "speciesId": "metfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "speergeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brueckenwart",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldhahn",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "speersplitter",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "hallenkrieger",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "erinnerungsrabe",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "thrudvang",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_speerfeld",
+  "entries": [
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schildgeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldhahn",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "erinnerungsrabe",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "asenbote",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "speergeist",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "hallenkrieger",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "enc_hallen_der_gefallenen",
+  "entries": [
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "schildgeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "metgeist",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brueckenwart",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "gullinkamm",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "goldkuecken",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "ewigkrieger",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "himmelsbock",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "himmelsbock",
+    "minLevel": 83,
+    "maxLevel": 87,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ },
+ {
+  "id": "enc_sturmwacht_turm",
+  "entries": [
+   {
+    "speciesId": "metfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "lichtfunke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "himmelszicke",
+    "minLevel": 70,
+    "maxLevel": 73,
+    "weight": 260,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "glanzbote",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "himmelsbock",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "goldhahn",
+    "minLevel": 73,
+    "maxLevel": 83,
+    "weight": 110,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    }
+   },
+   {
+    "speciesId": "brueckenwicht",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "speerschemen",
+    "minLevel": 82,
+    "maxLevel": 85,
+    "weight": 32,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "isRareSpawn": true
+   },
+   {
+    "speciesId": "methallengeist",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 150,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "dayPhases": [
+     "NIGHT",
+     "DUSK"
+    ]
+   },
+   {
+    "speciesId": "himmelsbock",
+    "minLevel": 71,
+    "maxLevel": 84,
+    "weight": 140,
+    "floorRange": {
+     "first": 1,
+     "last": 99
+    },
+    "weathers": [
+     "RAIN",
+     "THUNDERSTORM",
+     "SNOW"
+    ]
+   },
+   {
+    "speciesId": "donnerbock",
+    "minLevel": 83,
+    "maxLevel": 87,
+    "weight": 70,
+    "floorRange": {
+     "first": 3,
+     "last": 99
+    }
+   }
+  ]
+ }
+]

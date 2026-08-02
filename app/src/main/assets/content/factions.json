@@ -1,0 +1,291 @@
+[
+ {
+  "id": "fac_runewardens",
+  "nameKey": "fac_runewardens_name",
+  "descriptionKey": "fac_runewardens_desc",
+  "crestKey": "crest_fac_runewardens",
+  "colorHex": 4291271243,
+  "opposingFactionIds": [
+   "fac_chaoscult"
+  ],
+  "ranks": [
+   {
+    "id": "fac_runewardens_rank0",
+    "nameKey": "fac_runewardens_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_runewardens_rank1",
+    "nameKey": "fac_runewardens_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_runewardens_rank2",
+    "nameKey": "fac_runewardens_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_runewardens_rank3",
+    "nameKey": "fac_runewardens_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_runewardens_rank4",
+    "nameKey": "fac_runewardens_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "midgard_heartlands"
+ },
+ {
+  "id": "fac_valkyries",
+  "nameKey": "fac_valkyries_name",
+  "descriptionKey": "fac_valkyries_desc",
+  "crestKey": "crest_fac_valkyries",
+  "colorHex": 4293448314,
+  "opposingFactionIds": [
+   "fac_chaoscult"
+  ],
+  "ranks": [
+   {
+    "id": "fac_valkyries_rank0",
+    "nameKey": "fac_valkyries_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_valkyries_rank1",
+    "nameKey": "fac_valkyries_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_valkyries_rank2",
+    "nameKey": "fac_valkyries_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_valkyries_rank3",
+    "nameKey": "fac_valkyries_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_valkyries_rank4",
+    "nameKey": "fac_valkyries_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "asgard_goldenheights"
+ },
+ {
+  "id": "fac_chaoscult",
+  "nameKey": "fac_chaoscult_name",
+  "descriptionKey": "fac_chaoscult_desc",
+  "crestKey": "crest_fac_chaoscult",
+  "colorHex": 4287508303,
+  "opposingFactionIds": [
+   "fac_runewardens",
+   "fac_valkyries",
+   "fac_aesir"
+  ],
+  "ranks": [
+   {
+    "id": "fac_chaoscult_rank0",
+    "nameKey": "fac_chaoscult_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_chaoscult_rank1",
+    "nameKey": "fac_chaoscult_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_chaoscult_rank2",
+    "nameKey": "fac_chaoscult_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_chaoscult_rank3",
+    "nameKey": "fac_chaoscult_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_chaoscult_rank4",
+    "nameKey": "fac_chaoscult_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "helheim_deathmarches"
+ },
+ {
+  "id": "fac_dwarves",
+  "nameKey": "fac_dwarves_name",
+  "descriptionKey": "fac_dwarves_desc",
+  "crestKey": "crest_fac_dwarves",
+  "colorHex": 4288324525,
+  "opposingFactionIds": [],
+  "ranks": [
+   {
+    "id": "fac_dwarves_rank0",
+    "nameKey": "fac_dwarves_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_dwarves_rank1",
+    "nameKey": "fac_dwarves_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_dwarves_rank2",
+    "nameKey": "fac_dwarves_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_dwarves_rank3",
+    "nameKey": "fac_dwarves_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_dwarves_rank4",
+    "nameKey": "fac_dwarves_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "svartalfheim_deeps"
+ },
+ {
+  "id": "fac_vanir",
+  "nameKey": "fac_vanir_name",
+  "descriptionKey": "fac_vanir_desc",
+  "crestKey": "crest_fac_vanir",
+  "colorHex": 4283213388,
+  "opposingFactionIds": [
+   "fac_aesir"
+  ],
+  "ranks": [
+   {
+    "id": "fac_vanir_rank0",
+    "nameKey": "fac_vanir_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_vanir_rank1",
+    "nameKey": "fac_vanir_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_vanir_rank2",
+    "nameKey": "fac_vanir_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_vanir_rank3",
+    "nameKey": "fac_vanir_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_vanir_rank4",
+    "nameKey": "fac_vanir_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "vanaheim_marches"
+ },
+ {
+  "id": "fac_aesir",
+  "nameKey": "fac_aesir_name",
+  "descriptionKey": "fac_aesir_desc",
+  "crestKey": "crest_fac_aesir",
+  "colorHex": 4281302998,
+  "opposingFactionIds": [
+   "fac_vanir",
+   "fac_chaoscult"
+  ],
+  "ranks": [
+   {
+    "id": "fac_aesir_rank0",
+    "nameKey": "fac_aesir_rank0_name",
+    "minReputation": -1000,
+    "discountPercent": 0,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_aesir_rank1",
+    "nameKey": "fac_aesir_rank1_name",
+    "minReputation": 0,
+    "discountPercent": 4,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_aesir_rank2",
+    "nameKey": "fac_aesir_rank2_name",
+    "minReputation": 200,
+    "discountPercent": 8,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_aesir_rank3",
+    "nameKey": "fac_aesir_rank3_name",
+    "minReputation": 500,
+    "discountPercent": 12,
+    "unlocksQuestIds": []
+   },
+   {
+    "id": "fac_aesir_rank4",
+    "nameKey": "fac_aesir_rank4_name",
+    "minReputation": 850,
+    "discountPercent": 16,
+    "unlocksQuestIds": []
+   }
+  ],
+  "homeRegionId": "asgard_goldenheights"
+ }
+]

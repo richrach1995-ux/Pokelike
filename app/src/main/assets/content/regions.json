@@ -1,0 +1,3090 @@
+[
+ {
+  "id": "midgard_heartlands",
+  "world": "MIDGARD",
+  "nameKey": "midgard_heartlands_name",
+  "descriptionKey": "midgard_heartlands_desc",
+  "loreKey": "midgard_heartlands_lore",
+  "minLevel": 2,
+  "maxLevel": 14,
+  "dominantElements": [
+   "NATURE",
+   "EARTH",
+   "WATER"
+  ],
+  "musicKey": "bgm_midgard_heartlands",
+  "nightMusicKey": "bgm_midgard_heartlands_night",
+  "ambienceKey": "amb_midgard_heartlands",
+  "mapAssetKey": "map_midgard_heartlands",
+  "paletteKey": "pal_midgard_heartlands",
+  "weatherProfile": {
+   "weights": {
+    "CLEAR": 50,
+    "RAIN": 25,
+    "FOG": 15,
+    "THUNDERSTORM": 10
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_wanderrast",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_wanderrast_name",
+    "descriptionKey": "loc_wanderrast_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_midgard_heartlands_town",
+    "npcIds": [],
+    "shopId": "shop_wanderrast",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_eschenfurt",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_eschenfurt_name",
+    "descriptionKey": "loc_eschenfurt_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_midgard_heartlands_town",
+    "npcIds": [],
+    "shopId": "shop_eschenfurt",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_saltvik",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_saltvik_name",
+    "descriptionKey": "loc_saltvik_desc",
+    "type": "TOWN",
+    "mapX": 0.78,
+    "mapY": 0.45999999999999996,
+    "backgroundKey": "bg_midgard_heartlands_town",
+    "npcIds": [],
+    "shopId": "shop_saltvik",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_aehrenweg",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_aehrenweg_name",
+    "descriptionKey": "loc_aehrenweg_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_midgard_heartlands_route",
+    "encounterTableId": "enc_aehrenweg",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_aehrenweg"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_nebelmoor",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_nebelmoor_name",
+    "descriptionKey": "loc_nebelmoor_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_midgard_heartlands_route",
+    "encounterTableId": "enc_nebelmoor",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_nebelmoor"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_steinpfad",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_steinpfad_name",
+    "descriptionKey": "loc_steinpfad_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_midgard_heartlands_route",
+    "encounterTableId": "enc_steinpfad",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_steinpfad"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_kuestenweg",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_kuestenweg_name",
+    "descriptionKey": "loc_kuestenweg_desc",
+    "type": "ROUTE",
+    "mapX": 0.66,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_midgard_heartlands_route",
+    "encounterTableId": "enc_kuestenweg",
+    "encounterRate": 0.128,
+    "npcIds": [],
+    "chestIds": [
+     "chest_kuestenweg"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_rabenschlucht",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_rabenschlucht_name",
+    "descriptionKey": "loc_rabenschlucht_desc",
+    "type": "ROUTE",
+    "mapX": 0.84,
+    "mapY": 0.55,
+    "backgroundKey": "bg_midgard_heartlands_route",
+    "encounterTableId": "enc_rabenschlucht",
+    "encounterRate": 0.134,
+    "npcIds": [],
+    "chestIds": [
+     "chest_rabenschlucht"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_grabhuegel_von_alt_eik",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_grabhuegel_von_alt_eik_name",
+    "descriptionKey": "loc_grabhuegel_von_alt_eik_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_midgard_heartlands_dungeon",
+    "encounterTableId": "enc_grabhuegel_von_alt_eik",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_grabhuegel_von_alt_eik"
+    ],
+    "bossId": "boss_midgard_heartlands_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 1
+    }
+   },
+   {
+    "id": "loc_verlassene_muehle",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_verlassene_muehle_name",
+    "descriptionKey": "loc_verlassene_muehle_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_midgard_heartlands_dungeon",
+    "encounterTableId": "enc_verlassene_muehle",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_verlassene_muehle"
+    ],
+    "bossId": "boss_midgard_heartlands_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 1
+    }
+   },
+   {
+    "id": "loc_der_gespaltene_stein",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_der_gespaltene_stein_name",
+    "descriptionKey": "loc_der_gespaltene_stein_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_midgard_heartlands_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_hain_der_ersten_rune",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_hain_der_ersten_rune_name",
+    "descriptionKey": "loc_hain_der_ersten_rune_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_midgard_heartlands_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 1
+    },
+    "bossId": "legend_jorwyrm",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_versunkene_kammer",
+    "regionId": "midgard_heartlands",
+    "nameKey": "loc_versunkene_kammer_name",
+    "descriptionKey": "loc_versunkene_kammer_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_midgard_heartlands_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_midgard_heartlands_hint",
+    "chestIds": [
+     "chest_versunkene_kammer"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_wanderrast",
+    "toLocationId": "loc_eschenfurt",
+    "travelSteps": 33,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_eschenfurt",
+    "toLocationId": "loc_saltvik",
+    "travelSteps": 42,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_saltvik",
+    "toLocationId": "loc_aehrenweg",
+    "travelSteps": 25,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_aehrenweg",
+    "toLocationId": "loc_nebelmoor",
+    "travelSteps": 36,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_nebelmoor",
+    "toLocationId": "loc_steinpfad",
+    "travelSteps": 25,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_steinpfad",
+    "toLocationId": "loc_kuestenweg",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_kuestenweg",
+    "toLocationId": "loc_rabenschlucht",
+    "travelSteps": 26,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_rabenschlucht",
+    "toLocationId": "loc_grabhuegel_von_alt_eik",
+    "travelSteps": 38,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_grabhuegel_von_alt_eik",
+    "toLocationId": "loc_verlassene_muehle",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_verlassene_muehle",
+    "toLocationId": "loc_der_gespaltene_stein",
+    "travelSteps": 25,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_der_gespaltene_stein",
+    "toLocationId": "loc_hain_der_ersten_rune",
+    "travelSteps": 29,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_hain_der_ersten_rune",
+    "toLocationId": "loc_versunkene_kammer",
+    "travelSteps": 42,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_wanderrast",
+    "toLocationId": "loc_hain_der_ersten_rune",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 1
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "None"
+  },
+  "legendaryMonsterIds": [
+   "jorwyrm"
+  ],
+  "collectibleIds": [
+   "collectible_midgard_heartlands_1",
+   "collectible_midgard_heartlands_2",
+   "collectible_midgard_heartlands_3"
+  ],
+  "secretIds": [
+   "secret_midgard_heartlands"
+  ]
+ },
+ {
+  "id": "alfheim_prismwoods",
+  "world": "ALFHEIM",
+  "nameKey": "alfheim_prismwoods_name",
+  "descriptionKey": "alfheim_prismwoods_desc",
+  "loreKey": "alfheim_prismwoods_lore",
+  "minLevel": 12,
+  "maxLevel": 24,
+  "dominantElements": [
+   "LIGHT",
+   "NATURE",
+   "WIND"
+  ],
+  "musicKey": "bgm_alfheim_prismwoods",
+  "nightMusicKey": "bgm_alfheim_prismwoods_night",
+  "ambienceKey": "amb_alfheim_prismwoods",
+  "mapAssetKey": "map_alfheim_prismwoods",
+  "paletteKey": "pal_alfheim_prismwoods",
+  "weatherProfile": {
+   "weights": {
+    "CLEAR": 55,
+    "AURORA": 25,
+    "RAIN": 10,
+    "FOG": 10
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_glanzhall",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_glanzhall_name",
+    "descriptionKey": "loc_glanzhall_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_alfheim_prismwoods_town",
+    "npcIds": [],
+    "shopId": "shop_glanzhall",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_tauhof",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_tauhof_name",
+    "descriptionKey": "loc_tauhof_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_alfheim_prismwoods_town",
+    "npcIds": [],
+    "shopId": "shop_tauhof",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_silberpfad",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_silberpfad_name",
+    "descriptionKey": "loc_silberpfad_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_alfheim_prismwoods_route",
+    "encounterTableId": "enc_silberpfad",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_silberpfad"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_daemmerlichtung",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_daemmerlichtung_name",
+    "descriptionKey": "loc_daemmerlichtung_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_alfheim_prismwoods_route",
+    "encounterTableId": "enc_daemmerlichtung",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_daemmerlichtung"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_prismensteig",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_prismensteig_name",
+    "descriptionKey": "loc_prismensteig_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_alfheim_prismwoods_route",
+    "encounterTableId": "enc_prismensteig",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_prismensteig"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_lerchenwiese",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_lerchenwiese_name",
+    "descriptionKey": "loc_lerchenwiese_desc",
+    "type": "ROUTE",
+    "mapX": 0.66,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_alfheim_prismwoods_route",
+    "encounterTableId": "enc_lerchenwiese",
+    "encounterRate": 0.128,
+    "npcIds": [],
+    "chestIds": [
+     "chest_lerchenwiese"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_spiegelgrotte",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_spiegelgrotte_name",
+    "descriptionKey": "loc_spiegelgrotte_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_alfheim_prismwoods_dungeon",
+    "encounterTableId": "enc_spiegelgrotte",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_spiegelgrotte"
+    ],
+    "bossId": "boss_alfheim_prismwoods_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 2
+    }
+   },
+   {
+    "id": "loc_turm_der_sphaeren",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_turm_der_sphaeren_name",
+    "descriptionKey": "loc_turm_der_sphaeren_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_alfheim_prismwoods_dungeon",
+    "encounterTableId": "enc_turm_der_sphaeren",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_turm_der_sphaeren"
+    ],
+    "bossId": "boss_alfheim_prismwoods_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 2
+    }
+   },
+   {
+    "id": "loc_stein_des_ersten_morgens",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_stein_des_ersten_morgens_name",
+    "descriptionKey": "loc_stein_des_ersten_morgens_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_alfheim_prismwoods_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_lichtkreis",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_lichtkreis_name",
+    "descriptionKey": "loc_lichtkreis_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_alfheim_prismwoods_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 2
+    },
+    "bossId": "legend_dagrun",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_hinter_dem_regenbogen",
+    "regionId": "alfheim_prismwoods",
+    "nameKey": "loc_hinter_dem_regenbogen_name",
+    "descriptionKey": "loc_hinter_dem_regenbogen_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_alfheim_prismwoods_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_alfheim_prismwoods_hint",
+    "chestIds": [
+     "chest_hinter_dem_regenbogen"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_glanzhall",
+    "toLocationId": "loc_tauhof",
+    "travelSteps": 31,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_tauhof",
+    "toLocationId": "loc_silberpfad",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_silberpfad",
+    "toLocationId": "loc_daemmerlichtung",
+    "travelSteps": 31,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_daemmerlichtung",
+    "toLocationId": "loc_prismensteig",
+    "travelSteps": 29,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_prismensteig",
+    "toLocationId": "loc_lerchenwiese",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_lerchenwiese",
+    "toLocationId": "loc_spiegelgrotte",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_spiegelgrotte",
+    "toLocationId": "loc_turm_der_sphaeren",
+    "travelSteps": 27,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_turm_der_sphaeren",
+    "toLocationId": "loc_stein_des_ersten_morgens",
+    "travelSteps": 27,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_stein_des_ersten_morgens",
+    "toLocationId": "loc_lichtkreis",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_lichtkreis",
+    "toLocationId": "loc_hinter_dem_regenbogen",
+    "travelSteps": 27,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_glanzhall",
+    "toLocationId": "loc_lichtkreis",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 2
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 2
+  },
+  "legendaryMonsterIds": [
+   "dagrun"
+  ],
+  "collectibleIds": [
+   "collectible_alfheim_prismwoods_1",
+   "collectible_alfheim_prismwoods_2",
+   "collectible_alfheim_prismwoods_3"
+  ],
+  "secretIds": [
+   "secret_alfheim_prismwoods"
+  ]
+ },
+ {
+  "id": "vanaheim_marches",
+  "world": "VANAHEIM",
+  "nameKey": "vanaheim_marches_name",
+  "descriptionKey": "vanaheim_marches_desc",
+  "loreKey": "vanaheim_marches_lore",
+  "minLevel": 20,
+  "maxLevel": 32,
+  "dominantElements": [
+   "NATURE",
+   "WATER",
+   "RUNE"
+  ],
+  "musicKey": "bgm_vanaheim_marches",
+  "nightMusicKey": "bgm_vanaheim_marches_night",
+  "ambienceKey": "amb_vanaheim_marches",
+  "mapAssetKey": "map_vanaheim_marches",
+  "paletteKey": "pal_vanaheim_marches",
+  "weatherProfile": {
+   "weights": {
+    "CLEAR": 45,
+    "RAIN": 30,
+    "FOG": 15,
+    "THUNDERSTORM": 10
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_saatheim",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_saatheim_name",
+    "descriptionKey": "loc_saatheim_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_vanaheim_marches_town",
+    "npcIds": [],
+    "shopId": "shop_saatheim",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_metquell",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_metquell_name",
+    "descriptionKey": "loc_metquell_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_vanaheim_marches_town",
+    "npcIds": [],
+    "shopId": "shop_metquell",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_aehrenmark",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_aehrenmark_name",
+    "descriptionKey": "loc_aehrenmark_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_vanaheim_marches_route",
+    "encounterTableId": "enc_aehrenmark",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_aehrenmark"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_nebelaue",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_nebelaue_name",
+    "descriptionKey": "loc_nebelaue_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_vanaheim_marches_route",
+    "encounterTableId": "enc_nebelaue",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_nebelaue"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_seidrpfad",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_seidrpfad_name",
+    "descriptionKey": "loc_seidrpfad_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_vanaheim_marches_route",
+    "encounterTableId": "enc_seidrpfad",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_seidrpfad"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_schilfufer",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_schilfufer_name",
+    "descriptionKey": "loc_schilfufer_desc",
+    "type": "ROUTE",
+    "mapX": 0.66,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_vanaheim_marches_route",
+    "encounterTableId": "enc_schilfufer",
+    "encounterRate": 0.128,
+    "npcIds": [],
+    "chestIds": [
+     "chest_schilfufer"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_wurzelgrotte",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_wurzelgrotte_name",
+    "descriptionKey": "loc_wurzelgrotte_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_vanaheim_marches_dungeon",
+    "encounterTableId": "enc_wurzelgrotte",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_wurzelgrotte"
+    ],
+    "bossId": "boss_vanaheim_marches_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 3
+    }
+   },
+   {
+    "id": "loc_schilfhoehle",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_schilfhoehle_name",
+    "descriptionKey": "loc_schilfhoehle_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_vanaheim_marches_dungeon",
+    "encounterTableId": "enc_schilfhoehle",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_schilfhoehle"
+    ],
+    "bossId": "boss_vanaheim_marches_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 3
+    }
+   },
+   {
+    "id": "loc_goldbrunnen",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_goldbrunnen_name",
+    "descriptionKey": "loc_goldbrunnen_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_vanaheim_marches_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_erntestein",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_erntestein_name",
+    "descriptionKey": "loc_erntestein_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_vanaheim_marches_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 3
+    },
+    "bossId": "legend_ardvin",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_verborgener_weiher",
+    "regionId": "vanaheim_marches",
+    "nameKey": "loc_verborgener_weiher_name",
+    "descriptionKey": "loc_verborgener_weiher_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_vanaheim_marches_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_vanaheim_marches_hint",
+    "chestIds": [
+     "chest_verborgener_weiher"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_saatheim",
+    "toLocationId": "loc_metquell",
+    "travelSteps": 40,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_metquell",
+    "toLocationId": "loc_aehrenmark",
+    "travelSteps": 40,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_aehrenmark",
+    "toLocationId": "loc_nebelaue",
+    "travelSteps": 29,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_nebelaue",
+    "toLocationId": "loc_seidrpfad",
+    "travelSteps": 39,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_seidrpfad",
+    "toLocationId": "loc_schilfufer",
+    "travelSteps": 28,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_schilfufer",
+    "toLocationId": "loc_wurzelgrotte",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_wurzelgrotte",
+    "toLocationId": "loc_schilfhoehle",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_schilfhoehle",
+    "toLocationId": "loc_goldbrunnen",
+    "travelSteps": 32,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_goldbrunnen",
+    "toLocationId": "loc_erntestein",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_erntestein",
+    "toLocationId": "loc_verborgener_weiher",
+    "travelSteps": 25,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_saatheim",
+    "toLocationId": "loc_erntestein",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 3
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 3
+  },
+  "legendaryMonsterIds": [
+   "ardvin"
+  ],
+  "collectibleIds": [
+   "collectible_vanaheim_marches_1",
+   "collectible_vanaheim_marches_2",
+   "collectible_vanaheim_marches_3"
+  ],
+  "secretIds": [
+   "secret_vanaheim_marches"
+  ]
+ },
+ {
+  "id": "jotunheim_ridges",
+  "world": "JOTUNHEIM",
+  "nameKey": "jotunheim_ridges_name",
+  "descriptionKey": "jotunheim_ridges_desc",
+  "loreKey": "jotunheim_ridges_lore",
+  "minLevel": 30,
+  "maxLevel": 42,
+  "dominantElements": [
+   "ICE",
+   "EARTH",
+   "WIND"
+  ],
+  "musicKey": "bgm_jotunheim_ridges",
+  "nightMusicKey": "bgm_jotunheim_ridges_night",
+  "ambienceKey": "amb_jotunheim_ridges",
+  "mapAssetKey": "map_jotunheim_ridges",
+  "paletteKey": "pal_jotunheim_ridges",
+  "weatherProfile": {
+   "weights": {
+    "SNOW": 40,
+    "CLEAR": 25,
+    "FOG": 20,
+    "SANDSTORM": 15
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_trollmark",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_trollmark_name",
+    "descriptionKey": "loc_trollmark_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_jotunheim_ridges_town",
+    "npcIds": [],
+    "shopId": "shop_trollmark",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_riesenfurt",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_riesenfurt_name",
+    "descriptionKey": "loc_riesenfurt_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_jotunheim_ridges_town",
+    "npcIds": [],
+    "shopId": "shop_riesenfurt",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_windgrat",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_windgrat_name",
+    "descriptionKey": "loc_windgrat_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_jotunheim_ridges_route",
+    "encounterTableId": "enc_windgrat",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_windgrat"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_gletscherzunge",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_gletscherzunge_name",
+    "descriptionKey": "loc_gletscherzunge_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_jotunheim_ridges_route",
+    "encounterTableId": "enc_gletscherzunge",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_gletscherzunge"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_steinbruch",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_steinbruch_name",
+    "descriptionKey": "loc_steinbruch_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_jotunheim_ridges_route",
+    "encounterTableId": "enc_steinbruch",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_steinbruch"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_hochpass",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_hochpass_name",
+    "descriptionKey": "loc_hochpass_desc",
+    "type": "ROUTE",
+    "mapX": 0.66,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_jotunheim_ridges_route",
+    "encounterTableId": "enc_hochpass",
+    "encounterRate": 0.128,
+    "npcIds": [],
+    "chestIds": [
+     "chest_hochpass"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_bergfausts_hoehle",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_bergfausts_hoehle_name",
+    "descriptionKey": "loc_bergfausts_hoehle_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_jotunheim_ridges_dungeon",
+    "encounterTableId": "enc_bergfausts_hoehle",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_bergfausts_hoehle"
+    ],
+    "bossId": "boss_jotunheim_ridges_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 4
+    }
+   },
+   {
+    "id": "loc_eiskathedrale",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_eiskathedrale_name",
+    "descriptionKey": "loc_eiskathedrale_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_jotunheim_ridges_dungeon",
+    "encounterTableId": "enc_eiskathedrale",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_eiskathedrale"
+    ],
+    "bossId": "boss_jotunheim_ridges_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 4
+    }
+   },
+   {
+    "id": "loc_der_sitzende_riese",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_der_sitzende_riese_name",
+    "descriptionKey": "loc_der_sitzende_riese_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_jotunheim_ridges_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_urhornstein",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_urhornstein_name",
+    "descriptionKey": "loc_urhornstein_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_jotunheim_ridges_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 4
+    },
+    "bossId": "legend_bergrimm",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_spalte_im_grat",
+    "regionId": "jotunheim_ridges",
+    "nameKey": "loc_spalte_im_grat_name",
+    "descriptionKey": "loc_spalte_im_grat_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_jotunheim_ridges_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_jotunheim_ridges_hint",
+    "chestIds": [
+     "chest_spalte_im_grat"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_trollmark",
+    "toLocationId": "loc_riesenfurt",
+    "travelSteps": 28,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_riesenfurt",
+    "toLocationId": "loc_windgrat",
+    "travelSteps": 36,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_windgrat",
+    "toLocationId": "loc_gletscherzunge",
+    "travelSteps": 34,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_gletscherzunge",
+    "toLocationId": "loc_steinbruch",
+    "travelSteps": 34,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_steinbruch",
+    "toLocationId": "loc_hochpass",
+    "travelSteps": 32,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_hochpass",
+    "toLocationId": "loc_bergfausts_hoehle",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_bergfausts_hoehle",
+    "toLocationId": "loc_eiskathedrale",
+    "travelSteps": 24,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_eiskathedrale",
+    "toLocationId": "loc_der_sitzende_riese",
+    "travelSteps": 27,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_der_sitzende_riese",
+    "toLocationId": "loc_urhornstein",
+    "travelSteps": 36,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_urhornstein",
+    "toLocationId": "loc_spalte_im_grat",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_trollmark",
+    "toLocationId": "loc_urhornstein",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 4
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 4
+  },
+  "legendaryMonsterIds": [
+   "bergrimm"
+  ],
+  "collectibleIds": [
+   "collectible_jotunheim_ridges_1",
+   "collectible_jotunheim_ridges_2",
+   "collectible_jotunheim_ridges_3"
+  ],
+  "secretIds": [
+   "secret_jotunheim_ridges"
+  ]
+ },
+ {
+  "id": "svartalfheim_deeps",
+  "world": "SVARTALFHEIM",
+  "nameKey": "svartalfheim_deeps_name",
+  "descriptionKey": "svartalfheim_deeps_desc",
+  "loreKey": "svartalfheim_deeps_lore",
+  "minLevel": 38,
+  "maxLevel": 50,
+  "dominantElements": [
+   "METAL",
+   "EARTH",
+   "RUNE"
+  ],
+  "musicKey": "bgm_svartalfheim_deeps",
+  "nightMusicKey": "bgm_svartalfheim_deeps_night",
+  "ambienceKey": "amb_svartalfheim_deeps",
+  "mapAssetKey": "map_svartalfheim_deeps",
+  "paletteKey": "pal_svartalfheim_deeps",
+  "weatherProfile": {
+   "weights": {
+    "CLEAR": 60,
+    "SANDSTORM": 25,
+    "HEATWAVE": 15
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_ambosshall",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_ambosshall_name",
+    "descriptionKey": "loc_ambosshall_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_svartalfheim_deeps_town",
+    "npcIds": [],
+    "shopId": "shop_ambosshall",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_goldgrund",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_goldgrund_name",
+    "descriptionKey": "loc_goldgrund_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_svartalfheim_deeps_town",
+    "npcIds": [],
+    "shopId": "shop_goldgrund",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_erzstollen",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_erzstollen_name",
+    "descriptionKey": "loc_erzstollen_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_svartalfheim_deeps_route",
+    "encounterTableId": "enc_erzstollen",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_erzstollen"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_schachtweg",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_schachtweg_name",
+    "descriptionKey": "loc_schachtweg_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_svartalfheim_deeps_route",
+    "encounterTableId": "enc_schachtweg",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_schachtweg"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_aderngang",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_aderngang_name",
+    "descriptionKey": "loc_aderngang_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_svartalfheim_deeps_route",
+    "encounterTableId": "enc_aderngang",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_aderngang"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_alte_esse",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_alte_esse_name",
+    "descriptionKey": "loc_alte_esse_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_svartalfheim_deeps_dungeon",
+    "encounterTableId": "enc_alte_esse",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_alte_esse"
+    ],
+    "bossId": "boss_svartalfheim_deeps_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 5
+    }
+   },
+   {
+    "id": "loc_runenschmiede",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_runenschmiede_name",
+    "descriptionKey": "loc_runenschmiede_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_svartalfheim_deeps_dungeon",
+    "encounterTableId": "enc_runenschmiede",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_runenschmiede"
+    ],
+    "bossId": "boss_svartalfheim_deeps_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 5
+    }
+   },
+   {
+    "id": "loc_herz_des_berges",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_herz_des_berges_name",
+    "descriptionKey": "loc_herz_des_berges_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_svartalfheim_deeps_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_erster_amboss",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_erster_amboss_name",
+    "descriptionKey": "loc_erster_amboss_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_svartalfheim_deeps_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 5
+    },
+    "bossId": "legend_dvalgrim",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_vergessene_kammer",
+    "regionId": "svartalfheim_deeps",
+    "nameKey": "loc_vergessene_kammer_name",
+    "descriptionKey": "loc_vergessene_kammer_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_svartalfheim_deeps_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_svartalfheim_deeps_hint",
+    "chestIds": [
+     "chest_vergessene_kammer"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_ambosshall",
+    "toLocationId": "loc_goldgrund",
+    "travelSteps": 36,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_goldgrund",
+    "toLocationId": "loc_erzstollen",
+    "travelSteps": 24,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_erzstollen",
+    "toLocationId": "loc_schachtweg",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_schachtweg",
+    "toLocationId": "loc_aderngang",
+    "travelSteps": 31,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_aderngang",
+    "toLocationId": "loc_alte_esse",
+    "travelSteps": 31,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_alte_esse",
+    "toLocationId": "loc_runenschmiede",
+    "travelSteps": 38,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_runenschmiede",
+    "toLocationId": "loc_herz_des_berges",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_herz_des_berges",
+    "toLocationId": "loc_erster_amboss",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_erster_amboss",
+    "toLocationId": "loc_vergessene_kammer",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_ambosshall",
+    "toLocationId": "loc_erster_amboss",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 5
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 5
+  },
+  "legendaryMonsterIds": [
+   "dvalgrim"
+  ],
+  "collectibleIds": [
+   "collectible_svartalfheim_deeps_1",
+   "collectible_svartalfheim_deeps_2",
+   "collectible_svartalfheim_deeps_3"
+  ],
+  "secretIds": [
+   "secret_svartalfheim_deeps"
+  ]
+ },
+ {
+  "id": "muspelheim_emberfields",
+  "world": "MUSPELHEIM",
+  "nameKey": "muspelheim_emberfields_name",
+  "descriptionKey": "muspelheim_emberfields_desc",
+  "loreKey": "muspelheim_emberfields_lore",
+  "minLevel": 46,
+  "maxLevel": 58,
+  "dominantElements": [
+   "FIRE",
+   "CHAOS",
+   "METAL"
+  ],
+  "musicKey": "bgm_muspelheim_emberfields",
+  "nightMusicKey": "bgm_muspelheim_emberfields_night",
+  "ambienceKey": "amb_muspelheim_emberfields",
+  "mapAssetKey": "map_muspelheim_emberfields",
+  "paletteKey": "pal_muspelheim_emberfields",
+  "weatherProfile": {
+   "weights": {
+    "HEATWAVE": 55,
+    "CLEAR": 30,
+    "SANDSTORM": 15
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_aschenhort",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_aschenhort_name",
+    "descriptionKey": "loc_aschenhort_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_muspelheim_emberfields_town",
+    "npcIds": [],
+    "shopId": "shop_aschenhort",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_schlackenhort",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_schlackenhort_name",
+    "descriptionKey": "loc_schlackenhort_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_muspelheim_emberfields_town",
+    "npcIds": [],
+    "shopId": "shop_schlackenhort",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_lavastrom",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_lavastrom_name",
+    "descriptionKey": "loc_lavastrom_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_muspelheim_emberfields_route",
+    "encounterTableId": "enc_lavastrom",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_lavastrom"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_rauchsteig",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_rauchsteig_name",
+    "descriptionKey": "loc_rauchsteig_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_muspelheim_emberfields_route",
+    "encounterTableId": "enc_rauchsteig",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_rauchsteig"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_basaltweg",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_basaltweg_name",
+    "descriptionKey": "loc_basaltweg_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_muspelheim_emberfields_route",
+    "encounterTableId": "enc_basaltweg",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_basaltweg"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_surtwacht_feste",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_surtwacht_feste_name",
+    "descriptionKey": "loc_surtwacht_feste_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_muspelheim_emberfields_dungeon",
+    "encounterTableId": "enc_surtwacht_feste",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_surtwacht_feste"
+    ],
+    "bossId": "boss_muspelheim_emberfields_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 6
+    }
+   },
+   {
+    "id": "loc_glutschlund",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_glutschlund_name",
+    "descriptionKey": "loc_glutschlund_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_muspelheim_emberfields_dungeon",
+    "encounterTableId": "enc_glutschlund",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_glutschlund"
+    ],
+    "bossId": "boss_muspelheim_emberfields_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 6
+    }
+   },
+   {
+    "id": "loc_der_ewige_brand",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_der_ewige_brand_name",
+    "descriptionKey": "loc_der_ewige_brand_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_muspelheim_emberfields_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_funkenaltar",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_funkenaltar_name",
+    "descriptionKey": "loc_funkenaltar_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_muspelheim_emberfields_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 6
+    },
+    "bossId": "legend_surtwacht",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_kammer_unter_der_asche",
+    "regionId": "muspelheim_emberfields",
+    "nameKey": "loc_kammer_unter_der_asche_name",
+    "descriptionKey": "loc_kammer_unter_der_asche_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_muspelheim_emberfields_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_muspelheim_emberfields_hint",
+    "chestIds": [
+     "chest_kammer_unter_der_asche"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_aschenhort",
+    "toLocationId": "loc_schlackenhort",
+    "travelSteps": 39,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_schlackenhort",
+    "toLocationId": "loc_lavastrom",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_lavastrom",
+    "toLocationId": "loc_rauchsteig",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_rauchsteig",
+    "toLocationId": "loc_basaltweg",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_basaltweg",
+    "toLocationId": "loc_surtwacht_feste",
+    "travelSteps": 39,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_surtwacht_feste",
+    "toLocationId": "loc_glutschlund",
+    "travelSteps": 38,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_glutschlund",
+    "toLocationId": "loc_der_ewige_brand",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_der_ewige_brand",
+    "toLocationId": "loc_funkenaltar",
+    "travelSteps": 28,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_funkenaltar",
+    "toLocationId": "loc_kammer_unter_der_asche",
+    "travelSteps": 38,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_aschenhort",
+    "toLocationId": "loc_funkenaltar",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 6
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 6
+  },
+  "legendaryMonsterIds": [
+   "surtwacht"
+  ],
+  "collectibleIds": [
+   "collectible_muspelheim_emberfields_1",
+   "collectible_muspelheim_emberfields_2",
+   "collectible_muspelheim_emberfields_3"
+  ],
+  "secretIds": [
+   "secret_muspelheim_emberfields"
+  ]
+ },
+ {
+  "id": "niflheim_mistwastes",
+  "world": "NIFLHEIM",
+  "nameKey": "niflheim_mistwastes_name",
+  "descriptionKey": "niflheim_mistwastes_desc",
+  "loreKey": "niflheim_mistwastes_lore",
+  "minLevel": 54,
+  "maxLevel": 66,
+  "dominantElements": [
+   "ICE",
+   "SPIRIT",
+   "WATER"
+  ],
+  "musicKey": "bgm_niflheim_mistwastes",
+  "nightMusicKey": "bgm_niflheim_mistwastes_night",
+  "ambienceKey": "amb_niflheim_mistwastes",
+  "mapAssetKey": "map_niflheim_mistwastes",
+  "paletteKey": "pal_niflheim_mistwastes",
+  "weatherProfile": {
+   "weights": {
+    "SNOW": 45,
+    "FOG": 35,
+    "CLEAR": 20
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_reifhall",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_reifhall_name",
+    "descriptionKey": "loc_reifhall_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_niflheim_mistwastes_town",
+    "npcIds": [],
+    "shopId": "shop_reifhall",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_brunnenrast",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_brunnenrast_name",
+    "descriptionKey": "loc_brunnenrast_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_niflheim_mistwastes_town",
+    "npcIds": [],
+    "shopId": "shop_brunnenrast",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_nebelweg",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_nebelweg_name",
+    "descriptionKey": "loc_nebelweg_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_niflheim_mistwastes_route",
+    "encounterTableId": "enc_nebelweg",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_nebelweg"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_firnfeld",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_firnfeld_name",
+    "descriptionKey": "loc_firnfeld_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_niflheim_mistwastes_route",
+    "encounterTableId": "enc_firnfeld",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_firnfeld"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_kaeltegrat",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_kaeltegrat_name",
+    "descriptionKey": "loc_kaeltegrat_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_niflheim_mistwastes_route",
+    "encounterTableId": "enc_kaeltegrat",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_kaeltegrat"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_brunnentiefe",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_brunnentiefe_name",
+    "descriptionKey": "loc_brunnentiefe_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_niflheim_mistwastes_dungeon",
+    "encounterTableId": "enc_brunnentiefe",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_brunnentiefe"
+    ],
+    "bossId": "boss_niflheim_mistwastes_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 7
+    }
+   },
+   {
+    "id": "loc_nagwyrm_nest",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_nagwyrm_nest_name",
+    "descriptionKey": "loc_nagwyrm_nest_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_niflheim_mistwastes_dungeon",
+    "encounterTableId": "enc_nagwyrm_nest",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_nagwyrm_nest"
+    ],
+    "bossId": "boss_niflheim_mistwastes_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 7
+    }
+   },
+   {
+    "id": "loc_elf_quellen",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_elf_quellen_name",
+    "descriptionKey": "loc_elf_quellen_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_niflheim_mistwastes_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_stiller_ring",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_stiller_ring_name",
+    "descriptionKey": "loc_stiller_ring_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_niflheim_mistwastes_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 7
+    },
+    "bossId": "legend_hrimthar",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_unter_dem_eis",
+    "regionId": "niflheim_mistwastes",
+    "nameKey": "loc_unter_dem_eis_name",
+    "descriptionKey": "loc_unter_dem_eis_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_niflheim_mistwastes_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_niflheim_mistwastes_hint",
+    "chestIds": [
+     "chest_unter_dem_eis"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_reifhall",
+    "toLocationId": "loc_brunnenrast",
+    "travelSteps": 24,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_brunnenrast",
+    "toLocationId": "loc_nebelweg",
+    "travelSteps": 37,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_nebelweg",
+    "toLocationId": "loc_firnfeld",
+    "travelSteps": 25,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_firnfeld",
+    "toLocationId": "loc_kaeltegrat",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_kaeltegrat",
+    "toLocationId": "loc_brunnentiefe",
+    "travelSteps": 39,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_brunnentiefe",
+    "toLocationId": "loc_nagwyrm_nest",
+    "travelSteps": 28,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_nagwyrm_nest",
+    "toLocationId": "loc_elf_quellen",
+    "travelSteps": 33,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_elf_quellen",
+    "toLocationId": "loc_stiller_ring",
+    "travelSteps": 42,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_stiller_ring",
+    "toLocationId": "loc_unter_dem_eis",
+    "travelSteps": 41,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_reifhall",
+    "toLocationId": "loc_stiller_ring",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 7
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 7
+  },
+  "legendaryMonsterIds": [
+   "hrimthar"
+  ],
+  "collectibleIds": [
+   "collectible_niflheim_mistwastes_1",
+   "collectible_niflheim_mistwastes_2",
+   "collectible_niflheim_mistwastes_3"
+  ],
+  "secretIds": [
+   "secret_niflheim_mistwastes"
+  ]
+ },
+ {
+  "id": "helheim_deathmarches",
+  "world": "HELHEIM",
+  "nameKey": "helheim_deathmarches_name",
+  "descriptionKey": "helheim_deathmarches_desc",
+  "loreKey": "helheim_deathmarches_lore",
+  "minLevel": 62,
+  "maxLevel": 74,
+  "dominantElements": [
+   "SHADOW",
+   "SPIRIT",
+   "CHAOS"
+  ],
+  "musicKey": "bgm_helheim_deathmarches",
+  "nightMusicKey": "bgm_helheim_deathmarches_night",
+  "ambienceKey": "amb_helheim_deathmarches",
+  "mapAssetKey": "map_helheim_deathmarches",
+  "paletteKey": "pal_helheim_deathmarches",
+  "weatherProfile": {
+   "weights": {
+    "FOG": 50,
+    "CLEAR": 25,
+    "RAIN": 25
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_grabrast",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_grabrast_name",
+    "descriptionKey": "loc_grabrast_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_helheim_deathmarches_town",
+    "npcIds": [],
+    "shopId": "shop_grabrast",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_hallentor",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_hallentor_name",
+    "descriptionKey": "loc_hallentor_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_helheim_deathmarches_town",
+    "npcIds": [],
+    "shopId": "shop_hallentor",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_modersteig",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_modersteig_name",
+    "descriptionKey": "loc_modersteig_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_helheim_deathmarches_route",
+    "encounterTableId": "enc_modersteig",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_modersteig"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_schattenmoor",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_schattenmoor_name",
+    "descriptionKey": "loc_schattenmoor_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_helheim_deathmarches_route",
+    "encounterTableId": "enc_schattenmoor",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_schattenmoor"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_rabenfeld",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_rabenfeld_name",
+    "descriptionKey": "loc_rabenfeld_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_helheim_deathmarches_route",
+    "encounterTableId": "enc_rabenfeld",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_rabenfeld"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_halle_der_ungezaehlten",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_halle_der_ungezaehlten_name",
+    "descriptionKey": "loc_halle_der_ungezaehlten_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_helheim_deathmarches_dungeon",
+    "encounterTableId": "enc_halle_der_ungezaehlten",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_halle_der_ungezaehlten"
+    ],
+    "bossId": "boss_helheim_deathmarches_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 8
+    }
+   },
+   {
+    "id": "loc_garmwacht_tor",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_garmwacht_tor_name",
+    "descriptionKey": "loc_garmwacht_tor_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_helheim_deathmarches_dungeon",
+    "encounterTableId": "enc_garmwacht_tor",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_garmwacht_tor"
+    ],
+    "bossId": "boss_helheim_deathmarches_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 8
+    }
+   },
+   {
+    "id": "loc_bruecke_der_namen",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_bruecke_der_namen_name",
+    "descriptionKey": "loc_bruecke_der_namen_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_helheim_deathmarches_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_ruhestein",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_ruhestein_name",
+    "descriptionKey": "loc_ruhestein_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_helheim_deathmarches_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 8
+    },
+    "bossId": "legend_helvarn",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_zweite_halle",
+    "regionId": "helheim_deathmarches",
+    "nameKey": "loc_zweite_halle_name",
+    "descriptionKey": "loc_zweite_halle_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_helheim_deathmarches_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_helheim_deathmarches_hint",
+    "chestIds": [
+     "chest_zweite_halle"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_grabrast",
+    "toLocationId": "loc_hallentor",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_hallentor",
+    "toLocationId": "loc_modersteig",
+    "travelSteps": 29,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_modersteig",
+    "toLocationId": "loc_schattenmoor",
+    "travelSteps": 41,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_schattenmoor",
+    "toLocationId": "loc_rabenfeld",
+    "travelSteps": 41,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_rabenfeld",
+    "toLocationId": "loc_halle_der_ungezaehlten",
+    "travelSteps": 36,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_halle_der_ungezaehlten",
+    "toLocationId": "loc_garmwacht_tor",
+    "travelSteps": 28,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_garmwacht_tor",
+    "toLocationId": "loc_bruecke_der_namen",
+    "travelSteps": 43,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_bruecke_der_namen",
+    "toLocationId": "loc_ruhestein",
+    "travelSteps": 27,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_ruhestein",
+    "toLocationId": "loc_zweite_halle",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_grabrast",
+    "toLocationId": "loc_ruhestein",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 8
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 8
+  },
+  "legendaryMonsterIds": [
+   "helvarn"
+  ],
+  "collectibleIds": [
+   "collectible_helheim_deathmarches_1",
+   "collectible_helheim_deathmarches_2",
+   "collectible_helheim_deathmarches_3"
+  ],
+  "secretIds": [
+   "secret_helheim_deathmarches"
+  ]
+ },
+ {
+  "id": "asgard_goldenheights",
+  "world": "ASGARD",
+  "nameKey": "asgard_goldenheights_name",
+  "descriptionKey": "asgard_goldenheights_desc",
+  "loreKey": "asgard_goldenheights_lore",
+  "minLevel": 70,
+  "maxLevel": 85,
+  "dominantElements": [
+   "DIVINE",
+   "LIGHT",
+   "THUNDER"
+  ],
+  "musicKey": "bgm_asgard_goldenheights",
+  "nightMusicKey": "bgm_asgard_goldenheights_night",
+  "ambienceKey": "amb_asgard_goldenheights",
+  "mapAssetKey": "map_asgard_goldenheights",
+  "paletteKey": "pal_asgard_goldenheights",
+  "weatherProfile": {
+   "weights": {
+    "AURORA": 40,
+    "CLEAR": 35,
+    "THUNDERSTORM": 25
+   },
+   "changeIntervalMinutes": 12,
+   "seasonalOverrides": {}
+  },
+  "locations": [
+   {
+    "id": "loc_gladsheim_vorhof",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_gladsheim_vorhof_name",
+    "descriptionKey": "loc_gladsheim_vorhof_desc",
+    "type": "TOWN",
+    "mapX": 0.18,
+    "mapY": 0.22,
+    "backgroundKey": "bg_asgard_goldenheights_town",
+    "npcIds": [],
+    "shopId": "shop_gladsheim_vorhof",
+    "healerAvailable": true,
+    "roostAvailable": true,
+    "forgeAvailable": false,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_walstatt",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_walstatt_name",
+    "descriptionKey": "loc_walstatt_desc",
+    "type": "TOWN",
+    "mapX": 0.48,
+    "mapY": 0.33999999999999997,
+    "backgroundKey": "bg_asgard_goldenheights_town",
+    "npcIds": [],
+    "shopId": "shop_walstatt",
+    "healerAvailable": true,
+    "roostAvailable": false,
+    "forgeAvailable": true,
+    "storageAvailable": true,
+    "fastTravel": true,
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_bifroeststeig",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_bifroeststeig_name",
+    "descriptionKey": "loc_bifroeststeig_desc",
+    "type": "ROUTE",
+    "mapX": 0.12,
+    "mapY": 0.55,
+    "backgroundKey": "bg_asgard_goldenheights_route",
+    "encounterTableId": "enc_bifroeststeig",
+    "encounterRate": 0.11,
+    "npcIds": [],
+    "chestIds": [
+     "chest_bifroeststeig"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_wolkenmark",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_wolkenmark_name",
+    "descriptionKey": "loc_wolkenmark_desc",
+    "type": "ROUTE",
+    "mapX": 0.3,
+    "mapY": 0.7100000000000001,
+    "backgroundKey": "bg_asgard_goldenheights_route",
+    "encounterTableId": "enc_wolkenmark",
+    "encounterRate": 0.116,
+    "npcIds": [],
+    "chestIds": [
+     "chest_wolkenmark"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_speerfeld",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_speerfeld_name",
+    "descriptionKey": "loc_speerfeld_desc",
+    "type": "ROUTE",
+    "mapX": 0.48,
+    "mapY": 0.55,
+    "backgroundKey": "bg_asgard_goldenheights_route",
+    "encounterTableId": "enc_speerfeld",
+    "encounterRate": 0.122,
+    "npcIds": [],
+    "chestIds": [
+     "chest_speerfeld"
+    ],
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_hallen_der_gefallenen",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_hallen_der_gefallenen_name",
+    "descriptionKey": "loc_hallen_der_gefallenen_desc",
+    "type": "DUNGEON",
+    "mapX": 0.62,
+    "mapY": 0.62,
+    "backgroundKey": "bg_asgard_goldenheights_dungeon",
+    "encounterTableId": "enc_hallen_der_gefallenen",
+    "encounterRate": 0.16,
+    "floors": 4,
+    "chestIds": [
+     "chest_hallen_der_gefallenen"
+    ],
+    "bossId": "boss_asgard_goldenheights_1",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 9
+    }
+   },
+   {
+    "id": "loc_sturmwacht_turm",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_sturmwacht_turm_name",
+    "descriptionKey": "loc_sturmwacht_turm_desc",
+    "type": "DUNGEON",
+    "mapX": 0.8200000000000001,
+    "mapY": 0.48,
+    "backgroundKey": "bg_asgard_goldenheights_dungeon",
+    "encounterTableId": "enc_sturmwacht_turm",
+    "encounterRate": 0.18,
+    "floors": 6,
+    "chestIds": [
+     "chest_sturmwacht_turm"
+    ],
+    "bossId": "boss_asgard_goldenheights_2",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 9
+    }
+   },
+   {
+    "id": "loc_bifroestbogen",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_bifroestbogen_name",
+    "descriptionKey": "loc_bifroestbogen_desc",
+    "type": "LANDMARK",
+    "mapX": 0.8,
+    "mapY": 0.2,
+    "backgroundKey": "bg_asgard_goldenheights_landmark",
+    "unlockRequirement": {
+     "type": "None"
+    }
+   },
+   {
+    "id": "loc_thing_der_asen",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_thing_der_asen_name",
+    "descriptionKey": "loc_thing_der_asen_desc",
+    "type": "SANCTUARY",
+    "mapX": 0.5,
+    "mapY": 0.82,
+    "backgroundKey": "bg_asgard_goldenheights_sanctuary",
+    "unlockRequirement": {
+     "type": "Chapter",
+     "chapter": 9
+    },
+    "bossId": "legend_odrmund",
+    "healerAvailable": true
+   },
+   {
+    "id": "loc_odrmunds_auge",
+    "regionId": "asgard_goldenheights",
+    "nameKey": "loc_odrmunds_auge_name",
+    "descriptionKey": "loc_odrmunds_auge_desc",
+    "type": "SECRET",
+    "mapX": 0.3,
+    "mapY": 0.92,
+    "backgroundKey": "bg_asgard_goldenheights_secret",
+    "unlockRequirement": {
+     "type": "KeyItem",
+     "itemId": "schluessel_nornenkompass"
+    },
+    "secretHint": "secret_asgard_goldenheights_hint",
+    "chestIds": [
+     "chest_odrmunds_auge"
+    ]
+   }
+  ],
+  "links": [
+   {
+    "fromLocationId": "loc_gladsheim_vorhof",
+    "toLocationId": "loc_walstatt",
+    "travelSteps": 41,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_walstatt",
+    "toLocationId": "loc_bifroeststeig",
+    "travelSteps": 34,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_bifroeststeig",
+    "toLocationId": "loc_wolkenmark",
+    "travelSteps": 30,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_wolkenmark",
+    "toLocationId": "loc_speerfeld",
+    "travelSteps": 40,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_speerfeld",
+    "toLocationId": "loc_hallen_der_gefallenen",
+    "travelSteps": 24,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_hallen_der_gefallenen",
+    "toLocationId": "loc_sturmwacht_turm",
+    "travelSteps": 44,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_sturmwacht_turm",
+    "toLocationId": "loc_bifroestbogen",
+    "travelSteps": 41,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_bifroestbogen",
+    "toLocationId": "loc_thing_der_asen",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_thing_der_asen",
+    "toLocationId": "loc_odrmunds_auge",
+    "travelSteps": 35,
+    "requirement": {
+     "type": "None"
+    },
+    "bidirectional": true
+   },
+   {
+    "fromLocationId": "loc_gladsheim_vorhof",
+    "toLocationId": "loc_thing_der_asen",
+    "travelSteps": 60,
+    "requirement": {
+     "type": "Chapter",
+     "chapter": 9
+    },
+    "bidirectional": true
+   }
+  ],
+  "unlockRequirement": {
+   "type": "Chapter",
+   "chapter": 9
+  },
+  "legendaryMonsterIds": [
+   "odrmund"
+  ],
+  "collectibleIds": [
+   "collectible_asgard_goldenheights_1",
+   "collectible_asgard_goldenheights_2",
+   "collectible_asgard_goldenheights_3"
+  ],
+  "secretIds": [
+   "secret_asgard_goldenheights"
+  ]
+ }
+]

@@ -1,0 +1,338 @@
+[
+ {
+  "id": "ab_ember_hide",
+  "nameKey": "ab_ember_hide_name",
+  "descriptionKey": "ab_ember_hide_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "ember_hide",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_frost_hide",
+  "nameKey": "ab_frost_hide_name",
+  "descriptionKey": "ab_frost_hide_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "frost_hide",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_storm_hide",
+  "nameKey": "ab_storm_hide_name",
+  "descriptionKey": "ab_storm_hide_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "storm_hide",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_stone_hide",
+  "nameKey": "ab_stone_hide_name",
+  "descriptionKey": "ab_stone_hide_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "stone_hide",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_gale_hide",
+  "nameKey": "ab_gale_hide_name",
+  "descriptionKey": "ab_gale_hide_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "gale_hide",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_rune_ward",
+  "nameKey": "ab_rune_ward_name",
+  "descriptionKey": "ab_rune_ward_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "rune_ward",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_giant_frame",
+  "nameKey": "ab_giant_frame_name",
+  "descriptionKey": "ab_giant_frame_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "giant_frame",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_bulwark",
+  "nameKey": "ab_bulwark_name",
+  "descriptionKey": "ab_bulwark_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "bulwark",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_spirit_veil",
+  "nameKey": "ab_spirit_veil_name",
+  "descriptionKey": "ab_spirit_veil_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "spirit_veil",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_runic_bulwark",
+  "nameKey": "ab_runic_bulwark_name",
+  "descriptionKey": "ab_runic_bulwark_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "runic_bulwark",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_iron_will",
+  "nameKey": "ab_iron_will_name",
+  "descriptionKey": "ab_iron_will_desc",
+  "trigger": "ON_STATUS_APPLIED",
+  "effectId": "iron_will",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_clear_mind",
+  "nameKey": "ab_clear_mind_name",
+  "descriptionKey": "ab_clear_mind_desc",
+  "trigger": "ON_STATUS_APPLIED",
+  "effectId": "clear_mind",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_divine_grace",
+  "nameKey": "ab_divine_grace_name",
+  "descriptionKey": "ab_divine_grace_desc",
+  "trigger": "ON_STATUS_APPLIED",
+  "effectId": "divine_grace",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_chaos_heart",
+  "nameKey": "ab_chaos_heart_name",
+  "descriptionKey": "ab_chaos_heart_desc",
+  "trigger": "ON_DEALING_DAMAGE",
+  "effectId": "chaos_heart",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_cleansing_light",
+  "nameKey": "ab_cleansing_light_name",
+  "descriptionKey": "ab_cleansing_light_desc",
+  "trigger": "ON_TURN_END",
+  "effectId": "cleansing_light",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_regrowth",
+  "nameKey": "ab_regrowth_name",
+  "descriptionKey": "ab_regrowth_desc",
+  "trigger": "ON_TURN_END",
+  "effectId": "regrowth",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_sun_drinker",
+  "nameKey": "ab_sun_drinker_name",
+  "descriptionKey": "ab_sun_drinker_desc",
+  "trigger": "ON_TURN_END",
+  "effectId": "sun_drinker",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_moon_drinker",
+  "nameKey": "ab_moon_drinker_name",
+  "descriptionKey": "ab_moon_drinker_desc",
+  "trigger": "ON_TURN_END",
+  "effectId": "moon_drinker",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_storm_born",
+  "nameKey": "ab_storm_born_name",
+  "descriptionKey": "ab_storm_born_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "storm_born",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_snow_walker",
+  "nameKey": "ab_snow_walker_name",
+  "descriptionKey": "ab_snow_walker_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "snow_walker",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_sand_veil",
+  "nameKey": "ab_sand_veil_name",
+  "descriptionKey": "ab_sand_veil_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "sand_veil",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_gale_step",
+  "nameKey": "ab_gale_step_name",
+  "descriptionKey": "ab_gale_step_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "gale_step",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_venom_touch",
+  "nameKey": "ab_venom_touch_name",
+  "descriptionKey": "ab_venom_touch_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "venom_touch",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_ember_touch",
+  "nameKey": "ab_ember_touch_name",
+  "descriptionKey": "ab_ember_touch_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "ember_touch",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_frost_touch",
+  "nameKey": "ab_frost_touch_name",
+  "descriptionKey": "ab_frost_touch_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "frost_touch",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_curse_touch",
+  "nameKey": "ab_curse_touch_name",
+  "descriptionKey": "ab_curse_touch_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "curse_touch",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_thorn_mail",
+  "nameKey": "ab_thorn_mail_name",
+  "descriptionKey": "ab_thorn_mail_desc",
+  "trigger": "ON_TAKING_DAMAGE",
+  "effectId": "thorn_mail",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_soul_siphon",
+  "nameKey": "ab_soul_siphon_name",
+  "descriptionKey": "ab_soul_siphon_desc",
+  "trigger": "ON_AFTER_DAMAGE",
+  "effectId": "soul_siphon",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_arcane_focus",
+  "nameKey": "ab_arcane_focus_name",
+  "descriptionKey": "ab_arcane_focus_desc",
+  "trigger": "ON_DEALING_DAMAGE",
+  "effectId": "arcane_focus",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_brute_force",
+  "nameKey": "ab_brute_force_name",
+  "descriptionKey": "ab_brute_force_desc",
+  "trigger": "ON_DEALING_DAMAGE",
+  "effectId": "brute_force",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_berserker",
+  "nameKey": "ab_berserker_name",
+  "descriptionKey": "ab_berserker_desc",
+  "trigger": "ON_DEALING_DAMAGE",
+  "effectId": "berserker",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_last_stand",
+  "nameKey": "ab_last_stand_name",
+  "descriptionKey": "ab_last_stand_desc",
+  "trigger": "ON_FAINT",
+  "effectId": "last_stand",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_keen_eye",
+  "nameKey": "ab_keen_eye_name",
+  "descriptionKey": "ab_keen_eye_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "keen_eye",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_rune_siphon",
+  "nameKey": "ab_rune_siphon_name",
+  "descriptionKey": "ab_rune_siphon_desc",
+  "trigger": "ON_TURN_END",
+  "effectId": "rune_siphon",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_call_rain",
+  "nameKey": "ab_call_rain_name",
+  "descriptionKey": "ab_call_rain_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "call_rain",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_call_snow",
+  "nameKey": "ab_call_snow_name",
+  "descriptionKey": "ab_call_snow_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "call_snow",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_call_sand",
+  "nameKey": "ab_call_sand_name",
+  "descriptionKey": "ab_call_sand_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "call_sand",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_call_heat",
+  "nameKey": "ab_call_heat_name",
+  "descriptionKey": "ab_call_heat_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "call_heat",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_call_aurora",
+  "nameKey": "ab_call_aurora_name",
+  "descriptionKey": "ab_call_aurora_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "call_aurora",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_intimidating_roar",
+  "nameKey": "ab_intimidating_roar_name",
+  "descriptionKey": "ab_intimidating_roar_desc",
+  "trigger": "ON_BATTLE_START",
+  "effectId": "intimidating_roar",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_lucky_star",
+  "nameKey": "ab_lucky_star_name",
+  "descriptionKey": "ab_lucky_star_desc",
+  "trigger": "PASSIVE_STAT",
+  "effectId": "lucky_star",
+  "magnitude": 1.0
+ },
+ {
+  "id": "ab_swift_strike",
+  "nameKey": "ab_swift_strike_name",
+  "descriptionKey": "ab_swift_strike_desc",
+  "trigger": "ON_DEALING_DAMAGE",
+  "effectId": "swift_strike",
+  "magnitude": 1.0
+ }
+]

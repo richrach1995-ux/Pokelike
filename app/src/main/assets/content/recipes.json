@@ -1,0 +1,1108 @@
+[
+ {
+  "id": "rec_elixier_klein",
+  "nameKey": "rec_elixier_klein_name",
+  "descriptionKey": "rec_elixier_klein_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_heil": 2
+  },
+  "goldCost": 40,
+  "resultItemId": "elixier_klein",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_elixier",
+  "nameKey": "rec_elixier_name",
+  "descriptionKey": "rec_elixier_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_heil": 4,
+   "kristall_frost": 1
+  },
+  "goldCost": 120,
+  "resultItemId": "elixier",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_elixier_gross",
+  "nameKey": "rec_elixier_gross_name",
+  "descriptionKey": "rec_elixier_gross_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_heil": 8,
+   "kristall_seele": 1
+  },
+  "goldCost": 300,
+  "resultItemId": "elixier_gross",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_allheilkraut",
+  "nameKey": "rec_allheilkraut_name",
+  "descriptionKey": "rec_allheilkraut_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_bann": 3,
+   "kraut_nacht": 2,
+   "pilz_nifl": 1
+  },
+  "goldCost": 260,
+  "resultItemId": "allheilkraut",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_lebensfunke",
+  "nameKey": "rec_lebensfunke_name",
+  "descriptionKey": "rec_lebensfunke_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kristall_seele": 2,
+   "staub_stern": 1
+  },
+  "goldCost": 600,
+  "resultItemId": "lebensfunke",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_lebensflamme",
+  "nameKey": "rec_lebensflamme_name",
+  "descriptionKey": "rec_lebensflamme_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kristall_seele": 4,
+   "traene_vanen": 1
+  },
+  "goldCost": 1800,
+  "resultItemId": "lebensflamme",
+  "resultAmount": 1,
+  "successChance": 0.85,
+  "tier": 4
+ },
+ {
+  "id": "rec_aether_klein",
+  "nameKey": "rec_aether_klein_name",
+  "descriptionKey": "rec_aether_klein_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kraut_nacht": 1
+  },
+  "goldCost": 150,
+  "resultItemId": "aether_klein",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_aether_gross",
+  "nameKey": "rec_aether_gross_name",
+  "descriptionKey": "rec_aether_gross_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "staub_stern": 1
+  },
+  "goldCost": 700,
+  "resultItemId": "aether_gross",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_balsam_brand",
+  "nameKey": "rec_balsam_brand_name",
+  "descriptionKey": "rec_balsam_brand_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "harz_muspel": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "balsam_brand",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_balsam_gift",
+  "nameKey": "rec_balsam_gift_name",
+  "descriptionKey": "rec_balsam_gift_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_bann": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "balsam_gift",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_bannwasser",
+  "nameKey": "rec_bannwasser_name",
+  "descriptionKey": "rec_bannwasser_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_nacht": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "bannwasser",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_nervenharz",
+  "nameKey": "rec_nervenharz_name",
+  "descriptionKey": "rec_nervenharz_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_heil": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "nervenharz",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_tauwasser",
+  "nameKey": "rec_tauwasser_name",
+  "descriptionKey": "rec_tauwasser_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kristall_frost": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "tauwasser",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_weckruf",
+  "nameKey": "rec_weckruf_name",
+  "descriptionKey": "rec_weckruf_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_nacht": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "weckruf",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_klarheitstee",
+  "nameKey": "rec_klarheitstee_name",
+  "descriptionKey": "rec_klarheitstee_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "kraut_heil": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "klarheitstee",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_verband",
+  "nameKey": "rec_verband_name",
+  "descriptionKey": "rec_verband_desc",
+  "station": "ALCHEMY_TABLE",
+  "ingredients": {
+   "leder_wolf": 2
+  },
+  "goldCost": 60,
+  "resultItemId": "verband",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_waffe_jagdspeer",
+  "nameKey": "rec_waffe_jagdspeer_name",
+  "descriptionKey": "rec_waffe_jagdspeer_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_eisen": 4,
+   "holz_esche": 2
+  },
+  "goldCost": 200,
+  "resultItemId": "waffe_jagdspeer",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_waffe_runenaxt",
+  "nameKey": "rec_waffe_runenaxt_name",
+  "descriptionKey": "rec_waffe_runenaxt_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_silber": 5,
+   "splitter_rune": 4,
+   "holz_esche": 3
+  },
+  "goldCost": 800,
+  "resultItemId": "waffe_runenaxt",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_waffe_gluthammer",
+  "nameKey": "rec_waffe_gluthammer_name",
+  "descriptionKey": "rec_waffe_gluthammer_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_sternenstahl": 3,
+   "kristall_glut": 4,
+   "gold_zwerg": 2
+  },
+  "goldCost": 2600,
+  "resultItemId": "waffe_gluthammer",
+  "resultAmount": 1,
+  "successChance": 0.8,
+  "tier": 4,
+  "byproductItemId": "asche_welt",
+  "byproductChance": 0.4
+ },
+ {
+  "id": "rec_waffe_walkuerenschwert",
+  "nameKey": "rec_waffe_walkuerenschwert_name",
+  "descriptionKey": "rec_waffe_walkuerenschwert_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_sternenstahl": 4,
+   "feder_walkuere": 3,
+   "staub_stern": 2
+  },
+  "goldCost": 3200,
+  "resultItemId": "waffe_walkuerenschwert",
+  "resultAmount": 1,
+  "successChance": 0.75,
+  "tier": 4
+ },
+ {
+  "id": "rec_ruestung_kettenhemd",
+  "nameKey": "rec_ruestung_kettenhemd_name",
+  "descriptionKey": "rec_ruestung_kettenhemd_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_eisen": 6,
+   "leder_wolf": 3
+  },
+  "goldCost": 320,
+  "resultItemId": "ruestung_kettenhemd",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_ruestung_zwergenplatte",
+  "nameKey": "rec_ruestung_zwergenplatte_name",
+  "descriptionKey": "rec_ruestung_zwergenplatte_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_silber": 8,
+   "gold_zwerg": 3
+  },
+  "goldCost": 1200,
+  "resultItemId": "ruestung_zwergenplatte",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_ruestung_asenharnisch",
+  "nameKey": "rec_ruestung_asenharnisch_name",
+  "descriptionKey": "rec_ruestung_asenharnisch_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_sternenstahl": 6,
+   "feder_walkuere": 4,
+   "traene_vanen": 2
+  },
+  "goldCost": 4200,
+  "resultItemId": "ruestung_asenharnisch",
+  "resultAmount": 1,
+  "successChance": 0.7,
+  "tier": 5
+ },
+ {
+  "id": "rec_helm_eisenhelm",
+  "nameKey": "rec_helm_eisenhelm_name",
+  "descriptionKey": "rec_helm_eisenhelm_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "erz_eisen": 3,
+   "leder_wolf": 1
+  },
+  "goldCost": 180,
+  "resultItemId": "helm_eisenhelm",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_helm_drachenhelm",
+  "nameKey": "rec_helm_drachenhelm_name",
+  "descriptionKey": "rec_helm_drachenhelm_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "schuppe_wyrm": 5,
+   "leder_drache": 3,
+   "erz_gold": 2
+  },
+  "goldCost": 2200,
+  "resultItemId": "helm_drachenhelm",
+  "resultAmount": 1,
+  "successChance": 0.85,
+  "tier": 4
+ },
+ {
+  "id": "rec_relikt_schmiedemal",
+  "nameKey": "rec_relikt_schmiedemal_name",
+  "descriptionKey": "rec_relikt_schmiedemal_desc",
+  "station": "FORGE",
+  "ingredients": {
+   "gold_zwerg": 4,
+   "erz_gold": 3
+  },
+  "goldCost": 1400,
+  "resultItemId": "relikt_schmiedemal",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_rune_lesser_fire",
+  "nameKey": "rec_rune_lesser_fire_name",
+  "descriptionKey": "rec_rune_lesser_fire_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_glut": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_fire",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_fire",
+  "nameKey": "rec_rune_fire_name",
+  "descriptionKey": "rec_rune_fire_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_fire",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_fire",
+  "nameKey": "rec_rune_greater_fire_name",
+  "descriptionKey": "rec_rune_greater_fire_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_fire",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_water",
+  "nameKey": "rec_rune_lesser_water_name",
+  "descriptionKey": "rec_rune_lesser_water_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_frost": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_water",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_water",
+  "nameKey": "rec_rune_water_name",
+  "descriptionKey": "rec_rune_water_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_water",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_water",
+  "nameKey": "rec_rune_greater_water_name",
+  "descriptionKey": "rec_rune_greater_water_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_water",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_ice",
+  "nameKey": "rec_rune_lesser_ice_name",
+  "descriptionKey": "rec_rune_lesser_ice_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_frost": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_ice",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_ice",
+  "nameKey": "rec_rune_ice_name",
+  "descriptionKey": "rec_rune_ice_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_ice",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_ice",
+  "nameKey": "rec_rune_greater_ice_name",
+  "descriptionKey": "rec_rune_greater_ice_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_ice",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_wind",
+  "nameKey": "rec_rune_lesser_wind_name",
+  "descriptionKey": "rec_rune_lesser_wind_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_sturm": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_wind",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_wind",
+  "nameKey": "rec_rune_wind_name",
+  "descriptionKey": "rec_rune_wind_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_wind",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_wind",
+  "nameKey": "rec_rune_greater_wind_name",
+  "descriptionKey": "rec_rune_greater_wind_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_wind",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_earth",
+  "nameKey": "rec_rune_lesser_earth_name",
+  "descriptionKey": "rec_rune_lesser_earth_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_glut": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_earth",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_earth",
+  "nameKey": "rec_rune_earth_name",
+  "descriptionKey": "rec_rune_earth_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_earth",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_earth",
+  "nameKey": "rec_rune_greater_earth_name",
+  "descriptionKey": "rec_rune_greater_earth_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_earth",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_nature",
+  "nameKey": "rec_rune_lesser_nature_name",
+  "descriptionKey": "rec_rune_lesser_nature_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_nature",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_nature",
+  "nameKey": "rec_rune_nature_name",
+  "descriptionKey": "rec_rune_nature_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_nature",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_nature",
+  "nameKey": "rec_rune_greater_nature_name",
+  "descriptionKey": "rec_rune_greater_nature_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_nature",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_thunder",
+  "nameKey": "rec_rune_lesser_thunder_name",
+  "descriptionKey": "rec_rune_lesser_thunder_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_sturm": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_thunder",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_thunder",
+  "nameKey": "rec_rune_thunder_name",
+  "descriptionKey": "rec_rune_thunder_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_thunder",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_thunder",
+  "nameKey": "rec_rune_greater_thunder_name",
+  "descriptionKey": "rec_rune_greater_thunder_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_thunder",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_light",
+  "nameKey": "rec_rune_lesser_light_name",
+  "descriptionKey": "rec_rune_lesser_light_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_light",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_light",
+  "nameKey": "rec_rune_light_name",
+  "descriptionKey": "rec_rune_light_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_light",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_light",
+  "nameKey": "rec_rune_greater_light_name",
+  "descriptionKey": "rec_rune_greater_light_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_light",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_shadow",
+  "nameKey": "rec_rune_lesser_shadow_name",
+  "descriptionKey": "rec_rune_lesser_shadow_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_seele": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_shadow",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_shadow",
+  "nameKey": "rec_rune_shadow_name",
+  "descriptionKey": "rec_rune_shadow_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_shadow",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_shadow",
+  "nameKey": "rec_rune_greater_shadow_name",
+  "descriptionKey": "rec_rune_greater_shadow_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_shadow",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_spirit",
+  "nameKey": "rec_rune_lesser_spirit_name",
+  "descriptionKey": "rec_rune_lesser_spirit_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 3,
+   "kristall_seele": 2
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_spirit",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_spirit",
+  "nameKey": "rec_rune_spirit_name",
+  "descriptionKey": "rec_rune_spirit_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_spirit",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_spirit",
+  "nameKey": "rec_rune_greater_spirit_name",
+  "descriptionKey": "rec_rune_greater_spirit_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_spirit",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_rune",
+  "nameKey": "rec_rune_lesser_rune_name",
+  "descriptionKey": "rec_rune_lesser_rune_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_rune",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_rune",
+  "nameKey": "rec_rune_rune_name",
+  "descriptionKey": "rec_rune_rune_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_rune",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_rune",
+  "nameKey": "rec_rune_greater_rune_name",
+  "descriptionKey": "rec_rune_greater_rune_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_rune",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_chaos",
+  "nameKey": "rec_rune_lesser_chaos_name",
+  "descriptionKey": "rec_rune_lesser_chaos_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_chaos",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_chaos",
+  "nameKey": "rec_rune_chaos_name",
+  "descriptionKey": "rec_rune_chaos_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_chaos",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_chaos",
+  "nameKey": "rec_rune_greater_chaos_name",
+  "descriptionKey": "rec_rune_greater_chaos_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_chaos",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_metal",
+  "nameKey": "rec_rune_lesser_metal_name",
+  "descriptionKey": "rec_rune_lesser_metal_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_metal",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_metal",
+  "nameKey": "rec_rune_metal_name",
+  "descriptionKey": "rec_rune_metal_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_metal",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_metal",
+  "nameKey": "rec_rune_greater_metal_name",
+  "descriptionKey": "rec_rune_greater_metal_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_metal",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_lesser_divine",
+  "nameKey": "rec_rune_lesser_divine_name",
+  "descriptionKey": "rec_rune_lesser_divine_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "splitter_rune": 5
+  },
+  "goldCost": 250,
+  "resultItemId": "rune_lesser_divine",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 1
+ },
+ {
+  "id": "rec_rune_divine",
+  "nameKey": "rec_rune_divine_name",
+  "descriptionKey": "rec_rune_divine_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 3,
+   "splitter_rune": 6
+  },
+  "goldCost": 900,
+  "resultItemId": "rune_divine",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 2
+ },
+ {
+  "id": "rec_rune_greater_divine",
+  "nameKey": "rec_rune_greater_divine_name",
+  "descriptionKey": "rec_rune_greater_divine_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 8,
+   "staub_stern": 3,
+   "faden_norne": 1
+  },
+  "goldCost": 2600,
+  "resultItemId": "rune_greater_divine",
+  "resultAmount": 1,
+  "successChance": 0.88,
+  "tier": 4
+ },
+ {
+  "id": "rec_rune_keen",
+  "nameKey": "rec_rune_keen_name",
+  "descriptionKey": "rec_rune_keen_desc",
+  "station": "RUNE_LOOM",
+  "ingredients": {
+   "scherbe_glyphe": 6,
+   "feder_walkuere": 2
+  },
+  "goldCost": 1800,
+  "resultItemId": "rune_keen",
+  "resultAmount": 1,
+  "successChance": 1.0,
+  "tier": 3
+ },
+ {
+  "id": "rec_amulett_weltenbaum",
+  "nameKey": "rec_amulett_weltenbaum_name",
+  "descriptionKey": "rec_amulett_weltenbaum_desc",
+  "station": "ALTAR",
+  "ingredients": {
+   "holz_weltenast": 2,
+   "faden_norne": 2,
+   "traene_vanen": 3
+  },
+  "goldCost": 6000,
+  "resultItemId": "amulett_weltenbaum",
+  "resultAmount": 1,
+  "successChance": 0.6,
+  "tier": 5,
+  "byproductItemId": "asche_welt",
+  "byproductChance": 0.5
+ },
+ {
+  "id": "rec_relikt_nornenspindel",
+  "nameKey": "rec_relikt_nornenspindel_name",
+  "descriptionKey": "rec_relikt_nornenspindel_desc",
+  "station": "ALTAR",
+  "ingredients": {
+   "faden_norne": 3,
+   "staub_stern": 4
+  },
+  "goldCost": 4800,
+  "resultItemId": "relikt_nornenspindel",
+  "resultAmount": 1,
+  "successChance": 0.65,
+  "tier": 5
+ },
+ {
+  "id": "rec_orb_legend",
+  "nameKey": "rec_orb_legend_name",
+  "descriptionKey": "rec_orb_legend_desc",
+  "station": "ALTAR",
+  "ingredients": {
+   "essenz_chaos": 2,
+   "gold_zwerg": 5,
+   "faden_norne": 1
+  },
+  "goldCost": 3000,
+  "resultItemId": "orb_legend",
+  "resultAmount": 3,
+  "successChance": 0.7,
+  "tier": 5
+ },
+ {
+  "id": "rec_orb_divine",
+  "nameKey": "rec_orb_divine_name",
+  "descriptionKey": "rec_orb_divine_desc",
+  "station": "ALTAR",
+  "ingredients": {
+   "staub_stern": 4,
+   "gold_zwerg": 3
+  },
+  "goldCost": 1800,
+  "resultItemId": "orb_divine",
+  "resultAmount": 5,
+  "successChance": 0.85,
+  "tier": 4
+ }
+]

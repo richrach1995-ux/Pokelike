@@ -1,0 +1,3196 @@
+[
+ {
+  "id": "orb_wood",
+  "nameKey": "orb_wood_name",
+  "descriptionKey": "orb_wood_desc",
+  "category": "RUNE_ORB",
+  "price": 120,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_wood",
+  "rarityTier": 1,
+  "orbSpec": {
+   "grade": "WOOD",
+   "catchMultiplier": 1.0,
+   "conditionalBonus": 1.0,
+   "condition": "NONE",
+   "shakeAnimationKey": "anim_orb_wood"
+  }
+ },
+ {
+  "id": "orb_stone",
+  "nameKey": "orb_stone_name",
+  "descriptionKey": "orb_stone_desc",
+  "category": "RUNE_ORB",
+  "price": 320,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_stone",
+  "rarityTier": 2,
+  "orbSpec": {
+   "grade": "STONE",
+   "catchMultiplier": 1.35,
+   "conditionalBonus": 1.6,
+   "condition": "LOW_TARGET_HP",
+   "shakeAnimationKey": "anim_orb_stone"
+  }
+ },
+ {
+  "id": "orb_iron",
+  "nameKey": "orb_iron_name",
+  "descriptionKey": "orb_iron_desc",
+  "category": "RUNE_ORB",
+  "price": 700,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_iron",
+  "rarityTier": 3,
+  "orbSpec": {
+   "grade": "IRON",
+   "catchMultiplier": 1.7,
+   "conditionalBonus": 1.7,
+   "condition": "TARGET_HAS_STATUS",
+   "shakeAnimationKey": "anim_orb_iron"
+  }
+ },
+ {
+  "id": "orb_silver",
+  "nameKey": "orb_silver_name",
+  "descriptionKey": "orb_silver_desc",
+  "category": "RUNE_ORB",
+  "price": 1400,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_silver",
+  "rarityTier": 4,
+  "orbSpec": {
+   "grade": "SILVER",
+   "catchMultiplier": 2.1,
+   "conditionalBonus": 2.0,
+   "condition": "AT_NIGHT",
+   "shakeAnimationKey": "anim_orb_silver"
+  }
+ },
+ {
+  "id": "orb_gold",
+  "nameKey": "orb_gold_name",
+  "descriptionKey": "orb_gold_desc",
+  "category": "RUNE_ORB",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_gold",
+  "rarityTier": 5,
+  "orbSpec": {
+   "grade": "GOLD",
+   "catchMultiplier": 2.6,
+   "conditionalBonus": 1.9,
+   "condition": "HIGH_LEVEL_TARGET",
+   "shakeAnimationKey": "anim_orb_gold"
+  }
+ },
+ {
+  "id": "orb_mythic",
+  "nameKey": "orb_mythic_name",
+  "descriptionKey": "orb_mythic_desc",
+  "category": "RUNE_ORB",
+  "price": 5200,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_mythic",
+  "rarityTier": 6,
+  "orbSpec": {
+   "grade": "MYTHIC",
+   "catchMultiplier": 3.2,
+   "conditionalBonus": 2.2,
+   "condition": "LONG_BATTLE",
+   "shakeAnimationKey": "anim_orb_mythic"
+  }
+ },
+ {
+  "id": "orb_divine",
+  "nameKey": "orb_divine_name",
+  "descriptionKey": "orb_divine_desc",
+  "category": "RUNE_ORB",
+  "price": 9000,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_divine",
+  "rarityTier": 7,
+  "orbSpec": {
+   "grade": "DIVINE",
+   "catchMultiplier": 3.9,
+   "conditionalBonus": 2.4,
+   "condition": "MATCHING_WORLD",
+   "shakeAnimationKey": "anim_orb_divine"
+  }
+ },
+ {
+  "id": "orb_legend",
+  "nameKey": "orb_legend_name",
+  "descriptionKey": "orb_legend_desc",
+  "category": "RUNE_ORB",
+  "price": 0,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_orb_legend",
+  "rarityTier": 8,
+  "orbSpec": {
+   "grade": "LEGENDARY",
+   "catchMultiplier": 4.8,
+   "conditionalBonus": 2.8,
+   "condition": "LEGENDARY_TARGET",
+   "shakeAnimationKey": "anim_orb_legend"
+  }
+ },
+ {
+  "id": "elixier_klein",
+  "nameKey": "elixier_klein_name",
+  "descriptionKey": "elixier_klein_desc",
+  "category": "HEALING",
+  "price": 200,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestoreHp",
+    "amount": 60
+   }
+  ],
+  "iconKey": "ic_elixier_klein",
+  "rarityTier": 1
+ },
+ {
+  "id": "elixier",
+  "nameKey": "elixier_name",
+  "descriptionKey": "elixier_desc",
+  "category": "HEALING",
+  "price": 500,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestoreHp",
+    "amount": 150
+   }
+  ],
+  "iconKey": "ic_elixier",
+  "rarityTier": 2
+ },
+ {
+  "id": "elixier_gross",
+  "nameKey": "elixier_gross_name",
+  "descriptionKey": "elixier_gross_desc",
+  "category": "HEALING",
+  "price": 1100,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestoreHp",
+    "amount": 320
+   }
+  ],
+  "iconKey": "ic_elixier_gross",
+  "rarityTier": 3
+ },
+ {
+  "id": "elixier_meister",
+  "nameKey": "elixier_meister_name",
+  "descriptionKey": "elixier_meister_desc",
+  "category": "HEALING",
+  "price": 2400,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestoreHpFraction",
+    "fraction": 1.0
+   }
+  ],
+  "iconKey": "ic_elixier_meister",
+  "rarityTier": 4
+ },
+ {
+  "id": "balsam_brand",
+  "nameKey": "balsam_brand_name",
+  "descriptionKey": "balsam_brand_desc",
+  "category": "HEALING",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "BURN"
+    ]
+   }
+  ],
+  "iconKey": "ic_balsam_brand",
+  "rarityTier": 1
+ },
+ {
+  "id": "balsam_gift",
+  "nameKey": "balsam_gift_name",
+  "descriptionKey": "balsam_gift_desc",
+  "category": "HEALING",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "POISON"
+    ]
+   }
+  ],
+  "iconKey": "ic_balsam_gift",
+  "rarityTier": 1
+ },
+ {
+  "id": "weckruf",
+  "nameKey": "weckruf_name",
+  "descriptionKey": "weckruf_desc",
+  "category": "HEALING",
+  "price": 240,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "SLEEP"
+    ]
+   }
+  ],
+  "iconKey": "ic_weckruf",
+  "rarityTier": 1
+ },
+ {
+  "id": "tauwasser",
+  "nameKey": "tauwasser_name",
+  "descriptionKey": "tauwasser_desc",
+  "category": "HEALING",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "FREEZE"
+    ]
+   }
+  ],
+  "iconKey": "ic_tauwasser",
+  "rarityTier": 1
+ },
+ {
+  "id": "klarheitstee",
+  "nameKey": "klarheitstee_name",
+  "descriptionKey": "klarheitstee_desc",
+  "category": "HEALING",
+  "price": 280,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "CONFUSION"
+    ]
+   }
+  ],
+  "iconKey": "ic_klarheitstee",
+  "rarityTier": 1
+ },
+ {
+  "id": "verband",
+  "nameKey": "verband_name",
+  "descriptionKey": "verband_desc",
+  "category": "HEALING",
+  "price": 300,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "BLEED"
+    ]
+   }
+  ],
+  "iconKey": "ic_verband",
+  "rarityTier": 1
+ },
+ {
+  "id": "bannwasser",
+  "nameKey": "bannwasser_name",
+  "descriptionKey": "bannwasser_desc",
+  "category": "HEALING",
+  "price": 420,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "CURSE"
+    ]
+   }
+  ],
+  "iconKey": "ic_bannwasser",
+  "rarityTier": 2
+ },
+ {
+  "id": "nervenharz",
+  "nameKey": "nervenharz_name",
+  "descriptionKey": "nervenharz_desc",
+  "category": "HEALING",
+  "price": 300,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": [
+     "PARALYSIS"
+    ]
+   }
+  ],
+  "iconKey": "ic_nervenharz",
+  "rarityTier": 1
+ },
+ {
+  "id": "allheilkraut",
+  "nameKey": "allheilkraut_name",
+  "descriptionKey": "allheilkraut_desc",
+  "category": "HEALING",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "CureStatus",
+    "conditions": []
+   }
+  ],
+  "iconKey": "ic_allheilkraut",
+  "rarityTier": 3
+ },
+ {
+  "id": "lebensfunke",
+  "nameKey": "lebensfunke_name",
+  "descriptionKey": "lebensfunke_desc",
+  "category": "HEALING",
+  "price": 1500,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "Revive",
+    "hpFraction": 0.5
+   }
+  ],
+  "iconKey": "ic_lebensfunke",
+  "rarityTier": 3
+ },
+ {
+  "id": "lebensflamme",
+  "nameKey": "lebensflamme_name",
+  "descriptionKey": "lebensflamme_desc",
+  "category": "HEALING",
+  "price": 3200,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "Revive",
+    "hpFraction": 1.0
+   }
+  ],
+  "iconKey": "ic_lebensflamme",
+  "rarityTier": 4
+ },
+ {
+  "id": "aether_klein",
+  "nameKey": "aether_klein_name",
+  "descriptionKey": "aether_klein_desc",
+  "category": "HEALING",
+  "price": 400,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestorePp",
+    "amount": 10
+   }
+  ],
+  "iconKey": "ic_aether_klein",
+  "rarityTier": 2
+ },
+ {
+  "id": "aether_gross",
+  "nameKey": "aether_gross_name",
+  "descriptionKey": "aether_gross_desc",
+  "category": "HEALING",
+  "price": 1600,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "RestorePp",
+    "amount": 20,
+    "allMoves": true
+   }
+  ],
+  "iconKey": "ic_aether_gross",
+  "rarityTier": 3
+ },
+ {
+  "id": "kraftmet",
+  "nameKey": "kraftmet_name",
+  "descriptionKey": "kraftmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "attack": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_kraftmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "wehrmet",
+  "nameKey": "wehrmet_name",
+  "descriptionKey": "wehrmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "defense": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_wehrmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "weisheitsmet",
+  "nameKey": "weisheitsmet_name",
+  "descriptionKey": "weisheitsmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "magic": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_weisheitsmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "bannmet",
+  "nameKey": "bannmet_name",
+  "descriptionKey": "bannmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "resistance": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_bannmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "windmet",
+  "nameKey": "windmet_name",
+  "descriptionKey": "windmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "speed": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_windmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "gluecksmet",
+  "nameKey": "gluecksmet_name",
+  "descriptionKey": "gluecksmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "luck": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_gluecksmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "lebensmet",
+  "nameKey": "lebensmet_name",
+  "descriptionKey": "lebensmet_desc",
+  "category": "HEALING",
+  "price": 3800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GrantTraining",
+    "gains": {
+     "hp": 10
+    }
+   },
+   {
+    "type": "GrantFriendship",
+    "amount": 4
+   }
+  ],
+  "iconKey": "ic_lebensmet",
+  "rarityTier": 3
+ },
+ {
+  "id": "kampfruf_angriff",
+  "nameKey": "kampfruf_angriff_name",
+  "descriptionKey": "kampfruf_angriff_desc",
+  "category": "BATTLE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "BattleStatBoost",
+    "stat": "ATTACK",
+    "stages": 2
+   }
+  ],
+  "iconKey": "ic_kampfruf_angriff",
+  "rarityTier": 2
+ },
+ {
+  "id": "kampfruf_wehr",
+  "nameKey": "kampfruf_wehr_name",
+  "descriptionKey": "kampfruf_wehr_desc",
+  "category": "BATTLE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "BattleStatBoost",
+    "stat": "DEFENSE",
+    "stages": 2
+   }
+  ],
+  "iconKey": "ic_kampfruf_wehr",
+  "rarityTier": 2
+ },
+ {
+  "id": "kampfruf_magie",
+  "nameKey": "kampfruf_magie_name",
+  "descriptionKey": "kampfruf_magie_desc",
+  "category": "BATTLE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "BattleStatBoost",
+    "stat": "MAGIC",
+    "stages": 2
+   }
+  ],
+  "iconKey": "ic_kampfruf_magie",
+  "rarityTier": 2
+ },
+ {
+  "id": "kampfruf_bann",
+  "nameKey": "kampfruf_bann_name",
+  "descriptionKey": "kampfruf_bann_desc",
+  "category": "BATTLE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "BattleStatBoost",
+    "stat": "RESISTANCE",
+    "stages": 2
+   }
+  ],
+  "iconKey": "ic_kampfruf_bann",
+  "rarityTier": 2
+ },
+ {
+  "id": "kampfruf_hast",
+  "nameKey": "kampfruf_hast_name",
+  "descriptionKey": "kampfruf_hast_desc",
+  "category": "BATTLE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": true,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "BattleStatBoost",
+    "stat": "SPEED",
+    "stages": 2
+   }
+  ],
+  "iconKey": "ic_kampfruf_hast",
+  "rarityTier": 2
+ },
+ {
+  "id": "stein_glut",
+  "nameKey": "stein_glut_name",
+  "descriptionKey": "stein_glut_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_glut",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_flut",
+  "nameKey": "stein_flut_name",
+  "descriptionKey": "stein_flut_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_flut",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_frost",
+  "nameKey": "stein_frost_name",
+  "descriptionKey": "stein_frost_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_frost",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_sturm",
+  "nameKey": "stein_sturm_name",
+  "descriptionKey": "stein_sturm_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_sturm",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_fels",
+  "nameKey": "stein_fels_name",
+  "descriptionKey": "stein_fels_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_fels",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_hain",
+  "nameKey": "stein_hain_name",
+  "descriptionKey": "stein_hain_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_hain",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_blitz",
+  "nameKey": "stein_blitz_name",
+  "descriptionKey": "stein_blitz_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_blitz",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_glanz",
+  "nameKey": "stein_glanz_name",
+  "descriptionKey": "stein_glanz_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_glanz",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_schatten",
+  "nameKey": "stein_schatten_name",
+  "descriptionKey": "stein_schatten_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_schatten",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_geist",
+  "nameKey": "stein_geist_name",
+  "descriptionKey": "stein_geist_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_geist",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_rune",
+  "nameKey": "stein_rune_name",
+  "descriptionKey": "stein_rune_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_rune",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_chaos",
+  "nameKey": "stein_chaos_name",
+  "descriptionKey": "stein_chaos_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_chaos",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_erz",
+  "nameKey": "stein_erz_name",
+  "descriptionKey": "stein_erz_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_erz",
+  "rarityTier": 3
+ },
+ {
+  "id": "stein_asen",
+  "nameKey": "stein_asen_name",
+  "descriptionKey": "stein_asen_desc",
+  "category": "EVOLUTION",
+  "price": 3000,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "TriggerEvolution",
+    "allowedSpeciesIds": []
+   }
+  ],
+  "iconKey": "ic_stein_asen",
+  "rarityTier": 3
+ },
+ {
+  "id": "erz_eisen",
+  "nameKey": "erz_eisen_name",
+  "descriptionKey": "erz_eisen_desc",
+  "category": "MATERIAL",
+  "price": 60,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_erz_eisen",
+  "rarityTier": 1
+ },
+ {
+  "id": "erz_silber",
+  "nameKey": "erz_silber_name",
+  "descriptionKey": "erz_silber_desc",
+  "category": "MATERIAL",
+  "price": 180,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_erz_silber",
+  "rarityTier": 2
+ },
+ {
+  "id": "erz_gold",
+  "nameKey": "erz_gold_name",
+  "descriptionKey": "erz_gold_desc",
+  "category": "MATERIAL",
+  "price": 420,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_erz_gold",
+  "rarityTier": 3
+ },
+ {
+  "id": "erz_sternenstahl",
+  "nameKey": "erz_sternenstahl_name",
+  "descriptionKey": "erz_sternenstahl_desc",
+  "category": "MATERIAL",
+  "price": 1400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_erz_sternenstahl",
+  "rarityTier": 4
+ },
+ {
+  "id": "holz_esche",
+  "nameKey": "holz_esche_name",
+  "descriptionKey": "holz_esche_desc",
+  "category": "MATERIAL",
+  "price": 40,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_holz_esche",
+  "rarityTier": 1
+ },
+ {
+  "id": "holz_weltenast",
+  "nameKey": "holz_weltenast_name",
+  "descriptionKey": "holz_weltenast_desc",
+  "category": "MATERIAL",
+  "price": 1800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_holz_weltenast",
+  "rarityTier": 4
+ },
+ {
+  "id": "leder_wolf",
+  "nameKey": "leder_wolf_name",
+  "descriptionKey": "leder_wolf_desc",
+  "category": "MATERIAL",
+  "price": 80,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_leder_wolf",
+  "rarityTier": 1
+ },
+ {
+  "id": "leder_drache",
+  "nameKey": "leder_drache_name",
+  "descriptionKey": "leder_drache_desc",
+  "category": "MATERIAL",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_leder_drache",
+  "rarityTier": 3
+ },
+ {
+  "id": "schuppe_wyrm",
+  "nameKey": "schuppe_wyrm_name",
+  "descriptionKey": "schuppe_wyrm_desc",
+  "category": "MATERIAL",
+  "price": 520,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_schuppe_wyrm",
+  "rarityTier": 3
+ },
+ {
+  "id": "feder_walkuere",
+  "nameKey": "feder_walkuere_name",
+  "descriptionKey": "feder_walkuere_desc",
+  "category": "MATERIAL",
+  "price": 1100,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_feder_walkuere",
+  "rarityTier": 4
+ },
+ {
+  "id": "kraut_heil",
+  "nameKey": "kraut_heil_name",
+  "descriptionKey": "kraut_heil_desc",
+  "category": "MATERIAL",
+  "price": 30,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kraut_heil",
+  "rarityTier": 1
+ },
+ {
+  "id": "kraut_bann",
+  "nameKey": "kraut_bann_name",
+  "descriptionKey": "kraut_bann_desc",
+  "category": "MATERIAL",
+  "price": 70,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kraut_bann",
+  "rarityTier": 1
+ },
+ {
+  "id": "kraut_nacht",
+  "nameKey": "kraut_nacht_name",
+  "descriptionKey": "kraut_nacht_desc",
+  "category": "MATERIAL",
+  "price": 120,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kraut_nacht",
+  "rarityTier": 2
+ },
+ {
+  "id": "pilz_nifl",
+  "nameKey": "pilz_nifl_name",
+  "descriptionKey": "pilz_nifl_desc",
+  "category": "MATERIAL",
+  "price": 150,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_pilz_nifl",
+  "rarityTier": 2
+ },
+ {
+  "id": "harz_muspel",
+  "nameKey": "harz_muspel_name",
+  "descriptionKey": "harz_muspel_desc",
+  "category": "MATERIAL",
+  "price": 210,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_harz_muspel",
+  "rarityTier": 2
+ },
+ {
+  "id": "kristall_frost",
+  "nameKey": "kristall_frost_name",
+  "descriptionKey": "kristall_frost_desc",
+  "category": "MATERIAL",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kristall_frost",
+  "rarityTier": 2
+ },
+ {
+  "id": "kristall_glut",
+  "nameKey": "kristall_glut_name",
+  "descriptionKey": "kristall_glut_desc",
+  "category": "MATERIAL",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kristall_glut",
+  "rarityTier": 2
+ },
+ {
+  "id": "kristall_sturm",
+  "nameKey": "kristall_sturm_name",
+  "descriptionKey": "kristall_sturm_desc",
+  "category": "MATERIAL",
+  "price": 260,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kristall_sturm",
+  "rarityTier": 2
+ },
+ {
+  "id": "kristall_seele",
+  "nameKey": "kristall_seele_name",
+  "descriptionKey": "kristall_seele_desc",
+  "category": "MATERIAL",
+  "price": 640,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_kristall_seele",
+  "rarityTier": 3
+ },
+ {
+  "id": "splitter_rune",
+  "nameKey": "splitter_rune_name",
+  "descriptionKey": "splitter_rune_desc",
+  "category": "MATERIAL",
+  "price": 90,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_splitter_rune",
+  "rarityTier": 1
+ },
+ {
+  "id": "scherbe_glyphe",
+  "nameKey": "scherbe_glyphe_name",
+  "descriptionKey": "scherbe_glyphe_desc",
+  "category": "MATERIAL",
+  "price": 240,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_scherbe_glyphe",
+  "rarityTier": 2
+ },
+ {
+  "id": "staub_stern",
+  "nameKey": "staub_stern_name",
+  "descriptionKey": "staub_stern_desc",
+  "category": "MATERIAL",
+  "price": 380,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_staub_stern",
+  "rarityTier": 3
+ },
+ {
+  "id": "asche_welt",
+  "nameKey": "asche_welt_name",
+  "descriptionKey": "asche_welt_desc",
+  "category": "MATERIAL",
+  "price": 720,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_asche_welt",
+  "rarityTier": 3
+ },
+ {
+  "id": "traene_vanen",
+  "nameKey": "traene_vanen_name",
+  "descriptionKey": "traene_vanen_desc",
+  "category": "MATERIAL",
+  "price": 1600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_traene_vanen",
+  "rarityTier": 4
+ },
+ {
+  "id": "horn_jotun",
+  "nameKey": "horn_jotun_name",
+  "descriptionKey": "horn_jotun_desc",
+  "category": "MATERIAL",
+  "price": 980,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_horn_jotun",
+  "rarityTier": 3
+ },
+ {
+  "id": "knochen_draug",
+  "nameKey": "knochen_draug_name",
+  "descriptionKey": "knochen_draug_desc",
+  "category": "MATERIAL",
+  "price": 340,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_knochen_draug",
+  "rarityTier": 2
+ },
+ {
+  "id": "faden_norne",
+  "nameKey": "faden_norne_name",
+  "descriptionKey": "faden_norne_desc",
+  "category": "MATERIAL",
+  "price": 2200,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_faden_norne",
+  "rarityTier": 5
+ },
+ {
+  "id": "blut_fenrir",
+  "nameKey": "blut_fenrir_name",
+  "descriptionKey": "blut_fenrir_desc",
+  "category": "MATERIAL",
+  "price": 1300,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_blut_fenrir",
+  "rarityTier": 4
+ },
+ {
+  "id": "essenz_chaos",
+  "nameKey": "essenz_chaos_name",
+  "descriptionKey": "essenz_chaos_desc",
+  "category": "MATERIAL",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_essenz_chaos",
+  "rarityTier": 5
+ },
+ {
+  "id": "gold_zwerg",
+  "nameKey": "gold_zwerg_name",
+  "descriptionKey": "gold_zwerg_desc",
+  "category": "MATERIAL",
+  "price": 800,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [],
+  "iconKey": "ic_gold_zwerg",
+  "rarityTier": 3
+ },
+ {
+  "id": "rune_lesser_fire",
+  "nameKey": "rune_lesser_fire_name",
+  "descriptionKey": "rune_lesser_fire_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_fire",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "FIRE",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_fire",
+  "nameKey": "rune_fire_name",
+  "descriptionKey": "rune_fire_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_fire",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "FIRE",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_fire",
+  "nameKey": "rune_greater_fire_name",
+  "descriptionKey": "rune_greater_fire_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_fire",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "FIRE",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_water",
+  "nameKey": "rune_lesser_water_name",
+  "descriptionKey": "rune_lesser_water_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_water",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "WATER",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_water",
+  "nameKey": "rune_water_name",
+  "descriptionKey": "rune_water_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_water",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "WATER",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_water",
+  "nameKey": "rune_greater_water_name",
+  "descriptionKey": "rune_greater_water_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_water",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "WATER",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_ice",
+  "nameKey": "rune_lesser_ice_name",
+  "descriptionKey": "rune_lesser_ice_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_ice",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "ICE",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_ice",
+  "nameKey": "rune_ice_name",
+  "descriptionKey": "rune_ice_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_ice",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "ICE",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_ice",
+  "nameKey": "rune_greater_ice_name",
+  "descriptionKey": "rune_greater_ice_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_ice",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "ICE",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_wind",
+  "nameKey": "rune_lesser_wind_name",
+  "descriptionKey": "rune_lesser_wind_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_wind",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "WIND",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_wind",
+  "nameKey": "rune_wind_name",
+  "descriptionKey": "rune_wind_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_wind",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "WIND",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_wind",
+  "nameKey": "rune_greater_wind_name",
+  "descriptionKey": "rune_greater_wind_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_wind",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "WIND",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_earth",
+  "nameKey": "rune_lesser_earth_name",
+  "descriptionKey": "rune_lesser_earth_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_earth",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "EARTH",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_earth",
+  "nameKey": "rune_earth_name",
+  "descriptionKey": "rune_earth_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_earth",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "EARTH",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_earth",
+  "nameKey": "rune_greater_earth_name",
+  "descriptionKey": "rune_greater_earth_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_earth",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "EARTH",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_nature",
+  "nameKey": "rune_lesser_nature_name",
+  "descriptionKey": "rune_lesser_nature_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_nature",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "NATURE",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_nature",
+  "nameKey": "rune_nature_name",
+  "descriptionKey": "rune_nature_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_nature",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "NATURE",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_nature",
+  "nameKey": "rune_greater_nature_name",
+  "descriptionKey": "rune_greater_nature_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_nature",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "NATURE",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_thunder",
+  "nameKey": "rune_lesser_thunder_name",
+  "descriptionKey": "rune_lesser_thunder_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_thunder",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "THUNDER",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_thunder",
+  "nameKey": "rune_thunder_name",
+  "descriptionKey": "rune_thunder_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_thunder",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "THUNDER",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_thunder",
+  "nameKey": "rune_greater_thunder_name",
+  "descriptionKey": "rune_greater_thunder_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_thunder",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "THUNDER",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_light",
+  "nameKey": "rune_lesser_light_name",
+  "descriptionKey": "rune_lesser_light_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_light",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "LIGHT",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_light",
+  "nameKey": "rune_light_name",
+  "descriptionKey": "rune_light_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_light",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "LIGHT",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_light",
+  "nameKey": "rune_greater_light_name",
+  "descriptionKey": "rune_greater_light_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_light",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "LIGHT",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_shadow",
+  "nameKey": "rune_lesser_shadow_name",
+  "descriptionKey": "rune_lesser_shadow_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_shadow",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "SHADOW",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_shadow",
+  "nameKey": "rune_shadow_name",
+  "descriptionKey": "rune_shadow_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_shadow",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "SHADOW",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_shadow",
+  "nameKey": "rune_greater_shadow_name",
+  "descriptionKey": "rune_greater_shadow_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_shadow",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "SHADOW",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_spirit",
+  "nameKey": "rune_lesser_spirit_name",
+  "descriptionKey": "rune_lesser_spirit_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_spirit",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "SPIRIT",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_spirit",
+  "nameKey": "rune_spirit_name",
+  "descriptionKey": "rune_spirit_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_spirit",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "SPIRIT",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_spirit",
+  "nameKey": "rune_greater_spirit_name",
+  "descriptionKey": "rune_greater_spirit_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_spirit",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "SPIRIT",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_rune",
+  "nameKey": "rune_lesser_rune_name",
+  "descriptionKey": "rune_lesser_rune_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_rune",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "RUNE",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_rune",
+  "nameKey": "rune_rune_name",
+  "descriptionKey": "rune_rune_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_rune",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "RUNE",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_rune",
+  "nameKey": "rune_greater_rune_name",
+  "descriptionKey": "rune_greater_rune_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_rune",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "RUNE",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_chaos",
+  "nameKey": "rune_lesser_chaos_name",
+  "descriptionKey": "rune_lesser_chaos_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_chaos",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "CHAOS",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_chaos",
+  "nameKey": "rune_chaos_name",
+  "descriptionKey": "rune_chaos_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_chaos",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "CHAOS",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_chaos",
+  "nameKey": "rune_greater_chaos_name",
+  "descriptionKey": "rune_greater_chaos_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_chaos",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "CHAOS",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_metal",
+  "nameKey": "rune_lesser_metal_name",
+  "descriptionKey": "rune_lesser_metal_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_metal",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "METAL",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_metal",
+  "nameKey": "rune_metal_name",
+  "descriptionKey": "rune_metal_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_metal",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "METAL",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_metal",
+  "nameKey": "rune_greater_metal_name",
+  "descriptionKey": "rune_greater_metal_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_metal",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "METAL",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_lesser_divine",
+  "nameKey": "rune_lesser_divine_name",
+  "descriptionKey": "rune_lesser_divine_desc",
+  "category": "RUNE",
+  "price": 900,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_lesser_divine",
+  "rarityTier": 1,
+  "runeSpec": {
+   "element": "DIVINE",
+   "statBonus": {
+    "attack": 6,
+    "magic": 6
+   },
+   "bindCost": 225,
+   "tier": 1
+  }
+ },
+ {
+  "id": "rune_divine",
+  "nameKey": "rune_divine_name",
+  "descriptionKey": "rune_divine_desc",
+  "category": "RUNE",
+  "price": 2600,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_divine",
+  "rarityTier": 2,
+  "runeSpec": {
+   "element": "DIVINE",
+   "statBonus": {
+    "attack": 12,
+    "magic": 12
+   },
+   "bindCost": 650,
+   "tier": 2
+  }
+ },
+ {
+  "id": "rune_greater_divine",
+  "nameKey": "rune_greater_divine_name",
+  "descriptionKey": "rune_greater_divine_desc",
+  "category": "RUNE",
+  "price": 6400,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_greater_divine",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": "DIVINE",
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   },
+   "bindCost": 1600,
+   "tier": 3
+  }
+ },
+ {
+  "id": "rune_keen",
+  "nameKey": "rune_keen_name",
+  "descriptionKey": "rune_keen_desc",
+  "category": "RUNE",
+  "price": 4200,
+  "stackLimit": 99,
+  "usableInBattle": false,
+  "usableOnMonster": true,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_rune_keen",
+  "rarityTier": 3,
+  "runeSpec": {
+   "element": null,
+   "statBonus": {
+    "luck": 15
+   },
+   "bindCost": 1000,
+   "tier": 3
+  }
+ },
+ {
+  "id": "waffe_wanderstab",
+  "nameKey": "waffe_wanderstab_name",
+  "descriptionKey": "waffe_wanderstab_desc",
+  "category": "EQUIPMENT",
+  "price": 400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_wanderstab",
+  "rarityTier": 1,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "magic": 4
+   },
+   "levelRequirement": 1
+  }
+ },
+ {
+  "id": "waffe_jagdspeer",
+  "nameKey": "waffe_jagdspeer_name",
+  "descriptionKey": "waffe_jagdspeer_desc",
+  "category": "EQUIPMENT",
+  "price": 700,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_jagdspeer",
+  "rarityTier": 2,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "attack": 7
+   },
+   "levelRequirement": 12
+  }
+ },
+ {
+  "id": "waffe_runenaxt",
+  "nameKey": "waffe_runenaxt_name",
+  "descriptionKey": "waffe_runenaxt_desc",
+  "category": "EQUIPMENT",
+  "price": 2200,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_runenaxt",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "attack": 14,
+    "luck": 4
+   },
+   "levelRequirement": 24
+  }
+ },
+ {
+  "id": "waffe_seidrstab",
+  "nameKey": "waffe_seidrstab_name",
+  "descriptionKey": "waffe_seidrstab_desc",
+  "category": "EQUIPMENT",
+  "price": 2400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_seidrstab",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "magic": 15
+   },
+   "levelRequirement": 24
+  }
+ },
+ {
+  "id": "waffe_walkuerenschwert",
+  "nameKey": "waffe_walkuerenschwert_name",
+  "descriptionKey": "waffe_walkuerenschwert_desc",
+  "category": "EQUIPMENT",
+  "price": 6800,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_walkuerenschwert",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "attack": 24,
+    "speed": 6
+   },
+   "levelRequirement": 36,
+   "elementAffinity": "DIVINE",
+   "affinityBonusPercent": 8
+  }
+ },
+ {
+  "id": "waffe_gluthammer",
+  "nameKey": "waffe_gluthammer_name",
+  "descriptionKey": "waffe_gluthammer_desc",
+  "category": "EQUIPMENT",
+  "price": 6400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_waffe_gluthammer",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "WEAPON",
+   "statBonus": {
+    "attack": 26
+   },
+   "levelRequirement": 36,
+   "elementAffinity": "FIRE",
+   "affinityBonusPercent": 10
+  }
+ },
+ {
+  "id": "ruestung_lederwams",
+  "nameKey": "ruestung_lederwams_name",
+  "descriptionKey": "ruestung_lederwams_desc",
+  "category": "EQUIPMENT",
+  "price": 380,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_ruestung_lederwams",
+  "rarityTier": 1,
+  "equipmentSpec": {
+   "slot": "ARMOR",
+   "statBonus": {
+    "defense": 5
+   },
+   "levelRequirement": 1
+  }
+ },
+ {
+  "id": "ruestung_kettenhemd",
+  "nameKey": "ruestung_kettenhemd_name",
+  "descriptionKey": "ruestung_kettenhemd_desc",
+  "category": "EQUIPMENT",
+  "price": 900,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_ruestung_kettenhemd",
+  "rarityTier": 2,
+  "equipmentSpec": {
+   "slot": "ARMOR",
+   "statBonus": {
+    "defense": 10,
+    "hp": 8
+   },
+   "levelRequirement": 12
+  }
+ },
+ {
+  "id": "ruestung_zwergenplatte",
+  "nameKey": "ruestung_zwergenplatte_name",
+  "descriptionKey": "ruestung_zwergenplatte_desc",
+  "category": "EQUIPMENT",
+  "price": 3200,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_ruestung_zwergenplatte",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "ARMOR",
+   "statBonus": {
+    "defense": 20,
+    "hp": 14,
+    "speed": -3
+   },
+   "levelRequirement": 24
+  }
+ },
+ {
+  "id": "ruestung_schattenmantel",
+  "nameKey": "ruestung_schattenmantel_name",
+  "descriptionKey": "ruestung_schattenmantel_desc",
+  "category": "EQUIPMENT",
+  "price": 3400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_ruestung_schattenmantel",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "ARMOR",
+   "statBonus": {
+    "resistance": 18,
+    "speed": 6
+   },
+   "levelRequirement": 24,
+   "elementAffinity": "SHADOW",
+   "affinityBonusPercent": 6
+  }
+ },
+ {
+  "id": "ruestung_asenharnisch",
+  "nameKey": "ruestung_asenharnisch_name",
+  "descriptionKey": "ruestung_asenharnisch_desc",
+  "category": "EQUIPMENT",
+  "price": 8200,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_ruestung_asenharnisch",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "ARMOR",
+   "statBonus": {
+    "defense": 28,
+    "resistance": 22,
+    "hp": 20
+   },
+   "levelRequirement": 36
+  }
+ },
+ {
+  "id": "helm_lederkappe",
+  "nameKey": "helm_lederkappe_name",
+  "descriptionKey": "helm_lederkappe_desc",
+  "category": "EQUIPMENT",
+  "price": 260,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_helm_lederkappe",
+  "rarityTier": 1,
+  "equipmentSpec": {
+   "slot": "HELMET",
+   "statBonus": {
+    "defense": 3
+   },
+   "levelRequirement": 1
+  }
+ },
+ {
+  "id": "helm_eisenhelm",
+  "nameKey": "helm_eisenhelm_name",
+  "descriptionKey": "helm_eisenhelm_desc",
+  "category": "EQUIPMENT",
+  "price": 780,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_helm_eisenhelm",
+  "rarityTier": 2,
+  "equipmentSpec": {
+   "slot": "HELMET",
+   "statBonus": {
+    "defense": 8
+   },
+   "levelRequirement": 12
+  }
+ },
+ {
+  "id": "helm_seherhelm",
+  "nameKey": "helm_seherhelm_name",
+  "descriptionKey": "helm_seherhelm_desc",
+  "category": "EQUIPMENT",
+  "price": 2600,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_helm_seherhelm",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "HELMET",
+   "statBonus": {
+    "resistance": 12,
+    "luck": 8
+   },
+   "levelRequirement": 24,
+   "captureBonusPercent": 5
+  }
+ },
+ {
+  "id": "helm_drachenhelm",
+  "nameKey": "helm_drachenhelm_name",
+  "descriptionKey": "helm_drachenhelm_desc",
+  "category": "EQUIPMENT",
+  "price": 5600,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_helm_drachenhelm",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "HELMET",
+   "statBonus": {
+    "defense": 18,
+    "attack": 8
+   },
+   "levelRequirement": 36
+  }
+ },
+ {
+  "id": "relikt_seheraugen",
+  "nameKey": "relikt_seheraugen_name",
+  "descriptionKey": "relikt_seheraugen_desc",
+  "category": "EQUIPMENT",
+  "price": 3000,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_seheraugen",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {
+    "luck": 12
+   },
+   "levelRequirement": 24,
+   "captureBonusPercent": 10
+  }
+ },
+ {
+  "id": "relikt_wolfszahn",
+  "nameKey": "relikt_wolfszahn_name",
+  "descriptionKey": "relikt_wolfszahn_desc",
+  "category": "EQUIPMENT",
+  "price": 1800,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_wolfszahn",
+  "rarityTier": 2,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {
+    "attack": 9
+   },
+   "levelRequirement": 12
+  }
+ },
+ {
+  "id": "relikt_nornenspindel",
+  "nameKey": "relikt_nornenspindel_name",
+  "descriptionKey": "relikt_nornenspindel_desc",
+  "category": "EQUIPMENT",
+  "price": 7400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_nornenspindel",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {
+    "luck": 22,
+    "magic": 10
+   },
+   "levelRequirement": 36,
+   "captureBonusPercent": 15
+  }
+ },
+ {
+  "id": "relikt_schmiedemal",
+  "nameKey": "relikt_schmiedemal_name",
+  "descriptionKey": "relikt_schmiedemal_desc",
+  "category": "EQUIPMENT",
+  "price": 4200,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_schmiedemal",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {
+    "attack": 12,
+    "defense": 12
+   },
+   "levelRequirement": 24
+  }
+ },
+ {
+  "id": "relikt_stille_glocke",
+  "nameKey": "relikt_stille_glocke_name",
+  "descriptionKey": "relikt_stille_glocke_desc",
+  "category": "EQUIPMENT",
+  "price": 2800,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_stille_glocke",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {},
+   "levelRequirement": 24,
+   "encounterRateModifier": 0.5
+  }
+ },
+ {
+  "id": "relikt_lockhorn",
+  "nameKey": "relikt_lockhorn_name",
+  "descriptionKey": "relikt_lockhorn_desc",
+  "category": "EQUIPMENT",
+  "price": 2800,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_relikt_lockhorn",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "RELIC",
+   "statBonus": {},
+   "levelRequirement": 24,
+   "encounterRateModifier": 1.6
+  }
+ },
+ {
+  "id": "amulett_heilstein",
+  "nameKey": "amulett_heilstein_name",
+  "descriptionKey": "amulett_heilstein_desc",
+  "category": "EQUIPMENT",
+  "price": 1200,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_amulett_heilstein",
+  "rarityTier": 2,
+  "equipmentSpec": {
+   "slot": "AMULET",
+   "statBonus": {
+    "hp": 18
+   },
+   "levelRequirement": 12
+  }
+ },
+ {
+  "id": "amulett_glutkern",
+  "nameKey": "amulett_glutkern_name",
+  "descriptionKey": "amulett_glutkern_desc",
+  "category": "EQUIPMENT",
+  "price": 2600,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_amulett_glutkern",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "AMULET",
+   "statBonus": {
+    "attack": 10
+   },
+   "levelRequirement": 24,
+   "elementAffinity": "FIRE",
+   "affinityBonusPercent": 8
+  }
+ },
+ {
+  "id": "amulett_frostkern",
+  "nameKey": "amulett_frostkern_name",
+  "descriptionKey": "amulett_frostkern_desc",
+  "category": "EQUIPMENT",
+  "price": 2600,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_amulett_frostkern",
+  "rarityTier": 3,
+  "equipmentSpec": {
+   "slot": "AMULET",
+   "statBonus": {
+    "resistance": 12
+   },
+   "levelRequirement": 24,
+   "elementAffinity": "ICE",
+   "affinityBonusPercent": 8
+  }
+ },
+ {
+  "id": "amulett_gluecksrune",
+  "nameKey": "amulett_gluecksrune_name",
+  "descriptionKey": "amulett_gluecksrune_desc",
+  "category": "EQUIPMENT",
+  "price": 5400,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_amulett_gluecksrune",
+  "rarityTier": 4,
+  "equipmentSpec": {
+   "slot": "AMULET",
+   "statBonus": {
+    "luck": 25
+   },
+   "levelRequirement": 36,
+   "captureBonusPercent": 12
+  }
+ },
+ {
+  "id": "amulett_weltenbaum",
+  "nameKey": "amulett_weltenbaum_name",
+  "descriptionKey": "amulett_weltenbaum_desc",
+  "category": "EQUIPMENT",
+  "price": 9000,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_amulett_weltenbaum",
+  "rarityTier": 5,
+  "equipmentSpec": {
+   "slot": "AMULET",
+   "statBonus": {
+    "hp": 30,
+    "resistance": 18,
+    "luck": 10
+   },
+   "levelRequirement": 48
+  }
+ },
+ {
+  "id": "schluessel_runenwacht",
+  "nameKey": "schluessel_runenwacht_name",
+  "descriptionKey": "schluessel_runenwacht_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_schluessel_runenwacht",
+  "rarityTier": 5
+ },
+ {
+  "id": "schluessel_bifroest",
+  "nameKey": "schluessel_bifroest_name",
+  "descriptionKey": "schluessel_bifroest_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_schluessel_bifroest",
+  "rarityTier": 5
+ },
+ {
+  "id": "schluessel_helschluessel",
+  "nameKey": "schluessel_helschluessel_name",
+  "descriptionKey": "schluessel_helschluessel_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_schluessel_helschluessel",
+  "rarityTier": 5
+ },
+ {
+  "id": "schluessel_schmiedebrief",
+  "nameKey": "schluessel_schmiedebrief_name",
+  "descriptionKey": "schluessel_schmiedebrief_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_schluessel_schmiedebrief",
+  "rarityTier": 5
+ },
+ {
+  "id": "schluessel_nornenkompass",
+  "nameKey": "schluessel_nornenkompass_name",
+  "descriptionKey": "schluessel_nornenkompass_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_schluessel_nornenkompass",
+  "rarityTier": 5
+ },
+ {
+  "id": "werkzeug_flammenwiege",
+  "nameKey": "werkzeug_flammenwiege_name",
+  "descriptionKey": "werkzeug_flammenwiege_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_werkzeug_flammenwiege",
+  "rarityTier": 5
+ },
+ {
+  "id": "werkzeug_gluecksrune",
+  "nameKey": "werkzeug_gluecksrune_name",
+  "descriptionKey": "werkzeug_gluecksrune_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_werkzeug_gluecksrune",
+  "rarityTier": 5
+ },
+ {
+  "id": "werkzeug_sigill_ahnen",
+  "nameKey": "werkzeug_sigill_ahnen_name",
+  "descriptionKey": "werkzeug_sigill_ahnen_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_werkzeug_sigill_ahnen",
+  "rarityTier": 5
+ },
+ {
+  "id": "werkzeug_wesenszauber",
+  "nameKey": "werkzeug_wesenszauber_name",
+  "descriptionKey": "werkzeug_wesenszauber_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_werkzeug_wesenszauber",
+  "rarityTier": 5
+ },
+ {
+  "id": "werkzeug_bestiarium",
+  "nameKey": "werkzeug_bestiarium_name",
+  "descriptionKey": "werkzeug_bestiarium_desc",
+  "category": "KEY",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": false,
+  "usableOnMonster": false,
+  "consumedOnUse": false,
+  "effects": [],
+  "iconKey": "ic_werkzeug_bestiarium",
+  "rarityTier": 5
+ },
+ {
+  "id": "orb_der_bindung",
+  "nameKey": "orb_der_bindung_name",
+  "descriptionKey": "orb_der_bindung_desc",
+  "category": "RUNE_ORB",
+  "price": 0,
+  "stackLimit": 1,
+  "usableInBattle": true,
+  "usableOnMonster": false,
+  "consumedOnUse": true,
+  "effects": [
+   {
+    "type": "GuaranteedCapture"
+   }
+  ],
+  "iconKey": "ic_orb_der_bindung",
+  "rarityTier": 5,
+  "orbSpec": {
+   "grade": "LEGENDARY",
+   "catchMultiplier": 255.0,
+   "conditionalBonus": 1.0,
+   "condition": "NONE",
+   "shakeAnimationKey": "anim_orb_binding"
+  }
+ }
+]

@@ -1,0 +1,192 @@
+[
+ {
+  "number": 0,
+  "titleKey": "chapter_0_title",
+  "synopsisKey": "chapter_0_synopsis",
+  "regionId": "midgard_heartlands",
+  "mainQuestIds": [
+   "q_main_0_ankunft",
+   "q_main_0_spur",
+   "q_main_0_verlies",
+   "q_main_0_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_0_open",
+  "closingCutsceneId": "cs_chapter_0_close",
+  "unlocksRegionIds": [
+   "alfheim_prismwoods"
+  ],
+  "bossId": "legend_jorwyrm",
+  "musicKey": "bgm_chapter_0"
+ },
+ {
+  "number": 1,
+  "titleKey": "chapter_1_title",
+  "synopsisKey": "chapter_1_synopsis",
+  "regionId": "midgard_heartlands",
+  "mainQuestIds": [
+   "q_main_1_ankunft",
+   "q_main_1_spur",
+   "q_main_1_verlies",
+   "q_main_1_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_1_open",
+  "closingCutsceneId": "cs_chapter_1_close",
+  "unlocksRegionIds": [
+   "vanaheim_marches"
+  ],
+  "bossId": "legend_jorwyrm",
+  "musicKey": "bgm_chapter_1"
+ },
+ {
+  "number": 2,
+  "titleKey": "chapter_2_title",
+  "synopsisKey": "chapter_2_synopsis",
+  "regionId": "alfheim_prismwoods",
+  "mainQuestIds": [
+   "q_main_2_ankunft",
+   "q_main_2_spur",
+   "q_main_2_verlies",
+   "q_main_2_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_2_open",
+  "closingCutsceneId": "cs_chapter_2_close",
+  "unlocksRegionIds": [
+   "jotunheim_ridges"
+  ],
+  "bossId": "legend_dagrun",
+  "musicKey": "bgm_chapter_2"
+ },
+ {
+  "number": 3,
+  "titleKey": "chapter_3_title",
+  "synopsisKey": "chapter_3_synopsis",
+  "regionId": "vanaheim_marches",
+  "mainQuestIds": [
+   "q_main_3_ankunft",
+   "q_main_3_spur",
+   "q_main_3_verlies",
+   "q_main_3_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_3_open",
+  "closingCutsceneId": "cs_chapter_3_close",
+  "unlocksRegionIds": [
+   "svartalfheim_deeps"
+  ],
+  "bossId": "legend_ardvin",
+  "musicKey": "bgm_chapter_3"
+ },
+ {
+  "number": 4,
+  "titleKey": "chapter_4_title",
+  "synopsisKey": "chapter_4_synopsis",
+  "regionId": "jotunheim_ridges",
+  "mainQuestIds": [
+   "q_main_4_ankunft",
+   "q_main_4_spur",
+   "q_main_4_verlies",
+   "q_main_4_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_4_open",
+  "closingCutsceneId": "cs_chapter_4_close",
+  "unlocksRegionIds": [
+   "muspelheim_emberfields"
+  ],
+  "bossId": "legend_bergrimm",
+  "musicKey": "bgm_chapter_4"
+ },
+ {
+  "number": 5,
+  "titleKey": "chapter_5_title",
+  "synopsisKey": "chapter_5_synopsis",
+  "regionId": "svartalfheim_deeps",
+  "mainQuestIds": [
+   "q_main_5_ankunft",
+   "q_main_5_spur",
+   "q_main_5_verlies",
+   "q_main_5_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_5_open",
+  "closingCutsceneId": "cs_chapter_5_close",
+  "unlocksRegionIds": [
+   "niflheim_mistwastes"
+  ],
+  "bossId": "legend_dvalgrim",
+  "musicKey": "bgm_chapter_5"
+ },
+ {
+  "number": 6,
+  "titleKey": "chapter_6_title",
+  "synopsisKey": "chapter_6_synopsis",
+  "regionId": "muspelheim_emberfields",
+  "mainQuestIds": [
+   "q_main_6_ankunft",
+   "q_main_6_spur",
+   "q_main_6_verlies",
+   "q_main_6_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_6_open",
+  "closingCutsceneId": "cs_chapter_6_close",
+  "unlocksRegionIds": [
+   "helheim_deathmarches"
+  ],
+  "bossId": "legend_surtwacht",
+  "musicKey": "bgm_chapter_6"
+ },
+ {
+  "number": 7,
+  "titleKey": "chapter_7_title",
+  "synopsisKey": "chapter_7_synopsis",
+  "regionId": "niflheim_mistwastes",
+  "mainQuestIds": [
+   "q_main_7_ankunft",
+   "q_main_7_spur",
+   "q_main_7_verlies",
+   "q_main_7_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_7_open",
+  "closingCutsceneId": "cs_chapter_7_close",
+  "unlocksRegionIds": [
+   "asgard_goldenheights"
+  ],
+  "bossId": "legend_hrimthar",
+  "musicKey": "bgm_chapter_7"
+ },
+ {
+  "number": 8,
+  "titleKey": "chapter_8_title",
+  "synopsisKey": "chapter_8_synopsis",
+  "regionId": "helheim_deathmarches",
+  "mainQuestIds": [
+   "q_main_8_ankunft",
+   "q_main_8_spur",
+   "q_main_8_verlies",
+   "q_main_8_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_8_open",
+  "closingCutsceneId": "cs_chapter_8_close",
+  "unlocksRegionIds": [
+   "asgard_goldenheights"
+  ],
+  "bossId": "legend_helvarn",
+  "musicKey": "bgm_chapter_8"
+ },
+ {
+  "number": 9,
+  "titleKey": "chapter_9_title",
+  "synopsisKey": "chapter_9_synopsis",
+  "regionId": "asgard_goldenheights",
+  "mainQuestIds": [
+   "q_main_9_ankunft",
+   "q_main_9_spur",
+   "q_main_9_verlies",
+   "q_main_9_rune"
+  ],
+  "openingCutsceneId": "cs_chapter_9_open",
+  "closingCutsceneId": "cs_chapter_9_close",
+  "unlocksRegionIds": [
+   "asgard_goldenheights"
+  ],
+  "bossId": "legend_odrmund",
+  "musicKey": "bgm_chapter_9"
+ }
+]

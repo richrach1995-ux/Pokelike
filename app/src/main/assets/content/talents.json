@@ -1,0 +1,831 @@
+{
+ "talent_attacker": [
+  {
+   "id": "talent_attacker_1",
+   "nameKey": "talent_attacker_1_name",
+   "descriptionKey": "talent_attacker_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "attack": 6
+   }
+  },
+  {
+   "id": "talent_attacker_2",
+   "nameKey": "talent_attacker_2_name",
+   "descriptionKey": "talent_attacker_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_attacker_1"
+   ],
+   "statBonus": {
+    "hp": 14
+   }
+  },
+  {
+   "id": "talent_attacker_3",
+   "nameKey": "talent_attacker_3_name",
+   "descriptionKey": "talent_attacker_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_attacker_2"
+   ],
+   "statBonus": {
+    "attack": 10
+   }
+  },
+  {
+   "id": "talent_attacker_4",
+   "nameKey": "talent_attacker_4_name",
+   "descriptionKey": "talent_attacker_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_attacker_3"
+   ],
+   "statBonus": {
+    "speed": 8
+   }
+  },
+  {
+   "id": "talent_attacker_5",
+   "nameKey": "talent_attacker_5_name",
+   "descriptionKey": "talent_attacker_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_attacker_4"
+   ],
+   "statBonus": {
+    "attack": 14
+   }
+  },
+  {
+   "id": "talent_attacker_6",
+   "nameKey": "talent_attacker_6_name",
+   "descriptionKey": "talent_attacker_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_attacker_5"
+   ],
+   "statBonus": {
+    "hp": 22
+   }
+  },
+  {
+   "id": "talent_attacker_7",
+   "nameKey": "talent_attacker_7_name",
+   "descriptionKey": "talent_attacker_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_attacker_6"
+   ],
+   "statBonus": {
+    "attack": 20,
+    "luck": 6
+   }
+  }
+ ],
+ "talent_mage": [
+  {
+   "id": "talent_mage_1",
+   "nameKey": "talent_mage_1_name",
+   "descriptionKey": "talent_mage_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "magic": 6
+   }
+  },
+  {
+   "id": "talent_mage_2",
+   "nameKey": "talent_mage_2_name",
+   "descriptionKey": "talent_mage_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_mage_1"
+   ],
+   "statBonus": {
+    "resistance": 8
+   }
+  },
+  {
+   "id": "talent_mage_3",
+   "nameKey": "talent_mage_3_name",
+   "descriptionKey": "talent_mage_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_mage_2"
+   ],
+   "statBonus": {
+    "magic": 10
+   }
+  },
+  {
+   "id": "talent_mage_4",
+   "nameKey": "talent_mage_4_name",
+   "descriptionKey": "talent_mage_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_mage_3"
+   ],
+   "statBonus": {
+    "hp": 14
+   }
+  },
+  {
+   "id": "talent_mage_5",
+   "nameKey": "talent_mage_5_name",
+   "descriptionKey": "talent_mage_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_mage_4"
+   ],
+   "statBonus": {
+    "magic": 14
+   }
+  },
+  {
+   "id": "talent_mage_6",
+   "nameKey": "talent_mage_6_name",
+   "descriptionKey": "talent_mage_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_mage_5"
+   ],
+   "statBonus": {
+    "resistance": 14
+   }
+  },
+  {
+   "id": "talent_mage_7",
+   "nameKey": "talent_mage_7_name",
+   "descriptionKey": "talent_mage_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_mage_6"
+   ],
+   "statBonus": {
+    "magic": 20,
+    "speed": 6
+   }
+  }
+ ],
+ "talent_bruiser": [
+  {
+   "id": "talent_bruiser_1",
+   "nameKey": "talent_bruiser_1_name",
+   "descriptionKey": "talent_bruiser_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "attack": 6
+   }
+  },
+  {
+   "id": "talent_bruiser_2",
+   "nameKey": "talent_bruiser_2_name",
+   "descriptionKey": "talent_bruiser_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_bruiser_1"
+   ],
+   "statBonus": {
+    "defense": 8
+   }
+  },
+  {
+   "id": "talent_bruiser_3",
+   "nameKey": "talent_bruiser_3_name",
+   "descriptionKey": "talent_bruiser_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_bruiser_2"
+   ],
+   "statBonus": {
+    "attack": 10
+   }
+  },
+  {
+   "id": "talent_bruiser_4",
+   "nameKey": "talent_bruiser_4_name",
+   "descriptionKey": "talent_bruiser_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_bruiser_3"
+   ],
+   "statBonus": {
+    "hp": 18
+   }
+  },
+  {
+   "id": "talent_bruiser_5",
+   "nameKey": "talent_bruiser_5_name",
+   "descriptionKey": "talent_bruiser_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_bruiser_4"
+   ],
+   "statBonus": {
+    "attack": 14
+   }
+  },
+  {
+   "id": "talent_bruiser_6",
+   "nameKey": "talent_bruiser_6_name",
+   "descriptionKey": "talent_bruiser_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_bruiser_5"
+   ],
+   "statBonus": {
+    "defense": 14
+   }
+  },
+  {
+   "id": "talent_bruiser_7",
+   "nameKey": "talent_bruiser_7_name",
+   "descriptionKey": "talent_bruiser_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_bruiser_6"
+   ],
+   "statBonus": {
+    "attack": 18,
+    "hp": 18
+   }
+  }
+ ],
+ "talent_tank": [
+  {
+   "id": "talent_tank_1",
+   "nameKey": "talent_tank_1_name",
+   "descriptionKey": "talent_tank_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "defense": 8
+   }
+  },
+  {
+   "id": "talent_tank_2",
+   "nameKey": "talent_tank_2_name",
+   "descriptionKey": "talent_tank_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_tank_1"
+   ],
+   "statBonus": {
+    "hp": 18
+   }
+  },
+  {
+   "id": "talent_tank_3",
+   "nameKey": "talent_tank_3_name",
+   "descriptionKey": "talent_tank_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_tank_2"
+   ],
+   "statBonus": {
+    "defense": 12
+   }
+  },
+  {
+   "id": "talent_tank_4",
+   "nameKey": "talent_tank_4_name",
+   "descriptionKey": "talent_tank_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_tank_3"
+   ],
+   "statBonus": {
+    "resistance": 10
+   }
+  },
+  {
+   "id": "talent_tank_5",
+   "nameKey": "talent_tank_5_name",
+   "descriptionKey": "talent_tank_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_tank_4"
+   ],
+   "statBonus": {
+    "defense": 16
+   }
+  },
+  {
+   "id": "talent_tank_6",
+   "nameKey": "talent_tank_6_name",
+   "descriptionKey": "talent_tank_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_tank_5"
+   ],
+   "statBonus": {
+    "hp": 26
+   }
+  },
+  {
+   "id": "talent_tank_7",
+   "nameKey": "talent_tank_7_name",
+   "descriptionKey": "talent_tank_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_tank_6"
+   ],
+   "statBonus": {
+    "defense": 22,
+    "resistance": 12
+   }
+  }
+ ],
+ "talent_wall": [
+  {
+   "id": "talent_wall_1",
+   "nameKey": "talent_wall_1_name",
+   "descriptionKey": "talent_wall_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "resistance": 8
+   }
+  },
+  {
+   "id": "talent_wall_2",
+   "nameKey": "talent_wall_2_name",
+   "descriptionKey": "talent_wall_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_wall_1"
+   ],
+   "statBonus": {
+    "hp": 16
+   }
+  },
+  {
+   "id": "talent_wall_3",
+   "nameKey": "talent_wall_3_name",
+   "descriptionKey": "talent_wall_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_wall_2"
+   ],
+   "statBonus": {
+    "resistance": 12
+   }
+  },
+  {
+   "id": "talent_wall_4",
+   "nameKey": "talent_wall_4_name",
+   "descriptionKey": "talent_wall_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_wall_3"
+   ],
+   "statBonus": {
+    "defense": 10
+   }
+  },
+  {
+   "id": "talent_wall_5",
+   "nameKey": "talent_wall_5_name",
+   "descriptionKey": "talent_wall_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_wall_4"
+   ],
+   "statBonus": {
+    "resistance": 16
+   }
+  },
+  {
+   "id": "talent_wall_6",
+   "nameKey": "talent_wall_6_name",
+   "descriptionKey": "talent_wall_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_wall_5"
+   ],
+   "statBonus": {
+    "hp": 24
+   }
+  },
+  {
+   "id": "talent_wall_7",
+   "nameKey": "talent_wall_7_name",
+   "descriptionKey": "talent_wall_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_wall_6"
+   ],
+   "statBonus": {
+    "resistance": 22,
+    "defense": 12
+   }
+  }
+ ],
+ "talent_speedster": [
+  {
+   "id": "talent_speedster_1",
+   "nameKey": "talent_speedster_1_name",
+   "descriptionKey": "talent_speedster_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "speed": 8
+   }
+  },
+  {
+   "id": "talent_speedster_2",
+   "nameKey": "talent_speedster_2_name",
+   "descriptionKey": "talent_speedster_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_speedster_1"
+   ],
+   "statBonus": {
+    "luck": 8
+   }
+  },
+  {
+   "id": "talent_speedster_3",
+   "nameKey": "talent_speedster_3_name",
+   "descriptionKey": "talent_speedster_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_speedster_2"
+   ],
+   "statBonus": {
+    "speed": 12
+   }
+  },
+  {
+   "id": "talent_speedster_4",
+   "nameKey": "talent_speedster_4_name",
+   "descriptionKey": "talent_speedster_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_speedster_3"
+   ],
+   "statBonus": {
+    "defense": 8
+   }
+  },
+  {
+   "id": "talent_speedster_5",
+   "nameKey": "talent_speedster_5_name",
+   "descriptionKey": "talent_speedster_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_speedster_4"
+   ],
+   "statBonus": {
+    "speed": 16
+   }
+  },
+  {
+   "id": "talent_speedster_6",
+   "nameKey": "talent_speedster_6_name",
+   "descriptionKey": "talent_speedster_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_speedster_5"
+   ],
+   "statBonus": {
+    "luck": 14
+   }
+  },
+  {
+   "id": "talent_speedster_7",
+   "nameKey": "talent_speedster_7_name",
+   "descriptionKey": "talent_speedster_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_speedster_6"
+   ],
+   "statBonus": {
+    "speed": 22,
+    "attack": 10
+   }
+  }
+ ],
+ "talent_support": [
+  {
+   "id": "talent_support_1",
+   "nameKey": "talent_support_1_name",
+   "descriptionKey": "talent_support_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "hp": 14
+   }
+  },
+  {
+   "id": "talent_support_2",
+   "nameKey": "talent_support_2_name",
+   "descriptionKey": "talent_support_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_support_1"
+   ],
+   "statBonus": {
+    "resistance": 8
+   }
+  },
+  {
+   "id": "talent_support_3",
+   "nameKey": "talent_support_3_name",
+   "descriptionKey": "talent_support_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_support_2"
+   ],
+   "statBonus": {
+    "magic": 8
+   }
+  },
+  {
+   "id": "talent_support_4",
+   "nameKey": "talent_support_4_name",
+   "descriptionKey": "talent_support_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_support_3"
+   ],
+   "statBonus": {
+    "luck": 10
+   }
+  },
+  {
+   "id": "talent_support_5",
+   "nameKey": "talent_support_5_name",
+   "descriptionKey": "talent_support_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_support_4"
+   ],
+   "statBonus": {
+    "resistance": 14
+   }
+  },
+  {
+   "id": "talent_support_6",
+   "nameKey": "talent_support_6_name",
+   "descriptionKey": "talent_support_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_support_5"
+   ],
+   "statBonus": {
+    "hp": 22
+   }
+  },
+  {
+   "id": "talent_support_7",
+   "nameKey": "talent_support_7_name",
+   "descriptionKey": "talent_support_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_support_6"
+   ],
+   "statBonus": {
+    "resistance": 18,
+    "magic": 12
+   }
+  }
+ ],
+ "talent_glass": [
+  {
+   "id": "talent_glass_1",
+   "nameKey": "talent_glass_1_name",
+   "descriptionKey": "talent_glass_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "magic": 8
+   }
+  },
+  {
+   "id": "talent_glass_2",
+   "nameKey": "talent_glass_2_name",
+   "descriptionKey": "talent_glass_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_glass_1"
+   ],
+   "statBonus": {
+    "attack": 8
+   }
+  },
+  {
+   "id": "talent_glass_3",
+   "nameKey": "talent_glass_3_name",
+   "descriptionKey": "talent_glass_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_glass_2"
+   ],
+   "statBonus": {
+    "luck": 10
+   }
+  },
+  {
+   "id": "talent_glass_4",
+   "nameKey": "talent_glass_4_name",
+   "descriptionKey": "talent_glass_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_glass_3"
+   ],
+   "statBonus": {
+    "speed": 10
+   }
+  },
+  {
+   "id": "talent_glass_5",
+   "nameKey": "talent_glass_5_name",
+   "descriptionKey": "talent_glass_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_glass_4"
+   ],
+   "statBonus": {
+    "attack": 16
+   }
+  },
+  {
+   "id": "talent_glass_6",
+   "nameKey": "talent_glass_6_name",
+   "descriptionKey": "talent_glass_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_glass_5"
+   ],
+   "statBonus": {
+    "magic": 16
+   }
+  },
+  {
+   "id": "talent_glass_7",
+   "nameKey": "talent_glass_7_name",
+   "descriptionKey": "talent_glass_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_glass_6"
+   ],
+   "statBonus": {
+    "attack": 20,
+    "magic": 20
+   }
+  }
+ ],
+ "talent_balanced": [
+  {
+   "id": "talent_balanced_1",
+   "nameKey": "talent_balanced_1_name",
+   "descriptionKey": "talent_balanced_1_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [],
+   "statBonus": {
+    "hp": 12
+   }
+  },
+  {
+   "id": "talent_balanced_2",
+   "nameKey": "talent_balanced_2_name",
+   "descriptionKey": "talent_balanced_2_desc",
+   "tier": 1,
+   "cost": 1,
+   "requires": [
+    "talent_balanced_1"
+   ],
+   "statBonus": {
+    "defense": 8
+   }
+  },
+  {
+   "id": "talent_balanced_3",
+   "nameKey": "talent_balanced_3_name",
+   "descriptionKey": "talent_balanced_3_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_balanced_2"
+   ],
+   "statBonus": {
+    "attack": 8
+   }
+  },
+  {
+   "id": "talent_balanced_4",
+   "nameKey": "talent_balanced_4_name",
+   "descriptionKey": "talent_balanced_4_desc",
+   "tier": 2,
+   "cost": 2,
+   "requires": [
+    "talent_balanced_3"
+   ],
+   "statBonus": {
+    "magic": 8
+   }
+  },
+  {
+   "id": "talent_balanced_5",
+   "nameKey": "talent_balanced_5_name",
+   "descriptionKey": "talent_balanced_5_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_balanced_4"
+   ],
+   "statBonus": {
+    "speed": 10
+   }
+  },
+  {
+   "id": "talent_balanced_6",
+   "nameKey": "talent_balanced_6_name",
+   "descriptionKey": "talent_balanced_6_desc",
+   "tier": 3,
+   "cost": 3,
+   "requires": [
+    "talent_balanced_5"
+   ],
+   "statBonus": {
+    "resistance": 12
+   }
+  },
+  {
+   "id": "talent_balanced_7",
+   "nameKey": "talent_balanced_7_name",
+   "descriptionKey": "talent_balanced_7_desc",
+   "tier": 4,
+   "cost": 4,
+   "requires": [
+    "talent_balanced_6"
+   ],
+   "statBonus": {
+    "attack": 12,
+    "magic": 12,
+    "hp": 16
+   }
+  }
+ ]
+}
