@@ -21,6 +21,16 @@ Jeder Push baut die App automatisch über GitHub Actions.
 Die Release-APK ist mit dem Debug-Schlüssel signiert und damit direkt
 installierbar (auf dem Handy „Installation aus unbekannten Quellen" erlauben).
 
+**Ohne GitHub-Login herunterladen:** Für Artifacts muss man bei GitHub angemeldet
+sein. Wer einen offenen Download-Link möchte, setzt einfach einen Versions-Tag –
+der Workflow hängt die APKs dann automatisch an ein GitHub-Release:
+
+```bash
+git tag v1.0 && git push origin v1.0
+```
+
+Danach liegt die APK unter **Releases** im Repository.
+
 ### Selbst bauen
 
 ```bash

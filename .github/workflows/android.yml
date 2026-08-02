@@ -3,12 +3,15 @@ name: Android APK bauen
 on:
   push:
     branches: [ "**" ]
+    tags: [ "v*" ]
   workflow_dispatch:
 
 jobs:
   build:
     name: APK bauen
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Repository auschecken
@@ -46,3 +49,16 @@ jobs:
           path: artefakte/*.apk
           if-no-files-found: error
           retention-days: 90
+
+      - name: Release mit APK veroeffentlichen (nur bei Tags wie v1.0)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artefakte/*.apk
+          name: Pokelike ${{ github.ref_name }}
+          body: |
+            Pokelike - Die Monster von Auronia
+
+            Lade `Pokelike-release.apk` herunter und installiere sie auf deinem
+            Android-Geraet (Android 7.0 oder neuer). Dafuer muss in den
+            Einstellungen die Installation aus unbekannten Quellen erlaubt sein.
