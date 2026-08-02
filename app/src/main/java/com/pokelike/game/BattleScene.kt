@@ -319,7 +319,7 @@ class BattleScene(
 
         // Gegner
         val foe = battle.activeFoe
-        val foeY = h * 0.16f + (if (faintSide == 2) (0.7f - faintTime) * 60f else 0f)
+        val foeY = h * 0.40f - 56f + (if (faintSide == 2) (0.7f - faintTime) * 60f else 0f)
         if (!(faintSide == 2 && faintTime < 0.2f)) {
             val alpha = if (faintSide == 2) (faintTime / 0.7f * 255).toInt().coerceIn(0, 255) else 255
             if (evolveTime > 0f && evolveTo.isNotEmpty()) {
@@ -400,7 +400,9 @@ class BattleScene(
         }
         val sel = moves.getOrNull(moveIndex)
         if (sel != null) {
-            Gfx.text(c, "AP ${sel.pp}/${sel.maxPp}", Game.VW - 12f, y + 48f, 9f, 0xFF404858.toInt(), right = true)
+            if (moves.none { it.pp > 0 }) Unit
+            else Gfx.text(c, "AP ${sel.pp}/${sel.maxPp}  (B = zurueck)", Game.VW - 12f, y + 47f, 8.5f,
+                0xFF404858.toInt(), right = true)
             Gfx.typeBadge(c, sel.move.type, 10f, y + 38f, 8f)
             val kat = when (sel.move.cat) {
                 MoveCategory.PHYSISCH -> "PHYS"
@@ -411,27 +413,20 @@ class BattleScene(
                 62f, y + 47f, 9f, 0xFF404858.toInt())
         }
         if (moves.none { it.pp > 0 }) {
-            Gfx.text(c, "Keine AP! -> Verzweifler", Game.VW - 12f, y + 14f, 8f, Gfx.ACCENT, right = true)
-        } else {
-            Gfx.text(c, "B = zurueck", Game.VW - 12f, y + 14f, 8f, 0xFF808898.toInt(), right = true)
+            Gfx.text(c, "Keine AP! -> Verzweifler", Game.VW - 12f, y + 47f, 8f, Gfx.ACCENT, right = true)
         }
     }
 
     private fun drawFoeBox(c: Canvas, foe: Monster) {
-        Gfx.panel(c, 6f, 10f, 124f, 34f)
+        Gfx.panel(c, 6f, 10f, 124f, 40f)
         Gfx.text(c, foe.name, 12f, 24f, 10f)
         Gfx.text(c, "Lv${foe.level}", 124f, 24f, 9f, right = true)
-        Gfx.hpBar(c, 12f, 28f, 112f, 7f, fHpShown / max(1, foe.maxHp))
-        Gfx.statusTag(c, foe.status, 12f, 36f, 7f)
-        if (battle.isWild) {
-            val known = battle.playerParty.isNotEmpty()
-            if (known) {
-                var bx = 60f
-                for (t in foe.species.types) {
-                    Gfx.typeBadge(c, t, bx, 36f, 6.5f)
-                    bx += Gfx.textWidth(t.deName.uppercase(), 6.5f) + 12f
-                }
-            }
+        Gfx.hpBar(c, 12f, 28f, 112f, 6f, fHpShown / max(1, foe.maxHp))
+        Gfx.statusTag(c, foe.status, 12f, 37f, 6.5f)
+        var bx = if (foe.status == StatusKind.NONE) 12f else 42f
+        for (t in foe.species.types) {
+            Gfx.typeBadge(c, t, bx, 37f, 6.5f)
+            bx += Gfx.textWidth(t.deName.uppercase(), 6.5f) + 12f
         }
     }
 

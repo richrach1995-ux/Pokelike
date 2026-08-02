@@ -68,11 +68,17 @@ class PartyScene(
     private var actionIndex = 0
     private var showActions = false
     private var swapFrom = -1
+    private var vorgewaehlt = false
 
     override fun update(g: Game, dt: Float) {
         if (g.dialog.active) { g.dialog.update(g, dt); return }
         val party = g.state.party
         if (party.isEmpty()) { g.pop(); onCancel?.invoke(); return }
+        if (!vorgewaehlt) {
+            vorgewaehlt = true
+            // Beim Wechsel nach einer Niederlage gleich ein kampffaehiges Monster anbieten
+            if (forcedSwitch) index = party.indexOfFirst { !it.isFainted }.coerceAtLeast(0)
+        }
 
         if (showActions) {
             val actions = listOf("UEBERSICHT", "TAUSCHEN", "ZURUECK")
@@ -255,13 +261,15 @@ class SummaryScene(private val m: Monster) : Scene {
                 "Initiative" to m.stat(Stat.SPE)
             )
             Gfx.text(c, "WERTE", 12f, 85f, 10f, Gfx.ACCENT)
+            // Balken relativ zum staerksten Wert dieses Monsters - so bleibt der Vergleich lesbar
+            val bester = stats.maxOf { it.second }.coerceAtLeast(1)
             for ((i, s) in stats.withIndex()) {
                 Gfx.text(c, s.first, 12f, 100f + i * 13f, 9.5f)
                 Gfx.text(c, s.second.toString(), 130f, 100f + i * 13f, 9.5f, right = true)
-                Gfx.fillRect(c, 136f, 94f + i * 13f, (s.second.coerceAtMost(200) / 200f) * 90f, 6f, 0xFF68A8E0.toInt())
+                Gfx.fillRect(c, 136f, 94f + i * 13f, 6f + (s.second.toFloat() / bester) * 84f, 6f, 0xFF68A8E0.toInt())
             }
-            Gfx.text(c, "EP bis Level ${m.level + 1}: ${m.expToNext()}", 12f, 172f, 9f, 0xFF505868.toInt())
-            Gfx.expBar(c, 12f, 162f, Game.VW - 34f, 5f, m.expInLevel().toFloat() / m.expLevelSpan())
+            Gfx.text(c, "EP bis Level ${m.level + 1}: ${m.expToNext()}", 12f, 166f, 9f, 0xFF505868.toInt())
+            Gfx.expBar(c, 12f, 170f, Game.VW - 34f, 5f, m.expInLevel().toFloat() / m.expLevelSpan())
             Gfx.panel(c, 5f, 183f, Game.VW - 10f, 40f)
             var ty = 196f
             for (ln in Gfx.wrap(m.species.dexText, 36)) {
@@ -572,7 +580,7 @@ class TypeInfoScene : Scene {
         block("Anfaellig gegen:", defWeak, 0xFF902020.toInt())
         block("Widerstandsfaehig gegen:", defRes, 0xFF208030.toInt())
 
-        Gfx.text(c, "Attacken vom eigenen Typ: +50% Schaden (Typ-Bonus)",
+        Gfx.text(c, "Eigener Typ = +50% Schaden (Typ-Bonus)",
             Game.VW / 2f, g.worldH - 18f, 8.5f, 0xFFD8E0F0.toInt(), center = true)
         Gfx.text(c, "LINKS/RECHTS = Typ   B = zurueck", Game.VW / 2f, g.worldH - 6f, 9f, 0xFFD8E0F0.toInt(), center = true)
     }

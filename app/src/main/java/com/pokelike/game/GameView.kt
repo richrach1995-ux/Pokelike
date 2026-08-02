@@ -92,13 +92,7 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
             }
             val canvas = holder.lockCanvas() ?: continue
             try {
-                canvas.drawColor(0xFF000000.toInt())
-                canvas.save()
-                canvas.translate(offX, offY)
-                canvas.scale(scale, scale)
-                game.draw(canvas)
-                drawControls(canvas)
-                canvas.restore()
+                renderFrame(canvas)
             } catch (e: Exception) {
                 // ignorieren, naechster Frame
             } finally {
@@ -111,6 +105,20 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
             }
         }
     }
+
+    /** Zeichnet ein komplettes Bild: Spielflaeche plus Bedienelemente. */
+    fun renderFrame(canvas: Canvas) {
+        canvas.drawColor(0xFF000000.toInt())
+        canvas.save()
+        canvas.translate(offX, offY)
+        canvas.scale(scale, scale)
+        game.draw(canvas)
+        drawControls(canvas)
+        canvas.restore()
+    }
+
+    /** Groesse festlegen, ohne dass eine Surface existiert (fuer Tests/Vorschau). */
+    fun layoutFor(width: Int, height: Int) = computeLayout(width, height)
 
     // ------------------------------------------------------------------
     private fun drawControls(c: Canvas) {
