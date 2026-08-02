@@ -400,20 +400,19 @@ class BattleScene(
         }
         val sel = moves.getOrNull(moveIndex)
         if (sel != null) {
-            if (moves.none { it.pp > 0 }) Unit
-            else Gfx.text(c, "AP ${sel.pp}/${sel.maxPp}  (B = zurueck)", Game.VW - 12f, y + 47f, 8.5f,
-                0xFF404858.toInt(), right = true)
-            Gfx.typeBadge(c, sel.move.type, 10f, y + 38f, 8f)
+            Gfx.typeBadge(c, sel.move.type, 10f, y + 37f, 7.5f)
             val kat = when (sel.move.cat) {
                 MoveCategory.PHYSISCH -> "PHYS"
                 MoveCategory.SPEZIAL -> "SPEZ"
                 else -> "STAT"
             }
-            Gfx.text(c, "$kat  ST ${if (sel.move.power > 0) sel.move.power.toString() else "-"}",
-                62f, y + 47f, 9f, 0xFF404858.toInt())
-        }
-        if (moves.none { it.pp > 0 }) {
-            Gfx.text(c, "Keine AP! -> Verzweifler", Game.VW - 12f, y + 47f, 8f, Gfx.ACCENT, right = true)
+            val staerke = if (sel.move.power > 0) sel.move.power.toString() else "-"
+            Gfx.text(c, "$kat ST $staerke", 66f, y + 47f, 8.5f, 0xFF404858.toInt())
+            if (moves.none { it.pp > 0 }) {
+                Gfx.text(c, "Keine AP! Verzweifler", Game.VW - 12f, y + 47f, 8.5f, Gfx.ACCENT, right = true)
+            } else {
+                Gfx.text(c, "AP ${sel.pp}/${sel.maxPp}", Game.VW - 12f, y + 47f, 8.5f, 0xFF404858.toInt(), right = true)
+            }
         }
     }
 
