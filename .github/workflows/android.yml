@@ -1,0 +1,48 @@
+name: Android APK bauen
+
+on:
+  push:
+    branches: [ "**" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: APK bauen
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: JDK 17 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android SDK einrichten
+        uses: android-actions/setup-android@v3
+
+      - name: Gradle einrichten
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: gradlew ausfuehrbar machen
+        run: chmod +x ./gradlew
+
+      - name: Debug- und Release-APK bauen
+        run: ./gradlew assembleDebug assembleRelease --stacktrace
+
+      - name: APKs sammeln
+        run: |
+          mkdir -p artefakte
+          cp app/build/outputs/apk/debug/app-debug.apk artefakte/Pokelike-debug.apk
+          cp app/build/outputs/apk/release/app-release.apk artefakte/Pokelike-release.apk
+          ls -lh artefakte
+
+      - name: APK hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pokelike-APK
+          path: artefakte/*.apk
+          if-no-files-found: error
+          retention-days: 90
