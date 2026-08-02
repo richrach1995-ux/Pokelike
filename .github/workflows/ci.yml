@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "claude/**"]
+  pull_request:
+
+jobs:
+  content:
+    name: Inhalte prüfen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Fails on any dangling reference between content files or against
+      # the Kotlin rule sources.
+      - run: python3 tools/contentgen/build.py --check
+
+  build:
+    name: Bauen und testen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+      - run: ./gradlew :domain:test
+      - run: ./gradlew :data:testDebugUnitTest :app:testDebugUnitTest
+      - run: ./gradlew :app:assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runeveil-debug
+          path: app/build/outputs/apk/debug/*.apk
