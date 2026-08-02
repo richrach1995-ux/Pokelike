@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The save database and the settings are worth backing up; caches are not. -->
+<full-backup-content>
+    <include domain="database" path="runeveil.db" />
+    <include domain="file" path="datastore/" />
+    <exclude domain="file" path="cache/" />
+</full-backup-content>

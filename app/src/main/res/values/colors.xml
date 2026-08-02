@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <color name="rune_night">#FF0E0B14</color>
+    <color name="rune_gold">#FFC79A4B</color>
+    <color name="rune_frost">#FF7FD8E8</color>
+</resources>

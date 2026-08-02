@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The Ansuz-inspired mark of the Rune Watch, used as the splash icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:strokeColor="#C79A4B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M40,20 L40,88" />
+    <path
+        android:strokeColor="#C79A4B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M40,28 L70,44" />
+    <path
+        android:strokeColor="#C79A4B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M40,50 L70,66" />
+</vector>

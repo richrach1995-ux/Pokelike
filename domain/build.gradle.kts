@@ -17,6 +17,9 @@ kotlin {
 
 dependencies {
     implementation(libs.coroutines.core)
+    // Use-cases are constructor-injected by Hilt in :app; only the annotations
+    // are needed here, which keeps :domain free of any DI framework.
+    api(libs.javax.inject)
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)

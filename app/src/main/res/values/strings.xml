@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  UI chrome only. All *content* text (monster names, move descriptions, quest
+  text …) lives in assets/i18n/<lang>.json and is resolved by
+  LocalizationRepository — see docs/ARCHITECTURE.md.
+-->
+<resources>
+    <string name="app_name">Runeveil</string>
+    <string name="app_subtitle">Saga der Neun</string>
+
+    <!-- Title screen -->
+    <string name="title_new_game">Neues Spiel</string>
+    <string name="title_continue">Fortsetzen</string>
+    <string name="title_load">Spielstand laden</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="title_bestiary">Bestiarium</string>
+    <string name="title_credits">Mitwirkende</string>
+    <string name="title_press_start">Berühre den Bildschirm</string>
+
+    <!-- Common -->
+    <string name="common_confirm">Bestätigen</string>
+    <string name="common_cancel">Abbrechen</string>
+    <string name="common_back">Zurück</string>
+    <string name="common_close">Schließen</string>
+    <string name="common_save">Speichern</string>
+    <string name="common_delete">Löschen</string>
+    <string name="common_continue">Weiter</string>
+    <string name="common_yes">Ja</string>
+    <string name="common_no">Nein</string>
+    <string name="common_loading">Lade …</string>
+    <string name="common_empty">Leer</string>
+    <string name="common_level">Stufe %1$d</string>
+    <string name="common_gold">%1$d Gold</string>
+    <string name="common_none">—</string>
+
+    <!-- Save slots -->
+    <string name="save_slot">Spielstand %1$d</string>
+    <string name="save_autosave">Automatisch</string>
+    <string name="save_empty_slot">Leerer Platz</string>
+    <string name="save_playtime">%1$02d:%2$02d Std.</string>
+    <string name="save_completion">%1$d %% erfasst</string>
+    <string name="save_overwrite_title">Überschreiben?</string>
+    <string name="save_overwrite_message">Dieser Platz enthält bereits einen Spielstand.</string>
+    <string name="save_delete_title">Spielstand löschen?</string>
+    <string name="save_delete_message">Das lässt sich nicht rückgängig machen.</string>
+    <string name="save_saved">Gespeichert.</string>
+
+    <!-- Character creation -->
+    <string name="creation_title">Wer bist du?</string>
+    <string name="creation_name">Name</string>
+    <string name="creation_name_hint">Wie sollen dich die Neun Welten nennen?</string>
+    <string name="creation_gender">Geschlecht</string>
+    <string name="creation_gender_male">Männlich</string>
+    <string name="creation_gender_female">Weiblich</string>
+    <string name="creation_gender_other">Anders</string>
+    <string name="creation_appearance">Aussehen</string>
+    <string name="creation_starter">Wähle deinen ersten Gefährten</string>
+    <string name="creation_begin">Reise beginnen</string>
+
+    <!-- World -->
+    <string name="world_map">Weltkarte</string>
+    <string name="world_travel">Reisen</string>
+    <string name="world_explore">Erkunden</string>
+    <string name="world_enter">Betreten</string>
+    <string name="world_locked">Noch verschlossen</string>
+    <string name="world_steps">%1$d Schritte</string>
+    <string name="world_rest">Rasten</string>
+    <string name="world_rested">Dein Team ist wieder bei Kräften.</string>
+    <string name="world_shop">Handelsposten</string>
+    <string name="world_forge">Schmiede</string>
+    <string name="world_roost">Brutstätte</string>
+    <string name="world_vault">Runengewölbe</string>
+
+    <!-- Battle -->
+    <string name="battle_fight">Kämpfen</string>
+    <string name="battle_orb">Runenkugel</string>
+    <string name="battle_item">Beutel</string>
+    <string name="battle_switch">Wechseln</string>
+    <string name="battle_flee">Fliehen</string>
+    <string name="battle_turn">Runde %1$d</string>
+    <string name="battle_victory">Sieg!</string>
+    <string name="battle_defeat">Niederlage …</string>
+    <string name="battle_captured">Gefangen!</string>
+    <string name="battle_fled">Entkommen.</string>
+    <string name="battle_pp">AP %1$d/%2$d</string>
+    <string name="battle_choose_target">Ziel wählen</string>
+    <string name="battle_choose_switch">Wen schickst du?</string>
+    <string name="battle_no_pp">Keine Attackenpunkte mehr.</string>
+
+    <!-- Party and monsters -->
+    <string name="party_title">Team</string>
+    <string name="party_summary">Übersicht</string>
+    <string name="party_moves">Attacken</string>
+    <string name="party_talents">Talentbaum</string>
+    <string name="party_runes">Runen</string>
+    <string name="party_release">Freilassen</string>
+    <string name="party_release_confirm">%1$s wirklich freilassen?</string>
+    <string name="party_to_vault">Ins Gewölbe</string>
+    <string name="party_to_party">Ins Team</string>
+    <string name="party_full">Dein Team ist voll.</string>
+    <string name="party_last_monster">Du kannst nicht dein letztes Wesen ablegen.</string>
+    <string name="party_talent_points">%1$d Talentpunkte</string>
+    <string name="party_egg">Ei — noch %1$d Schritte</string>
+
+    <!-- Bestiary -->
+    <string name="bestiary_title">Bestiarium</string>
+    <string name="bestiary_seen">Gesehen</string>
+    <string name="bestiary_caught">Gefangen</string>
+    <string name="bestiary_unknown">Unbekannt</string>
+    <string name="bestiary_progress">%1$d von %2$d</string>
+    <string name="bestiary_habitat">Fundorte</string>
+    <string name="bestiary_evolutions">Entwicklungen</string>
+    <string name="bestiary_shiny">Schillernd</string>
+
+    <!-- Inventory -->
+    <string name="inventory_title">Beutel</string>
+    <string name="inventory_use">Benutzen</string>
+    <string name="inventory_give">Geben</string>
+    <string name="inventory_sell">Verkaufen</string>
+    <string name="inventory_empty">Nichts dabei.</string>
+    <string name="inventory_count">×%1$d</string>
+
+    <!-- Shop -->
+    <string name="shop_buy">Kaufen</string>
+    <string name="shop_sell">Verkaufen</string>
+    <string name="shop_not_enough_gold">Nicht genug Gold.</string>
+
+    <!-- Crafting -->
+    <string name="craft_title">Werkbank</string>
+    <string name="craft_make">Fertigen</string>
+    <string name="craft_missing">Zutaten fehlen</string>
+    <string name="craft_success">%1$s gefertigt.</string>
+    <string name="craft_failed">Das Werk misslang.</string>
+    <string name="craft_chance">Erfolg %1$d %%</string>
+
+    <!-- Breeding -->
+    <string name="roost_title">Brutstätte</string>
+    <string name="roost_place">Ablegen</string>
+    <string name="roost_breed">Ei erbitten</string>
+    <string name="roost_fee">Gebühr: %1$d Gold</string>
+    <string name="roost_incompatible">Diese beiden passen nicht zusammen.</string>
+    <string name="roost_egg_received">Ein Ei! Trag es bei dir, damit es schlüpft.</string>
+
+    <!-- Quests -->
+    <string name="quest_title">Auftragsbuch</string>
+    <string name="quest_active">Aktiv</string>
+    <string name="quest_completed">Abgeschlossen</string>
+    <string name="quest_available">Verfügbar</string>
+    <string name="quest_turn_in">Abgeben</string>
+    <string name="quest_rewards">Belohnung</string>
+    <string name="quest_none">Keine Aufträge.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_audio">Ton</string>
+    <string name="settings_music">Musik</string>
+    <string name="settings_sound">Geräusche</string>
+    <string name="settings_voice">Stimmen</string>
+    <string name="settings_gameplay">Spiel</string>
+    <string name="settings_animation_speed">Kampftempo</string>
+    <string name="settings_text_speed">Texttempo</string>
+    <string name="settings_autosave">Automatisch speichern</string>
+    <string name="settings_difficulty">Schwierigkeit</string>
+    <string name="settings_accessibility">Barrierefreiheit</string>
+    <string name="settings_reduced_motion">Weniger Bewegung</string>
+    <string name="settings_high_contrast">Hoher Kontrast</string>
+    <string name="settings_screen_shake">Bildschirmerschütterung</string>
+    <string name="settings_haptics">Vibration</string>
+    <string name="settings_damage_numbers">Schadenszahlen</string>
+    <string name="settings_type_hints">Typhinweise</string>
+    <string name="settings_language">Sprache</string>
+
+    <!-- Achievements and titles -->
+    <string name="achievements_title">Errungenschaften</string>
+    <string name="titles_title">Titel</string>
+    <string name="titles_equip">Anlegen</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Etwas ging schief.</string>
+    <string name="error_save_failed">Speichern fehlgeschlagen.</string>
+    <string name="error_load_failed">Laden fehlgeschlagen.</string>
+    <string name="error_retry">Erneut versuchen</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_monster_sprite">Abbild von %1$s</string>
+    <string name="cd_element_badge">Element %1$s</string>
+    <string name="cd_hp_bar">%1$d von %2$d Lebenspunkten</string>
+    <string name="cd_back">Zurück</string>
+    <string name="cd_menu">Menü</string>
+</resources>

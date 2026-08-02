@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <!--
+      The splash theme is the only XML theme in the app; everything after the
+      first frame is styled by Compose (see ui/theme/Theme.kt).
+    -->
+    <style name="Theme.Runeveil.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/rune_night</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_rune</item>
+        <item name="postSplashScreenTheme">@style/Theme.Runeveil</item>
+    </style>
+
+    <style name="Theme.Runeveil" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/rune_night</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>
