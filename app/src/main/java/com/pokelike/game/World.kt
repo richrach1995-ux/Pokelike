@@ -78,6 +78,7 @@ class NpcDef(
     val givesItemCount: Int = 1,
     val blocks: Boolean = true,
     val requiresItem: String = "",
+    val afterFlag: String = "",
     val requiresBadges: Int = 0,
     val blockLines: List<String> = emptyList()
 )

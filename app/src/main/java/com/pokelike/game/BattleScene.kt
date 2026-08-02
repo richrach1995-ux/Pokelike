@@ -65,6 +65,12 @@ class BattleScene(
         if (shakeTime > 0f) shakeTime -= dt
         if (flashTime > 0f) flashTime -= dt
 
+        // Ein offenes Textfenster hat immer Vorrang, egal in welcher Phase.
+        if (g.dialog.active) {
+            g.dialog.update(g, dt)
+            return
+        }
+
         when (phase) {
             Phase.EVENTS -> updateEvents(g, dt)
             Phase.MENU -> updateMenu(g)
@@ -228,7 +234,6 @@ class BattleScene(
 
     // ------------------------------------------------------------------
     private fun updateMenu(g: Game) {
-        if (g.dialog.active) { g.dialog.update(g, 0.016f); return }
         if (g.input.repeated(Btn.LEFT) && menuIndex % 2 == 1) menuIndex--
         if (g.input.repeated(Btn.RIGHT) && menuIndex % 2 == 0) menuIndex++
         if (g.input.repeated(Btn.UP) && menuIndex >= 2) menuIndex -= 2
@@ -266,7 +271,7 @@ class BattleScene(
             if (item.needsTarget && item.ballRate <= 0.0) {
                 g.push(PartyScene(forcedSwitch = false, onChosen = { idx ->
                     useItem(g, itemId, idx)
-                }, selectOnly = true))
+                }, onCancel = { phase = Phase.MENU }, selectOnly = true))
             } else {
                 useItem(g, itemId, battle.playerIndex)
             }

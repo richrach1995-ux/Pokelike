@@ -643,6 +643,11 @@ class OverworldScene : Scene {
                 }
             }
             else -> {
+                // Nach einem Story-Fortschritt reden manche Leute anders
+                if (n.afterFlag.isNotEmpty() && g.state.flags.contains(n.afterFlag) && n.afterLines.isNotEmpty()) {
+                    g.dialog.say(n.afterLines)
+                    return
+                }
                 // Bedingungen fuer Geschenke / Story-NPCs
                 if (n.requiresBadges > 0 && g.state.badges < n.requiresBadges) {
                     g.dialog.say(n.lines)

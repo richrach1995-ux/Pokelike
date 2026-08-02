@@ -70,6 +70,11 @@ object MapData {
                     "Frueher bin ich selbst durch Auronia gereist.",
                     "Fuenf Arenen, fuenf Siegel - erst dann darf man zur Liga.",
                     "Und pass auf den Schattenorden auf. Die fuehren nichts Gutes im Schilde."
+                ),
+                afterFlag = "siegel5",
+                afterLines = listOf(
+                    "Alle fuenf Siegel! Du bist schon weiter gekommen als ich damals.",
+                    "Im Schattental wartet der Orden auf dich. Gib acht, Kind."
                 ))
         ),
         shop = shopA
@@ -119,6 +124,7 @@ object MapData {
                     "Prof. Eibe: In den drei Kugeln dort wartet dein erster Partner.",
                     "Prof. Eibe: Waehle weise! Feuer, Wasser oder Pflanze."
                 ),
+                afterFlag = "starter",
                 afterLines = listOf(
                     "Prof. Eibe: Besiege die fuenf Arenameister und stelle dich der Liga.",
                     "Prof. Eibe: Und behalte den Schattenorden im Auge. Sie suchen Titanox."
