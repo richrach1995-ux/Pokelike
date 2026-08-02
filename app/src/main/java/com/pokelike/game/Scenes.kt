@@ -13,7 +13,6 @@ class Input {
     private val timers = FloatArray(7)
 
     fun set(b: Btn, v: Boolean) { held[b.ordinal] = v }
-    fun clear() { for (i in held.indices) { held[i] = false } }
 
     fun isHeld(b: Btn) = held[b.ordinal]
 
@@ -181,7 +180,6 @@ class Game(val ctx: Context) {
     private var fadeTime = 0f
     private var fadeDur = 0f
     private var fadeMid: (() -> Unit)? = null
-    val isFading: Boolean get() = fadeDur > 0f
 
     var message: String = ""
     private var messageTime = 0f

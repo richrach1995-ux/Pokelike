@@ -44,7 +44,6 @@ class Battle(
     var over = false
     var caughtMonster: Monster? = null
     var lastItemConsumed = false
-    var moneyEarned = 0
 
     private val pSide = SideState()
     private val fSide = SideState()
@@ -676,7 +675,6 @@ class Battle(
             val next = foeParty.indexOfFirst { !it.isFainted }
             if (next < 0) {
                 if (!isWild) {
-                    moneyEarned = rewardMoney
                     ev.add(BEvent.Msg("Du hast $trainerName besiegt!"))
                     if (rewardMoney > 0) ev.add(BEvent.Msg("Du erhaeltst $rewardMoney Muenzen!"))
                 }

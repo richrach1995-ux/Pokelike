@@ -32,7 +32,6 @@ class BattleScene(
     private var sendTime = 0f
     private var ballTime = 0f
     private var ballShakes = 0
-    private var ballCaught = false
     private var flashTime = 0f
     private var evolveTime = 0f
     private var evolveFrom = ""
@@ -172,7 +171,7 @@ class BattleScene(
                     pExpShown = expRatio(battle.activePlayer)
                 } else fHpShown = battle.activeFoe.currentHp.toFloat()
             }
-            is BEvent.Ball -> { ballTime = 0f; ballShakes = ev.shakes; ballCaught = ev.caught }
+            is BEvent.Ball -> { ballTime = 0f; ballShakes = ev.shakes }
             is BEvent.LevelUp -> {
                 val m = battle.playerParty.getOrNull(ev.monsterIndex)
                 queue.addFirst(BEvent.Msg("${m?.name ?: "Monster"} erreicht Level ${ev.newLevel}!"))
@@ -271,7 +270,7 @@ class BattleScene(
             if (item.needsTarget && item.ballRate <= 0.0) {
                 g.push(PartyScene(forcedSwitch = false, onChosen = { idx ->
                     useItem(g, itemId, idx)
-                }, onCancel = { phase = Phase.MENU }, selectOnly = true))
+                }, onCancel = { phase = Phase.MENU }))
             } else {
                 useItem(g, itemId, battle.playerIndex)
             }

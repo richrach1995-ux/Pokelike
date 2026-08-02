@@ -18,7 +18,6 @@ object Gfx {
     const val BLACK = 0xFF101018.toInt()
     const val UI_BG = 0xFFF8F8F0.toInt()
     const val UI_BORDER = 0xFF283048.toInt()
-    const val UI_SHADOW = 0xFFA0A8B8.toInt()
     const val ACCENT = 0xFFD03828.toInt()
 
     // ---------------------------------------------------------------- Text

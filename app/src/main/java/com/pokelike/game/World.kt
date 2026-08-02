@@ -19,8 +19,6 @@ object Tiles {
 
     fun solid(ch: Char): Boolean = SOLIDS.indexOf(ch) >= 0
     fun isTallGrass(ch: Char): Boolean = ch == 'g'
-    fun isWater(ch: Char): Boolean = ch == '~'
-    fun isDoor(ch: Char): Boolean = ch == 'D'
     fun isIce(ch: Char): Boolean = ch == 'I'
 }
 
@@ -55,7 +53,7 @@ data class TrainerDef(
     }
 }
 
-enum class NpcKind { TALK, SIGN, TRAINER, HEALER, SHOP, ITEM, HIDDEN_ITEM }
+enum class NpcKind { TALK, SIGN, TRAINER, HEALER, ITEM }
 
 class NpcDef(
     val id: String,
@@ -68,7 +66,6 @@ class NpcDef(
     val afterLines: List<String> = emptyList(),
     val trainer: TrainerDef? = null,
     val sight: Int = 0,
-    val shop: List<String> = emptyList(),
     val itemId: String = "",
     val itemCount: Int = 1,
     val requiresFlag: String = "",
@@ -77,10 +74,8 @@ class NpcDef(
     val givesItem: String = "",
     val givesItemCount: Int = 1,
     val blocks: Boolean = true,
-    val requiresItem: String = "",
     val afterFlag: String = "",
-    val requiresBadges: Int = 0,
-    val blockLines: List<String> = emptyList()
+    val requiresBadges: Int = 0
 )
 
 class GameMap(

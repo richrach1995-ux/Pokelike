@@ -16,16 +16,7 @@ data class Species(
     val learnset: List<Pair<Int, String>>,
     val evolution: Evolution? = null,
     val dexText: String = ""
-) {
-    fun base(stat: Stat): Int = when (stat) {
-        Stat.HP -> hp
-        Stat.ATK -> atk
-        Stat.DEF -> def
-        Stat.SPA -> spa
-        Stat.SPD -> spd
-        else -> spe
-    }
-}
+)
 
 object Dex {
 

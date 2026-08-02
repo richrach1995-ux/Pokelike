@@ -61,7 +61,6 @@ class PartyScene(
     private val forcedSwitch: Boolean = false,
     private val onChosen: ((Int) -> Unit)? = null,
     private val onCancel: (() -> Unit)? = null,
-    private val selectOnly: Boolean = false,
     private val itemToUse: String = ""
 ) : Scene {
 
