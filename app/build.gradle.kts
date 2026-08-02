@@ -37,6 +37,12 @@ android {
             java.srcDirs("src/main/java")
         }
     }
+
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
-dependencies { }
+dependencies {
+    testImplementation("junit:junit:4.13.2")
+}

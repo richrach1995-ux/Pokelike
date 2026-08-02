@@ -32,6 +32,9 @@ jobs:
       - name: gradlew ausfuehrbar machen
         run: chmod +x ./gradlew
 
+      - name: Spieltests ausfuehren
+        run: ./gradlew testDebugUnitTest --stacktrace
+
       - name: Debug- und Release-APK bauen
         run: ./gradlew assembleDebug assembleRelease --stacktrace
 
