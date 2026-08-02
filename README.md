@@ -127,6 +127,21 @@ Angelstellen, 45 Monsterarten mit Monsterdex, Speicherfunktion und Trainerkarte.
 
 ---
 
+## Tests
+
+Bei jedem Build laufen automatisch neun Tests mit (`./gradlew testDebugUnitTest`):
+
+* Monster- und Attackendaten (Lernsets, Entwicklungen, Sprites, Fangraten)
+* Typentabelle inklusive Doppeltyp-Multiplikation und Typ-Bonus
+* alle Karten: Zeilenlängen, Warps, NPC-Positionen, Begegnungstabellen, Läden
+* **600 zufällig durchgespielte Kämpfe** – prüft auf Abstürze, ungültige Zustände
+  und Kämpfe, die nie enden
+* Status-Immunitäten, Erfahrung und Entwicklung
+* **Durchspielbarkeit**: Eine Flutfüllung über alle Karten, Warps, blockierende
+  NPCs und Story-Flags weist nach, dass man vom Startdorf über alle fünf Siegel
+  und den Schattenorden bis zum Champion und zu Titanox kommt – und dass jedes
+  Bodenitem erreichbar ist.
+
 ## Projektaufbau
 
 ```
