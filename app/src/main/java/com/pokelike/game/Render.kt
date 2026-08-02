@@ -415,7 +415,16 @@ object Gfx {
 
     fun drawActor(c: Canvas, style: String, dir: Int, x: Float, y: Float, s: Float, walkFrame: Int) {
         when (style) {
-            "sign" -> return   // Schilder sind bereits Teil der Kachel
+            "sign" -> {
+                p.color = 0xFF6B4A28.toInt()
+                c.drawRect(x + s * 0.44f, y + s * 0.5f, x + s * 0.56f, y + s, p)
+                p.color = 0xFFC89858.toInt()
+                c.drawRect(x + s * 0.12f, y + s * 0.14f, x + s * 0.88f, y + s * 0.56f, p)
+                p.color = 0xFF6B4A28.toInt()
+                c.drawRect(x + s * 0.2f, y + s * 0.24f, x + s * 0.8f, y + s * 0.3f, p)
+                c.drawRect(x + s * 0.2f, y + s * 0.38f, x + s * 0.66f, y + s * 0.44f, p)
+                return
+            }
             "item" -> {
                 p.color = 0xFFE8B830.toInt()
                 c.drawRect(x + s * 0.2f, y + s * 0.35f, x + s * 0.8f, y + s * 0.85f, p)

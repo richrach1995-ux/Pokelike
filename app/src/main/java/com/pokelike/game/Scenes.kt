@@ -654,9 +654,13 @@ class OverworldScene : Scene {
                         g.state.bag.add(n.givesItem, n.givesItemCount)
                         g.state.setFlag(flag)
                         g.state.setFlag(n.setsFlag)
-                        g.dialog.say(if (n.afterLines.isNotEmpty()) n.afterLines else n.lines)
+                        // Bei Bedingungen steht die Uebergabe in afterLines, sonst in lines.
+                        val handover = if (n.requiresBadges > 0 && n.afterLines.isNotEmpty()) n.afterLines else n.lines
+                        g.dialog.say(handover)
                         return
                     }
+                    g.dialog.say(if (n.afterLines.isNotEmpty()) n.afterLines else n.lines)
+                    return
                 }
                 if (n.requiresBadges > 0 && g.state.badges >= n.requiresBadges && n.afterLines.isNotEmpty()) {
                     g.state.setFlag(n.setsFlag)

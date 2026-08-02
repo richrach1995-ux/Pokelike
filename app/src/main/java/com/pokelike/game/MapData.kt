@@ -279,9 +279,9 @@ object MapData {
                 ),
                 trainer = TrainerDef("boss1", "Meisterin Bella",
                     listOf(
-                        TrainerMon("raupix", 10),
-                        TrainerMon("glutwurm", 12, listOf("kaeferbiss", "glut", "fadenschuss")),
-                        TrainerMon("mothara", 14, listOf("silberhauch", "giftpuder", "kaefergebrumm", "konfustrahl"))
+                        TrainerMon("raupix", 8, listOf("tackle", "fadenschuss", "kaeferbiss")),
+                        TrainerMon("kokonix", 10, listOf("kaeferbiss", "haertner", "fadenschuss")),
+                        TrainerMon("glutwurm", 12, listOf("kaeferbiss", "glut", "fadenschuss"))
                     ),
                     money = 1200, boss = true, badge = "siegel1",
                     rewardItem = "sonderbonbon", rewardCount = 2,
@@ -290,12 +290,12 @@ object MapData {
                 lines = listOf("Arenaschueler Nino: An mir kommst du nicht vorbei!"),
                 afterLines = listOf("Arenaschueler Nino: Bella wird dich schon aufhalten."),
                 trainer = TrainerDef("a1_t1", "Arenaschueler Nino",
-                    listOf(TrainerMon("raupix", 8), TrainerMon("kokonix", 9)), 320)),
+                    listOf(TrainerMon("raupix", 6), TrainerMon("kokonix", 7)), 320)),
             NpcDef("a1_t2", 9, 7, 2, "npc_bug", NpcKind.TRAINER, sight = 2,
                 lines = listOf("Arenaschuelerin Ida: Kaefer sind die Zukunft!"),
                 afterLines = listOf("Arenaschuelerin Ida: Nicht schlecht ..."),
                 trainer = TrainerDef("a1_t2", "Arenaschuelerin Ida",
-                    listOf(TrainerMon("glutwurm", 10)), 300))
+                    listOf(TrainerMon("glutwurm", 8)), 300))
         )
     )
 
@@ -490,9 +490,9 @@ object MapData {
                 ),
                 trainer = TrainerDef("boss2", "Meisterin Nerina",
                     listOf(
-                        TrainerMon("korallis", 17, listOf("blubbstrahl", "steinwurf", "haertner")),
-                        TrainerMon("seeklinge", 18, listOf("aquahaubitze", "nassschweif", "agilitaet")),
-                        TrainerMon("wavox", 21, listOf("surfer", "frostatem", "blubbstrahl", "haertner"))
+                        TrainerMon("korallis", 16, listOf("blubbstrahl", "steinwurf", "haertner")),
+                        TrainerMon("seeklinge", 17, listOf("aquahaubitze", "nassschweif", "agilitaet")),
+                        TrainerMon("wavox", 20, listOf("surfer", "frostatem", "blubbstrahl", "haertner"))
                     ),
                     money = 2400, boss = true, badge = "siegel2",
                     rewardItem = "hyperball", rewardCount = 5,
@@ -646,9 +646,9 @@ object MapData {
                 ),
                 trainer = TrainerDef("boss3", "Meister Ignaz",
                     listOf(
-                        TrainerMon("flufflamm", 24, listOf("flammenrad", "heuler", "hitzeschutz")),
-                        TrainerMon("glutwurm", 24, listOf("flammenwurf", "sichelschlag", "kaefergebrumm")),
-                        TrainerMon("flammor", 27, listOf("flammenwurf", "feuerzahn", "schlitzer", "ruckzuck"))
+                        TrainerMon("flufflamm", 25, listOf("flammenwurf", "hitzeschutz", "heuler")),
+                        TrainerMon("glutwurm", 26, listOf("flammenwurf", "sichelschlag", "kaefergebrumm")),
+                        TrainerMon("flammor", 29, listOf("flammenwurf", "feuerzahn", "schlitzer", "ruckzuck"))
                     ),
                     money = 3600, boss = true, badge = "siegel3",
                     rewardItem = "toptrank", rewardCount = 3,
@@ -920,11 +920,13 @@ object MapData {
                     "Wache: Hinter mir liegt das Schattental.",
                     "Wache: Dort haust der Schattenorden. Ohne alle fuenf Siegel lasse ich niemanden durch!"
                 ),
-                afterLines = listOf(
-                    "Wache: Fuenf Siegel! Dann bist du unsere letzte Hoffnung.",
-                    "Wache: Der Orden will Titanox erwecken. Halte sie auf!"
+                hiddenFlag = "siegel5"),
+            NpcDef("sf_bote", 14, 8, 0, "npc_f", NpcKind.TALK,
+                lines = listOf(
+                    "Botin: Fuenf Siegel! Dann bist du unsere letzte Hoffnung.",
+                    "Botin: Der Orden will Titanox erwecken. Halte sie im Schattental auf!"
                 ),
-                requiresBadges = 5),
+                requiresFlag = "siegel5"),
             NpcDef("sf_item", 16, 15, 0, "item", NpcKind.ITEM, itemId = "meisterball")
         ),
         shop = shopE
@@ -961,9 +963,9 @@ object MapData {
                 ),
                 trainer = TrainerDef("boss5", "Meister Volter",
                     listOf(
-                        TrainerMon("funkling", 34, listOf("donnerblitz", "donnerwelle", "agilitaet")),
-                        TrainerMon("voltrax", 36, listOf("donnerblitz", "ladungsstoss", "agilitaet", "funkenflug")),
-                        TrainerMon("gigavolt", 38, listOf("donner", "steinkante", "erdbeben", "donnerblitz"))
+                        TrainerMon("funkling", 35, listOf("donnerblitz", "donnerwelle", "agilitaet")),
+                        TrainerMon("voltrax", 37, listOf("donnerblitz", "ladungsstoss", "agilitaet", "funkenflug")),
+                        TrainerMon("gigavolt", 40, listOf("donner", "steinkante", "erdbeben", "donnerblitz"))
                     ),
                     money = 7000, boss = true, badge = "siegel5",
                     rewardItem = "sonderbonbon", rewardCount = 5,
@@ -1130,7 +1132,7 @@ object MapData {
                 lines = listOf("HEILSTATION - Letzte Station vor der Liga.")),
             NpcDef("lg_sign2", 13, 5, 0, "sign", NpcKind.SIGN,
                 lines = listOf("GROSSMARKT VON LIGATOR - Alles fuer den letzten Kampf.")),
-            NpcDef("lg_wache", 9, 10, 1, "npc_m", NpcKind.TALK,
+            NpcDef("lg_wache", 12, 10, 1, "npc_m", NpcKind.TALK,
                 lines = listOf(
                     "Ligawache: Nur wer alle fuenf Siegel besitzt, darf hinein.",
                     "Ligawache: Champion Drakon hat noch nie verloren."

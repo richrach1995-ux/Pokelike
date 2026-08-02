@@ -251,6 +251,8 @@ class BattleScene(
         if (g.input.repeated(Btn.RIGHT) && moveIndex % 2 == 0 && moveIndex + 1 < moves.size) moveIndex++
         if (g.input.pressed(Btn.B)) { phase = Phase.MENU; return }
         if (g.input.pressed(Btn.A)) {
+            val noPp = moves.none { it.pp > 0 }
+            if (noPp) { enqueue(battle.playerMove(0)); return }
             val slot = moves.getOrNull(moveIndex) ?: return
             if (slot.pp <= 0) return
             enqueue(battle.playerMove(moveIndex))
@@ -404,7 +406,11 @@ class BattleScene(
             Gfx.text(c, "$kat  ST ${if (sel.move.power > 0) sel.move.power.toString() else "-"}",
                 62f, y + 47f, 9f, 0xFF404858.toInt())
         }
-        Gfx.text(c, "B = zurueck", Game.VW - 12f, y + 14f, 8f, 0xFF808898.toInt(), right = true)
+        if (moves.none { it.pp > 0 }) {
+            Gfx.text(c, "Keine AP! -> Verzweifler", Game.VW - 12f, y + 14f, 8f, Gfx.ACCENT, right = true)
+        } else {
+            Gfx.text(c, "B = zurueck", Game.VW - 12f, y + 14f, 8f, 0xFF808898.toInt(), right = true)
+        }
     }
 
     private fun drawFoeBox(c: Canvas, foe: Monster) {

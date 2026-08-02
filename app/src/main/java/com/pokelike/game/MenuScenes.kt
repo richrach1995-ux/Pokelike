@@ -198,15 +198,6 @@ class PartyScene(
             Gfx.hpBar(c, 84f, y + 8f, 92f, 6f, m.hpRatio)
             Gfx.text(c, "${m.currentHp}/${m.maxHp}", 84f, y + 25f, 9f)
             Gfx.statusTag(c, m.status, 140f, y + 18f, 7f)
-            var bx = 182f
-            for (t in m.species.types) {
-                Gfx.typeBadge(c, t, bx, y + 6f, 6f)
-                bx += 0f
-                Gfx.p.color = 0
-                bx = 182f
-                break
-            }
-            // Typen untereinander
             var ty = y + 4f
             for (t in m.species.types) {
                 Gfx.typeBadge(c, t, 182f, ty, 6f)

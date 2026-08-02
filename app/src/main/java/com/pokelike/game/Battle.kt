@@ -49,7 +49,7 @@ class Battle(
     private val pSide = SideState()
     private val fSide = SideState()
     private var runAttempts = 0
-    private var trainerPotions = if (kind == BattleKind.BOSS) 2 else if (kind == BattleKind.TRAINER) 1 else 0
+    private var trainerPotions = if (kind == BattleKind.BOSS) 1 else 0
     private val ev = mutableListOf<BEvent>()
     private val participants = HashSet<Int>()
 
@@ -82,6 +82,11 @@ class Battle(
     // ------------------------------------------------------------------
     fun playerMove(moveIndex: Int): List<BEvent> {
         ev.clear()
+        if (activePlayer.moves.none { it.pp > 0 }) {
+            // Ohne AP bleibt nur noch der Verzweifler
+            runTurn(PlayerAction.Fight(-1))
+            return ev.toList()
+        }
         val slot = activePlayer.moves.getOrNull(moveIndex)
         if (slot == null || slot.pp <= 0) {
             ev.add(BEvent.Msg("Keine AP mehr fuer diese Attacke!"))
@@ -90,6 +95,8 @@ class Battle(
         runTurn(PlayerAction.Fight(moveIndex))
         return ev.toList()
     }
+
+    private fun struggleSlot() = MoveSlot("verzweifler", 1, 1)
 
     fun playerItem(itemId: String, targetIndex: Int): List<BEvent> {
         ev.clear()
@@ -139,6 +146,7 @@ class Battle(
             is PlayerAction.Run -> {
                 if (!isWild) {
                     ev.add(BEvent.Msg("Vor einem Kampf kann man nicht fliehen!"))
+                    return
                 } else if (tryRun()) {
                     ev.add(BEvent.Msg("Du bist entkommen!"))
                     finish(BattleResult.FLED)
@@ -172,7 +180,9 @@ class Battle(
             is PlayerAction.Fight -> Unit
         }
 
-        val playerMoveSlot = (action as PlayerAction.Fight).let { activePlayer.moves[it.moveIndex] }
+        val fightAction = action as PlayerAction.Fight
+        val playerMoveSlot = if (fightAction.moveIndex < 0) struggleSlot()
+        else activePlayer.moves.getOrNull(fightAction.moveIndex) ?: struggleSlot()
         val foeChoice = chooseFoeAction()
 
         if (foeChoice is FoeAction.Potion) {
@@ -501,7 +511,7 @@ class Battle(
             return FoeAction.Potion
         }
         val usable = foe.moves.filter { it.pp > 0 }
-        if (usable.isEmpty()) return FoeAction.Fight(MoveSlot.of("tackle"))
+        if (usable.isEmpty()) return FoeAction.Fight(struggleSlot())
         if (kind == BattleKind.WILD) {
             // Wilde Monster greifen weitgehend zufaellig an, bevorzugen aber Schaden
             val damaging = usable.filter { it.move.power > 0 }
@@ -539,7 +549,7 @@ class Battle(
     private fun doFoePotion() {
         trainerPotions--
         val foe = activeFoe
-        val healed = foe.heal(foe.maxHp / 2)
+        val healed = foe.heal(foe.maxHp / 3)
         ev.add(BEvent.Msg("$trainerName setzt einen Hypertrank ein!"))
         ev.add(BEvent.Hp(false, foe.currentHp))
         if (healed <= 0) ev.add(BEvent.Msg("Es hatte keine Wirkung."))
@@ -611,8 +621,7 @@ class Battle(
                 else -> "So ein Pech! Es hat sich befreit!"
             }
             ev.add(BEvent.Msg(text))
-            foeTurn()
-            endOfTurn()
+            // Die Gegnerrunde wird von runTurn ausgeloest.
         }
     }
 

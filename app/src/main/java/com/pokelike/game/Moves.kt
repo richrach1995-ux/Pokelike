@@ -86,6 +86,9 @@ object Moves {
             desc = "Senkt die Genauigkeit des Gegners."),
         Move("erholung", "Erholung", Type.NORMAL, MoveCategory.STATUS, 0, 0, 10,
             healPct = 50, desc = "Stellt die Haelfte der eigenen KP her."),
+        Move("verzweifler", "Verzweifler", Type.NORMAL, MoveCategory.PHYSISCH, 50, 100, 1,
+            recoilPct = 25,
+            desc = "Letzter Ausweg, wenn keine AP mehr uebrig sind. Verletzt auch einen selbst."),
 
         // ---------------- FEUER ----------------
         Move("glut", "Glut", Type.FEUER, MoveCategory.SPEZIAL, 40, 100, 25,
