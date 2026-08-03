@@ -3,6 +3,7 @@ package com.runeveil.saga.audio
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
+import android.os.Looper
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -10,6 +11,9 @@ import com.runeveil.saga.data.di.ApplicationScope
 import com.runeveil.saga.domain.repository.SettingsRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.launchIn
@@ -39,6 +43,26 @@ class AudioEngine @Inject constructor(
     private val settings: SettingsRepository,
     @ApplicationScope private val scope: CoroutineScope,
 ) {
+    /**
+     * Every ExoPlayer call has to happen on the thread the player was built on.
+     * The player is built on the main looper, but the injected application
+     * scope runs on [kotlinx.coroutines.Dispatchers.Default] — collecting the
+     * settings flow there and writing `player.volume` from it threw
+     * `IllegalStateException: Player is accessed on the wrong thread` and killed
+     * the process a moment after launch.
+     *
+     * All player work therefore runs in this scope: same lifetime as the
+     * application scope (it is a child of its job, so it dies with it), but
+     * pinned to the main thread. `Main.immediate` means a call that is already
+     * on the main thread is executed inline rather than posted, so pausing the
+     * music from the lifecycle observer stays synchronous.
+     *
+     * SoundPool has no such restriction and is used from any thread.
+     */
+    private val playerScope = CoroutineScope(
+        SupervisorJob(scope.coroutineContext[Job]) + Dispatchers.Main.immediate,
+    )
+
     private var musicPlayer: ExoPlayer? = null
     private var soundPool: SoundPool? = null
 
@@ -56,10 +80,15 @@ class AudioEngine @Inject constructor(
 
     fun initialise() {
         if (musicPlayer == null) {
-            musicPlayer = ExoPlayer.Builder(context).build().apply {
-                repeatMode = Player.REPEAT_MODE_ONE
-                volume = musicVolume
-            }
+            // Pin the player to the main looper explicitly instead of inheriting
+            // the looper of whatever thread happens to call initialise().
+            musicPlayer = ExoPlayer.Builder(context)
+                .setLooper(Looper.getMainLooper())
+                .build()
+                .apply {
+                    repeatMode = Player.REPEAT_MODE_ONE
+                    volume = musicVolume
+                }
         }
         if (soundPool == null) {
             soundPool = SoundPool.Builder()
@@ -78,7 +107,7 @@ class AudioEngine @Inject constructor(
                 soundVolume = current.soundVolume
                 musicPlayer?.volume = musicVolume
             }
-            .launchIn(scope)
+            .launchIn(playerScope)
     }
 
     /**
@@ -91,11 +120,11 @@ class AudioEngine @Inject constructor(
         currentMusic.value = musicKey
 
         if (musicKey == null) {
-            scope.launch { fadeOutAndStop(player, fadeMs) }
+            playerScope.launch { fadeOutAndStop(player, fadeMs) }
             return
         }
         val path = "asset:///audio/$musicKey.ogg"
-        scope.launch {
+        playerScope.launch {
             if (player.isPlaying) fadeOutAndStop(player, fadeMs / 2)
             runCatching {
                 player.setMediaItem(MediaItem.fromUri(path))
@@ -161,22 +190,24 @@ class AudioEngine @Inject constructor(
     }
 
     fun pause() {
-        musicPlayer?.pause()
         soundPool?.autoPause()
+        playerScope.launch { musicPlayer?.pause() }
     }
 
     fun resume() {
-        musicPlayer?.play()
         soundPool?.autoResume()
+        playerScope.launch { musicPlayer?.play() }
     }
 
     fun release() {
-        musicPlayer?.release()
-        musicPlayer = null
         soundPool?.release()
         soundPool = null
         samples.clear()
         currentMusic.value = null
+        playerScope.launch {
+            musicPlayer?.release()
+            musicPlayer = null
+        }
     }
 
     private suspend fun fadeIn(player: ExoPlayer, durationMs: Int) {

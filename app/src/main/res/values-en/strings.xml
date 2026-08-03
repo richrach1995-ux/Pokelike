@@ -19,6 +19,8 @@
     <string name="common_yes">Yes</string>
     <string name="common_no">No</string>
     <string name="common_loading">Loading …</string>
+    <string name="boot_failed_title">The game could not start</string>
+    <string name="boot_failed_hint">The game data could not be loaded. Please send us the text below — it identifies the cause exactly.</string>
     <string name="common_empty">Empty</string>
     <string name="common_level">Level %1$d</string>
     <string name="common_gold">%1$d gold</string>

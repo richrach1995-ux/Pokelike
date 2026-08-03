@@ -28,6 +28,8 @@
     <string name="common_yes">Ja</string>
     <string name="common_no">Nein</string>
     <string name="common_loading">Lade …</string>
+    <string name="boot_failed_title">Das Spiel konnte nicht starten</string>
+    <string name="boot_failed_hint">Die Spieldaten ließen sich nicht laden. Bitte schicke uns den folgenden Text — damit lässt sich die Ursache eindeutig bestimmen.</string>
     <string name="common_empty">Leer</string>
     <string name="common_level">Stufe %1$d</string>
     <string name="common_gold">%1$d Gold</string>
