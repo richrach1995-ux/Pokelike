@@ -53,29 +53,6 @@ jobs:
           arch: x86_64
           profile: pixel_5
           disable-animations: true
-          script: |
-            set -x
-            APK=$(find app/build/outputs/apk/debug -name '*.apk' | head -n 1)
-            adb install -r "$APK"
-            adb logcat -c
-            adb shell am start -W -n com.runeveil.saga.debug/com.runeveil.saga.MainActivity
-            sleep 15
-
-            echo "=================== PROZESS ==================="
-            PID=$(adb shell pidof com.runeveil.saga.debug || true)
-            echo "pid='$PID'"
-
-            echo "=================== CRASH-PUFFER ==================="
-            adb logcat -d -b crash || true
-
-            echo "=================== FEHLER IM HAUPTPUFFER ==================="
-            adb logcat -d '*:E' | tail -n 200 || true
-
-            echo "=================== APP-EIGENE ZEILEN ==================="
-            adb logcat -d | grep -iE 'runeveil|AndroidRuntime|FATAL' | tail -n 120 || true
-
-            if [ -z "$PID" ]; then
-              echo "::error::Die App läuft nach dem Start nicht mehr — siehe Stacktrace oben."
-              exit 1
-            fi
-            echo "App läuft (pid $PID)."
+          # Achtung: Der Runner führt jede Zeile in einer eigenen Shell aus.
+          # Der komplette Ablauf steht deshalb in tools/smoke.sh.
+          script: bash tools/smoke.sh
