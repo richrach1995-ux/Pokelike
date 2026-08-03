@@ -10,9 +10,13 @@ on:
 
 jobs:
   smoke:
-    name: App starten
+    name: App starten (API ${{ matrix.api }})
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        api: [30, 34, 35]
 
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +48,7 @@ jobs:
       - name: Auf Emulator starten
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: ${{ matrix.api }}
           target: google_apis
           arch: x86_64
           profile: pixel_5
