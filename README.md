@@ -3,6 +3,9 @@
 Ein vollständiges Monster-Sammel-RPG für Android, angesiedelt in einer eigenständigen
 Welt auf Basis der nordischen Mythologie. Kotlin, Jetpack Compose, Clean Architecture.
 
+**[➜ Fertige APK herunterladen](https://github.com/richrach1995-ux/Pokelike/releases/latest)**
+(Android 8.0 oder neuer; beim Öffnen die Installation aus unbekannter Quelle erlauben.)
+
 > Der Weltenbaum stirbt. Die Grenzen zwischen den Neun Welten reißen auf, Chaoswesen
 > strömen hindurch, und eine uralte Organisation arbeitet daran, Ragnarök nicht zu
 > verhindern, sondern zu beschleunigen. Du wirst zum Runenwächter berufen.
@@ -61,6 +64,12 @@ Voraussetzungen: JDK 17, Android Studio Ladybug (oder neuer), Android SDK 35.
 
 Das Projekt lässt sich ohne weitere Anpassungen in Android Studio öffnen
 (`File → Open` auf das Wurzelverzeichnis).
+
+### Fertige APK
+
+Jeder Push auf `main` oder einen `claude/**`-Branch baut über
+`.github/workflows/apk.yml` eine installierbare Debug-APK und veröffentlicht sie
+als GitHub-Release. Der Direktlink zur jeweils neuesten Version steht oben.
 
 ### Inhalte neu erzeugen
 
