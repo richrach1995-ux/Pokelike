@@ -150,4 +150,9 @@
     <string name="cd_hp_bar">%1$d of %2$d hit points</string>
     <string name="cd_back">Back</string>
     <string name="cd_menu">Menu</string>
+    <string name="battle_blocked_no_monsters">You have no creature that could fight for you yet.</string>
+    <string name="battle_blocked_only_eggs">You are only carrying eggs — nothing in there can fight.</string>
+    <string name="battle_blocked_all_fainted">Your whole team is down. Rest or heal before travelling on.</string>
+    <string name="battle_blocked_unknown_opponent">That opponent cannot be found — the battle was cancelled.</string>
+    <string name="battle_blocked_opponent_empty">That opponent has no team to fight.</string>
 </resources>

@@ -189,4 +189,9 @@
     <string name="cd_hp_bar">%1$d von %2$d Lebenspunkten</string>
     <string name="cd_back">Zurück</string>
     <string name="cd_menu">Menü</string>
+    <string name="battle_blocked_no_monsters">Du hast noch kein Wesen, das für dich kämpfen könnte.</string>
+    <string name="battle_blocked_only_eggs">Du trägst nur Eier bei dir — aus denen kämpft noch niemand.</string>
+    <string name="battle_blocked_all_fainted">Dein ganzes Team ist besiegt. Ruhe dich aus oder heile es, bevor du weiterziehst.</string>
+    <string name="battle_blocked_unknown_opponent">Dieser Gegner ist nicht auffindbar — der Kampf wurde abgebrochen.</string>
+    <string name="battle_blocked_opponent_empty">Dieser Gegner hat kein Team, gegen das sich kämpfen ließe.</string>
 </resources>

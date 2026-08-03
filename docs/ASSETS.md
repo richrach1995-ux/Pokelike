@@ -1,9 +1,13 @@
 # Medien-Assets
 
-Bild- und Tondateien sind nicht Teil dieses Repositorys. Das Spiel adressiert sie
-über Schlüssel; fehlt eine Datei, bleibt das Spiel spielbar (stiller No-Op beim
-Ton, Platzhalter beim Bild). So kann Spiellogik unabhängig von der
-Medienproduktion entstehen.
+**Monsterbilder werden nicht geladen, sondern erzeugt.** Jede Art wird aus ihrem
+eigenen Bauplan gezeichnet — siehe [SPRITES.md](SPRITES.md). Es gibt daher keine
+255 Bilddateien, keine Platzhalter und keinen Download dafür.
+
+Ton- und Hintergrunddateien sind weiterhin nicht Teil dieses Repositorys. Das
+Spiel adressiert sie über Schlüssel; fehlt eine Datei, bleibt es spielbar
+(stiller No-Op beim Ton). So kann Spiellogik unabhängig von der Medienproduktion
+entstehen.
 
 ## Verzeichnisse
 
@@ -12,7 +16,7 @@ app/src/main/assets/
 ├── content/    generiert — Spieldaten (JSON)
 ├── i18n/       generiert — Texte (DE/EN)
 ├── audio/      Musik und Effekte (.ogg)
-└── sprites/    Monster, Porträts, Hintergründe (.webp)
+└── sprites/    Porträts und Hintergründe (.webp) — Monster nicht, die werden gezeichnet
 ```
 
 ## Namensschema
@@ -24,8 +28,6 @@ app/src/main/assets/
 | Kampfmusik | `bgm_battle_<typ>` | `audio/bgm_battle_boss.ogg` |
 | Attackengeräusch | `sfx_<element>_<stufe>` | `audio/sfx_fire_3.ogg` |
 | Monsterruf | `cry_<familyId>` | `audio/cry_glutwelp.ogg` |
-| Monsterbild | `spr_<speciesId>` | `sprites/spr_glutwelp.webp` |
-| Schimmer-Palette | `pal_<speciesId>_shiny` | `sprites/pal_glutwelp_shiny.webp` |
 | Porträt | `portrait_<npcId>` | `sprites/portrait_npc_seeress_vala.webp` |
 | Hintergrund | `bg_<regionId>_<typ>` | `sprites/bg_muspelheim_emberfields_dungeon.webp` |
 
@@ -33,7 +35,6 @@ app/src/main/assets/
 
 Aus den erzeugten Inhalten ergeben sich:
 
-- 255 Monsterbilder plus 255 Schimmer-Paletten
 - 106 Monsterrufe (einer je Familie)
 - 9 Regionsthemen plus 9 Nachtvarianten
 - 7 Kampfthemen, 1 Titelthema, 1 Endthema

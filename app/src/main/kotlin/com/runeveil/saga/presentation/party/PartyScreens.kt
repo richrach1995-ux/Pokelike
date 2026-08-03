@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -49,6 +51,8 @@ import com.runeveil.saga.ui.components.ExperienceBar
 import com.runeveil.saga.ui.components.HealthBar
 import com.runeveil.saga.ui.components.RarityDot
 import com.runeveil.saga.ui.components.RunePanel
+import com.runeveil.saga.ui.sprite.EggPortrait
+import com.runeveil.saga.ui.sprite.MonsterPortrait
 import com.runeveil.saga.ui.components.RunicOutlinedButton
 import com.runeveil.saga.ui.components.SectionHeader
 import com.runeveil.saga.ui.components.StatRow
@@ -143,8 +147,15 @@ private fun MonsterRow(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
+                    // An egg has no creature to show yet, so the row keeps the
+                    // shell rather than spoiling what is inside it.
+                    if (monster.isEgg) {
+                        EggPortrait(Modifier.size(48.dp))
+                    } else {
+                        MonsterPortrait(monster, Modifier.size(48.dp))
+                    }
+                    Spacer(Modifier.width(8.dp))
                     RarityDot(monster.species.rarity)
-                    Spacer(Modifier.height(0.dp))
                     Text(
                         text = "  " + contentText(monster.displayNameKey) +
                             if (monster.isShiny) " ✦" else "",

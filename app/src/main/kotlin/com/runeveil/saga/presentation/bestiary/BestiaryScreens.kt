@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -39,6 +41,7 @@ import com.runeveil.saga.ui.components.ElementBadge
 import com.runeveil.saga.ui.components.EmptyState
 import com.runeveil.saga.ui.components.RarityDot
 import com.runeveil.saga.ui.components.RunePanel
+import com.runeveil.saga.ui.sprite.SpeciesPortrait
 import com.runeveil.saga.ui.components.SectionHeader
 import com.runeveil.saga.ui.components.StatRow
 import com.runeveil.saga.ui.components.contentText
@@ -101,7 +104,16 @@ private fun BestiaryRow(row: BestiaryRowUi, onClick: () -> Unit) {
             modifier = Modifier.fillMaxWidth().padding(12.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            Column {
+            // An unseen species is shown as a silhouette: the shape is already
+            // a hint, the colours would give the type away.
+            SpeciesPortrait(
+                species = row.species,
+                revealed = row.seen,
+                shiny = row.shiny,
+                modifier = Modifier.size(52.dp),
+            )
+            Spacer(Modifier.width(10.dp))
+            Column(Modifier.weight(1f)) {
                 Text(
                     text = "#%03d  %s".format(
                         row.species.dexNumber,
@@ -175,6 +187,13 @@ fun BestiaryDetailScreen(
             item {
                 RunePanel(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(14.dp)) {
+                        SpeciesPortrait(
+                            species = species,
+                            revealed = true,
+                            shiny = false,
+                            modifier = Modifier.fillMaxWidth().height(180.dp),
+                        )
+                        Spacer(Modifier.height(8.dp))
                         Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                             species.elements.forEach { ElementBadge(it) }
                         }

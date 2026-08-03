@@ -31,6 +31,7 @@ Welt auf Basis der nordischen Mythologie. Kotlin, Jetpack Compose, Clean Archite
 | Kapitel | 10 · Zwischensequenzen 24 · Enden 4 |
 | Gegenstände | 161 · Rezepte 73 · Talentbäume 9 |
 | Texte | 4 479 Schlüssel, zweisprachig (DE/EN) |
+| Sprites | prozedural erzeugt — 8 Körperbaupläne, 0 Bilddateien |
 
 ---
 
@@ -58,7 +59,7 @@ Voraussetzungen: JDK 17, Android Studio Ladybug (oder neuer), Android SDK 35.
 
 ```bash
 ./gradlew :app:assembleDebug     # APK bauen
-./gradlew :domain:test           # Regel-Tests (116 Tests)
+./gradlew :domain:test           # Regel-Tests (138 Tests)
 ./gradlew qualityGate            # alle Tests + Debug-Build
 ```
 
@@ -113,6 +114,13 @@ gebundene Rune, Geschlecht, bekannte Attacke, Wetter oder Story-Ereignis.
 **Welt** — Tag/Nacht in vier Phasen, regionales Wetter mit eigenen
 Wahrscheinlichkeiten, tages- und wetterabhängige Begegnungstabellen.
 
+**Darstellung** — Jede der 255 Arten wird aus einem eigenen, deterministisch
+abgeleiteten Bauplan gezeichnet statt aus einer Bilddatei geladen: Element und
+Größenklasse bestimmen Körperbau und Farben, die Entwicklungslinie teilt sich
+eine Silhouette, ein Schimmer-Exemplar dreht den Farbkreis. Im Kampf werden
+Angriff, Treffer, Niederlage, Auftritt und Fang **aus den Ereignissen der Engine**
+animiert — siehe [docs/SPRITES.md](docs/SPRITES.md).
+
 **Weiteres** — Handwerk an vier Werkstätten (legendäre Rezepte können
 fehlschlagen), Handel mit regionalen Aufschlägen, Fraktionsruf mit fünf Rängen,
 Errungenschaften, Titel mit spielmechanischen Boni, mehrere Speicherstände plus
@@ -122,9 +130,10 @@ Autosave, New Game Plus.
 
 ## Qualitätssicherung
 
-- **116 Unit-Tests** decken Typentabelle, Werteformeln, Erfahrungskurve,
+- **138 Unit-Tests** decken Typentabelle, Werteformeln, Erfahrungskurve,
   Schadens- und Trefferrechnung, Fangsystem, Kampf-Engine (End-to-End über
-  mehrere Runden), Zucht, Entwicklung, Fortschritt, Inventar und Quests ab.
+  mehrere Runden), Zucht, Entwicklung, Fortschritt, Inventar, Quests,
+  Sprite-Erzeugung und Kampfvoraussetzungen ab.
 - Die Typentabelle wird gegen **Balance-Invarianten** getestet: jedes Element hat
   2–4 Stärken und 2–4 Schwächen, keines ist gegen sich selbst effektiv, die
   Streuung der Offensivwerte bleibt begrenzt.
@@ -139,6 +148,8 @@ Alle Namen, Beschreibungen, Kreaturen, Orte und Texte sind eigenständige
 Schöpfungen. Die nordische Mythologie selbst ist gemeinfrei; es wurden keinerlei
 geschützte Namen, Designs oder Inhalte bestehender Marken übernommen.
 
-Audio- und Bilddateien sind nicht Teil dieses Repositorys. Das Spiel adressiert
-sie über Schlüssel (`bgm_battle_boss`, `spr_glutwelp`) und läuft auch dann, wenn
-eine Datei fehlt — siehe [docs/ASSETS.md](docs/ASSETS.md).
+Monsterbilder werden gezeichnet, nicht ausgeliefert — es gibt keine
+Monster-Bilddateien und damit auch nichts, was einer bestehenden Marke ähneln
+könnte. Ton- und Hintergrunddateien sind nicht Teil dieses Repositorys; das Spiel
+adressiert sie über Schlüssel (`bgm_battle_boss`) und läuft auch dann, wenn eine
+Datei fehlt — siehe [docs/ASSETS.md](docs/ASSETS.md).

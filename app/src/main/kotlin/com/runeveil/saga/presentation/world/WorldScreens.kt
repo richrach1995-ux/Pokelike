@@ -56,6 +56,8 @@ import com.runeveil.saga.domain.repository.WorldStateRepository
 import com.runeveil.saga.domain.rules.QuestRules
 import com.runeveil.saga.domain.usecase.AdvanceEggsUseCase
 import com.runeveil.saga.domain.usecase.AdvanceWorldClockUseCase
+import com.runeveil.saga.domain.rules.BattleReadiness
+import com.runeveil.saga.domain.rules.BattleReadinessRules
 import com.runeveil.saga.domain.usecase.RollEncounterUseCase
 import com.runeveil.saga.domain.usecase.TrackQuestEventUseCase
 import com.runeveil.saga.ui.components.EmptyState
@@ -64,6 +66,7 @@ import com.runeveil.saga.ui.components.RunicButton
 import com.runeveil.saga.ui.components.RunicOutlinedButton
 import com.runeveil.saga.ui.components.SectionHeader
 import com.runeveil.saga.ui.components.contentText
+import com.runeveil.saga.ui.components.messageRes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -317,6 +320,21 @@ fun LocationScreen(
                 }
             }
 
+            (state.readiness as? BattleReadiness.Blocked)?.let { blocked ->
+                item {
+                    // Stated up front, not on tap: the player should know their
+                    // team cannot fight before they walk into something.
+                    RunePanel(Modifier.fillMaxWidth()) {
+                        Text(
+                            text = stringResource(blocked.reason.messageRes),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.error,
+                            modifier = Modifier.padding(14.dp),
+                        )
+                    }
+                }
+            }
+
             if (location.hasWildEncounters) {
                 item {
                     RunicButton(
@@ -334,8 +352,15 @@ fun LocationScreen(
                 item { SectionHeader("NPCs") }
                 items(state.npcs, key = { it.id }) { npc ->
                     RunePanel(Modifier.fillMaxWidth(), onClick = {
-                        if (npc.isTrainer && npc.id !in state.defeatedTrainers) {
-                            onTrainerBattle(npc.trainerTeamId!!, npc.id)
+                        val teamId = npc.trainerTeamId
+                        val challengeable = npc.isTrainer &&
+                            teamId != null &&
+                            npc.id !in state.defeatedTrainers
+                        // A trainer whose team cannot be fought is simply
+                        // talked to instead — the battle never begins. The
+                        // banner above already says why.
+                        if (challengeable && state.readiness.isReady) {
+                            onTrainerBattle(teamId, npc.id)
                         } else {
                             onTalkTo(npc.id)
                         }
@@ -467,6 +492,11 @@ data class LocationUiState(
     val defeatedTrainers: Set<String> = emptySet(),
     val pendingEncounterId: String? = null,
     val message: String? = null,
+    /**
+     * Whether the party could fight *right now*. Kept in the state rather than
+     * checked on tap so the screen can say so before the player tries.
+     */
+    val readiness: BattleReadiness = BattleReadiness.Ready,
 )
 
 @HiltViewModel
@@ -497,12 +527,20 @@ class LocationViewModel @Inject constructor(
                     location = location,
                     npcs = content.npcsAt(locationId),
                     defeatedTrainers = worldState.defeatedTrainers(),
+                    readiness = BattleReadinessRules.forParty(monsters.party()),
                 )
             }
         }
     }
 
-    /** One "step": advances eggs, the clock and possibly starts a battle. */
+    /**
+     * One "step": advances eggs and the clock, and may run into a wild monster.
+     *
+     * Walking stays possible with a beaten team — eggs still need steps, and
+     * locking the player out of the location would be worse than the problem.
+     * The *encounter roll* is what is skipped: a battle that cannot be fought
+     * is never rolled, so nothing is generated and nothing is navigated to.
+     */
     fun explore() {
         val location = _state.value.location ?: return
         viewModelScope.launch {
@@ -515,6 +553,10 @@ class LocationViewModel @Inject constructor(
                 audio.playSound(AudioKeys.EGG_HATCH)
                 questTracker(QuestRules.GameEvent.HatchedEgg)
             }
+
+            val readiness = BattleReadinessRules.forParty(monsters.party())
+            _state.update { it.copy(readiness = readiness) }
+            if (readiness is BattleReadiness.Blocked) return@launch
 
             val phase = DayPhase.forHour(((worldState.weatherFor(location.regionId).startedAtEpochMs / 3_600_000) % 24).toInt())
             val encounter = rollEncounter(
@@ -537,7 +579,12 @@ class LocationViewModel @Inject constructor(
         viewModelScope.launch {
             monsters.healParty()
             audio.playSound(AudioKeys.HEAL)
-            _state.update { it.copy(message = "world_rested") }
+            _state.update {
+                it.copy(
+                    message = "world_rested",
+                    readiness = BattleReadinessRules.forParty(monsters.party()),
+                )
+            }
         }
     }
 

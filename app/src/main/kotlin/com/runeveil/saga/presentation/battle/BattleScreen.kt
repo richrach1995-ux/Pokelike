@@ -1,6 +1,10 @@
 package com.runeveil.saga.presentation.battle
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,20 +14,29 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.SavedStateHandle
@@ -49,6 +62,8 @@ import com.runeveil.saga.domain.repository.MonsterRepository
 import com.runeveil.saga.domain.repository.PlayerRepository
 import com.runeveil.saga.domain.repository.SettingsRepository
 import com.runeveil.saga.domain.repository.WorldStateRepository
+import com.runeveil.saga.domain.rules.BattleReadiness
+import com.runeveil.saga.domain.rules.BattleReadinessRules
 import com.runeveil.saga.domain.rules.Effectiveness
 import com.runeveil.saga.domain.usecase.ApplyBattleResultsUseCase
 import com.runeveil.saga.domain.usecase.BattleSession
@@ -61,9 +76,20 @@ import com.runeveil.saga.ui.components.RunePanel
 import com.runeveil.saga.ui.components.RunicButton
 import com.runeveil.saga.ui.components.RunicOutlinedButton
 import com.runeveil.saga.ui.components.contentText
+import com.runeveil.saga.ui.components.messageRes
+import com.runeveil.saga.ui.sprite.MonsterSprite
+import com.runeveil.saga.ui.sprite.SpriteFacing
+import com.runeveil.saga.ui.sprite.SpritePose
+import com.runeveil.saga.ui.sprite.rememberBlueprint
+import com.runeveil.saga.ui.sprite.rememberSpriteMotion
+import com.runeveil.saga.ui.theme.LocalMotionSettings
+import com.runeveil.saga.ui.theme.RuneAsh
+import com.runeveil.saga.ui.theme.RuneEmber
 import com.runeveil.saga.ui.theme.RuneGold
+import com.runeveil.saga.ui.theme.RuneGoldDim
 import com.runeveil.saga.ui.theme.RuneNight
 import com.runeveil.saga.ui.theme.RuneNightSunken
+import com.runeveil.saga.ui.theme.RuneParchment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -71,6 +97,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlin.math.sin
 import javax.inject.Inject
 
 /**
@@ -112,7 +139,16 @@ fun BattleScreen(
             Spacer(Modifier.height(8.dp))
 
             state.enemy?.let { BattlerCard(it, isPlayer = false) }
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(8.dp))
+
+            BattleStage(
+                state = state,
+                onPlayerPoseFinished = viewModel::onPlayerPoseFinished,
+                onEnemyPoseFinished = viewModel::onEnemyPoseFinished,
+                modifier = Modifier.fillMaxWidth().height(200.dp),
+            )
+
+            Spacer(Modifier.height(8.dp))
 
             RunePanel(Modifier.fillMaxWidth().weight(1f)) {
                 LazyColumn(
@@ -134,7 +170,18 @@ fun BattleScreen(
                 BattleCommands(state = state, viewModel = viewModel)
             }
 
-            if (state.finished) {
+            state.blocked?.let { reason ->
+                // The battle was refused, not lost. Say why, and say nothing
+                // about victory or defeat.
+                Text(
+                    text = stringResource(reason.messageRes),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = RuneEmber,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+
+            if (state.finished && state.blocked == null) {
                 Text(
                     text = when (state.outcome) {
                         BattleOutcome.VICTORY -> stringResource(R.string.battle_victory)
@@ -150,6 +197,148 @@ fun BattleScreen(
             }
         }
     }
+}
+
+/**
+ * The visual half of the battle: both creatures on a lit stage.
+ *
+ * The opponent stands upper right and looks left, the player's monster lower
+ * left and looks right, so the two read as facing each other. Every animation
+ * is driven by the engine's events — the screen never invents motion, it only
+ * replays what actually happened in the turn.
+ */
+@Composable
+private fun BattleStage(
+    state: BattleUiState,
+    onPlayerPoseFinished: () -> Unit,
+    onEnemyPoseFinished: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val motionSettings = LocalMotionSettings.current
+
+    // A critical hit knocks the whole stage sideways for a moment. Players who
+    // switched screen shake off get the hit without the camera move.
+    val shake = remember { Animatable(0f) }
+    LaunchedEffect(state.impact) {
+        if (state.impact == 0L || !motionSettings.screenShake || motionSettings.reducedMotion) {
+            return@LaunchedEffect
+        }
+        shake.snapTo(1f)
+        shake.animateTo(0f, tween(durationMillis = 260, easing = LinearEasing))
+    }
+
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(12.dp))
+            .background(
+                Brush.verticalGradient(listOf(RuneNight, RuneNightSunken)),
+            )
+            .offset { IntOffset(x = (sin(shake.value * 40f) * shake.value * 14f).toInt(), y = 0) },
+    ) {
+        StageGround(Modifier.matchParentSize())
+
+        state.enemy?.let { enemy ->
+            StageActor(
+                battler = enemy,
+                pose = state.enemyPose,
+                facing = SpriteFacing.LEFT,
+                onPoseFinished = onEnemyPoseFinished,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(end = 24.dp, top = 4.dp)
+                    .size(112.dp),
+            )
+        }
+
+        state.player?.let { player ->
+            StageActor(
+                battler = player,
+                pose = state.playerPose,
+                facing = SpriteFacing.RIGHT,
+                onPoseFinished = onPlayerPoseFinished,
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 24.dp, bottom = 4.dp)
+                    .size(132.dp),
+            )
+        }
+
+        state.burst?.let { burst ->
+            DamageNumber(
+                burst = burst,
+                modifier = Modifier.align(
+                    if (burst.onPlayerSide) Alignment.BottomStart else Alignment.TopEnd,
+                ).padding(horizontal = 60.dp, vertical = 28.dp),
+            )
+        }
+    }
+}
+
+/** Two pools of light that give the flat sprites something to stand on. */
+@Composable
+private fun StageGround(modifier: Modifier = Modifier) {
+    Canvas(modifier) {
+        drawOval(
+            color = RuneGoldDim.copy(alpha = 0.16f),
+            topLeft = Offset(size.width * 0.52f, size.height * 0.30f),
+            size = androidx.compose.ui.geometry.Size(size.width * 0.42f, size.height * 0.13f),
+        )
+        drawOval(
+            color = RuneGoldDim.copy(alpha = 0.22f),
+            topLeft = Offset(size.width * 0.06f, size.height * 0.80f),
+            size = androidx.compose.ui.geometry.Size(size.width * 0.48f, size.height * 0.15f),
+        )
+    }
+}
+
+@Composable
+private fun StageActor(
+    battler: Battler,
+    pose: SpritePose,
+    facing: SpriteFacing,
+    onPoseFinished: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val blueprint = rememberBlueprint(battler.monster.species, battler.monster.isShiny)
+    val motion = rememberSpriteMotion(
+        blueprint = blueprint,
+        pose = pose,
+        onPoseFinished = onPoseFinished,
+    )
+    MonsterSprite(
+        blueprint = blueprint,
+        modifier = modifier.semantics {
+            contentDescription = battler.monster.displayNameKey
+        },
+        facing = facing,
+        motion = motion,
+    )
+}
+
+/** A damage figure that rises off the sprite and fades. */
+@Composable
+private fun DamageNumber(burst: DamageBurst, modifier: Modifier = Modifier) {
+    val rise = remember(burst.id) { Animatable(0f) }
+    LaunchedEffect(burst.id) {
+        rise.snapTo(0f)
+        rise.animateTo(1f, tween(durationMillis = 780, easing = LinearEasing))
+    }
+    val colour = when (burst.effectiveness) {
+        Effectiveness.SUPER_EFFECTIVE, Effectiveness.DEVASTATING -> RuneEmber
+        Effectiveness.RESISTED, Effectiveness.DOUBLE_RESISTED, Effectiveness.IMMUNE -> RuneAsh
+        Effectiveness.NEUTRAL -> RuneParchment
+    }
+    Text(
+        text = if (burst.critical) "−${burst.amount}!" else "−${burst.amount}",
+        style = if (burst.critical) {
+            MaterialTheme.typography.headlineMedium
+        } else {
+            MaterialTheme.typography.titleLarge
+        },
+        color = colour.copy(alpha = (1f - rise.value).coerceIn(0f, 1f)),
+        fontWeight = FontWeight.Bold,
+        modifier = modifier.offset { IntOffset(x = 0, y = (-rise.value * 46f).toInt()) },
+    )
 }
 
 @Composable
@@ -295,6 +484,20 @@ enum class BattleMenu { ROOT, MOVES, ORBS, SWITCH }
 data class MoveButton(val nameKey: String, val currentPp: Int, val maxPp: Int)
 data class OrbButton(val itemId: String, val nameKey: String, val count: Int)
 
+/**
+ * One damage figure floating off a sprite.
+ *
+ * [id] increments with every burst so that two identical hits in a row still
+ * replay the animation instead of being deduplicated by Compose.
+ */
+data class DamageBurst(
+    val id: Long,
+    val amount: Int,
+    val critical: Boolean,
+    val effectiveness: Effectiveness,
+    val onPlayerSide: Boolean,
+)
+
 data class BattleUiState(
     val player: Battler? = null,
     val enemy: Battler? = null,
@@ -309,6 +512,13 @@ data class BattleUiState(
     val outcome: BattleOutcome = BattleOutcome.ONGOING,
     val canCapture: Boolean = false,
     val canFlee: Boolean = false,
+    val playerPose: SpritePose = SpritePose.ENTER,
+    val enemyPose: SpritePose = SpritePose.ENTER,
+    val burst: DamageBurst? = null,
+    /** Raised for one frame on a critical hit so the stage can shake. */
+    val impact: Long = 0,
+    /** Set when the battle was refused; no session was ever created. */
+    val blocked: BattleReadiness.Reason? = null,
 ) {
     val benchSize: Int get() = bench.count { !it.isFainted }
 }
@@ -347,22 +557,31 @@ class BattleViewModel @Inject constructor(
     private suspend fun start() {
         content.ensureLoaded()
         animationSpeed = settings.settings().battleAnimationSpeed
-        val party = monsters.party().filter { !it.isEgg }
-        if (party.isEmpty()) {
-            _state.update { it.copy(finished = true, outcome = BattleOutcome.DEFEAT) }
-            return
-        }
 
+        val fullParty = monsters.party()
         val profile = player.profile()
         val weather = worldState.weatherFor(profile.currentRegionId).weather
         val difficulty = settings.settings().difficulty
 
         val (enemies, type, aiProfile) = buildEnemies(difficulty.enemyLevelDelta)
-        if (enemies.isEmpty()) {
-            _state.update { it.copy(finished = true) }
+
+        // Second line of defence. The world screen already refuses to navigate
+        // here when the battle cannot be fought, so reaching this branch means
+        // something got past that check — a stale back-stack entry, a deep link.
+        // It must leave without recording a defeat: the player did not lose,
+        // the battle never happened.
+        val readiness = BattleReadinessRules.check(
+            party = fullParty,
+            opponents = enemies.ifEmpty { null },
+        )
+        if (readiness is BattleReadiness.Blocked) {
+            _state.update {
+                it.copy(finished = true, busy = true, blocked = readiness.reason)
+            }
             return
         }
 
+        val party = fullParty.filter { !it.isEgg }
         val created = BattleSession(
             content = battleContent,
             rng = rng,
@@ -485,12 +704,14 @@ class BattleViewModel @Inject constructor(
         }
     }
 
-    /** Replays the engine's events with pacing, sound and log lines. */
+    /** Replays the engine's events with pacing, sound, animation and log lines. */
     private suspend fun playEvents(events: List<BattleEvent>) {
         for (event in events) {
             val line = describe(event)
             if (line != null) _state.update { it.copy(log = it.log + line) }
             when (event) {
+                is BattleEvent.MoveDeclared -> pose(event.actorId, SpritePose.ATTACK)
+
                 is BattleEvent.DamageDealt -> {
                     audio.playSound(
                         when (event.effectiveness) {
@@ -500,19 +721,80 @@ class BattleViewModel @Inject constructor(
                         },
                     )
                     if (event.critical) audio.playSound(AudioKeys.CRITICAL)
+                    pose(event.targetId, SpritePose.HURT)
+                    showDamage(event)
                 }
-                is BattleEvent.Fainted -> audio.playSound(AudioKeys.FAINT)
+
+                is BattleEvent.Fainted -> {
+                    audio.playSound(AudioKeys.FAINT)
+                    pose(event.battlerId, SpritePose.FAINT)
+                }
+
+                is BattleEvent.SwitchedIn -> pose(event.battlerId, SpritePose.ENTER)
+
                 is BattleEvent.Healed -> audio.playSound(AudioKeys.HEAL)
                 is BattleEvent.ShieldRaised -> audio.playSound(AudioKeys.SHIELD)
                 is BattleEvent.StatusInflicted -> audio.playSound(AudioKeys.STATUS)
                 is BattleEvent.OrbShake -> audio.playSound(AudioKeys.ORB_SHAKE)
-                is BattleEvent.CaptureSucceeded -> audio.playSound(AudioKeys.ORB_CAUGHT)
+
+                is BattleEvent.CaptureSucceeded -> {
+                    audio.playSound(AudioKeys.ORB_CAUGHT)
+                    pose(event.targetId, SpritePose.CAPTURE)
+                }
+
                 is BattleEvent.CaptureFailed -> audio.playSound(AudioKeys.ORB_BREAK)
                 else -> Unit
             }
             refreshFromSession()
             delay((EVENT_DELAY_MS / animationSpeed.coerceAtLeast(0.25f)).toLong())
         }
+    }
+
+    // -----------------------------------------------------------------------
+    // Animation
+    // -----------------------------------------------------------------------
+
+    /** True when [battlerId] is on the player's side, null when it is unknown. */
+    private fun isPlayerSide(battlerId: String): Boolean? {
+        val battleState = session?.state ?: return null
+        return battleState.playerTeam.firstOrNull { it.id == battlerId }?.let { true }
+            ?: battleState.enemyTeam.firstOrNull { it.id == battlerId }?.let { false }
+    }
+
+    private fun pose(battlerId: String, pose: SpritePose) {
+        when (isPlayerSide(battlerId)) {
+            true -> _state.update { it.copy(playerPose = pose) }
+            false -> _state.update { it.copy(enemyPose = pose) }
+            null -> Unit
+        }
+    }
+
+    private fun showDamage(event: BattleEvent.DamageDealt) {
+        val onPlayerSide = isPlayerSide(event.targetId) ?: return
+        _state.update {
+            it.copy(
+                burst = DamageBurst(
+                    id = it.burst?.id?.plus(1) ?: 1L,
+                    amount = event.amount,
+                    critical = event.critical,
+                    effectiveness = event.effectiveness,
+                    onPlayerSide = onPlayerSide,
+                ),
+                impact = if (event.critical) it.impact + 1 else it.impact,
+            )
+        }
+    }
+
+    /**
+     * A one-shot pose has played out. Most return to breathing; being knocked
+     * out or captured is a *state*, not a flourish, so those stay put.
+     */
+    fun onPlayerPoseFinished() = _state.update {
+        if (it.playerPose.isTerminal) it else it.copy(playerPose = SpritePose.IDLE)
+    }
+
+    fun onEnemyPoseFinished() = _state.update {
+        if (it.enemyPose.isTerminal) it else it.copy(enemyPose = SpritePose.IDLE)
     }
 
     /** Turns an engine event into a log line; null means "not worth showing". */
