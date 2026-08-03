@@ -6,7 +6,9 @@ import android.media.SoundPool
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
+import com.runeveil.saga.data.di.ApplicationScope
 import com.runeveil.saga.domain.repository.SettingsRepository
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -33,9 +35,9 @@ import javax.inject.Singleton
  */
 @Singleton
 class AudioEngine @Inject constructor(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
     private val settings: SettingsRepository,
-    private val scope: CoroutineScope,
+    @ApplicationScope private val scope: CoroutineScope,
 ) {
     private var musicPlayer: ExoPlayer? = null
     private var soundPool: SoundPool? = null

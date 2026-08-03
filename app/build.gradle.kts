@@ -64,10 +64,6 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    kotlin {
-        jvmToolchain(17)
-    }
-
     testOptions {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
@@ -77,6 +73,10 @@ android {
     androidResources {
         noCompress += listOf("ogg")
     }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {

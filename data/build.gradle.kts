@@ -32,10 +32,6 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    kotlin {
-        jvmToolchain(17)
-    }
-
     testOptions {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
@@ -47,6 +43,10 @@ ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
     arg("room.incremental", "true")
     arg("room.generateKotlin", "true")
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {

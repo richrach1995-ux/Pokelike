@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -49,6 +50,7 @@ import javax.inject.Inject
  * companion — three starters, one per classic role, so the first hour plays
  * differently depending on the pick.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharacterCreationScreen(
     onBack: () -> Unit,
@@ -122,6 +124,7 @@ fun CharacterCreationScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun GenderChip(
     gender: Gender,
@@ -136,6 +139,7 @@ private fun GenderChip(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AppearanceRow(
     label: String,

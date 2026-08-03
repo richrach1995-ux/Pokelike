@@ -158,7 +158,7 @@ class CutsceneViewModel @Inject constructor(
     private suspend fun waitOrSkip(durationMs: Int) {
         var elapsed = 0
         while (elapsed < durationMs && !skipRequested) {
-            delay(TICK_MS)
+            delay(TICK_MS.toLong())
             elapsed += TICK_MS
         }
     }

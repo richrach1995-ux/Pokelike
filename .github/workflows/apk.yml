@@ -1,0 +1,88 @@
+name: APK bauen
+
+# Baut bei jedem Push eine installierbare Debug-APK und veröffentlicht sie
+# als Artefakt *und* als GitHub-Release, damit sie sich direkt auf dem Handy
+# herunterladen lässt.
+on:
+  push:
+    branches: [main, "claude/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    name: Debug-APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JDK 17 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Android SDK einrichten
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0"
+
+      - name: Gradle einrichten
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Inhalte prüfen
+        run: python3 tools/contentgen/build.py --check
+
+      - name: Regeltests
+        run: ./gradlew :domain:test --stacktrace
+
+      - name: Debug-APK bauen
+        run: ./gradlew :app:assembleDebug --stacktrace
+
+      - name: APK umbenennen
+        id: rename
+        run: |
+          set -euo pipefail
+          SRC=$(find app/build/outputs/apk/debug -name '*.apk' | head -n 1)
+          NAME="Runeveil-debug-${GITHUB_RUN_NUMBER}.apk"
+          cp "$SRC" "$NAME"
+          echo "apk=$NAME" >> "$GITHUB_OUTPUT"
+          ls -lh "$NAME"
+
+      - name: APK als Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Runeveil-APK
+          path: ${{ steps.rename.outputs.apk }}
+          retention-days: 90
+
+      # Ein Release liefert einen direkten Download-Link — praktischer als ein
+      # Artefakt, weil es sich ohne Entpacken auf dem Handy installieren lässt.
+      - name: Release veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="build-${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" "${{ steps.rename.outputs.apk }}" \
+            --title "Runeveil Debug-Build #${GITHUB_RUN_NUMBER}" \
+            --notes "Automatisch gebaute Debug-APK von Commit ${GITHUB_SHA:0:7}.
+
+          **Installation:** APK auf dem Android-Gerät öffnen und die Installation
+          aus unbekannter Quelle für den Browser bzw. Dateimanager erlauben.
+          Mindestens Android 8.0 (API 26)." \
+            --target "$GITHUB_SHA"
+
+      - name: Fehlerbericht anhängen
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-reports
+          path: |
+            **/build/reports/
+            **/build/outputs/logs/
+          retention-days: 14

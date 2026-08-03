@@ -3,6 +3,7 @@ package com.runeveil.saga
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
@@ -41,7 +42,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: BootViewModel by androidx.activity.viewModels()
+    private val viewModel: BootViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splash = installSplashScreen()
