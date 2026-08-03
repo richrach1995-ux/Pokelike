@@ -14,12 +14,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Backpack
-import androidx.compose.material.icons.filled.Book
-import androidx.compose.material.icons.filled.Groups
-import androidx.compose.material.icons.filled.Save
+import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Task
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -97,7 +98,7 @@ fun WorldMapScreen(
                 title = { Text(stringResource(R.string.world_map)) },
                 actions = {
                     IconButton(onClick = onOpenSaves) {
-                        Icon(Icons.Filled.Save, contentDescription = stringResource(R.string.common_save))
+                        Icon(Icons.Filled.Done, contentDescription = stringResource(R.string.common_save))
                     }
                     IconButton(onClick = onOpenSettings) {
                         Icon(Icons.Filled.Settings, contentDescription = stringResource(R.string.settings_title))
@@ -110,31 +111,31 @@ fun WorldMapScreen(
                 NavigationBarItem(
                     selected = true,
                     onClick = {},
-                    icon = { Icon(Icons.Filled.Book, contentDescription = null) },
+                    icon = { Icon(Icons.Filled.Home, contentDescription = null) },
                     label = { Text(stringResource(R.string.world_map)) },
                 )
                 NavigationBarItem(
                     selected = false,
                     onClick = onOpenParty,
-                    icon = { Icon(Icons.Filled.Groups, contentDescription = null) },
+                    icon = { Icon(Icons.Filled.Person, contentDescription = null) },
                     label = { Text(stringResource(R.string.party_title)) },
                 )
                 NavigationBarItem(
                     selected = false,
                     onClick = onOpenInventory,
-                    icon = { Icon(Icons.Filled.Backpack, contentDescription = null) },
+                    icon = { Icon(Icons.Filled.ShoppingCart, contentDescription = null) },
                     label = { Text(stringResource(R.string.inventory_title)) },
                 )
                 NavigationBarItem(
                     selected = false,
                     onClick = onOpenQuests,
-                    icon = { Icon(Icons.Filled.Task, contentDescription = null) },
+                    icon = { Icon(Icons.Filled.List, contentDescription = null) },
                     label = { Text(stringResource(R.string.quest_title)) },
                 )
                 NavigationBarItem(
                     selected = false,
                     onClick = onOpenBestiary,
-                    icon = { Icon(Icons.Filled.Book, contentDescription = null) },
+                    icon = { Icon(Icons.Filled.Info, contentDescription = null) },
                     label = { Text(stringResource(R.string.bestiary_title)) },
                 )
             }
