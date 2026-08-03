@@ -1,0 +1,77 @@
+name: Start-Test
+
+# Startet die gebaute App auf einem echten Emulator und schreibt den Absturz-
+# Stacktrace direkt ins Job-Protokoll. Ohne diesen Schritt lässt sich ein
+# Startabsturz nur raten.
+on:
+  push:
+    branches: [main, "claude/**"]
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    name: App starten
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: JDK 17 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Android SDK einrichten
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools platforms;android-35 build-tools;35.0.0"
+
+      - name: Gradle einrichten
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Debug-APK bauen
+        run: ./gradlew :app:assembleDebug
+
+      - name: KVM freischalten
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Auf Emulator starten
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_5
+          disable-animations: true
+          script: |
+            set -x
+            APK=$(find app/build/outputs/apk/debug -name '*.apk' | head -n 1)
+            adb install -r "$APK"
+            adb logcat -c
+            adb shell am start -W -n com.runeveil.saga.debug/com.runeveil.saga.MainActivity
+            sleep 15
+
+            echo "=================== PROZESS ==================="
+            PID=$(adb shell pidof com.runeveil.saga.debug || true)
+            echo "pid='$PID'"
+
+            echo "=================== CRASH-PUFFER ==================="
+            adb logcat -d -b crash || true
+
+            echo "=================== FEHLER IM HAUPTPUFFER ==================="
+            adb logcat -d '*:E' | tail -n 200 || true
+
+            echo "=================== APP-EIGENE ZEILEN ==================="
+            adb logcat -d | grep -iE 'runeveil|AndroidRuntime|FATAL' | tail -n 120 || true
+
+            if [ -z "$PID" ]; then
+              echo "::error::Die App läuft nach dem Start nicht mehr — siehe Stacktrace oben."
+              exit 1
+            fi
+            echo "App läuft (pid $PID)."
