@@ -4,6 +4,7 @@ import android.graphics.Canvas
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.roundToInt
 
 /** Der Kampfbildschirm: verarbeitet die Ereignisse der Kampf-Engine. */
 class BattleScene(
@@ -158,6 +159,10 @@ class BattleScene(
         current = ev
         when (ev) {
             is BEvent.Msg -> { msg = ev.text; typed = 0f; msgHold = 0f }
+            // KP- und EP-Aenderungen laufen als Animation weiter - hier nichts tun,
+            // sonst wird das Ereignis verworfen und der Balken bewegt sich nie.
+            is BEvent.Hp -> Unit
+            is BEvent.Exp -> Unit
             is BEvent.Hit -> {
                 shakeSide = if (ev.playerSide) 1 else 2
                 shakeTime = 0.28f
@@ -417,14 +422,15 @@ class BattleScene(
     }
 
     private fun drawFoeBox(c: Canvas, foe: Monster) {
-        Gfx.panel(c, 6f, 10f, 124f, 40f)
+        Gfx.panel(c, 6f, 10f, 124f, 48f)
         Gfx.text(c, foe.name, 12f, 24f, 10f)
         Gfx.text(c, "Lv${foe.level}", 124f, 24f, 9f, right = true)
         Gfx.hpBar(c, 12f, 28f, 112f, 6f, fHpShown / max(1, foe.maxHp))
-        Gfx.statusTag(c, foe.status, 12f, 37f, 6.5f)
+        Gfx.text(c, "${fHpShown.roundToInt()}/${foe.maxHp} KP", 124f, 43f, 9f, right = true)
+        Gfx.statusTag(c, foe.status, 12f, 36f, 6.5f)
         var bx = if (foe.status == StatusKind.NONE) 12f else 42f
         for (t in foe.species.types) {
-            Gfx.typeBadge(c, t, bx, 37f, 6.5f)
+            Gfx.typeBadge(c, t, bx, 36f, 6.5f)
             bx += Gfx.textWidth(t.deName.uppercase(), 6.5f) + 12f
         }
     }
@@ -436,7 +442,7 @@ class BattleScene(
         Gfx.text(c, pl.name, x + 6f, y + 14f, 10f)
         Gfx.text(c, "Lv${pl.level}", x + 118f, y + 14f, 9f, right = true)
         Gfx.hpBar(c, x + 6f, y + 18f, 112f, 7f, pHpShown / max(1, pl.maxHp))
-        Gfx.text(c, "${pHpShown.toInt()}/${pl.maxHp}", x + 118f, y + 33f, 9f, right = true)
+        Gfx.text(c, "${pHpShown.roundToInt()}/${pl.maxHp} KP", x + 118f, y + 33f, 9f, right = true)
         Gfx.statusTag(c, pl.status, x + 6f, y + 26f, 7f)
         Gfx.expBar(c, x + 6f, y + 36f, 112f, 4f, pExpShown)
     }

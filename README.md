@@ -142,6 +142,21 @@ Bei jedem Build laufen automatisch neun Tests mit (`./gradlew testDebugUnitTest`
   und den Schattenorden bis zum Champion und zu Titanox kommt – und dass jedes
   Bodenitem erreichbar ist.
 
+## Darstellung prüfen ohne Handy
+
+Unter `tools/vorschau/` liegt ein eigenständiger Build, der den echten Spielcode
+auf dem PC startet, per Tastendruck bedient und Bildschirmfotos speichert
+(Android-Zeichen-APIs werden dafür schlank über Java AWT nachgebaut, der
+Spielcode bleibt unverändert):
+
+```bash
+cd tools/vorschau && gradle test --rerun-tasks   # Bilder in build/bilder/
+```
+
+Einer der Prüfungen misst die **Pixelbreite der KP-Balken** vor und nach einem
+Treffer und vergleicht sie mit den echten KP – damit fallen Anzeigefehler auf,
+die kein Logiktest bemerkt.
+
 ## Projektaufbau
 
 ```

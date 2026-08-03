@@ -9,3 +9,6 @@ captures/
 .cxx
 *.apk
 *.aab
+
+# Vorschau-Build
+tools/vorschau/shim.jar
