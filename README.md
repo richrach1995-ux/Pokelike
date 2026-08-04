@@ -3,8 +3,14 @@
 Ein Idle-/Clicker-Spiel für Android, gebaut mit Kotlin, Jetpack Compose und
 Material Design 3.
 
-Dieses Repository befindet sich im Aufbau. Der aktuelle Stand entspricht
-**Schritt 1: Projekt-Grundgerüst**.
+Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
+
+1. Projekt-Grundgerüst (Build, DI, Theme, Navigation, Spiel-Uhr)
+2. Zahlentyp, Ressourcensystem, Spielstand
+3. Persistenz, Autosave, Offline-Fortschritt
+4. Klick-System mit Combo und kritischen Treffern
+
+Als Nächstes: Gebäude und Idle-Einkommen.
 
 ---
 
@@ -67,10 +73,10 @@ com.pokelike.idle
 └── util/       Querschnittswerkzeuge (Zeit, Dispatcher, Formatierung)
 ```
 
-Weitere Pakete (`data/`, `domain/`, `billing/`, `ads/`, `analytics/`,
-`events/`, `quests/`, `achievements/`, `prestige/`) kommen in den folgenden
-Schritten hinzu, sobald das jeweilige System implementiert wird — jeweils mit
-echtem Inhalt statt als leeres Gerüst.
+Weitere Pakete (`billing/`, `ads/`, `analytics/`, `events/`, `quests/`,
+`achievements/`, `prestige/`) kommen in den folgenden Schritten hinzu, sobald
+das jeweilige System implementiert wird — jeweils mit echtem Inhalt statt als
+leeres Gerüst.
 
 ---
 
