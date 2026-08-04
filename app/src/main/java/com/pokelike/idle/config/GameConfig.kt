@@ -56,4 +56,28 @@ object GameConfig {
      * natuerlich von der naechsten Stufe abgeloest wird.
      */
     const val BUILDING_COST_GROWTH: Double = 1.15
+
+    // --- Startausstattung -------------------------------------------------
+
+    /**
+     * Muenzen zu Spielbeginn.
+     *
+     * Bewusst null: Der erste Klick soll den ersten Muenzgewinn erzeugen. Ein
+     * Startguthaben wuerde genau den Moment entwerten, auf dem die gesamte
+     * Kernschleife des Genres aufbaut.
+     */
+    const val STARTING_COINS: Long = 0L
+
+    /**
+     * Diamanten zu Spielbeginn.
+     *
+     * Eine kleine Menge Premiumwaehrung ist eine bewusste Designentscheidung:
+     * Sie erlaubt dem Spieler, den Premium-Shop einmal folgenlos auszuprobieren
+     * und den Wert der Waehrung kennenzulernen. Wer nie erlebt hat, was
+     * Diamanten bewirken, kauft auch keine.
+     *
+     * 25 reichen fuer genau einen guenstigen Booster - genug fuer das Erlebnis,
+     * zu wenig, um den Einstieg zu ueberspringen.
+     */
+    const val STARTING_DIAMONDS: Long = 25L
 }

@@ -168,6 +168,10 @@ dependencies {
 
     // --- Unit Tests -------------------------------------------------------
     testImplementation(libs.junit)
+    // kotlin-test liefert assertFailsWith - der lesbarste Weg, eine erwartete
+    // Ausnahme zu pruefen. Viele Zusicherungen des Domaenenmodells sind
+    // Sicherheitsmassnahmen und muessen genau darueber getestet werden.
+    testImplementation(libs.kotlin.test)
     testImplementation(libs.truth)
     testImplementation(libs.turbine)
     testImplementation(libs.kotlinx.coroutines.test)

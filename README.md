@@ -49,6 +49,8 @@ maschinenspezifischen Pfad.
 com.pokelike.idle
 ├── config/     Balancing- und Laufzeitkonstanten (GameConfig)
 ├── di/         Hilt-Module und Qualifier
+├── domain/
+│   └── model/  Zahlentyp, Ressourcen, Spielstand
 ├── manager/    Prozessweite Dienste (GameClock)
 ├── ui/
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
@@ -86,6 +88,28 @@ Serverzeitstempel geprüft.
 **Prozess-Lifecycle statt Activity-Lifecycle.** Die Uhr hängt an
 `ProcessLifecycleOwner`. Am Activity-Lifecycle würde sie bei jeder
 Bildschirmdrehung anhalten und neu starten.
+
+**Eigener Zahlentyp.** `BigNumber` stellt Werte als `mantisse * 10^exponent`
+dar. `Double` bricht bei ~1e308 — mit Prestige-Multiplikatoren wird das
+regelmäßig erreicht, und `1.15^n` (Gebäudepreis) liefert ab etwa 5.300
+Gebäuden nur noch `Infinity`. `BigDecimal` wäre exakt, aber für zehn
+Berechnungen pro Sekunde über dutzende Gebäude zu langsam.
+
+Die Mantisse wird bei jeder Operation auf 14 signifikante Stellen gerundet.
+Ohne diesen Schritt ergibt `100 - 30` in Fließkommaarithmetik `6.999999999999999e1`
+statt `7e1` — im Spiel bliebe der Kauf-Button dann genau dann grau, wenn der
+Spieler gerade genug gespart hat.
+
+**Ressourcen ohne Sonderfälle.** Jede Währung ist ein Eintrag in
+`ResourceType`. Ob sie den Prestige-Reset überlebt und ob sie serverseitig
+geprüft werden muss, steht als Eigenschaft am Eintrag — nicht als `if` in der
+Reset-Logik. Eine neue Ressource ist damit eine Zeile, und sie verhält sich
+beim Prestige automatisch richtig.
+
+**Beträge können nicht negativ werden.** `ResourceBundle` und `ResourcePool`
+weisen negative Werte ab, und Abbuchungen laufen ausschließlich über
+`spend()`, das Deckungsprüfung und Abbuchung in einer Operation vereint. Ein
+Preis mit negativem Betrag würde beim Bezahlen sonst Guthaben gutschreiben.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

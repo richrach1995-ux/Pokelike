@@ -112,6 +112,7 @@ desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", versi
 
 # --- Test -----------------------------------------------------------------
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
