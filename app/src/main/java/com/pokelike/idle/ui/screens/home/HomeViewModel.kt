@@ -2,11 +2,11 @@ package com.pokelike.idle.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pokelike.idle.domain.model.ClickOutcome
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
-import com.pokelike.idle.manager.GameClock
+import com.pokelike.idle.manager.ClickManager
 import com.pokelike.idle.util.DispatcherProvider
-import com.pokelike.idle.util.DurationFormatter
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -15,56 +15,45 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
+import java.util.Locale
 import javax.inject.Inject
 
 /**
  * ViewModel des Hauptbildschirms.
  *
- * Fuehrt die Quellen der Spiel-Engine und den Spielstand zu genau einem
- * [HomeUiState] zusammen. Der Screen bekommt dadurch einen einzigen Zustand
- * statt mehrerer Flows, die er selbst kombinieren muesste - was bei mehreren
- * Quellen unweigerlich zu kurzzeitig widerspruechlichen Anzeigen fuehrt (etwa
- * "pausiert", waehrend die Zeit noch weiterlaeuft).
+ * Fuehrt Spielstand, Combo und Klickwerte zu genau einem [HomeUiState]
+ * zusammen. Der Screen bekommt dadurch einen einzigen Zustand statt mehrerer
+ * Fluesse, die er selbst kombinieren muesste - was bei mehreren Quellen
+ * unweigerlich zu kurzzeitig widerspruechlichen Anzeigen fuehrt.
  */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    gameClock: GameClock,
+    private val clickManager: ClickManager,
     gameRepository: GameRepository,
-    durationFormatter: DurationFormatter,
-    numberFormatter: NumberFormatter,
+    private val numberFormatter: NumberFormatter,
     dispatchers: DispatcherProvider,
 ) : ViewModel() {
 
-    /**
-     * Anzeigezustand des Bildschirms.
-     *
-     * Zur Konstruktion im Einzelnen:
-     *
-     * - [combine] fuehrt Takt, Laufzustand und Spielstand zusammen.
-     * - [flowOn] verlagert Zeit- und Zahlenformatierung auf den
-     *   Default-Dispatcher. Bei zehn Aktualisierungen pro Sekunde soll die
-     *   Zeichenkettenerzeugung nicht auf dem UI-Thread liegen.
-     * - [distinctUntilChanged] unterdrueckt Aktualisierungen, bei denen sich am
-     *   sichtbaren Zustand nichts geaendert hat, und erspart Compose die
-     *   Neuzeichnung.
-     * - [stateIn] mit [SharingStarted.WhileSubscribed] beendet die Sammlung
-     *   fuenf Sekunden nachdem der letzte Beobachter verschwunden ist. Das
-     *   Zeitfenster ueberbrueckt eine Bildschirmdrehung, ohne dass der Flow
-     *   dabei neu aufgebaut wird.
-     */
     val uiState: StateFlow<HomeUiState> = combine(
-        gameClock.tick,
-        gameClock.isRunning,
         gameRepository.gameState,
-    ) { tick, isRunning, gameState ->
+        gameRepository.isLoaded,
+        clickManager.combo,
+        clickManager.modifiers,
+    ) { gameState, isLoaded, combo, modifiers ->
         HomeUiState(
-            isEngineRunning = isRunning,
-            sessionTime = durationFormatter.formatCompact(tick.elapsedMillis),
-            tickCount = tick.index,
+            isReady = isLoaded,
             coins = numberFormatter.format(gameState[ResourceType.COINS]),
             diamonds = numberFormatter.format(gameState[ResourceType.DIAMONDS]),
+            coinsPerClick = numberFormatter.format(
+                modifiers.expectedValuePerClick(combo.multiplier),
+            ),
+            comboCount = combo.count,
+            comboMultiplier = formatMultiplier(combo.multiplier),
+            comboRemaining = combo.remainingFraction,
         )
     }
+        // Formatierung gehoert nicht auf den UI-Thread: Bei laufender Combo
+        // aendert sich der Zustand zehnmal pro Sekunde.
         .flowOn(dispatchers.default)
         .distinctUntilChanged()
         .stateIn(
@@ -72,6 +61,27 @@ class HomeViewModel @Inject constructor(
             started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
             initialValue = HomeUiState(),
         )
+
+    /**
+     * Verarbeitet einen Klick und liefert das Ergebnis fuer die Rueckmeldung.
+     *
+     * Der Rueckgabewert ist Absicht. Der uebliche Weg waere ein Ereignisfluss,
+     * den der Bildschirm beobachtet - hier aber der falsche: Ein Klick muss
+     * noch im selben Frame sichtbar werden. Der Umweg ueber einen Fluss
+     * verschoebe die Rueckmeldung um mindestens einen Frame und braechte bei
+     * schnellem Tippen zusaetzlich Pufferfragen mit sich.
+     *
+     * Der Aufruf ist nicht `suspend`, weil alle Schritte im Arbeitsspeicher
+     * ablaufen; geschrieben wird ueber den Autosave.
+     */
+    fun onClick(): ClickOutcome = clickManager.click()
+
+    /** Formatiert einen Klickertrag fuer den schwebenden Hinweis. */
+    fun formatEarned(outcome: ClickOutcome): String =
+        "+${numberFormatter.format(outcome.earned)}"
+
+    private fun formatMultiplier(multiplier: Double): String =
+        String.format(Locale.US, "%.2fx", multiplier)
 
     private companion object {
         /**

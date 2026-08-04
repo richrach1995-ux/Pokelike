@@ -43,6 +43,22 @@ data class Dimens(
     val logoSize: Dp = 120.dp,
     /** Durchmesser kleiner Statusanzeigen (z. B. der Engine-Zustandspunkt). */
     val statusDotSize: Dp = 10.dp,
+
+    /**
+     * Durchmesser des Klick-Buttons.
+     *
+     * 220 dp sind bewusst gross. Der Button wird ueber lange Sitzungen
+     * tausendfach getroffen; jede Fehlbetaetigung faellt dabei staerker ins
+     * Gewicht als der gewonnene Platz. Auf kleinen Geraeten bleibt daneben
+     * genug Raum fuer Kontostand und Combo-Anzeige.
+     */
+    val clickButtonSize: Dp = 220.dp,
+
+    /** Steighoehe des schwebenden Textes ueber dem Klick-Button. */
+    val floatingTextRise: Dp = 120.dp,
+
+    /** Hoehe des ablaufenden Combo-Balkens. */
+    val comboBarHeight: Dp = 6.dp,
 )
 
 /**

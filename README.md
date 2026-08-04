@@ -57,9 +57,10 @@ com.pokelike.idle
 ├── domain/
 │   ├── model/      Zahlentyp, Ressourcen, Spielstand
 │   ├── repository/ Schnittstellen
-│   └── usecases/   Offline-Fortschritt
-├── manager/    Prozessweite Dienste (GameClock, Autosave, Sitzung)
+│   └── usecases/   Klickberechnung, Offline-Fortschritt
+├── manager/    Prozessweite Dienste (GameClock, Autosave, Klicks, Sitzung)
 ├── ui/
+│   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
 │   ├── screens/     Bildschirme, je Feature ein Unterpaket
 │   └── theme/       Farben, Typografie, Abstände
@@ -144,6 +145,33 @@ serverseitig; die Architektur ist darauf vorbereitet.
 bei beendetem Prozess nicht zur Verfügung. Liegt der gespeicherte Zeitpunkt
 mehr als fünf Minuten in der Zukunft, gilt die Uhr als manipuliert und es wird
 nichts gutgeschrieben. Zusätzlich ein Deckel von acht Stunden.
+
+**Zufall als injizierte Schnittstelle.** `RandomProvider` statt direkter
+`Random`-Aufrufe. Ein Test gibt damit gezielt den Wert vor, der die
+Kritschwelle trifft, statt über tausende Durchläufe zu schätzen und
+gelegentlich ohne Fehler im Code fehlzuschlagen. `rollChance` vergleicht mit
+`<`; bei Wahrscheinlichkeit 0 oder 1 wird gar nicht erst gewürfelt, damit
+Sonderfälle die Zufallsfolge nicht verschieben.
+
+**Reihenfolge der Klickberechnung ist Balancing.**
+`(Grundwert + flacher Zuschlag) × Faktor × Combo × Kritfaktor` — erst
+addieren, dann multiplizieren. Andersherum wären flache Zuschläge im späten
+Spiel wertlos, und ein Upgrade ohne Wirkung ist schlimmer als gar keines.
+
+**Combo im prozessweiten Dienst, nicht im ViewModel.** Ein ViewModel wird beim
+Bildschirmwechsel verworfen — die Combo würde beim Blick in den Shop verfallen.
+`ClickManager` hält sie; sie endet nur, wenn das Zeitfenster tatsächlich
+abläuft oder die App in den Hintergrund geht.
+
+**Klick-Rückmeldung ohne Ripple.** Die Standardanimation von Material ist auf
+einzelne Betätigungen ausgelegt und überlagert sich bei mehreren Klicks pro
+Sekunde zu einem Flimmern. Stattdessen staucht sich der Button per Feder —
+jederzeit abfangbar, kein Klick wirkt verschluckt. Skalierung und schwebende
+Texte laufen über `graphicsLayer`, also ohne erneutes Layout oder Recompose.
+
+**Vibration nur bei kritischen Treffern.** Bei jedem Klick zu vibrieren würde
+bei schnellem Tippen zu einem Dauerbrummen verschmelzen, das den Akku belastet
+und den besonderen Moment entwertet.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

@@ -1,7 +1,9 @@
 package com.pokelike.idle.manager
 
 import com.google.common.truth.Truth.assertThat
+import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.testing.FakeGameRepository
+import com.pokelike.idle.testing.FakeRandomProvider
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
 import kotlinx.coroutines.CoroutineScope
@@ -38,6 +40,14 @@ class GameSessionManagerTest {
         val timeSource = VirtualTimeSource(testScheduler)
         val clock = GameClock(scope, dispatchers, timeSource)
         val autosave = AutosaveManager(scope, dispatchers, clock, repository)
+        val clickManager = ClickManager(
+            scope = scope,
+            dispatchers = dispatchers,
+            timeSource = timeSource,
+            gameClock = clock,
+            repository = repository,
+            performClick = PerformClickUseCase(FakeRandomProvider.neverHitting()),
+        )
 
         return Fixture(
             session = GameSessionManager(
@@ -47,6 +57,7 @@ class GameSessionManagerTest {
                 repository = repository,
                 gameClock = clock,
                 autosaveManager = autosave,
+                clickManager = clickManager,
             ),
             repository = repository,
             clock = clock,

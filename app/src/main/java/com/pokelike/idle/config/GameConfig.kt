@@ -127,4 +127,63 @@ object GameConfig {
      * einen Zeitserver bewegen die Uhr um Sekunden bis Minuten.
      */
     const val CLOCK_TOLERANCE_MILLIS: Long = 5L * 60L * 1_000L
+
+    // --- Klick-System -----------------------------------------------------
+
+    /**
+     * Muenzen fuer einen Klick ohne jede Verbesserung.
+     *
+     * Genau eins. Der Wert selbst ist belanglos - entscheidend ist, dass er
+     * der Bezugspunkt fuer jede spaetere Verbesserung ist. Ein hoeherer
+     * Startwert wuerde die ersten Upgrades gefuehlt wirkungslos machen, weil
+     * "+1 pro Klick" neben einer Zehn kaum auffaellt.
+     */
+    const val BASE_COINS_PER_CLICK: Long = 1L
+
+    /**
+     * Grundwahrscheinlichkeit fuer einen kritischen Treffer.
+     *
+     * Fuenf Prozent bedeuten im Schnitt jeden zwanzigsten Klick. Das ist haeufig
+     * genug, dass ein Spieler den Effekt in den ersten Sekunden bemerkt, und
+     * selten genug, dass er besonders bleibt. Wird sich unter zwanzig Prozent
+     * kaum jemand ueberraschen lassen, oberhalb davon verliert der Treffer
+     * seine Wirkung.
+     */
+    const val BASE_CRITICAL_CHANCE: Double = 0.05
+
+    /**
+     * Faktor eines kritischen Treffers.
+     *
+     * Fuenffach. Ein Faktor von zwei faellt neben dem Combo-Bonus kaum auf; ab
+     * etwa zehnfach dominiert der Zufall den Ertrag so stark, dass gezieltes
+     * Spielen sinnlos wirkt.
+     */
+    const val BASE_CRITICAL_MULTIPLIER: Double = 5.0
+
+    /**
+     * Zeitfenster, in dem ein Klick die Combo fortsetzt.
+     *
+     * 1,5 Sekunden sind bewusst grosszuegig. Ein enges Fenster belohnt
+     * ausschliesslich schnelles Tippen und benachteiligt aeltere Geraete und
+     * Spieler mit eingeschraenkter Feinmotorik. Die Combo soll fuer
+     * Aufmerksamkeit belohnen, nicht fuer Fingerfertigkeit.
+     */
+    const val COMBO_WINDOW_MS: Long = 1_500L
+
+    /**
+     * Zuwachs des Combo-Faktors je Stufe.
+     *
+     * Zwei Prozent je Klick. Zusammen mit [COMBO_MAX_STEPS] ergibt das im
+     * Bestfall den doppelten Ertrag.
+     */
+    const val COMBO_STEP_BONUS: Double = 0.02
+
+    /**
+     * Obergrenze der Combo-Stufen.
+     *
+     * Fuenfzig Stufen sind in gut einer Minute erreichbar. Ohne Deckel waere
+     * dauerhaftes Tippen jedem Gebaeudeausbau ueberlegen, und das Spiel
+     * verloere seinen Idle-Charakter.
+     */
+    const val COMBO_MAX_STEPS: Int = 50
 }

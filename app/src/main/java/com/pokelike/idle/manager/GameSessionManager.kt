@@ -35,6 +35,7 @@ class GameSessionManager @Inject constructor(
     private val repository: GameRepository,
     private val gameClock: GameClock,
     private val autosaveManager: AutosaveManager,
+    private val clickManager: ClickManager,
 ) {
 
     /**
@@ -63,6 +64,7 @@ class GameSessionManager @Inject constructor(
                 }
                 gameClock.start()
                 autosaveManager.start()
+                clickManager.start()
             }
         }
     }
@@ -80,6 +82,7 @@ class GameSessionManager @Inject constructor(
             transitionLock.withLock {
                 gameClock.stop()
                 autosaveManager.stop()
+                clickManager.stop()
 
                 if (repository.isLoaded.value) {
                     val now = timeSource.wallClock()

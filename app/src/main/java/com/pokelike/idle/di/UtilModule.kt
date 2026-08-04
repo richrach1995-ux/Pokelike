@@ -2,8 +2,10 @@ package com.pokelike.idle.di
 
 import com.pokelike.idle.util.AndroidGameLogger
 import com.pokelike.idle.util.DefaultDispatcherProvider
+import com.pokelike.idle.util.DefaultRandomProvider
 import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.GameLogger
+import com.pokelike.idle.util.RandomProvider
 import com.pokelike.idle.util.SystemTimeSource
 import com.pokelike.idle.util.TimeSource
 import dagger.Binds
@@ -44,4 +46,10 @@ abstract class UtilModule {
     abstract fun bindGameLogger(
         implementation: AndroidGameLogger,
     ): GameLogger
+
+    @Binds
+    @Singleton
+    abstract fun bindRandomProvider(
+        implementation: DefaultRandomProvider,
+    ): RandomProvider
 }

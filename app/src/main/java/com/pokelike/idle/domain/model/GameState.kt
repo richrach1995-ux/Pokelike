@@ -46,6 +46,23 @@ data class GameState(
     operator fun get(type: ResourceType): BigNumber = resources[type]
 
     /**
+     * Bucht Ressourcen gut und schreibt zugleich die Statistik fort.
+     *
+     * Beides gehoert zwingend zusammen. Waeren es zwei Aufrufe, wuerde
+     * irgendwann einer vergessen - und die Lebenszeitsumme, an der
+     * Achievements und Prestige-Berechnung haengen, waere dauerhaft zu
+     * niedrig. Ein solcher Fehler faellt erst Wochen spaeter auf und laesst
+     * sich rueckwirkend nicht mehr beheben.
+     */
+    fun grant(bundle: ResourceBundle): GameState {
+        if (bundle.isEmpty) return this
+        return copy(
+            resources = resources.grant(bundle),
+            statistics = statistics.withEarned(bundle),
+        )
+    }
+
+    /**
      * Fuehrt einen Prestige-Reset aus.
      *
      * Zurueckgesetzt wird ausschliesslich, was

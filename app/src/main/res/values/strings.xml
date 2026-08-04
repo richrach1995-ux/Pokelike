@@ -12,18 +12,18 @@
     <string name="nav_home">Spiel</string>
 
     <!-- Startbildschirm -->
-    <string name="home_title">Pokelike</string>
-    <string name="home_subtitle">Idle Clicker</string>
-    <string name="home_session_time">Sitzungsdauer: %1$s</string>
-    <string name="home_tick_count">Ticks: %1$d</string>
-    <string name="home_engine_running">Spiel-Engine laeuft</string>
-    <string name="home_engine_paused">Spiel-Engine pausiert</string>
+    <string name="home_coins_per_click">%1$s pro Klick</string>
 
     <!-- Ressourcen -->
     <string name="resource_coins">Münzen</string>
     <string name="resource_diamonds">Diamanten</string>
 
+    <!-- Klick-System -->
+    <string name="combo_label">Combo %1$d · %2$s</string>
+
     <!-- Barrierefreiheit -->
     <string name="cd_app_logo">Pokelike Logo</string>
+    <string name="click_button_description">Münzen sammeln</string>
+    <string name="click_button_action">Klicken</string>
 
 </resources>
