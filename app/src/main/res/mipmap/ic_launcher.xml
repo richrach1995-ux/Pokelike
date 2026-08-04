@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fallback fuer API 24 und 25. Diese Versionen kennen noch keine Adaptive
+    Icons, koennen aber Layer-Drawables mit Vektor-Inhalt darstellen.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/ic_launcher_background" />
+    <item android:drawable="@drawable/ic_launcher_foreground" />
+</layer-list>

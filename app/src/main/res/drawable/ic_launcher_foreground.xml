@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Vordergrund des Launcher-Icons: eine stilisierte Goldmuenze.
+
+    Adaptive Icons zeichnen nur die inneren 72x72 dp der 108x108 dp grossen
+    Flaeche sicher sichtbar; alles ausserhalb kann vom Launcher beschnitten
+    werden. Die Muenze bleibt deshalb innerhalb dieses Sicherheitsbereichs.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Aeusserer Muenzenkoerper -->
+    <path
+        android:fillColor="#FFD54A"
+        android:pathData="M54,29 A25,25 0 1,1 53.99,29 Z" />
+
+    <!-- Abgesetzter Rand fuer Tiefenwirkung -->
+    <path
+        android:fillColor="#E5A81F"
+        android:pathData="M54,29 A25,25 0 1,1 53.99,29 Z M54,34 A20,20 0 1,0 54.01,34 Z" />
+
+    <!-- Glanzlicht oben links -->
+    <path
+        android:fillColor="#FFF0A8"
+        android:pathData="M44,40 a14,14 0 0,1 12,-6 a18,18 0 0,0 -16,12 a10,10 0 0,1 4,-6 Z" />
+
+    <!-- Zentrales "P" -->
+    <path
+        android:fillColor="#7A4E05"
+        android:pathData="M48,42 L48,66 L53,66 L53,58 L57,58 A8,8 0 0,0 57,42 Z M53,47 L57,47 A3,3 0 0,1 57,53 L53,53 Z" />
+
+</vector>

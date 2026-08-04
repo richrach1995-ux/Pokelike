@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Basistheme der Activity nach dem Splashscreen. Die sichtbare Gestaltung
+        uebernimmt vollstaendig Compose (siehe ui/theme/Theme.kt); dieses Theme
+        liefert nur einen neutralen Fensterhintergrund und blendet die
+        klassische ActionBar aus.
+    -->
+    <style name="Theme.Pokelike" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <!--
+        Startbildschirm ueber die AndroidX-SplashScreen-Bibliothek. Sie sorgt
+        dafuer, dass sich das Verhalten auf API 24-30 genauso anfuehlt wie der
+        systemeigene Splashscreen ab API 31.
+    -->
+    <style name="Theme.Pokelike.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Pokelike</item>
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Auto-Backup fuer API 24-30.
+
+    Der Spielstand wird bewusst NICHT ins Auto-Backup aufgenommen. Auto-Backup
+    laesst sich vom Nutzer per adb wiederherstellen und waere damit ein
+    trivialer Weg, Fortschritt und Premiumwaehrung zu duplizieren. Die
+    Sicherung von Spielstaenden uebernimmt spaeter der Cloud-Save-Pfad mit
+    serverseitiger Autoritaet.
+
+    Gesichert werden nur reine Geraeteeinstellungen (Ton, Vibration, Theme).
+-->
+<full-backup-content>
+    <include
+        domain="sharedpref"
+        path="pokelike_settings.preferences_pb" />
+
+    <exclude
+        domain="database"
+        path="pokelike-database" />
+    <exclude
+        domain="file"
+        path="datastore" />
+</full-backup-content>

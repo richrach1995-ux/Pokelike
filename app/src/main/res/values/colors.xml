@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    XML-Farben werden ausschliesslich fuer Dinge gebraucht, die vor dem Start
+    von Compose gezeichnet werden (Splashscreen, Launcher-Icon-Hintergrund).
+    Die eigentliche Spielpalette liegt in ui/theme/Color.kt.
+-->
+<resources>
+    <color name="splash_background">#FF12101B</color>
+    <color name="ic_launcher_background">#FF12101B</color>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Backup-Regeln ab API 31.
+
+    Gleiche Begruendung wie in backup_rules.xml: Der Spielstand ist bewusst
+    ausgeschlossen, damit er nicht ueber ein Geraete-Backup vervielfaeltigt
+    werden kann. Bei device-transfer gilt dieselbe Regel, weil auch dieser Pfad
+    fuer den Nutzer ausloesbar ist.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude
+            domain="database"
+            path="pokelike-database" />
+        <exclude
+            domain="file"
+            path="datastore" />
+    </cloud-backup>
+
+    <device-transfer>
+        <exclude
+            domain="database"
+            path="pokelike-database" />
+        <exclude
+            domain="file"
+            path="datastore" />
+    </device-transfer>
+</data-extraction-rules>

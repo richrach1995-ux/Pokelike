@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Alle sichtbaren Texte liegen ausschliesslich hier. Damit ist die spaeter
+    geplante Mehrsprachigkeit eine reine Uebersetzungsaufgabe und erfordert
+    keine Code-Aenderung.
+-->
+<resources>
+
+    <string name="app_name">Pokelike</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Spiel</string>
+
+    <!-- Startbildschirm -->
+    <string name="home_title">Pokelike</string>
+    <string name="home_subtitle">Idle Clicker</string>
+    <string name="home_session_time">Sitzungsdauer: %1$s</string>
+    <string name="home_tick_count">Ticks: %1$d</string>
+    <string name="home_engine_running">Spiel-Engine laeuft</string>
+    <string name="home_engine_paused">Spiel-Engine pausiert</string>
+
+    <!-- Barrierefreiheit -->
+    <string name="cd_app_logo">Pokelike Logo</string>
+
+</resources>

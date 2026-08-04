@@ -1,0 +1,32 @@
+# --- Gradle ---------------------------------------------------------------
+.gradle/
+build/
+local.properties
+
+# --- Android Studio / IntelliJ -------------------------------------------
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# --- Build-Artefakte ------------------------------------------------------
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+release/
+
+# --- Signierung: NIEMALS einchecken ---------------------------------------
+*.jks
+*.keystore
+keystore.properties
+
+# --- Firebase / Google Services: enthalten projektspezifische Schluessel ---
+google-services.json
+app/google-services.json
+
+# --- Systemmuell ----------------------------------------------------------
+.DS_Store
+Thumbs.db
