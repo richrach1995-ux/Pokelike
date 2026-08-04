@@ -12,6 +12,7 @@
     <string name="nav_home">Spiel</string>
     <string name="nav_buildings">Gebäude</string>
     <string name="nav_upgrades">Upgrades</string>
+    <string name="nav_prestige">Prestige</string>
 
     <!-- Startbildschirm -->
     <string name="home_coins_per_click">%1$s pro Klick</string>
@@ -96,6 +97,20 @@
     <string name="upgrade_night_shift_description">Offline fallen 25 Prozentpunkte mehr Ertrag an.</string>
     <string name="upgrade_dream_factory">Traumfabrik</string>
     <string name="upgrade_dream_factory_description">Offline fallen weitere 25 Prozentpunkte mehr Ertrag an.</string>
+
+    <!-- Prestige -->
+    <string name="prestige_points_label">Prestige-Punkte</string>
+    <string name="prestige_current_bonus">Aktueller Bonus</string>
+    <string name="prestige_bonus_after_reset">Bonus nach dem Reset</string>
+    <string name="prestige_runs">Bisherige Durchläufe</string>
+    <string name="prestige_lifetime_coins">Insgesamt verdient</string>
+    <string name="prestige_next_point_at">Nächster Punkt bei</string>
+    <string name="prestige_action">Zurücksetzen für %1$s Punkte</string>
+    <string name="prestige_not_ready">Für einen Reset ist mindestens ein Prestige-Punkt nötig. Verdiene weiter Münzen.</string>
+    <string name="prestige_confirm_title">Wirklich zurücksetzen?</string>
+    <string name="prestige_confirm_message">Du erhältst %1$s Prestige-Punkte und damit dauerhaft %2$s auf Klicks und Einkommen.\n\nDafür verlierst du alle Gebäude und alle Münzen. Upgrades, Diamanten und deine Statistik bleiben erhalten.</string>
+    <string name="prestige_confirm_action">Zurücksetzen</string>
+    <string name="prestige_cancel">Abbrechen</string>
 
     <!-- Offline-Fortschritt -->
     <string name="offline_title">Willkommen zurück!</string>

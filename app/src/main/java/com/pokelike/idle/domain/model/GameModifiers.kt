@@ -18,6 +18,12 @@ import com.pokelike.idle.config.GameConfig
  * @property buildingIncomeMultipliers Zusaetzliche Faktoren je Gebaeudeart.
  * @property buildingDiscount Preisnachlass auf Gebaeude, 0 bis unter 1.
  * @property offlineEfficiency Anteil des Einkommens, der offline anfaellt.
+ * @property prestigeMultiplier Faktor aus den Prestige-Punkten.
+ *
+ *   Ausschliesslich zur Anzeige gedacht. Er ist in [click] und
+ *   [incomeMultiplier] **bereits enthalten** - wer ihn zusaetzlich anwendet,
+ *   rechnet ihn doppelt. Getrennt gefuehrt wird er nur, weil der
+ *   Prestige-Bildschirm den erreichten Bonus ausweisen muss.
  */
 data class GameModifiers(
     val click: ClickModifiers,
@@ -25,6 +31,7 @@ data class GameModifiers(
     val buildingIncomeMultipliers: Map<BuildingType, Double>,
     val buildingDiscount: Double,
     val offlineEfficiency: Double,
+    val prestigeMultiplier: Double,
 ) {
 
     init {
@@ -33,6 +40,9 @@ data class GameModifiers(
             "Nachlass ausserhalb des Bereichs: $buildingDiscount"
         }
         require(offlineEfficiency >= 0.0) { "Negative Offline-Effizienz: $offlineEfficiency" }
+        require(prestigeMultiplier >= 1.0) {
+            "Prestige-Faktor unter 1 wuerde bestrafen: $prestigeMultiplier"
+        }
     }
 
     companion object {
@@ -53,6 +63,7 @@ data class GameModifiers(
             buildingIncomeMultipliers = emptyMap(),
             buildingDiscount = 0.0,
             offlineEfficiency = GameConfig.OFFLINE_EFFICIENCY,
+            prestigeMultiplier = 1.0,
         )
     }
 }

@@ -11,8 +11,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 4. Klick-System mit Combo und kritischen Treffern
 5. Gebäude, Idle-Einkommen, Offline-Fortschritt
 6. Upgrades mit Freischaltbedingungen
+7. Prestige mit Wurzelformel und dauerhaftem Bonus
 
-Als Nächstes: Prestige.
+Als Nächstes: Achievements und Quests.
 
 ---
 
@@ -237,6 +238,29 @@ Arten mindestens einmal vorkommt.
 **Upgrades überleben den Prestige-Reset.** Gebäude fallen weg, Upgrades
 bleiben. Sie sind der Grund, warum ein Neuanfang schneller läuft als der vorige
 Durchlauf — ohne sie wäre Prestige eine reine Bestrafung.
+
+**Prestige-Punkte über die Wurzelformel.** `punkte = ⌊√(lebenssumme / basis)⌋`.
+Der zehnfache Ertrag bringt nur etwa dreifach so viele Punkte. Ohne diese
+Dämpfung wäre ein einziger sehr langer Durchlauf jedem regelmäßigen Spielen
+überlegen — genau das Gegenteil dessen, was Prestige belohnen soll.
+
+**Prestige-Bonus additiv, nicht multiplikativ.** Hundert Punkte ergeben den
+dreifachen Ertrag, nicht das Zweihoch-Hundertfache. Multiplikativ wären die
+Zahlen nach wenigen Durchläufen so groß, dass Gebäudepreise, Upgrade-Kosten
+und Angebotsgestaltung keinen Einfluss auf den Spielverlauf mehr hätten.
+
+**Offene Punkte über die Lebenssumme, nicht den Kontostand.** Abgezogen wird
+`lifetimeEarned[PRESTIGE_POINTS]`. Sobald sich Punkte ausgeben lassen, würde
+der Kontostand sinken — und der Spieler bekäme dieselben Punkte ein zweites
+Mal. Ein Test sichert ab, dass ein zweiter Reset ohne neuen Fortschritt nichts
+einbringt.
+
+**Fortschrittsbalken logarithmisch.** Zwischen zwei Punktschwellen liegen im
+späten Spiel Größenordnungen; ein linearer Balken stünde dort über Stunden bei
+nahezu null und trüge keine Information mehr.
+
+**Reset nur über Bestätigungsdialog, der den Verlust benennt.** Ein Dialog, der
+nur den Gewinn nennt, wäre im Ergebnis eine Falle.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

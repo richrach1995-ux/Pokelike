@@ -16,7 +16,7 @@ import org.junit.Test
 
 class CalculateModifiersUseCaseTest {
 
-    private val calculateModifiers = CalculateModifiersUseCase()
+    private val calculateModifiers = CalculateModifiersUseCase(CalculatePrestigeUseCase())
 
     private fun stateWith(vararg upgrades: UpgradeType): GameState =
         GameState.newGame(nowMillis = 0L).copy(upgrades = UpgradeInventory.of(upgrades.toSet()))
@@ -119,6 +119,39 @@ class CalculateModifiersUseCaseTest {
         val modifiers = calculateModifiers(stateWith(*allCritical.toTypedArray()))
 
         assertThat(modifiers.click.criticalChance).isAtMost(1.0)
+    }
+
+    @Test
+    fun `rechnet den Prestige-Bonus in Klick und Einkommen ein`() {
+        // Der Bonus ist in click.multiplier und incomeMultiplier bereits
+        // enthalten; prestigeMultiplier dient nur der Anzeige. Wer ihn
+        // zusaetzlich anwendet, rechnet ihn doppelt.
+        val withPoints = GameState.newGame(0L).copy(
+            resources = ResourcePool.of(ResourceType.PRESTIGE_POINTS to BigNumber.of(50)),
+        )
+
+        val modifiers = calculateModifiers(withPoints)
+
+        assertThat(modifiers.prestigeMultiplier).isWithin(TOLERANCE).of(2.0)
+        assertThat(modifiers.click.multiplier).isWithin(TOLERANCE).of(2.0)
+        assertThat(modifiers.incomeMultiplier).isWithin(TOLERANCE).of(2.0)
+    }
+
+    @Test
+    fun `verbindet Prestige-Bonus und Upgrade-Faktoren`() {
+        val state = GameState.newGame(0L).copy(
+            resources = ResourcePool.of(ResourceType.PRESTIGE_POINTS to BigNumber.of(50)),
+            upgrades = UpgradeInventory.of(
+                UpgradeType.STRONGER_FINGERS,
+                UpgradeType.PRODUCTION_LINE,
+            ),
+        )
+
+        val modifiers = calculateModifiers(state)
+
+        // Upgrade verdoppelt, Prestige verdoppelt: vierfach.
+        assertThat(modifiers.click.multiplier).isWithin(TOLERANCE).of(4.0)
+        assertThat(modifiers.incomeMultiplier).isWithin(TOLERANCE).of(4.0)
     }
 
     @Test

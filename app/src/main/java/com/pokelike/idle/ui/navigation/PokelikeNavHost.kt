@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.pokelike.idle.ui.screens.buildings.BuildingsRoute
 import com.pokelike.idle.ui.screens.home.HomeRoute
+import com.pokelike.idle.ui.screens.prestige.PrestigeRoute
 import com.pokelike.idle.ui.screens.upgrades.UpgradesRoute
 
 /**
@@ -31,6 +32,7 @@ fun PokelikeNavHost(
         homeScreen()
         buildingsScreen()
         upgradesScreen()
+        prestigeScreen()
     }
 }
 
@@ -58,5 +60,12 @@ private fun NavGraphBuilder.buildingsScreen() {
 private fun NavGraphBuilder.upgradesScreen() {
     composable(route = PokelikeDestination.Upgrades.route) {
         UpgradesRoute()
+    }
+}
+
+/** Registriert den Prestige-Bildschirm. */
+private fun NavGraphBuilder.prestigeScreen() {
+    composable(route = PokelikeDestination.Prestige.route) {
+        PrestigeRoute()
     }
 }

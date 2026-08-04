@@ -208,4 +208,43 @@ object GameConfig {
      * ist ohnehin keine sinnvolle Bedienhandlung.
      */
     const val MAX_BULK_PURCHASE: Int = 10_000
+
+    // --- Prestige ---------------------------------------------------------
+
+    /**
+     * Muenzmenge, die einem Prestige-Punkt zugrunde liegt.
+     *
+     * Die Punkte folgen der Wurzelformel `punkte = wurzel(lebenssumme / basis)`.
+     * Die Wurzel ist im Genre etabliert und aus einem guten Grund: Sie sorgt
+     * dafuer, dass der zehnfache Ertrag nur etwa dreifach so viele Punkte
+     * bringt. Ohne diese Daempfung waere ein einziger sehr langer Durchlauf
+     * jedem regelmaessigen Spielen ueberlegen, und das Prestige-System verloere
+     * seinen Zweck.
+     *
+     * 1e10 als Basis bedeutet: der erste Punkt bei zehn Milliarden verdienten
+     * Muenzen, zehn Punkte bei einer Billion, hundert bei hundert Billionen.
+     */
+    const val PRESTIGE_BASE_COINS: Double = 1e10
+
+    /**
+     * Mindestzahl an Punkten, ab der ein Reset moeglich ist.
+     *
+     * Ohne diese Schwelle koennte ein Spieler fuer null Punkte zuruecksetzen
+     * und seinen gesamten Fortschritt ohne Gegenwert verlieren - der
+     * aergerlichste denkbare Fehlgriff.
+     */
+    const val PRESTIGE_MIN_POINTS: Double = 1.0
+
+    /**
+     * Dauerhafter Bonus je Prestige-Punkt.
+     *
+     * Bewusst additiv: Hundert Punkte ergeben den dreifachen Ertrag, nicht das
+     * Zweihoch-Hundertfache. Multiplikativ waeren die Zahlen nach wenigen
+     * Durchlaeufen so gross, dass jedes weitere Balancing wirkungslos bliebe -
+     * Gebaeudepreise, Upgrade-Kosten und Angebotsgestaltung haetten dann keinen
+     * Einfluss mehr auf den Spielverlauf.
+     *
+     * Der Bonus wirkt auf Klickertrag und Leerlaufeinkommen gleichermassen.
+     */
+    const val PRESTIGE_BONUS_PER_POINT: Double = 0.02
 }

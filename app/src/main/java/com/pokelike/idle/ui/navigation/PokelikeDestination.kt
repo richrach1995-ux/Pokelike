@@ -4,9 +4,11 @@ import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.TouchApp
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Upgrade
 import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.outlined.TouchApp
+import androidx.compose.material.icons.outlined.AutoAwesome
 import androidx.compose.material.icons.outlined.Upgrade
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.pokelike.idle.R
@@ -66,6 +68,14 @@ sealed interface PokelikeDestination {
         override val unselectedIcon: ImageVector = Icons.Outlined.Upgrade
     }
 
+    /** Prestige mit Punkteuebersicht und Reset. */
+    data object Prestige : PokelikeDestination {
+        override val route: String = "prestige"
+        override val labelRes: Int = R.string.nav_prestige
+        override val selectedIcon: ImageVector = Icons.Filled.AutoAwesome
+        override val unselectedIcon: ImageVector = Icons.Outlined.AutoAwesome
+    }
+
     companion object {
 
         /** Ziel, das beim Start der App angezeigt wird. */
@@ -78,6 +88,6 @@ sealed interface PokelikeDestination {
          * [PokelikeBottomBar]); bei einem einzigen Ziel gaebe es nichts zu
          * waehlen, und sie wuerde nur Hoehe kosten.
          */
-        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades)
+        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades, Prestige)
     }
 }

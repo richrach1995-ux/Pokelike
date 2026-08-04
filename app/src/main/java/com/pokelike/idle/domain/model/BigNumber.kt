@@ -147,6 +147,16 @@ class BigNumber private constructor(
         return pow(base = this, power = power)
     }
 
+    /**
+     * Quadratwurzel.
+     *
+     * Gerechnet ueber [pow] und damit im Logarithmus - fuer Werte jenseits des
+     * Double-Bereichs der einzig gangbare Weg. Grundlage der Prestige-Formel.
+     *
+     * @throws ArithmeticException bei negativer Basis.
+     */
+    fun sqrt(): BigNumber = pow(0.5)
+
     // --- Umwandlung -------------------------------------------------------
 
     /**

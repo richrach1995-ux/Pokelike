@@ -82,5 +82,7 @@ internal fun modifierManagerFor(
 ): com.pokelike.idle.manager.ModifierManager = com.pokelike.idle.manager.ModifierManager(
     scope = scope,
     repository = repository,
-    calculateModifiers = com.pokelike.idle.domain.usecases.CalculateModifiersUseCase(),
+    calculateModifiers = com.pokelike.idle.domain.usecases.CalculateModifiersUseCase(
+        com.pokelike.idle.domain.usecases.CalculatePrestigeUseCase(),
+    ),
 )
