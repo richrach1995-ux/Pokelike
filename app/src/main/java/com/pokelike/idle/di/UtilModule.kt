@@ -1,7 +1,9 @@
 package com.pokelike.idle.di
 
+import com.pokelike.idle.util.AndroidGameLogger
 import com.pokelike.idle.util.DefaultDispatcherProvider
 import com.pokelike.idle.util.DispatcherProvider
+import com.pokelike.idle.util.GameLogger
 import com.pokelike.idle.util.SystemTimeSource
 import com.pokelike.idle.util.TimeSource
 import dagger.Binds
@@ -36,4 +38,10 @@ abstract class UtilModule {
     abstract fun bindTimeSource(
         implementation: SystemTimeSource,
     ): TimeSource
+
+    @Binds
+    @Singleton
+    abstract fun bindGameLogger(
+        implementation: AndroidGameLogger,
+    ): GameLogger
 }

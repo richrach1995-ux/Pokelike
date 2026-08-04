@@ -55,10 +55,11 @@ fun HomeRoute(
 /**
  * Zustandsloser Hauptbildschirm.
  *
- * In diesem Schritt zeigt er den Zustand der Spiel-Engine an und weist damit
- * nach, dass die Kette Hilt -> GameClock -> ViewModel -> StateFlow -> Compose
- * vollstaendig traegt. Klick-Button und Ressourcenanzeige ersetzen diesen
- * Inhalt im naechsten Schritt.
+ * Zeigt die Kontostaende aus dem geladenen Spielstand und den Zustand der
+ * Spiel-Engine. Damit ist die Kette vom Speicher bis zur Anzeige vollstaendig
+ * sichtbar: Datenbank -> Repository -> ViewModel -> StateFlow -> Compose.
+ * Der Klick-Button tritt im naechsten Schritt an die Stelle der
+ * Engine-Statuskarte.
  */
 @Composable
 fun HomeScreen(
@@ -97,9 +98,71 @@ fun HomeScreen(
             modifier = Modifier.padding(top = dimens.spaceXs),
         )
 
+        ResourceRow(
+            uiState = uiState,
+            modifier = Modifier.padding(top = dimens.spaceLg),
+        )
+
         EngineStatusCard(
             uiState = uiState,
-            modifier = Modifier.padding(top = dimens.spaceXl),
+            modifier = Modifier.padding(top = dimens.spaceLg),
+        )
+    }
+}
+
+/**
+ * Zeigt die Kontostaende.
+ *
+ * Die Betraege kommen bereits formatiert aus dem ViewModel; hier wird nur noch
+ * gezeichnet. Ausgelagert, damit ein steigender Kontostand nicht den gesamten
+ * Bildschirm samt Logo neu zeichnen laesst.
+ */
+@Composable
+private fun ResourceRow(
+    uiState: HomeUiState,
+    modifier: Modifier = Modifier,
+) {
+    val dimens = PokelikeTheme.dimens
+    val gameColors = PokelikeTheme.gameColors
+
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(dimens.spaceLg),
+    ) {
+        ResourceValue(
+            label = stringResource(R.string.resource_coins),
+            value = uiState.coins,
+            color = gameColors.coin,
+        )
+        ResourceValue(
+            label = stringResource(R.string.resource_diamonds),
+            value = uiState.diamonds,
+            color = gameColors.diamond,
+        )
+    }
+}
+
+/** Einzelner Kontostand mit Beschriftung. */
+@Composable
+private fun ResourceValue(
+    label: String,
+    value: String,
+    color: Color,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = value,
+            style = ResourceValueTextStyle,
+            color = color,
+        )
+        Text(
+            text = label,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
 }
@@ -180,6 +243,8 @@ private fun HomeScreenDarkPreview() {
                     isEngineRunning = true,
                     sessionTime = "12:34",
                     tickCount = 7_540L,
+                    coins = "1.234M",
+                    diamonds = "25",
                 ),
             )
         }
@@ -196,6 +261,8 @@ private fun HomeScreenLightPreview() {
                     isEngineRunning = false,
                     sessionTime = "01:02:03",
                     tickCount = 36_123L,
+                    coins = "987.6K",
+                    diamonds = "142",
                 ),
             )
         }

@@ -48,10 +48,17 @@ maschinenspezifischen Pfad.
 ```
 com.pokelike.idle
 ├── config/     Balancing- und Laufzeitkonstanten (GameConfig)
+├── data/
+│   ├── database/    Room-Entities, DAO, Mapper
+│   ├── preferences/ DataStore für Einstellungen
+│   ├── repository/  Umsetzung der Domänen-Schnittstellen
+│   └── security/    Signatur des Spielstands
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
-│   └── model/  Zahlentyp, Ressourcen, Spielstand
-├── manager/    Prozessweite Dienste (GameClock)
+│   ├── model/      Zahlentyp, Ressourcen, Spielstand
+│   ├── repository/ Schnittstellen
+│   └── usecases/   Offline-Fortschritt
+├── manager/    Prozessweite Dienste (GameClock, Autosave, Sitzung)
 ├── ui/
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
 │   ├── screens/     Bildschirme, je Feature ein Unterpaket
@@ -110,6 +117,33 @@ beim Prestige automatisch richtig.
 weisen negative Werte ab, und Abbuchungen laufen ausschließlich über
 `spend()`, das Deckungsprüfung und Abbuchung in einer Operation vereint. Ein
 Preis mit negativem Betrag würde beim Bezahlen sonst Guthaben gutschreiben.
+
+**Spielstand im Arbeitsspeicher, Sicherung in Abständen.** `GameRepository`
+führt den Zustand als `StateFlow` und schreibt alle 30 Sekunden sowie beim
+Wechsel in den Hintergrund. Bei zehn Änderungen pro Sekunde wäre ein
+Schreibvorgang je Änderung sinnlos.
+
+**Ressourcen als Zeilen, nicht als Spalten.** Eine neue Währung ist dadurch
+kein Datenbankschema-Wechsel. `DATABASE_VERSION` beschreibt den Tabellenaufbau,
+`GameState.CURRENT_SCHEMA_VERSION` den Inhalt — der häufigere Fall kommt ohne
+Room-Migration aus.
+
+**Kein `fallbackToDestructiveMigration`.** Das würde bei einer vergessenen
+Migration alle Spielstände löschen — erst nach dem Rollout und ohne Weg zurück.
+Ein Absturz beim Start fällt in der Entwicklung sofort auf, stiller
+Datenverlust erst in den Rezensionen.
+
+**Signatur über beide Tabellen.** `SaveSignature` bildet ein HMAC-SHA256 über
+skalare Felder *und* Ressourcenzeilen. Deckte sie nur die skalaren Felder ab,
+ließe sich der Münzstand direkt in der Ressourcentabelle hochsetzen. Das stoppt
+das Bearbeiten der Datenbankdatei, nicht das Manipulieren des laufenden
+Prozesses — der Schlüssel steckt im Programm. Belastbaren Schutz gibt es nur
+serverseitig; die Architektur ist darauf vorbereitet.
+
+**Offline-Zeit nur über die Systemuhr, mit Prüfung.** Die monotone Uhr steht
+bei beendetem Prozess nicht zur Verfügung. Liegt der gespeicherte Zeitpunkt
+mehr als fünf Minuten in der Zukunft, gilt die Uhr als manipuliert und es wird
+nichts gutgeschrieben. Zusätzlich ein Deckel von acht Stunden.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

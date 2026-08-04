@@ -8,6 +8,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
+import com.pokelike.idle.domain.model.ThemeMode
 
 /**
  * Wurzel-Theme der App.
@@ -40,6 +41,21 @@ fun PokelikeTheme(
             content = content,
         )
     }
+}
+
+/**
+ * Loest die gewaehlte Darstellungsvariante in einen konkreten Modus auf.
+ *
+ * Als eigene Funktion statt eines `when` im Screen: Der Systemzustand darf nur
+ * dann gelesen werden, wenn er auch gilt. Eine feste Wahl des Spielers soll
+ * keine Neuzusammensetzung ausloesen, bloss weil das Geraet in den Dunkelmodus
+ * wechselt.
+ */
+@Composable
+fun ThemeMode.resolveIsDark(): Boolean = when (this) {
+    ThemeMode.SYSTEM -> isSystemInDarkTheme()
+    ThemeMode.LIGHT -> false
+    ThemeMode.DARK -> true
 }
 
 /**

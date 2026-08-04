@@ -2,11 +2,14 @@ package com.pokelike.idle.ui.screens.home
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.manager.GameClock
+import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.MainDispatcherRule
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
 import com.pokelike.idle.util.DurationFormatter
+import com.pokelike.idle.util.NumberFormatter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineScheduler
@@ -38,7 +41,11 @@ class HomeViewModelTest {
         )
         val viewModel = HomeViewModel(
             gameClock = clock,
+            gameRepository = FakeGameRepository(
+                initialState = GameState.newGame(nowMillis = 0L),
+            ),
             durationFormatter = DurationFormatter(),
+            numberFormatter = NumberFormatter(),
             dispatchers = dispatchers,
         )
         return viewModel to clock
@@ -52,6 +59,22 @@ class HomeViewModelTest {
         assertThat(initial.isEngineRunning).isFalse()
         assertThat(initial.sessionTime).isEqualTo("00:00")
         assertThat(initial.tickCount).isEqualTo(0L)
+    }
+
+    @Test
+    fun `zeigt die Kontostaende aus dem Spielstand`() = runTest {
+        val (viewModel, _) = createViewModel(backgroundScope, testScheduler)
+
+        viewModel.uiState.test {
+            val state = awaitItem()
+
+            // Werte aus GameConfig: Der Spieler startet ohne Muenzen, aber mit
+            // einer kleinen Menge Premiumwaehrung.
+            assertThat(state.coins).isEqualTo("0")
+            assertThat(state.diamonds).isEqualTo("25")
+
+            cancelAndIgnoreRemainingEvents()
+        }
     }
 
     @Test

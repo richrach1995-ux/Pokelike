@@ -19,6 +19,10 @@
     <string name="home_engine_running">Spiel-Engine laeuft</string>
     <string name="home_engine_paused">Spiel-Engine pausiert</string>
 
+    <!-- Ressourcen -->
+    <string name="resource_coins">Münzen</string>
+    <string name="resource_diamonds">Diamanten</string>
+
     <!-- Barrierefreiheit -->
     <string name="cd_app_logo">Pokelike Logo</string>
 

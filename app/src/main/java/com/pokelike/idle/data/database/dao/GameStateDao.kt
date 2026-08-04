@@ -1,0 +1,83 @@
+package com.pokelike.idle.data.database.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
+import androidx.room.Upsert
+import com.pokelike.idle.data.database.entity.GameStateEntity
+import com.pokelike.idle.data.database.entity.ResourceEntity
+
+/**
+ * Datenbankzugriff auf den Spielstand.
+ *
+ * Alle Methoden sind `suspend`: Room verweigert dadurch bereits beim
+ * Uebersetzen den Aufruf auf dem UI-Thread. Ein Datenbankzugriff waehrend eines
+ * Frames ist die haeufigste Ursache fuer Ruckler in Compose-Anwendungen.
+ *
+ * Als abstrakte Klasse statt als Interface: Die mit [Transaction] versehenen
+ * Methoden bringen eine eigene Umsetzung mit, und fuer diese Kombination ist
+ * die abstrakte Klasse der von Room ausdruecklich vorgesehene Weg.
+ */
+@Dao
+abstract class GameStateDao {
+
+    /**
+     * Es gibt nur eine Zeile, deshalb ohne Parameter.
+     *
+     * Room unterstuetzt zwar Standardwerte fuer DAO-Parameter, aber eine
+     * Abfrage ohne Parameter kann gar nicht erst mit dem falschen Schluessel
+     * aufgerufen werden.
+     */
+    @Query("SELECT * FROM game_state LIMIT 1")
+    abstract suspend fun findState(): GameStateEntity?
+
+    @Query("SELECT * FROM resources")
+    abstract suspend fun findResources(): List<ResourceEntity>
+
+    /**
+     * Schreibt den vollstaendigen Spielstand in einem Zug.
+     *
+     * Die Transaktion ist hier nicht optional. Der Spielstand besteht aus zwei
+     * Tabellen, und die Pruefsumme deckt beide ab. Wuerde der Vorgang zwischen
+     * den Schritten abbrechen - etwa weil das System den Prozess beendet -,
+     * blieben skalare Felder und Ressourcen aus verschiedenen Staenden
+     * uebrig. Die Pruefung schluege beim naechsten Start fehl, und der Spieler
+     * verloere seinen gesamten Fortschritt.
+     *
+     * Die Ressourcen werden geloescht und neu geschrieben, statt sie
+     * abzugleichen. Nur so verschwinden Zeilen, die es im neuen Stand nicht
+     * mehr gibt - etwa nach einem Prestige-Reset.
+     */
+    @Transaction
+    open suspend fun saveState(state: GameStateEntity, resources: List<ResourceEntity>) {
+        upsertState(state)
+        deleteAllResources()
+        insertResources(resources)
+    }
+
+    /**
+     * Loescht den gesamten Spielstand.
+     *
+     * Ebenfalls als Transaktion, damit kein Zustand entsteht, in dem die
+     * skalaren Felder geloescht sind, die Ressourcen aber noch stehen.
+     */
+    @Transaction
+    open suspend fun clearAll() {
+        deleteState()
+        deleteAllResources()
+    }
+
+    @Upsert
+    abstract suspend fun upsertState(state: GameStateEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertResources(resources: List<ResourceEntity>)
+
+    @Query("DELETE FROM resources")
+    abstract suspend fun deleteAllResources()
+
+    @Query("DELETE FROM game_state")
+    abstract suspend fun deleteState()
+}

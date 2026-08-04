@@ -80,4 +80,51 @@ object GameConfig {
      * zu wenig, um den Einstieg zu ueberspringen.
      */
     const val STARTING_DIAMONDS: Long = 25L
+
+    // --- Offline-Fortschritt ----------------------------------------------
+
+    /**
+     * Anteil des Einkommens, der offline gutgeschrieben wird.
+     *
+     * Bewusst unter 100 Prozent. Volle Offline-Produktion nimmt dem aktiven
+     * Spielen jeden Vorteil - es gaebe keinen Grund, die App zu oeffnen. Die
+     * Haelfte ist im Genre etabliert: spuerbar genug, dass sich Zurueckkommen
+     * lohnt, klein genug, dass aktives Spielen ueberlegen bleibt.
+     *
+     * Zugleich der wichtigste Hebel fuer die Monetarisierung: Ein Offline-
+     * Booster, der diesen Wert anhebt, ist eines der am besten angenommenen
+     * Premiumangebote des Genres.
+     */
+    const val OFFLINE_EFFICIENCY: Double = 0.5
+
+    /**
+     * Obergrenze der anrechenbaren Offline-Zeit.
+     *
+     * Acht Stunden entsprechen etwa einer Nachtruhe. Der Deckel hat zwei
+     * Aufgaben: Er haelt den Spieler in einem taeglichen Rhythmus, statt
+     * wochenlanges Wegbleiben zu belohnen, und er begrenzt den Schaden, falls
+     * die Manipulationserkennung je umgangen wird.
+     */
+    const val MAX_OFFLINE_MILLIS: Long = 8L * 60L * 60L * 1_000L
+
+    /**
+     * Kuerzeste Abwesenheit, die als Offline-Zeit zaehlt.
+     *
+     * Unterhalb einer Minute ist der Ertrag belanglos, ein Willkommensdialog
+     * dafuer aber stoerend - etwa wenn der Spieler nur kurz eine Nachricht
+     * beantwortet hat.
+     */
+    const val MIN_OFFLINE_MILLIS: Long = 60L * 1_000L
+
+    // --- Persistenz -------------------------------------------------------
+
+    /**
+     * Zulaessiger Vorlauf der Systemuhr gegenueber dem letzten Speicherpunkt.
+     *
+     * Liegt der gespeicherte Zeitpunkt in der Zukunft, wurde die Uhr entweder
+     * zurueckgestellt oder zuvor vorgestellt. Eine kleine Toleranz faengt
+     * legitime Faelle ab: Zeitzonenwechsel, Sommerzeit und die Korrektur durch
+     * einen Zeitserver bewegen die Uhr um Sekunden bis Minuten.
+     */
+    const val CLOCK_TOLERANCE_MILLIS: Long = 5L * 60L * 1_000L
 }
