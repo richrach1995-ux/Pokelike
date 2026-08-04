@@ -31,6 +31,7 @@ import androidx.compose.runtime.Immutable
  * @property comboCount Klicks in Folge.
  * @property comboMultiplier Wirksamer Combo-Faktor, formatiert.
  * @property comboRemaining Verbleibender Anteil des Combo-Fensters.
+ * @property coinsPerSecond Leerlaufeinkommen aus Gebaeuden, formatiert.
  */
 @Immutable
 data class HomeUiState(
@@ -41,4 +42,5 @@ data class HomeUiState(
     val comboCount: Int = 0,
     val comboMultiplier: String = "1.00x",
     val comboRemaining: Float = 0f,
+    val coinsPerSecond: String = "0",
 )

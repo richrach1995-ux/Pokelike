@@ -4,8 +4,13 @@ import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pokelike.idle.domain.model.GameSettings
+import com.pokelike.idle.domain.model.OfflineProgress
+import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.repository.SettingsRepository
+import com.pokelike.idle.manager.GameSessionManager
+import com.pokelike.idle.util.DurationFormatter
+import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -19,11 +24,18 @@ import javax.inject.Inject
  * @property settings Einstellungen. Bestimmen unter anderem die Farbgebung.
  * @property isReady Ob der Spielstand geladen ist. Solange nicht, bleibt der
  *   Splashscreen stehen.
+ * @property offlineEarned Ertrag der Abwesenheit, formatiert. `null`, wenn
+ *   nichts anzuzeigen ist.
+ * @property offlineDuration Dauer der Abwesenheit, formatiert.
+ * @property offlineWasCapped Ob die Obergrenze gegriffen hat.
  */
 @Immutable
 data class MainUiState(
     val settings: GameSettings = GameSettings(),
     val isReady: Boolean = false,
+    val offlineEarned: String? = null,
+    val offlineDuration: String = "",
+    val offlineWasCapped: Boolean = false,
 )
 
 /**
@@ -37,6 +49,9 @@ data class MainUiState(
 class MainViewModel @Inject constructor(
     settingsRepository: SettingsRepository,
     gameRepository: GameRepository,
+    private val sessionManager: GameSessionManager,
+    private val numberFormatter: NumberFormatter,
+    private val durationFormatter: DurationFormatter,
 ) : ViewModel() {
 
     /**
@@ -50,11 +65,35 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<MainUiState> = combine(
         settingsRepository.settings,
         gameRepository.isLoaded,
-    ) { settings, isLoaded ->
-        MainUiState(settings = settings, isReady = isLoaded)
+        sessionManager.offlineProgress,
+    ) { settings, isLoaded, offline ->
+        MainUiState(
+            settings = settings,
+            isReady = isLoaded,
+            offlineEarned = offline?.let { formatEarned(it) },
+            offlineDuration = offline?.let {
+                durationFormatter.formatCompact(it.creditedMillis)
+            }.orEmpty(),
+            offlineWasCapped = offline?.wasCapped ?: false,
+        )
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.Eagerly,
         initialValue = MainUiState(),
     )
+
+    /** Bestaetigt, dass der Willkommensdialog gezeigt wurde. */
+    fun onOfflineProgressDismissed() {
+        sessionManager.consumeOfflineProgress()
+    }
+
+    /**
+     * Fasst den Offline-Ertrag als Text zusammen.
+     *
+     * Zeigt bewusst nur die Muenzen: Weitere Ressourcen fallen offline nicht
+     * an, und eine Aufzaehlung mit einem einzigen Eintrag waere unnoetig
+     * umstaendlich.
+     */
+    private fun formatEarned(progress: OfflineProgress): String =
+        "+" + numberFormatter.format(progress.earned[ResourceType.COINS])
 }

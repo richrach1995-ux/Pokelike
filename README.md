@@ -9,8 +9,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 2. Zahlentyp, Ressourcensystem, Spielstand
 3. Persistenz, Autosave, Offline-Fortschritt
 4. Klick-System mit Combo und kritischen Treffern
+5. Gebäude, Idle-Einkommen, Offline-Fortschritt
 
-Als Nächstes: Gebäude und Idle-Einkommen.
+Als Nächstes: Upgrades.
 
 ---
 
@@ -178,6 +179,36 @@ Texte laufen über `graphicsLayer`, also ohne erneutes Layout oder Recompose.
 **Vibration nur bei kritischen Treffern.** Bei jedem Klick zu vibrieren würde
 bei schnellem Tippen zu einem Dauerbrummen verschmelzen, das den Akku belastet
 und den besonderen Moment entwertet.
+
+**Gebäude als Zeilen, mit echter Migration.** Eine neue Tabelle *ist* eine
+Schemaänderung — `DATABASE_VERSION` steht auf 2, `Migration(1,2)` legt die
+Tabelle an. Bestehende Spielstände bleiben unverändert und starten mit leerem
+Bestand.
+
+**Signatur-Format ist anhängend.** Gebäude werden an die kanonische Zeichenkette
+*angehängt*, nie eingefügt. Ein Spielstand ohne Gebäude ergibt dadurch exakt
+dieselbe Prüfsumme wie vor Einführung des Abschnitts — alte Stände behalten
+ihre Gültigkeit. Diese Regel gilt für jede künftige Erweiterung.
+
+**Geschlossene Preisformel statt Schleife.** Ein Sammelkauf von zehntausend
+Exemplaren wäre sonst zehntausend `BigNumber`-Multiplikationen während eines
+Frames. Die größtmögliche Kaufmenge wird über den Logarithmus bestimmt und
+anschließend gegengeprüft — der Logarithmus rechnet mit `Double`-Genauigkeit
+und kann um ein Exemplar danebenliegen.
+
+**Eine Einkommensformel für drei Verwendungen.** Laufende Gutschrift, Anzeige
+und Offline-Berechnung nutzen dasselbe `CalculateIncomeUseCase`. Wäre die
+Formel mehrfach vorhanden, liefen die Werte auseinander — und genau das bemerkt
+ein Spieler sofort.
+
+**Idle-Einkommen am Uhrentakt.** Ein eigener Zeitgeber würde im Hintergrund
+weiterlaufen und dort Ertrag erzeugen, den die Offline-Berechnung beim nächsten
+Start ein zweites Mal gutschreibt.
+
+**Gebäude erscheinen ab dem halben Preis.** Der Spieler sieht sein nächstes
+Ziel, bevor er es sich leisten kann. Maßgeblich ist die Lebenszeitsumme, nicht
+der Kontostand — sonst verschwände ein Gebäude wieder, sobald er sein Geld
+ausgibt.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

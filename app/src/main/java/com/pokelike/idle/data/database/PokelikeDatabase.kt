@@ -3,6 +3,7 @@ package com.pokelike.idle.data.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.pokelike.idle.data.database.dao.GameStateDao
+import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
 
@@ -26,6 +27,7 @@ import com.pokelike.idle.data.database.entity.ResourceEntity
     entities = [
         GameStateEntity::class,
         ResourceEntity::class,
+        BuildingEntity::class,
     ],
     version = PokelikeDatabase.DATABASE_VERSION,
     exportSchema = true,
@@ -36,7 +38,12 @@ abstract class PokelikeDatabase : RoomDatabase() {
 
     companion object {
 
-        const val DATABASE_VERSION: Int = 1
+        /**
+         * Version 2 hat die Tabelle `buildings` ergaenzt. Die zugehoerige
+         * Migration steht in
+         * [com.pokelike.idle.data.database.migration.DatabaseMigrations].
+         */
+        const val DATABASE_VERSION: Int = 2
 
         /**
          * Dateiname der Datenbank.

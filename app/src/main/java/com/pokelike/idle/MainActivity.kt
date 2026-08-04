@@ -10,6 +10,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pokelike.idle.ui.MainViewModel
 import com.pokelike.idle.ui.PokelikeApp
+import com.pokelike.idle.ui.components.OfflineProgressDialog
 import com.pokelike.idle.ui.theme.PokelikeTheme
 import com.pokelike.idle.ui.theme.resolveIsDark
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,6 +56,19 @@ class MainActivity : AppCompatActivity() {
 
             PokelikeTheme(darkTheme = uiState.settings.themeMode.resolveIsDark()) {
                 PokelikeApp()
+
+                // Der Willkommensdialog liegt bewusst hier und nicht in einem
+                // einzelnen Bildschirm: Er gilt fuer die gesamte Sitzung und
+                // soll unabhaengig davon erscheinen, welcher Tab zuletzt offen
+                // war.
+                uiState.offlineEarned?.let { earned ->
+                    OfflineProgressDialog(
+                        earnedText = earned,
+                        durationText = uiState.offlineDuration,
+                        wasCapped = uiState.offlineWasCapped,
+                        onDismiss = viewModel::onOfflineProgressDismissed,
+                    )
+                }
             }
         }
     }

@@ -10,9 +10,11 @@
 
     <!-- Navigation -->
     <string name="nav_home">Spiel</string>
+    <string name="nav_buildings">Gebäude</string>
 
     <!-- Startbildschirm -->
     <string name="home_coins_per_click">%1$s pro Klick</string>
+    <string name="home_coins_per_second">%1$s pro Sekunde</string>
 
     <!-- Ressourcen -->
     <string name="resource_coins">Münzen</string>
@@ -20,6 +22,38 @@
 
     <!-- Klick-System -->
     <string name="combo_label">Combo %1$d · %2$s</string>
+
+    <!-- Gebäude -->
+    <string name="buildings_income_per_second">%1$s Münzen pro Sekunde</string>
+    <string name="buildings_owned_and_income">%1$d im Besitz · %2$s pro Sekunde</string>
+    <string name="buildings_buy_count">Kaufen ×%1$d</string>
+
+    <string name="building_finger">Finger</string>
+    <string name="building_finger_description">Tippt für dich weiter, wenn du gerade nicht hinsiehst.</string>
+    <string name="building_cursor">Cursor</string>
+    <string name="building_cursor_description">Ein Zeiger, der von allein klickt. Praktisch.</string>
+    <string name="building_mouse">Maus</string>
+    <string name="building_mouse_description">Deutlich schneller als ein Finger und wird nie müde.</string>
+    <string name="building_mine">Mine</string>
+    <string name="building_mine_description">Fördert Münzen direkt aus dem Boden.</string>
+    <string name="building_farm">Farm</string>
+    <string name="building_farm_description">Münzen wachsen hier tatsächlich auf Bäumen.</string>
+    <string name="building_factory">Fabrik</string>
+    <string name="building_factory_description">Produziert Münzen im Schichtbetrieb.</string>
+    <string name="building_bank">Bank</string>
+    <string name="building_bank_description">Vermehrt Münzen, indem sie sie einfach verleiht.</string>
+    <string name="building_lab">Labor</string>
+    <string name="building_lab_description">Erforscht, wie man Münzen aus dem Nichts erzeugt.</string>
+    <string name="building_spaceship">Raumschiff</string>
+    <string name="building_spaceship_description">Holt Münzen von Planeten, die noch keinen Namen haben.</string>
+    <string name="building_time_machine">Zeitmaschine</string>
+    <string name="building_time_machine_description">Bringt Münzen aus einer Zukunft mit, in der du reich bist.</string>
+
+    <!-- Offline-Fortschritt -->
+    <string name="offline_title">Willkommen zurück!</string>
+    <string name="offline_duration">Du warst %1$s weg.</string>
+    <string name="offline_capped">Die Obergrenze war erreicht — länger als acht Stunden wird nicht angerechnet.</string>
+    <string name="offline_collect">Einsammeln</string>
 
     <!-- Barrierefreiheit -->
     <string name="cd_app_logo">Pokelike Logo</string>

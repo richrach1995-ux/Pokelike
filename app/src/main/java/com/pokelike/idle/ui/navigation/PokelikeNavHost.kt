@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.pokelike.idle.ui.screens.buildings.BuildingsRoute
 import com.pokelike.idle.ui.screens.home.HomeRoute
 
 /**
@@ -27,6 +28,7 @@ fun PokelikeNavHost(
         modifier = modifier,
     ) {
         homeScreen()
+        buildingsScreen()
     }
 }
 
@@ -40,5 +42,12 @@ fun PokelikeNavHost(
 private fun NavGraphBuilder.homeScreen() {
     composable(route = PokelikeDestination.Home.route) {
         HomeRoute()
+    }
+}
+
+/** Registriert die Gebaeudeliste. */
+private fun NavGraphBuilder.buildingsScreen() {
+    composable(route = PokelikeDestination.Buildings.route) {
+        BuildingsRoute()
     }
 }

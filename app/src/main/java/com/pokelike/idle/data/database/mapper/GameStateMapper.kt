@@ -1,10 +1,13 @@
 package com.pokelike.idle.data.database.mapper
 
+import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BuildingInventory
+import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
 import com.pokelike.idle.domain.model.ResourceBundle
@@ -22,6 +25,7 @@ import javax.inject.Singleton
 data class PersistedGameState(
     val state: GameStateEntity,
     val resources: List<ResourceEntity>,
+    val buildings: List<BuildingEntity>,
 )
 
 /**
@@ -41,6 +45,7 @@ class GameStateMapper @Inject constructor(
     /** Wandelt einen Spielstand in Datenbankzeilen um und signiert ihn. */
     fun toPersisted(state: GameState): PersistedGameState {
         val resources = buildResourceRows(state)
+        val buildings = buildBuildingRows(state)
 
         val unsigned = GameStateEntity(
             schemaVersion = state.schemaVersion,
@@ -55,8 +60,13 @@ class GameStateMapper @Inject constructor(
         )
 
         return PersistedGameState(
-            state = unsigned.copy(signature = saveSignature.sign(canonicalPayload(unsigned, resources))),
+            state = unsigned.copy(
+                signature = saveSignature.sign(
+                    canonicalPayload(unsigned, resources, buildings),
+                ),
+            ),
             resources = resources,
+            buildings = buildings,
         )
     }
 
@@ -68,15 +78,19 @@ class GameStateMapper @Inject constructor(
      *   uebernehmen waere die schlechtere Antwort: Der Spieler behielte den
      *   gefaelschten Kontostand, und die Ursache bliebe unerkannt.
      */
-    fun toDomain(entity: GameStateEntity, resources: List<ResourceEntity>): GameState? {
+    fun toDomain(
+        entity: GameStateEntity,
+        resources: List<ResourceEntity>,
+        buildings: List<BuildingEntity> = emptyList(),
+    ): GameState? {
         val unsigned = entity.copy(signature = "")
-        if (!saveSignature.verify(canonicalPayload(unsigned, resources), entity.signature)) {
-            return null
-        }
+        val payload = canonicalPayload(unsigned, resources, buildings)
+        if (!saveSignature.verify(payload, entity.signature)) return null
 
         return GameState(
             schemaVersion = entity.schemaVersion,
             resources = ResourcePool.of(readBucket(resources, ResourceBucket.CURRENT)),
+            buildings = readBuildings(buildings),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -101,6 +115,28 @@ class GameStateMapper @Inject constructor(
         addAll(toRows(ResourceBucket.LIFETIME_EARNED, state.statistics.lifetimeEarned.amounts))
         addAll(toRows(ResourceBucket.LIFETIME_SPENT, state.statistics.lifetimeSpent.amounts))
     }
+
+    /** Erzeugt die Zeilen des Gebaeudebestands. */
+    private fun buildBuildingRows(state: GameState): List<BuildingEntity> =
+        state.buildings.asMap().map { (type, owned) ->
+            BuildingEntity(buildingId = type.id, owned = owned)
+        }
+
+    /**
+     * Liest den Gebaeudebestand.
+     *
+     * Unbekannte Schluessel werden uebergangen - dieselbe Ueberlegung wie bei
+     * den Ressourcen.
+     */
+    private fun readBuildings(buildings: List<BuildingEntity>): BuildingInventory =
+        BuildingInventory.of(
+            buildMap {
+                buildings.forEach { row ->
+                    val type = BuildingType.fromId(row.buildingId) ?: return@forEach
+                    if (row.owned > 0) put(type, row.owned)
+                }
+            },
+        )
 
     private fun toRows(
         bucket: ResourceBucket,
@@ -154,6 +190,7 @@ class GameStateMapper @Inject constructor(
     internal fun canonicalPayload(
         entity: GameStateEntity,
         resources: List<ResourceEntity>,
+        buildings: List<BuildingEntity> = emptyList(),
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -170,6 +207,19 @@ class GameStateMapper @Inject constructor(
                 append('|')
                 append(row.bucket).append(':').append(row.resourceId)
                 append('=').append(row.mantissa).append('^').append(row.exponent)
+            }
+
+        // Gebaeude werden angehaengt, nicht eingefuegt. Ein Spielstand ohne
+        // Gebaeude ergibt dadurch exakt dieselbe Zeichenkette wie vor
+        // Einfuehrung dieses Abschnitts - alte Staende behalten ihre gueltige
+        // Pruefsumme und lassen sich weiter lesen.
+        //
+        // Diese Regel gilt fuer jede kuenftige Erweiterung: nur anhaengen, nie
+        // die Reihenfolge des Bestehenden aendern.
+        buildings
+            .sortedBy { it.buildingId }
+            .forEach { row ->
+                append("|building:").append(row.buildingId).append('=').append(row.owned)
             }
     }
 }

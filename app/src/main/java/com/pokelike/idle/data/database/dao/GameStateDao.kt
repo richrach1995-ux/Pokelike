@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
+import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
 
@@ -36,6 +37,9 @@ abstract class GameStateDao {
     @Query("SELECT * FROM resources")
     abstract suspend fun findResources(): List<ResourceEntity>
 
+    @Query("SELECT * FROM buildings")
+    abstract suspend fun findBuildings(): List<BuildingEntity>
+
     /**
      * Schreibt den vollstaendigen Spielstand in einem Zug.
      *
@@ -51,10 +55,16 @@ abstract class GameStateDao {
      * mehr gibt - etwa nach einem Prestige-Reset.
      */
     @Transaction
-    open suspend fun saveState(state: GameStateEntity, resources: List<ResourceEntity>) {
+    open suspend fun saveState(
+        state: GameStateEntity,
+        resources: List<ResourceEntity>,
+        buildings: List<BuildingEntity>,
+    ) {
         upsertState(state)
         deleteAllResources()
         insertResources(resources)
+        deleteAllBuildings()
+        insertBuildings(buildings)
     }
 
     /**
@@ -67,6 +77,7 @@ abstract class GameStateDao {
     open suspend fun clearAll() {
         deleteState()
         deleteAllResources()
+        deleteAllBuildings()
     }
 
     @Upsert
@@ -77,6 +88,12 @@ abstract class GameStateDao {
 
     @Query("DELETE FROM resources")
     abstract suspend fun deleteAllResources()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertBuildings(buildings: List<BuildingEntity>)
+
+    @Query("DELETE FROM buildings")
+    abstract suspend fun deleteAllBuildings()
 
     @Query("DELETE FROM game_state")
     abstract suspend fun deleteState()

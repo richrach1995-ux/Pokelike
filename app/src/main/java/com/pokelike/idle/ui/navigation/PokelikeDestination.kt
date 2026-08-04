@@ -2,7 +2,9 @@ package com.pokelike.idle.ui.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.TouchApp
+import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.pokelike.idle.R
@@ -46,6 +48,14 @@ sealed interface PokelikeDestination {
         override val unselectedIcon: ImageVector = Icons.Outlined.TouchApp
     }
 
+    /** Gebaeudeliste mit Kaufmoeglichkeit. */
+    data object Buildings : PokelikeDestination {
+        override val route: String = "buildings"
+        override val labelRes: Int = R.string.nav_buildings
+        override val selectedIcon: ImageVector = Icons.Filled.Store
+        override val unselectedIcon: ImageVector = Icons.Outlined.Store
+    }
+
     companion object {
 
         /** Ziel, das beim Start der App angezeigt wird. */
@@ -54,12 +64,10 @@ sealed interface PokelikeDestination {
         /**
          * Ziele der unteren Navigationsleiste, in Anzeigereihenfolge.
          *
-         * Aktuell enthaelt die Liste nur den Hauptbildschirm. Die untere Leiste
-         * blendet sich deshalb selbst aus (siehe [PokelikeBottomBar]) - eine
-         * Navigationsleiste mit einem einzigen Eintrag waere sinnlos und wuerde
-         * nur Platz kosten. Sobald das zweite Ziel eingetragen ist, erscheint
-         * sie automatisch.
+         * Die Leiste erscheint erst ab zwei Eintraegen (siehe
+         * [PokelikeBottomBar]); bei einem einzigen Ziel gaebe es nichts zu
+         * waehlen, und sie wuerde nur Hoehe kosten.
          */
-        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home)
+        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings)
     }
 }

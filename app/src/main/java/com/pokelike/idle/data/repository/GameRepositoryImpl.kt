@@ -69,7 +69,11 @@ class GameRepositoryImpl @Inject constructor(
                     null
                 } else {
                     // Liefert null, wenn die Pruefsumme nicht passt.
-                    mapper.toDomain(entity, dao.findResources()).also { state ->
+                    mapper.toDomain(
+                        entity = entity,
+                        resources = dao.findResources(),
+                        buildings = dao.findBuildings(),
+                    ).also { state ->
                         if (state == null) {
                             logger.warn(TAG, "Spielstand hat die Integritaetspruefung nicht bestanden")
                         }
@@ -117,7 +121,7 @@ class GameRepositoryImpl @Inject constructor(
             withContext(dispatchers.io) {
                 try {
                     val persisted = mapper.toPersisted(snapshot)
-                    dao.saveState(persisted.state, persisted.resources)
+                    dao.saveState(persisted.state, persisted.resources, persisted.buildings)
                     true
                 } catch (throwable: Throwable) {
                     // Der Fortschritt bleibt im Arbeitsspeicher erhalten, und
@@ -139,7 +143,7 @@ class GameRepositoryImpl @Inject constructor(
         withContext(dispatchers.io) {
             dao.clearAll()
             val persisted = mapper.toPersisted(fresh)
-            dao.saveState(persisted.state, persisted.resources)
+            dao.saveState(persisted.state, persisted.resources, persisted.buildings)
         }
 
         _gameState.value = fresh

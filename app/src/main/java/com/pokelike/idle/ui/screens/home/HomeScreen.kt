@@ -128,6 +128,12 @@ fun HomeScreen(
             modifier = Modifier.padding(top = dimens.spaceSm),
         )
 
+        Text(
+            text = stringResource(R.string.home_coins_per_second, uiState.coinsPerSecond),
+            style = MaterialTheme.typography.labelLarge,
+            color = PokelikeTheme.gameColors.positive,
+        )
+
         // Button und schwebende Hinweise teilen sich dieselbe Flaeche, damit
         // der Ertrag genau dort erscheint, wo der Spieler hinsieht.
         Box(
@@ -233,6 +239,7 @@ private fun HomeScreenDarkPreview() {
                     comboCount = 17,
                     comboMultiplier = "1.32x",
                     comboRemaining = 0.6f,
+                    coinsPerSecond = "4.82K",
                 ),
                 floatingTexts = emptyList(),
                 onClick = {},
@@ -256,6 +263,7 @@ private fun HomeScreenLightPreview() {
                     comboCount = 0,
                     comboMultiplier = "1.00x",
                     comboRemaining = 0f,
+                    coinsPerSecond = "312.5",
                 ),
                 floatingTexts = emptyList(),
                 onClick = {},

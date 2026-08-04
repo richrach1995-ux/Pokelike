@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.pokelike.idle.data.database.PokelikeDatabase
 import com.pokelike.idle.data.database.dao.GameStateDao
+import com.pokelike.idle.data.database.migration.DatabaseMigrations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +28,7 @@ object DatabaseModule {
         klass = PokelikeDatabase::class.java,
         name = PokelikeDatabase.DATABASE_NAME,
     )
+        .addMigrations(*DatabaseMigrations.ALL)
         // Bewusst KEIN fallbackToDestructiveMigration: Das wuerde bei einer
         // vergessenen Migration alle Spielstaende der Nutzerschaft loeschen -
         // erst nach dem Rollout und ohne Weg zurueck. Ein Absturz beim Start

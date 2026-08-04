@@ -6,6 +6,7 @@ import com.pokelike.idle.domain.model.ClickOutcome
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.manager.ClickManager
+import com.pokelike.idle.manager.IdleIncomeManager
 import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -29,6 +30,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val clickManager: ClickManager,
+    idleIncomeManager: IdleIncomeManager,
     gameRepository: GameRepository,
     private val numberFormatter: NumberFormatter,
     dispatchers: DispatcherProvider,
@@ -39,7 +41,8 @@ class HomeViewModel @Inject constructor(
         gameRepository.isLoaded,
         clickManager.combo,
         clickManager.modifiers,
-    ) { gameState, isLoaded, combo, modifiers ->
+        idleIncomeManager.incomePerSecond,
+    ) { gameState, isLoaded, combo, modifiers, incomePerSecond ->
         HomeUiState(
             isReady = isLoaded,
             coins = numberFormatter.format(gameState[ResourceType.COINS]),
@@ -50,6 +53,7 @@ class HomeViewModel @Inject constructor(
             comboCount = combo.count,
             comboMultiplier = formatMultiplier(combo.multiplier),
             comboRemaining = combo.remainingFraction,
+            coinsPerSecond = numberFormatter.format(incomePerSecond),
         )
     }
         // Formatierung gehoert nicht auf den UI-Thread: Bei laufender Combo

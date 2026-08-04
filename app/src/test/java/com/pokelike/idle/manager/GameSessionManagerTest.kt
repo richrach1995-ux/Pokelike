@@ -1,6 +1,13 @@
 package com.pokelike.idle.manager
 
 import com.google.common.truth.Truth.assertThat
+import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BuildingInventory
+import com.pokelike.idle.domain.model.BuildingType
+import com.pokelike.idle.domain.model.GameState
+import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
+import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.FakeRandomProvider
@@ -37,7 +44,9 @@ class GameSessionManagerTest {
         repository: FakeGameRepository = FakeGameRepository(),
     ): Fixture {
         val dispatchers = TestDispatcherProvider(StandardTestDispatcher(testScheduler))
-        val timeSource = VirtualTimeSource(testScheduler)
+        // Versatz, damit die Systemzeit einen realistischen Wert hat: Ein
+        // zurueckliegender Speicherzeitpunkt muesste sonst negativ sein.
+        val timeSource = VirtualTimeSource(testScheduler, offsetMillis = WALL_CLOCK_BASE)
         val clock = GameClock(scope, dispatchers, timeSource)
         val autosave = AutosaveManager(scope, dispatchers, clock, repository)
         val clickManager = ClickManager(
@@ -47,6 +56,13 @@ class GameSessionManagerTest {
             gameClock = clock,
             repository = repository,
             performClick = PerformClickUseCase(FakeRandomProvider.neverHitting()),
+        )
+        val incomeManager = IdleIncomeManager(
+            scope = scope,
+            dispatchers = dispatchers,
+            gameClock = clock,
+            repository = repository,
+            calculateIncome = CalculateIncomeUseCase(),
         )
 
         return Fixture(
@@ -58,6 +74,9 @@ class GameSessionManagerTest {
                 gameClock = clock,
                 autosaveManager = autosave,
                 clickManager = clickManager,
+                idleIncomeManager = incomeManager,
+                calculateIncome = CalculateIncomeUseCase(),
+                calculateOfflineProgress = CalculateOfflineProgressUseCase(),
             ),
             repository = repository,
             clock = clock,
@@ -129,6 +148,91 @@ class GameSessionManagerTest {
             .isGreaterThan(beforeBackground)
     }
 
+    // --- Offline-Fortschritt ---------------------------------------------
+
+    @Test
+    fun `schreibt den Offline-Ertrag beim Laden gut`() = runTest {
+        // Ein gespeicherter Stand mit zehn Cursorn und einer Stunde
+        // Abwesenheit. Zehn Muenzen pro Sekunde, halbe Offline-Effizienz.
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            buildings = BuildingInventory.of(BuildingType.CURSOR to 10),
+            lastSeenAtMillis = WALL_CLOCK_BASE - ONE_HOUR,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        // 3600 Sekunden * 10 * 0.5 = 18.000
+        assertThat(fixture.repository.gameState.value[ResourceType.COINS].toDouble())
+            .isWithin(TOLERANCE).of(18_000.0)
+    }
+
+    @Test
+    fun `bietet den Offline-Ertrag zur Anzeige an`() = runTest {
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            buildings = BuildingInventory.of(BuildingType.CURSOR to 10),
+            lastSeenAtMillis = WALL_CLOCK_BASE - ONE_HOUR,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        val progress = fixture.session.offlineProgress.value
+        assertThat(progress).isNotNull()
+        assertThat(progress!!.isWorthShowing).isTrue()
+
+        // Nach dem Bestaetigen darf der Dialog nicht erneut erscheinen.
+        fixture.session.consumeOfflineProgress()
+        assertThat(fixture.session.offlineProgress.value).isNull()
+    }
+
+    @Test
+    fun `zeigt nichts an, wenn offline nichts angefallen ist`() = runTest {
+        // Ohne Gebaeude gibt es keinen Ertrag, und ein Dialog darueber waere
+        // reine Stoerung.
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            lastSeenAtMillis = WALL_CLOCK_BASE - ONE_HOUR,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        assertThat(fixture.session.offlineProgress.value).isNull()
+    }
+
+    @Test
+    fun `verweigert den Offline-Ertrag bei vorgestellter Uhr`() = runTest {
+        // Der gespeicherte Zeitpunkt liegt in der Zukunft: Die Uhr wurde
+        // vorgestellt und danach zurueckgesetzt.
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            buildings = BuildingInventory.of(BuildingType.CURSOR to 10),
+            lastSeenAtMillis = WALL_CLOCK_BASE + ONE_HOUR,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        assertThat(fixture.repository.gameState.value[ResourceType.COINS])
+            .isEqualTo(BigNumber.ZERO)
+        assertThat(fixture.session.offlineProgress.value).isNull()
+    }
+
     @Test
     fun `speichert nicht, solange nichts geladen wurde`() = runTest {
         val fixture = createFixture(backgroundScope)
@@ -140,5 +244,11 @@ class GameSessionManagerTest {
         runCurrent()
 
         assertThat(fixture.repository.saveCount).isEqualTo(0)
+    }
+
+    private companion object {
+        const val WALL_CLOCK_BASE = 1_700_000_000_000L
+        const val ONE_HOUR = 3_600_000L
+        const val TOLERANCE = 1e-6
     }
 }

@@ -186,4 +186,26 @@ object GameConfig {
      * verloere seinen Idle-Charakter.
      */
     const val COMBO_MAX_STEPS: Int = 50
+
+    // --- Gebaeude ---------------------------------------------------------
+
+    /**
+     * Anteil des Grundpreises, ab dem ein Gebaeude sichtbar wird.
+     *
+     * Die Haelfte. Der Spieler sieht das naechste Ziel, bevor er es sich
+     * leisten kann - das ist der Moment, der ihn weiterspielen laesst. Bei 1.0
+     * erschiene ein Gebaeude erst, wenn es bereits kaufbar ist, und der
+     * Vorfreude-Effekt entfiele.
+     */
+    const val BUILDING_UNLOCK_FRACTION: Double = 0.5
+
+    /**
+     * Obergrenze fuer einen einzelnen Sammelkauf.
+     *
+     * Begrenzt die Suche nach der groesstmoeglichen Kaufmenge. Ohne Deckel
+     * koennte ein extrem hoher Kontostand eine Menge liefern, deren Berechnung
+     * die Oberflaeche blockiert - und mehr als zehntausend Exemplare auf einmal
+     * ist ohnehin keine sinnvolle Bedienhandlung.
+     */
+    const val MAX_BULK_PURCHASE: Int = 10_000
 }

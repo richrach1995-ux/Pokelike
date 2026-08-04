@@ -17,10 +17,15 @@ import kotlinx.coroutines.flow.update
  *
  * @property saveCount Anzahl erfolgreicher Schreibvorgaenge.
  * @property failSave Laesst [save] fehlschlagen, um den Fehlerpfad zu pruefen.
+ * @property stateToLoad Spielstand, den [load] liefert. Ohne Angabe wird ein
+ *   neuer Stand angelegt. Wird gebraucht, um einen gespeicherten Stand mit
+ *   zurueckliegendem Zeitstempel nachzustellen - die Voraussetzung fuer jeden
+ *   Test des Offline-Fortschritts.
  */
 class FakeGameRepository(
     initialState: GameState = GameState(),
     var failSave: Boolean = false,
+    var stateToLoad: GameState? = null,
 ) : GameRepository {
 
     private val _gameState = MutableStateFlow(initialState)
@@ -40,7 +45,7 @@ class FakeGameRepository(
 
     override suspend fun load(nowMillis: Long): GameState {
         loadCount++
-        val state = GameState.newGame(nowMillis)
+        val state = stateToLoad ?: GameState.newGame(nowMillis)
         _gameState.value = state
         _isLoaded.value = true
         return state

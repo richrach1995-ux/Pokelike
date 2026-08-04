@@ -1,10 +1,13 @@
 package com.pokelike.idle.data.database.mapper
 
 import com.google.common.truth.Truth.assertThat
+import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BuildingInventory
+import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
 import com.pokelike.idle.domain.model.ResourceBundle
@@ -68,6 +71,99 @@ class GameStateMapperTest {
             ResourceBucket.LIFETIME_EARNED.id,
             ResourceBucket.LIFETIME_SPENT.id,
         )
+    }
+
+    // --- Gebaeude ---------------------------------------------------------
+
+    @Test
+    fun `stellt den Gebaeudebestand wieder her`() {
+        val state = sampleState.copy(
+            buildings = BuildingInventory.of(
+                BuildingType.FINGER to 42,
+                BuildingType.TIME_MACHINE to 3,
+            ),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(persisted.state, persisted.resources, persisted.buildings)
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit veraenderter Gebaeudeanzahl`() {
+        // Die Pruefsumme muss auch die Gebaeudetabelle abdecken, sonst liesse
+        // sich der Bestand direkt in der Datenbank hochsetzen.
+        val state = sampleState.copy(
+            buildings = BuildingInventory.of(BuildingType.FINGER to 5),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.buildings.map { row -> row.copy(owned = 9_999) }
+
+        assertThat(mapper.toDomain(persisted.state, persisted.resources, tampered)).isNull()
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Gebaeude unveraendert`() {
+        // Der entscheidende Punkt fuer die Vertraeglichkeit mit aelteren
+        // Staenden: Ein Spielstand ohne Gebaeude muss dieselbe Pruefsumme
+        // ergeben wie vor Einfuehrung des Gebaeudeabschnitts. Die Signatur
+        // wird hier bewusst ohne Gebaeudeliste gebildet und mit einer
+        // leeren Liste geprueft.
+        val persisted = mapper.toPersisted(sampleState)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = emptyList(),
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+        assertThat(restored?.buildings?.isEmpty).isTrue()
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit unbekanntem Gebaeude`() {
+        val state = sampleState.copy(
+            buildings = BuildingInventory.of(BuildingType.FINGER to 5),
+        )
+        val persisted = mapper.toPersisted(state)
+        val withUnknown = persisted.buildings + BuildingEntity(
+            buildingId = "gebaeude_aus_der_zukunft",
+            owned = 7,
+        )
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(unsigned, persisted.resources, withUnknown),
+            ),
+        )
+
+        val restored = mapper.toDomain(resigned, persisted.resources, withUnknown)
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `ist unabhaengig von der Reihenfolge der Gebaeudezeilen`() {
+        val state = sampleState.copy(
+            buildings = BuildingInventory.of(
+                BuildingType.FINGER to 5,
+                BuildingType.MINE to 2,
+                BuildingType.BANK to 1,
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings.reversed(),
+        )
+
+        assertThat(restored).isEqualTo(state)
     }
 
     @Test
