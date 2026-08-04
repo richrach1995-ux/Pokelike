@@ -8,6 +8,7 @@ import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
 import com.pokelike.idle.testing.FakeGameRepository
+import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
 import kotlinx.coroutines.CoroutineScope
@@ -44,6 +45,7 @@ class IdleIncomeManagerTest {
                 dispatchers = dispatchers,
                 gameClock = clock,
                 repository = repository,
+                modifierManager = modifierManagerFor(scope, repository),
                 calculateIncome = CalculateIncomeUseCase(),
             ),
             repository = repository,

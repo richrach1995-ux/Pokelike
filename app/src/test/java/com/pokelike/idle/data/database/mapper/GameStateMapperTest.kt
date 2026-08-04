@@ -4,6 +4,7 @@ import com.google.common.truth.Truth.assertThat
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
+import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BuildingInventory
@@ -13,6 +14,8 @@ import com.pokelike.idle.domain.model.GameStatistics
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.model.UpgradeInventory
+import com.pokelike.idle.domain.model.UpgradeType
 import org.junit.Test
 
 class GameStateMapperTest {
@@ -161,6 +164,111 @@ class GameStateMapperTest {
             entity = persisted.state,
             resources = persisted.resources,
             buildings = persisted.buildings.reversed(),
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    // --- Upgrades ---------------------------------------------------------
+
+    @Test
+    fun `stellt die gekauften Upgrades wieder her`() {
+        val state = sampleState.copy(
+            upgrades = UpgradeInventory.of(
+                UpgradeType.STRONGER_FINGERS,
+                UpgradeType.NIGHT_SHIFT,
+            ),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit nachtraeglich eingefuegtem Upgrade`() {
+        // Ohne Abdeckung durch die Pruefsumme liesse sich jedes Upgrade
+        // kostenlos in die Datenbank eintragen.
+        val persisted = mapper.toPersisted(sampleState)
+
+        val tampered = listOf(UpgradeEntity(upgradeId = UpgradeType.GOLDEN_TOUCH.id))
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                buildings = persisted.buildings,
+                upgrades = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Upgrades unveraendert`() {
+        // Dieselbe Vertraeglichkeitsregel wie bei den Gebaeuden: Der
+        // Upgrade-Abschnitt wird angehaengt, nie eingefuegt. Ein Stand ohne
+        // Upgrades ergibt deshalb dieselbe Pruefsumme wie zuvor.
+        val persisted = mapper.toPersisted(sampleState)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = emptyList(),
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit unbekanntem Upgrade`() {
+        val persisted = mapper.toPersisted(sampleState)
+        val withUnknown = listOf(UpgradeEntity(upgradeId = "upgrade_aus_der_zukunft"))
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(
+                    unsigned,
+                    persisted.resources,
+                    persisted.buildings,
+                    withUnknown,
+                ),
+            ),
+        )
+
+        val restored = mapper.toDomain(
+            entity = resigned,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = withUnknown,
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `ist unabhaengig von der Reihenfolge der Upgrade-Zeilen`() {
+        val state = sampleState.copy(
+            upgrades = UpgradeInventory.of(
+                UpgradeType.STRONGER_FINGERS,
+                UpgradeType.LUCKY_CHARM,
+                UpgradeType.WHOLESALE,
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades.reversed(),
         )
 
         assertThat(restored).isEqualTo(state)

@@ -11,6 +11,7 @@
     <!-- Navigation -->
     <string name="nav_home">Spiel</string>
     <string name="nav_buildings">Gebäude</string>
+    <string name="nav_upgrades">Upgrades</string>
 
     <!-- Startbildschirm -->
     <string name="home_coins_per_click">%1$s pro Klick</string>
@@ -48,6 +49,53 @@
     <string name="building_spaceship_description">Holt Münzen von Planeten, die noch keinen Namen haben.</string>
     <string name="building_time_machine">Zeitmaschine</string>
     <string name="building_time_machine_description">Bringt Münzen aus einer Zukunft mit, in der du reich bist.</string>
+
+    <!-- Upgrades -->
+    <string name="upgrades_progress">%1$d von %2$d gekauft</string>
+    <string name="upgrades_owned">Bereits gekauft</string>
+
+    <string name="upgrade_stronger_fingers">Kräftigere Finger</string>
+    <string name="upgrade_stronger_fingers_description">Verdoppelt den Ertrag pro Klick.</string>
+    <string name="upgrade_iron_fingers">Eiserne Finger</string>
+    <string name="upgrade_iron_fingers_description">Verdoppelt den Ertrag pro Klick noch einmal.</string>
+    <string name="upgrade_golden_touch">Goldene Hand</string>
+    <string name="upgrade_golden_touch_description">Verdreifacht den Ertrag pro Klick.</string>
+    <string name="upgrade_heavy_hands">Schwere Hände</string>
+    <string name="upgrade_heavy_hands_description">Jeder Klick bringt 10 Münzen zusätzlich, bevor alle Faktoren greifen.</string>
+    <string name="upgrade_thunder_strike">Donnerschlag</string>
+    <string name="upgrade_thunder_strike_description">Jeder Klick bringt 250 Münzen zusätzlich, bevor alle Faktoren greifen.</string>
+
+    <string name="upgrade_lucky_charm">Glücksbringer</string>
+    <string name="upgrade_lucky_charm_description">Erhöht die Chance auf einen kritischen Treffer um 5 Prozentpunkte.</string>
+    <string name="upgrade_four_leaf_clover">Vierblättriges Kleeblatt</string>
+    <string name="upgrade_four_leaf_clover_description">Erhöht die Chance auf einen kritischen Treffer um weitere 5 Prozentpunkte.</string>
+    <string name="upgrade_critical_mass">Kritische Masse</string>
+    <string name="upgrade_critical_mass_description">Kritische Treffer bringen das Fünffache zusätzlich.</string>
+
+    <string name="upgrade_production_line">Fließband</string>
+    <string name="upgrade_production_line_description">Verdoppelt den Ertrag aller Gebäude.</string>
+    <string name="upgrade_automation">Automatisierung</string>
+    <string name="upgrade_automation_description">Verdoppelt den Ertrag aller Gebäude erneut.</string>
+    <string name="upgrade_global_logistics">Globale Logistik</string>
+    <string name="upgrade_global_logistics_description">Verdreifacht den Ertrag aller Gebäude.</string>
+
+    <string name="upgrade_nimble_fingers">Flinke Finger</string>
+    <string name="upgrade_nimble_fingers_description">Finger produzieren dreimal so viel.</string>
+    <string name="upgrade_ergonomic_cursor">Ergonomischer Cursor</string>
+    <string name="upgrade_ergonomic_cursor_description">Cursor produzieren dreimal so viel.</string>
+    <string name="upgrade_deep_drilling">Tiefenbohrung</string>
+    <string name="upgrade_deep_drilling_description">Minen produzieren dreimal so viel.</string>
+    <string name="upgrade_fertilizer">Dünger</string>
+    <string name="upgrade_fertilizer_description">Farmen produzieren dreimal so viel.</string>
+    <string name="upgrade_bulk_discount">Mengenrabatt</string>
+    <string name="upgrade_bulk_discount_description">Alle Gebäude kosten 5 Prozent weniger.</string>
+    <string name="upgrade_wholesale">Großhandel</string>
+    <string name="upgrade_wholesale_description">Alle Gebäude kosten 10 Prozent weniger.</string>
+
+    <string name="upgrade_night_shift">Nachtschicht</string>
+    <string name="upgrade_night_shift_description">Offline fallen 25 Prozentpunkte mehr Ertrag an.</string>
+    <string name="upgrade_dream_factory">Traumfabrik</string>
+    <string name="upgrade_dream_factory_description">Offline fallen weitere 25 Prozentpunkte mehr Ertrag an.</string>
 
     <!-- Offline-Fortschritt -->
     <string name="offline_title">Willkommen zurück!</string>

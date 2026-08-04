@@ -1,7 +1,6 @@
 package com.pokelike.idle.manager
 
 import com.pokelike.idle.di.ApplicationScope
-import com.pokelike.idle.domain.model.ClickModifiers
 import com.pokelike.idle.domain.model.ClickOutcome
 import com.pokelike.idle.domain.model.ComboSnapshot
 import com.pokelike.idle.domain.model.ComboState
@@ -38,6 +37,7 @@ class ClickManager @Inject constructor(
     private val timeSource: TimeSource,
     private val gameClock: GameClock,
     private val repository: GameRepository,
+    private val modifierManager: ModifierManager,
     private val performClick: PerformClickUseCase,
 ) {
 
@@ -55,17 +55,6 @@ class ClickManager @Inject constructor(
     /** Combo-Stand fuer die Anzeige. */
     val combo: StateFlow<ComboSnapshot> = _combo.asStateFlow()
 
-    /**
-     * Aktuelle Klickwerte.
-     *
-     * Vorerst konstant, weil es noch keine Upgrades gibt. Ab dem
-     * Upgrade-Schritt wird dieser Fluss aus dem Spielstand abgeleitet; die
-     * Oberflaeche beobachtet ihn bereits jetzt und zeigt Aenderungen dann ohne
-     * weiteres Zutun an.
-     */
-    private val _modifiers = MutableStateFlow(ClickModifiers.base())
-    val modifiers: StateFlow<ClickModifiers> = _modifiers.asStateFlow()
-
     private var decayJob: Job? = null
 
     /**
@@ -79,7 +68,7 @@ class ClickManager @Inject constructor(
     fun click(): ClickOutcome {
         val now = timeSource.elapsedRealtime()
         val comboBefore = comboState.value
-        val currentModifiers = _modifiers.value
+        val currentModifiers = modifierManager.modifiers.value.click
 
         lateinit var outcome: ClickOutcome
 

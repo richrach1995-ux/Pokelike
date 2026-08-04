@@ -7,6 +7,7 @@ import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.testing.FakeGameRepository
+import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.FakeRandomProvider
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
@@ -44,6 +45,7 @@ class ClickManagerTest {
                 timeSource = timeSource,
                 gameClock = clock,
                 repository = repository,
+                modifierManager = modifierManagerFor(scope, repository),
                 performClick = PerformClickUseCase(random),
             ),
             repository = repository,

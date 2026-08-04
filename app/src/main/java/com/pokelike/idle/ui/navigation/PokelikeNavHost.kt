@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.pokelike.idle.ui.screens.buildings.BuildingsRoute
 import com.pokelike.idle.ui.screens.home.HomeRoute
+import com.pokelike.idle.ui.screens.upgrades.UpgradesRoute
 
 /**
  * Navigationsgraph der App.
@@ -29,6 +30,7 @@ fun PokelikeNavHost(
     ) {
         homeScreen()
         buildingsScreen()
+        upgradesScreen()
     }
 }
 
@@ -49,5 +51,12 @@ private fun NavGraphBuilder.homeScreen() {
 private fun NavGraphBuilder.buildingsScreen() {
     composable(route = PokelikeDestination.Buildings.route) {
         BuildingsRoute()
+    }
+}
+
+/** Registriert die Upgrade-Liste. */
+private fun NavGraphBuilder.upgradesScreen() {
+    composable(route = PokelikeDestination.Upgrades.route) {
+        UpgradesRoute()
     }
 }

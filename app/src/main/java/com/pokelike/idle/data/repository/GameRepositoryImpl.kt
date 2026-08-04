@@ -73,6 +73,7 @@ class GameRepositoryImpl @Inject constructor(
                         entity = entity,
                         resources = dao.findResources(),
                         buildings = dao.findBuildings(),
+                        upgrades = dao.findUpgrades(),
                     ).also { state ->
                         if (state == null) {
                             logger.warn(TAG, "Spielstand hat die Integritaetspruefung nicht bestanden")
@@ -121,7 +122,12 @@ class GameRepositoryImpl @Inject constructor(
             withContext(dispatchers.io) {
                 try {
                     val persisted = mapper.toPersisted(snapshot)
-                    dao.saveState(persisted.state, persisted.resources, persisted.buildings)
+                    dao.saveState(
+                persisted.state,
+                persisted.resources,
+                persisted.buildings,
+                persisted.upgrades,
+            )
                     true
                 } catch (throwable: Throwable) {
                     // Der Fortschritt bleibt im Arbeitsspeicher erhalten, und
@@ -143,7 +149,12 @@ class GameRepositoryImpl @Inject constructor(
         withContext(dispatchers.io) {
             dao.clearAll()
             val persisted = mapper.toPersisted(fresh)
-            dao.saveState(persisted.state, persisted.resources, persisted.buildings)
+            dao.saveState(
+                persisted.state,
+                persisted.resources,
+                persisted.buildings,
+                persisted.upgrades,
+            )
         }
 
         _gameState.value = fresh

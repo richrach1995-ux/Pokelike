@@ -10,6 +10,7 @@ import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
 import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.testing.FakeGameRepository
+import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.FakeRandomProvider
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
@@ -49,12 +50,14 @@ class GameSessionManagerTest {
         val timeSource = VirtualTimeSource(testScheduler, offsetMillis = WALL_CLOCK_BASE)
         val clock = GameClock(scope, dispatchers, timeSource)
         val autosave = AutosaveManager(scope, dispatchers, clock, repository)
+        val modifierManager = modifierManagerFor(scope, repository)
         val clickManager = ClickManager(
             scope = scope,
             dispatchers = dispatchers,
             timeSource = timeSource,
             gameClock = clock,
             repository = repository,
+            modifierManager = modifierManager,
             performClick = PerformClickUseCase(FakeRandomProvider.neverHitting()),
         )
         val incomeManager = IdleIncomeManager(
@@ -62,6 +65,7 @@ class GameSessionManagerTest {
             dispatchers = dispatchers,
             gameClock = clock,
             repository = repository,
+            modifierManager = modifierManager,
             calculateIncome = CalculateIncomeUseCase(),
         )
 
@@ -75,6 +79,7 @@ class GameSessionManagerTest {
                 autosaveManager = autosave,
                 clickManager = clickManager,
                 idleIncomeManager = incomeManager,
+                modifierManager = modifierManager,
                 calculateIncome = CalculateIncomeUseCase(),
                 calculateOfflineProgress = CalculateOfflineProgressUseCase(),
             ),

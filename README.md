@@ -10,8 +10,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 3. Persistenz, Autosave, Offline-Fortschritt
 4. Klick-System mit Combo und kritischen Treffern
 5. Gebäude, Idle-Einkommen, Offline-Fortschritt
+6. Upgrades mit Freischaltbedingungen
 
-Als Nächstes: Upgrades.
+Als Nächstes: Prestige.
 
 ---
 
@@ -62,10 +63,11 @@ com.pokelike.idle
 │   └── security/    Signatur des Spielstands
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
-│   ├── model/      Zahlentyp, Ressourcen, Spielstand
+│   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Spielstand
 │   ├── repository/ Schnittstellen
-│   └── usecases/   Klickberechnung, Offline-Fortschritt
-├── manager/    Prozessweite Dienste (GameClock, Autosave, Klicks, Sitzung)
+│   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline
+├── manager/    Prozessweite Dienste (Uhr, Autosave, Klicks, Einkommen,
+│            Modifikatoren, Sitzung)
 ├── ui/
 │   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
@@ -209,6 +211,32 @@ Start ein zweites Mal gutschreibt.
 Ziel, bevor er es sich leisten kann. Maßgeblich ist die Lebenszeitsumme, nicht
 der Kontostand — sonst verschwände ein Gebäude wieder, sobald er sein Geld
 ausgibt.
+
+**Freischaltbedingungen als `sealed interface`.** Jede Bedingung trägt genau
+die Angaben, die sie braucht, und prüft sich selbst gegen den Spielstand. Ein
+Enum mit Zahlenfeldern müsste alle denkbaren Felder führen, von denen bei jeder
+Bedingung die meisten bedeutungslos wären. Eine neue Bedingungsart ist eine neue
+Klasse — bestehende bleiben unberührt.
+
+**`GameModifiers` als einzige Zwischenschicht.** Upgrades — und später Booster,
+Events, Prestige-Boni, Skins — verändern ausschließlich dieses Objekt. Klick,
+Einkommen, Preise und Offline lesen daraus und kennen keine einzige Quelle.
+Ohne die Schicht wäre eine neue Quelle eine Änderung an vier Stellen.
+
+**Verrechnungsart ist Balancing.** Faktoren werden multipliziert (zweimal
+„doppelt" ergibt vierfach — additiv wären späte Upgrades wirkungslos),
+Zuschläge addiert (5 % + 5 % Kritchance = 10 %, so liest es der Spieler),
+Nachlässe addiert und gedeckelt (multiplikativ ergäben 5 % + 10 % nur 14,5 %
+und wirkten wie ein Rechenfehler).
+
+**Nur Wirkungsarten mit Auswertungsstelle.** `UpgradeEffect` enthält keine
+Wirkung, die nirgends ankommt — ein Upgrade, das der Spieler kauft und das
+nichts tut, ist schlimmer als gar keines. Ein Test prüft, dass jede der acht
+Arten mindestens einmal vorkommt.
+
+**Upgrades überleben den Prestige-Reset.** Gebäude fallen weg, Upgrades
+bleiben. Sie sind der Grund, warum ein Neuanfang schneller läuft als der vorige
+Durchlauf — ohne sie wäre Prestige eine reine Bestrafung.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

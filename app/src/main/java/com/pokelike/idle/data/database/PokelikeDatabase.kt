@@ -6,6 +6,7 @@ import com.pokelike.idle.data.database.dao.GameStateDao
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
+import com.pokelike.idle.data.database.entity.UpgradeEntity
 
 /**
  * Room-Datenbank der App.
@@ -28,6 +29,7 @@ import com.pokelike.idle.data.database.entity.ResourceEntity
         GameStateEntity::class,
         ResourceEntity::class,
         BuildingEntity::class,
+        UpgradeEntity::class,
     ],
     version = PokelikeDatabase.DATABASE_VERSION,
     exportSchema = true,
@@ -39,11 +41,11 @@ abstract class PokelikeDatabase : RoomDatabase() {
     companion object {
 
         /**
-         * Version 2 hat die Tabelle `buildings` ergaenzt. Die zugehoerige
-         * Migration steht in
+         * Version 2 hat die Tabelle `buildings` ergaenzt, Version 3 die
+         * Tabelle `upgrades`. Die zugehoerigen Migrationen stehen in
          * [com.pokelike.idle.data.database.migration.DatabaseMigrations].
          */
-        const val DATABASE_VERSION: Int = 2
+        const val DATABASE_VERSION: Int = 3
 
         /**
          * Dateiname der Datenbank.

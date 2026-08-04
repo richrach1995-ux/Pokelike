@@ -47,6 +47,7 @@ class GameSessionManager @Inject constructor(
     private val autosaveManager: AutosaveManager,
     private val clickManager: ClickManager,
     private val idleIncomeManager: IdleIncomeManager,
+    private val modifierManager: ModifierManager,
     private val calculateIncome: CalculateIncomeUseCase,
     private val calculateOfflineProgress: CalculateOfflineProgressUseCase,
 ) {
@@ -135,10 +136,17 @@ class GameSessionManager @Inject constructor(
      */
     private fun applyOfflineProgress(lastSeenAtMillis: Long) {
         val state = repository.gameState.value
+        val modifiers = modifierManager.modifiers.value
+
         val progress = calculateOfflineProgress(
             lastSeenAtMillis = lastSeenAtMillis,
             nowMillis = timeSource.wallClock(),
-            incomePerSecond = calculateIncome(state.buildings),
+            incomePerSecond = calculateIncome(
+                buildings = state.buildings,
+                multiplier = modifiers.incomeMultiplier,
+                perBuildingMultipliers = modifiers.buildingIncomeMultipliers,
+            ),
+            efficiency = modifiers.offlineEfficiency,
         )
 
         if (!progress.earned.isEmpty) {

@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -40,6 +40,7 @@ class IdleIncomeManager @Inject constructor(
     private val dispatchers: DispatcherProvider,
     private val gameClock: GameClock,
     private val repository: GameRepository,
+    private val modifierManager: ModifierManager,
     private val calculateIncome: CalculateIncomeUseCase,
 ) {
 
@@ -54,8 +55,16 @@ class IdleIncomeManager @Inject constructor(
      * nur beim Kauf eines Gebaeudes. Ohne den Filter wuerde jede Anzeige, die
      * daran haengt, zehnmal pro Sekunde neu gezeichnet.
      */
-    val incomePerSecond: StateFlow<BigNumber> = repository.gameState
-        .map { state -> calculateIncome(state.buildings) }
+    val incomePerSecond: StateFlow<BigNumber> = combine(
+        repository.gameState,
+        modifierManager.modifiers,
+    ) { state, modifiers ->
+        calculateIncome(
+            buildings = state.buildings,
+            multiplier = modifiers.incomeMultiplier,
+            perBuildingMultipliers = modifiers.buildingIncomeMultipliers,
+        )
+    }
         .distinctUntilChanged()
         .stateIn(
             scope = scope,

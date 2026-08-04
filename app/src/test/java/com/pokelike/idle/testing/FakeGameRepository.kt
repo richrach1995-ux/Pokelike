@@ -69,3 +69,18 @@ class FakeGameRepository(
         return state
     }
 }
+
+/**
+ * Baut einen [ModifierManager] fuer Tests.
+ *
+ * Er leitet die wirksamen Werte aus dem Spielstand ab und wird von
+ * ClickManager, IdleIncomeManager und GameSessionManager benoetigt.
+ */
+internal fun modifierManagerFor(
+    scope: kotlinx.coroutines.CoroutineScope,
+    repository: com.pokelike.idle.domain.repository.GameRepository,
+): com.pokelike.idle.manager.ModifierManager = com.pokelike.idle.manager.ModifierManager(
+    scope = scope,
+    repository = repository,
+    calculateModifiers = com.pokelike.idle.domain.usecases.CalculateModifiersUseCase(),
+)

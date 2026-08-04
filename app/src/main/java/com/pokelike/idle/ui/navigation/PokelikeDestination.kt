@@ -4,8 +4,10 @@ import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.TouchApp
+import androidx.compose.material.icons.filled.Upgrade
 import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.outlined.TouchApp
+import androidx.compose.material.icons.outlined.Upgrade
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.pokelike.idle.R
 
@@ -56,6 +58,14 @@ sealed interface PokelikeDestination {
         override val unselectedIcon: ImageVector = Icons.Outlined.Store
     }
 
+    /** Upgrade-Liste mit Kaufmoeglichkeit. */
+    data object Upgrades : PokelikeDestination {
+        override val route: String = "upgrades"
+        override val labelRes: Int = R.string.nav_upgrades
+        override val selectedIcon: ImageVector = Icons.Filled.Upgrade
+        override val unselectedIcon: ImageVector = Icons.Outlined.Upgrade
+    }
+
     companion object {
 
         /** Ziel, das beim Start der App angezeigt wird. */
@@ -68,6 +78,6 @@ sealed interface PokelikeDestination {
          * [PokelikeBottomBar]); bei einem einzigen Ziel gaebe es nichts zu
          * waehlen, und sie wuerde nur Hoehe kosten.
          */
-        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings)
+        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades)
     }
 }

@@ -15,8 +15,8 @@ import com.pokelike.idle.config.GameConfig
  * - Der Offline-Fortschritt ist eine reine Funktion `(Zustand, Zeit) -> Zustand`
  *   und laesst sich ohne Datenbank und ohne Android testen.
  *
- * Upgrades, Booster, Quests und Achievements kommen in den folgenden Schritten
- * als weitere Felder hinzu - jeweils dann, wenn das zugehoerige System
+ * Booster, Quests und Achievements kommen in den folgenden Schritten als
+ * weitere Felder hinzu - jeweils dann, wenn das zugehoerige System
  * tatsaechlich existiert.
  *
  * @property schemaVersion Version des Spielstandformats. Wird beim Laden
@@ -25,6 +25,7 @@ import com.pokelike.idle.config.GameConfig
  *   unterscheiden.
  * @property resources Aktueller Kontostand.
  * @property buildings Besitzstand an Gebaeuden.
+ * @property upgrades Gekaufte Upgrades.
  * @property statistics Lebenslange Kennzahlen.
  * @property createdAtMillis Zeitpunkt des ersten Starts (Systemzeit).
  * @property lastSeenAtMillis Zeitpunkt der letzten Sicherung (Systemzeit).
@@ -34,6 +35,7 @@ data class GameState(
     val schemaVersion: Int = CURRENT_SCHEMA_VERSION,
     val resources: ResourcePool = ResourcePool.EMPTY,
     val buildings: BuildingInventory = BuildingInventory.EMPTY,
+    val upgrades: UpgradeInventory = UpgradeInventory.EMPTY,
     val statistics: GameStatistics = GameStatistics(),
     val createdAtMillis: Long = 0L,
     val lastSeenAtMillis: Long = 0L,
@@ -83,10 +85,10 @@ data class GameState(
     /**
      * Fuehrt einen Prestige-Reset aus.
      *
-     * Zurueckgesetzt wird ausschliesslich, was
-     * [ResourceType.resetOnPrestige] als vergaenglich markiert. Die Statistik
-     * bleibt vollstaendig erhalten und zaehlt lediglich den Durchlauf hoch -
-     * sonst verloere der Spieler mit jedem Prestige seine Achievements.
+     * Zurueckgesetzt werden Gebaeude und die als vergaenglich markierten
+     * Ressourcen (siehe [ResourceType.resetOnPrestige]). Statistik und
+     * Upgrades bleiben vollstaendig erhalten - sonst verloere der Spieler mit
+     * jedem Prestige seine Achievements und jeden Grund, es zu tun.
      *
      * @param prestigePointsEarned Gutschrift fuer diesen Durchlauf. Die
      *   Berechnung dieser Menge gehoert in den Prestige-Use-Case, nicht hierher:
@@ -106,6 +108,10 @@ data class GameState(
             // Systems: Der Spieler gibt seinen Fortschritt auf und erhaelt
             // dafuer dauerhafte Boni.
             buildings = buildings.cleared(),
+            // Upgrades bleiben bewusst erhalten. Sie sind der Grund, warum ein
+            // Neuanfang schneller laeuft als der vorige Durchlauf - ohne sie
+            // waere Prestige eine reine Bestrafung.
+            upgrades = upgrades,
             statistics = statistics.copy(
                 prestigeCount = statistics.prestigeCount + 1,
                 lifetimeEarned = statistics.lifetimeEarned + ResourceBundle.single(
@@ -124,12 +130,12 @@ data class GameState(
          * Muss erhoeht werden, sobald sich die Struktur so aendert, dass ein
          * alter Spielstand nicht mehr unveraendert gelesen werden kann.
          *
-         * Version 2 hat den Gebaeudebestand ergaenzt. Ein Spielstand der
-         * Version 1 laesst sich unveraendert weiterlesen und startet mit einem
-         * leeren Bestand - deshalb ist keine Umwandlung noetig, nur diese
-         * Kennzeichnung.
+         * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades.
+         * Beide Male laesst sich ein aelterer Spielstand unveraendert
+         * weiterlesen und startet mit leerem Bestand - deshalb ist keine
+         * Umwandlung noetig, nur diese Kennzeichnung.
          */
-        const val CURRENT_SCHEMA_VERSION: Int = 2
+        const val CURRENT_SCHEMA_VERSION: Int = 3
 
         /**
          * Spielstand fuer einen neuen Spieler.

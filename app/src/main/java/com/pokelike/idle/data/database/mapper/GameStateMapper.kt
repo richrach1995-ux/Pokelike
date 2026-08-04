@@ -4,6 +4,7 @@ import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
+import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BuildingInventory
@@ -13,6 +14,8 @@ import com.pokelike.idle.domain.model.GameStatistics
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.model.UpgradeInventory
+import com.pokelike.idle.domain.model.UpgradeType
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -26,6 +29,7 @@ data class PersistedGameState(
     val state: GameStateEntity,
     val resources: List<ResourceEntity>,
     val buildings: List<BuildingEntity>,
+    val upgrades: List<UpgradeEntity>,
 )
 
 /**
@@ -46,6 +50,7 @@ class GameStateMapper @Inject constructor(
     fun toPersisted(state: GameState): PersistedGameState {
         val resources = buildResourceRows(state)
         val buildings = buildBuildingRows(state)
+        val upgrades = state.upgrades.asSet().map { UpgradeEntity(upgradeId = it.id) }
 
         val unsigned = GameStateEntity(
             schemaVersion = state.schemaVersion,
@@ -62,11 +67,12 @@ class GameStateMapper @Inject constructor(
         return PersistedGameState(
             state = unsigned.copy(
                 signature = saveSignature.sign(
-                    canonicalPayload(unsigned, resources, buildings),
+                    canonicalPayload(unsigned, resources, buildings, upgrades),
                 ),
             ),
             resources = resources,
             buildings = buildings,
+            upgrades = upgrades,
         )
     }
 
@@ -82,15 +88,17 @@ class GameStateMapper @Inject constructor(
         entity: GameStateEntity,
         resources: List<ResourceEntity>,
         buildings: List<BuildingEntity> = emptyList(),
+        upgrades: List<UpgradeEntity> = emptyList(),
     ): GameState? {
         val unsigned = entity.copy(signature = "")
-        val payload = canonicalPayload(unsigned, resources, buildings)
+        val payload = canonicalPayload(unsigned, resources, buildings, upgrades)
         if (!saveSignature.verify(payload, entity.signature)) return null
 
         return GameState(
             schemaVersion = entity.schemaVersion,
             resources = ResourcePool.of(readBucket(resources, ResourceBucket.CURRENT)),
             buildings = readBuildings(buildings),
+            upgrades = readUpgrades(upgrades),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -136,6 +144,17 @@ class GameStateMapper @Inject constructor(
                     if (row.owned > 0) put(type, row.owned)
                 }
             },
+        )
+
+    /**
+     * Liest die gekauften Upgrades.
+     *
+     * Unbekannte Schluessel werden uebergangen - dieselbe Ueberlegung wie bei
+     * Ressourcen und Gebaeuden.
+     */
+    private fun readUpgrades(upgrades: List<UpgradeEntity>): UpgradeInventory =
+        UpgradeInventory.of(
+            upgrades.mapNotNull { row -> UpgradeType.fromId(row.upgradeId) }.toSet(),
         )
 
     private fun toRows(
@@ -191,6 +210,7 @@ class GameStateMapper @Inject constructor(
         entity: GameStateEntity,
         resources: List<ResourceEntity>,
         buildings: List<BuildingEntity> = emptyList(),
+        upgrades: List<UpgradeEntity> = emptyList(),
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -220,6 +240,12 @@ class GameStateMapper @Inject constructor(
             .sortedBy { it.buildingId }
             .forEach { row ->
                 append("|building:").append(row.buildingId).append('=').append(row.owned)
+            }
+
+        upgrades
+            .sortedBy { it.upgradeId }
+            .forEach { row ->
+                append("|upgrade:").append(row.upgradeId)
             }
     }
 }

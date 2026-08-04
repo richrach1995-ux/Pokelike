@@ -3,6 +3,7 @@ package com.pokelike.idle.ui.screens.buildings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pokelike.idle.domain.model.BuildingType
+import com.pokelike.idle.domain.model.GameModifiers
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
@@ -11,6 +12,7 @@ import com.pokelike.idle.domain.usecases.BuyAmount
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
 import com.pokelike.idle.domain.usecases.PurchaseBuildingUseCase
 import com.pokelike.idle.domain.usecases.PurchaseResult
+import com.pokelike.idle.manager.ModifierManager
 import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,6 +39,7 @@ class BuildingsViewModel @Inject constructor(
     private val purchaseBuilding: PurchaseBuildingUseCase,
     private val costCalculator: BuildingCostCalculator,
     private val calculateIncome: CalculateIncomeUseCase,
+    private val modifierManager: ModifierManager,
     private val numberFormatter: NumberFormatter,
     dispatchers: DispatcherProvider,
 ) : ViewModel() {
@@ -54,8 +57,9 @@ class BuildingsViewModel @Inject constructor(
     val uiState: StateFlow<BuildingsUiState> = combine(
         repository.gameState,
         buyAmount,
-    ) { state, amount ->
-        buildUiState(state, amount)
+        modifierManager.modifiers,
+    ) { state, amount, modifiers ->
+        buildUiState(state, amount, modifiers)
     }
         .flowOn(dispatchers.default)
         .distinctUntilChanged()
@@ -81,10 +85,11 @@ class BuildingsViewModel @Inject constructor(
      */
     fun onBuy(building: BuildingType): Boolean {
         val amount = buyAmount.value
+        val discount = modifierManager.modifiers.value.buildingDiscount
         var purchased = false
 
         repository.update { state ->
-            when (val result = purchaseBuilding(state, building, amount)) {
+            when (val result = purchaseBuilding(state, building, amount, discount)) {
                 is PurchaseResult.Success -> {
                     purchased = true
                     result.state
@@ -102,8 +107,13 @@ class BuildingsViewModel @Inject constructor(
         return purchased
     }
 
-    private fun buildUiState(state: GameState, amount: BuyAmount): BuildingsUiState {
+    private fun buildUiState(
+        state: GameState,
+        amount: BuyAmount,
+        modifiers: GameModifiers,
+    ): BuildingsUiState {
         val coins = state[ResourceType.COINS]
+        val discount = modifiers.buildingDiscount
         val lifetimeCoins = state.statistics.lifetimeEarned[ResourceType.COINS]
 
         val rows = BuildingType.entries
@@ -115,14 +125,14 @@ class BuildingsViewModel @Inject constructor(
                     BuyAmount.ONE -> 1
                     BuyAmount.TEN -> 10
                     BuyAmount.MAX -> costCalculator
-                        .maxAffordable(type, owned, coins)
+                        .maxAffordable(type, owned, coins, discount = discount)
                         // Bei leerem Konto waere die Menge null und der Preis
                         // ebenfalls. Angezeigt wird dann der Preis fuer ein
                         // Exemplar, damit der Spieler sein naechstes Ziel sieht.
                         .coerceAtLeast(1)
                 }
 
-                val price = costCalculator.priceFor(type, owned, count)
+                val price = costCalculator.priceFor(type, owned, count, discount = discount)
 
                 BuildingRow(
                     type = type,
@@ -130,7 +140,11 @@ class BuildingsViewModel @Inject constructor(
                     price = numberFormatter.format(price),
                     purchasableCount = count,
                     incomePerSecond = numberFormatter.format(
-                        calculateIncome.incomeFor(type, owned),
+                        calculateIncome.incomeFor(
+                            building = type,
+                            count = owned,
+                            multiplier = modifiers.buildingIncomeMultipliers[type] ?: 1.0,
+                        ),
                     ),
                     isAffordable = coins >= price,
                 )
@@ -139,7 +153,13 @@ class BuildingsViewModel @Inject constructor(
         return BuildingsUiState(
             rows = rows,
             buyAmount = amount,
-            totalIncomePerSecond = numberFormatter.format(calculateIncome(state.buildings)),
+            totalIncomePerSecond = numberFormatter.format(
+                calculateIncome(
+                    buildings = state.buildings,
+                    multiplier = modifiers.incomeMultiplier,
+                    perBuildingMultipliers = modifiers.buildingIncomeMultipliers,
+                ),
+            ),
             coins = numberFormatter.format(coins),
         )
     }

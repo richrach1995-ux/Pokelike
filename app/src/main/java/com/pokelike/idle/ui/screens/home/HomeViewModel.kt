@@ -7,6 +7,7 @@ import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.manager.ClickManager
 import com.pokelike.idle.manager.IdleIncomeManager
+import com.pokelike.idle.manager.ModifierManager
 import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,6 +32,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val clickManager: ClickManager,
     idleIncomeManager: IdleIncomeManager,
+    modifierManager: ModifierManager,
     gameRepository: GameRepository,
     private val numberFormatter: NumberFormatter,
     dispatchers: DispatcherProvider,
@@ -40,7 +42,7 @@ class HomeViewModel @Inject constructor(
         gameRepository.gameState,
         gameRepository.isLoaded,
         clickManager.combo,
-        clickManager.modifiers,
+        modifierManager.modifiers,
         idleIncomeManager.incomePerSecond,
     ) { gameState, isLoaded, combo, modifiers, incomePerSecond ->
         HomeUiState(
@@ -48,7 +50,7 @@ class HomeViewModel @Inject constructor(
             coins = numberFormatter.format(gameState[ResourceType.COINS]),
             diamonds = numberFormatter.format(gameState[ResourceType.DIAMONDS]),
             coinsPerClick = numberFormatter.format(
-                modifiers.expectedValuePerClick(combo.multiplier),
+                modifiers.click.expectedValuePerClick(combo.multiplier),
             ),
             comboCount = combo.count,
             comboMultiplier = formatMultiplier(combo.multiplier),
