@@ -1,0 +1,67 @@
+# Baut das Debug-APK und laesst die Unit-Tests laufen.
+#
+# Der Build laeuft hier und nicht in der Entwicklungsumgebung, weil dort weder
+# das Android SDK vorhanden ist noch Googles Maven-Repository erreichbar. Auf
+# einem GitHub-Runner ist beides gegeben, und das fertige APK haengt
+# anschliessend als Artefakt am Lauf - herunterladbar ohne installierte
+# Werkzeuge.
+name: Build
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+# Ein laufender Build wird abgebrochen, sobald ein neuerer Commit auf denselben
+# Branch kommt. Ohne das stauen sich bei mehreren Korrekturen hintereinander
+# ueberholte Laeufe.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Quellcode holen
+        uses: actions/checkout@v4
+
+      # AGP 8.7 verlangt mindestens JDK 17; javaTarget im Version Catalog steht
+      # ebenfalls auf 17. Temurin ist die auf den Runnern vorinstallierte
+      # Distribution und braucht deshalb keinen zusaetzlichen Download.
+      - name: JDK 17 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Gradle einrichten
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Unit-Tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Debug-APK bauen
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: APK hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokelike-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+      # Auch bei fehlgeschlagenen Tests hochladen: Genau dann werden die
+      # Berichte gebraucht.
+      - name: Testberichte hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokelike-test-reports
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+          if-no-files-found: ignore
