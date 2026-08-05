@@ -109,7 +109,15 @@ class HomeViewModelTest {
         val fixture = createFixture(backgroundScope, testScheduler)
 
         fixture.viewModel.uiState.test {
-            val state = awaitItem()
+            // Der erste Wert ist der Ausgangswert des StateFlow und noch leer:
+            // Die Zusammenfuehrung der Quellflusse laeuft auf dem
+            // Test-Dispatcher und muss erst einmal ausgefuehrt werden. Ohne
+            // runCurrent pruefte dieser Test den Ausgangswert statt den
+            // Spielstand.
+            awaitItem()
+            runCurrent()
+
+            val state = expectMostRecentItem()
 
             // Werte aus GameConfig: Der Spieler startet ohne Muenzen, aber mit
             // einer kleinen Menge Premiumwaehrung.
