@@ -4,14 +4,25 @@ import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import com.pokelike.idle.config.GameConfig
 import com.pokelike.idle.domain.model.GameState
+import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
+import com.pokelike.idle.domain.usecases.GrantAdRewardUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
+import com.pokelike.idle.domain.usecases.PurchaseBoosterUseCase
+import com.pokelike.idle.domain.usecases.StartBoosterUseCase
+import com.pokelike.idle.manager.BoosterManager
 import com.pokelike.idle.manager.ClickManager
 import com.pokelike.idle.manager.GameClock
+import com.pokelike.idle.manager.IdleIncomeManager
+import com.pokelike.idle.manager.RewardedAdManager
+import com.pokelike.idle.testing.FakeAdSource
 import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.FakeRandomProvider
 import com.pokelike.idle.testing.MainDispatcherRule
+import com.pokelike.idle.testing.RecordingGameLogger
 import com.pokelike.idle.testing.TestDispatcherProvider
 import com.pokelike.idle.testing.VirtualTimeSource
+import com.pokelike.idle.testing.modifierManagerFor
+import com.pokelike.idle.util.DurationFormatter
 import com.pokelike.idle.util.NumberFormatter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -44,6 +55,7 @@ class HomeViewModelTest {
         val timeSource = VirtualTimeSource(scheduler)
         val repository = FakeGameRepository(initialState = GameState.newGame(nowMillis = 0L))
         val clock = GameClock(scope, dispatchers, timeSource)
+        val modifierManager = modifierManagerFor(scope, repository)
 
         return Fixture(
             viewModel = HomeViewModel(
@@ -53,10 +65,39 @@ class HomeViewModelTest {
                     timeSource = timeSource,
                     gameClock = clock,
                     repository = repository,
+                    modifierManager = modifierManager,
                     performClick = PerformClickUseCase(FakeRandomProvider.neverHitting()),
                 ),
+                boosterManager = BoosterManager(
+                    scope = scope,
+                    dispatchers = dispatchers,
+                    gameClock = clock,
+                    repository = repository,
+                    timeSource = timeSource,
+                    purchaseBooster = PurchaseBoosterUseCase(StartBoosterUseCase()),
+                ),
+                rewardedAdManager = RewardedAdManager(
+                    scope = scope,
+                    dispatchers = dispatchers,
+                    gameClock = clock,
+                    repository = repository,
+                    timeSource = timeSource,
+                    adSource = FakeAdSource(),
+                    grantAdReward = GrantAdRewardUseCase(StartBoosterUseCase()),
+                    logger = RecordingGameLogger(),
+                ),
+                idleIncomeManager = IdleIncomeManager(
+                    scope = scope,
+                    dispatchers = dispatchers,
+                    gameClock = clock,
+                    repository = repository,
+                    modifierManager = modifierManager,
+                    calculateIncome = CalculateIncomeUseCase(),
+                ),
+                modifierManager = modifierManager,
                 gameRepository = repository,
                 numberFormatter = NumberFormatter(),
+                durationFormatter = DurationFormatter(),
                 dispatchers = dispatchers,
             ),
             repository = repository,
