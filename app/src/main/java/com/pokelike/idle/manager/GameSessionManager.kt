@@ -52,6 +52,7 @@ class GameSessionManager @Inject constructor(
     private val calculateIncome: CalculateIncomeUseCase,
     private val calculateOfflineProgress: CalculateOfflineProgressUseCase,
     private val achievementManager: AchievementManager,
+    private val dailyRewardManager: DailyRewardManager,
     private val rolloverQuests: RolloverQuestsUseCase,
 ) {
 
@@ -111,6 +112,12 @@ class GameSessionManager @Inject constructor(
                 // Sofortige Pruefung, damit ein offline erreichtes Achievement
                 // beim Oeffnen gemeldet wird und nicht erst eine Sekunde spaeter.
                 achievementManager.checkNow()
+
+                // Zuletzt, weil der Tagesbonus vom Einkommen abhaengt: Der
+                // Offline-Ertrag kann Gebaeude nicht veraendern, ein
+                // Achievement aber Ressourcen gutschreiben, und die
+                // Modifikatoren stehen erst danach auf dem endgueltigen Stand.
+                dailyRewardManager.refresh()
             }
         }
     }

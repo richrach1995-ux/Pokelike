@@ -59,4 +59,6 @@ val AchievementType.nameRes: Int
         AchievementType.FIVE_UPGRADES -> R.string.achievement_five_upgrades
         AchievementType.FIRST_PRESTIGE -> R.string.achievement_first_prestige
         AchievementType.FIFTH_PRESTIGE -> R.string.achievement_fifth_prestige
+        AchievementType.WEEK_STREAK -> R.string.achievement_week_streak
+        AchievementType.MONTH_STREAK -> R.string.achievement_month_streak
     }

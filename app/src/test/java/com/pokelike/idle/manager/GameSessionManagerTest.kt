@@ -7,8 +7,12 @@ import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
+import com.pokelike.idle.domain.usecases.CalculateModifiersUseCase
 import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
+import com.pokelike.idle.domain.usecases.CalculatePrestigeUseCase
 import com.pokelike.idle.domain.usecases.CheckAchievementsUseCase
+import com.pokelike.idle.domain.usecases.ClaimDailyRewardUseCase
+import com.pokelike.idle.domain.usecases.EvaluateDailyRewardUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
 import com.pokelike.idle.testing.FakeGameRepository
@@ -40,6 +44,7 @@ class GameSessionManagerTest {
         val session: GameSessionManager,
         val repository: FakeGameRepository,
         val clock: GameClock,
+        val dailyReward: DailyRewardManager,
     )
 
     private fun TestScope.createFixture(
@@ -78,6 +83,14 @@ class GameSessionManagerTest {
             rewardManager = RewardManager(),
             checkAchievements = CheckAchievementsUseCase(),
         )
+        val evaluateDailyReward = EvaluateDailyRewardUseCase(CalculateIncomeUseCase())
+        val dailyRewardManager = DailyRewardManager(
+            repository = repository,
+            calculateModifiers = CalculateModifiersUseCase(CalculatePrestigeUseCase()),
+            timeSource = timeSource,
+            evaluate = evaluateDailyReward,
+            claimDailyReward = ClaimDailyRewardUseCase(evaluateDailyReward),
+        )
 
         return Fixture(
             session = GameSessionManager(
@@ -93,10 +106,12 @@ class GameSessionManagerTest {
                 calculateIncome = CalculateIncomeUseCase(),
                 calculateOfflineProgress = CalculateOfflineProgressUseCase(),
                 achievementManager = achievementManager,
+                dailyRewardManager = dailyRewardManager,
                 rolloverQuests = RolloverQuestsUseCase(),
             ),
             repository = repository,
             clock = clock,
+            dailyReward = dailyRewardManager,
         )
     }
 
@@ -248,6 +263,47 @@ class GameSessionManagerTest {
         assertThat(fixture.repository.gameState.value[ResourceType.COINS])
             .isEqualTo(BigNumber.ZERO)
         assertThat(fixture.session.offlineProgress.value).isNull()
+    }
+
+    // --- Taeglicher Bonus ------------------------------------------------
+
+    @Test
+    fun `bietet den Tagesbonus beim Wechsel in den Vordergrund an`() = runTest {
+        val fixture = createFixture(backgroundScope)
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        assertThat(fixture.dailyReward.pending.value).isNotNull()
+    }
+
+    @Test
+    fun `bemisst den Tagesbonus am geladenen Gebaeudebestand`() = runTest {
+        // Der Grund fuer diesen Test: Der Bonus haengt am Einkommen, und das
+        // steht erst nach dem Laden fest. Wuerde er vor dem Laden bemessen,
+        // bekaeme jeder Spieler den Betrag eines Anfaengers.
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            buildings = BuildingInventory.of(BuildingType.CURSOR to 100),
+            lastSeenAtMillis = WALL_CLOCK_BASE,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+        val withoutBuildings = createFixture(backgroundScope).also { plain ->
+            plain.session.onEnterForeground()
+        }
+        runCurrent()
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        val withBuildingsReward = fixture.dailyReward.pending.value
+            ?.reward?.get(ResourceType.COINS)
+        val plainReward = withoutBuildings.dailyReward.pending.value
+            ?.reward?.get(ResourceType.COINS)
+
+        assertThat(withBuildingsReward).isGreaterThan(plainReward)
     }
 
     @Test

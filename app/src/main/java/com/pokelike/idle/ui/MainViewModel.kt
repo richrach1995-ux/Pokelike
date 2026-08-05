@@ -3,14 +3,17 @@ package com.pokelike.idle.ui
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pokelike.idle.domain.model.DailyRewardType
 import com.pokelike.idle.domain.model.GameSettings
 import com.pokelike.idle.domain.model.OfflineProgress
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.model.RewardSource
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.repository.SettingsRepository
+import com.pokelike.idle.manager.DailyRewardManager
 import com.pokelike.idle.manager.GameSessionManager
 import com.pokelike.idle.manager.RewardManager
+import com.pokelike.idle.ui.components.DailyRewardUiState
 import com.pokelike.idle.ui.components.RewardLineItem
 import com.pokelike.idle.ui.components.RewardPart
 import com.pokelike.idle.ui.components.toRewardParts
@@ -36,6 +39,9 @@ import javax.inject.Inject
  * @property offlineWasCapped Ob die Obergrenze gegriffen hat.
  * @property rewards Anliegende Belohnungsmeldungen. Die Betraege sind bereits
  *   gutgeschrieben; der Dialog meldet nur.
+ * @property dailyReward Anstehender Tagesbonus, `null`, wenn heute nichts
+ *   abzuholen ist. Anders als [rewards] ist er noch **nicht** gutgeschrieben -
+ *   der Spieler holt ihn selbst ab.
  */
 @Immutable
 data class MainUiState(
@@ -45,6 +51,7 @@ data class MainUiState(
     val offlineDuration: String = "",
     val offlineWasCapped: Boolean = false,
     val rewards: List<RewardLineItem> = emptyList(),
+    val dailyReward: DailyRewardUiState? = null,
 )
 
 /**
@@ -60,6 +67,7 @@ class MainViewModel @Inject constructor(
     gameRepository: GameRepository,
     private val sessionManager: GameSessionManager,
     private val rewardManager: RewardManager,
+    private val dailyRewardManager: DailyRewardManager,
     private val numberFormatter: NumberFormatter,
     private val durationFormatter: DurationFormatter,
 ) : ViewModel() {
@@ -77,7 +85,8 @@ class MainViewModel @Inject constructor(
         gameRepository.isLoaded,
         sessionManager.offlineProgress,
         rewardManager.pending,
-    ) { settings, isLoaded, offline, pendingRewards ->
+        dailyRewardManager.pending,
+    ) { settings, isLoaded, offline, pendingRewards, dailyReward ->
         MainUiState(
             settings = settings,
             isReady = isLoaded,
@@ -95,6 +104,16 @@ class MainViewModel @Inject constructor(
                 durationFormatter.formatCompact(it.creditedMillis)
             }.orEmpty(),
             offlineWasCapped = offline?.wasCapped ?: false,
+            dailyReward = dailyReward?.let { status ->
+                DailyRewardUiState(
+                    streak = status.streakAfterClaim,
+                    cycleDay = status.day.day,
+                    cycleLength = DailyRewardType.cycleLength,
+                    reward = status.reward.toRewardParts(numberFormatter),
+                    protectionUsed = status.protectionUsed,
+                    streakBroken = status.streakBroken,
+                )
+            },
         )
     }.stateIn(
         scope = viewModelScope,
@@ -110,6 +129,20 @@ class MainViewModel @Inject constructor(
     /** Bestaetigt, dass die Belohnungsmeldung gezeigt wurde. */
     fun onRewardsDismissed() {
         rewardManager.consumeAll()
+    }
+
+    /** Holt den Tagesbonus ab. */
+    fun onDailyRewardClaimed() {
+        dailyRewardManager.claim()
+    }
+
+    /**
+     * Schliesst den Tagesbonus, ohne abzuholen.
+     *
+     * Der Anspruch bleibt bestehen und steht beim naechsten Start wieder an.
+     */
+    fun onDailyRewardDismissed() {
+        dailyRewardManager.dismiss()
     }
 
     /**

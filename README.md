@@ -13,8 +13,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 6. Upgrades mit Freischaltbedingungen
 7. Prestige mit Wurzelformel und dauerhaftem Bonus
 8. Achievements, Quests und eine zentrale Belohnungsmeldung
+9. Täglicher Bonus mit Serie und kaufbarem Serienschutz
 
-Als Nächstes: täglicher Login-Bonus.
+Als Nächstes: Booster mit begrenzter Laufzeit.
 
 ---
 
@@ -65,14 +66,16 @@ com.pokelike.idle
 │   └── security/    Signatur des Spielstands
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
-│   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Ziele, Spielstand
+│   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Ziele,
+│   │                Tagesbonus, Spielstand
 │   ├── repository/ Schnittstellen
-│   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline, Ziele
+│   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline, Ziele,
+│                    Tagesbonus
 ├── manager/    Prozessweite Dienste (Uhr, Autosave, Klicks, Einkommen,
-│            Modifikatoren, Achievements, Belohnungen, Sitzung)
+│            Modifikatoren, Achievements, Belohnungen, Tagesbonus, Sitzung)
 ├── ui/
 │   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige,
-│   │                Belohnungsdialog
+│   │                Belohnungs- und Tagesbonusdialog
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
 │   ├── screens/     Bildschirme, je Feature ein Unterpaket
 │   └── theme/       Farben, Typografie, Abstände
@@ -288,8 +291,12 @@ beginnt nur neu, wenn der aktuelle Kalendertag *nach* dem gespeicherten liegt.
 Gutschrift und Meldung ein gemeinsamer Schritt, ginge die Belohnung verloren,
 sobald die App zwischen Freischaltung und Dialog beendet wird. `RewardManager`
 ist deshalb eine reine Benachrichtigungsschlange; Achievements, Quests und
-später Login-Bonus, Events und Battle Pass melden dort an und teilen sich einen
-Dialog.
+später Events und Battle Pass melden dort an und teilen sich einen Dialog.
+
+Der tägliche Bonus ist bewusst die Ausnahme: Er wird nicht gutgeschrieben,
+sondern abgeholt, und braucht dafür seinen eigenen Dialog mit der Zyklusleiste.
+Ihn zusätzlich als Meldung anzumelden hieße, dem Spieler unmittelbar nach dem
+Abholen ein zweites Popup mit derselben Zahl zu zeigen.
 
 **Ein Bildschirm für Quests und Achievements.** Beides sind Ziele mit
 Belohnung, und zwei Einträge in der unteren Leiste hätten sie auf sechs
@@ -301,6 +308,40 @@ Ausgangswert bedeutet mehr Fortschritt. Jede dieser Tabellen wäre ohne
 Signatur ein direkter Weg, sich Premiumwährung einzutragen. Die Abschnitte
 werden dabei *angehängt*, nie eingefügt: Ein Spielstand aus Version 3 ergibt
 weiterhin dieselbe Prüfsumme.
+
+**Der Münzanteil des Tagesbonus wird in Minuten angegeben, nicht als Betrag.**
+Ein fester Münzbetrag wäre nach wenigen Stunden weniger als eine Sekunde
+Einkommen. Angegeben ist deshalb eine Zeitspanne, und der Betrag ergibt sich aus
+dem Einkommen des Spielers — der Bonus behält damit über die gesamte Spieldauer
+denselben gefühlten Wert. Untergrenze ist der erwartete Ertrag eines Klicks pro
+Sekunde, damit ein Spieler ohne Gebäude nicht null Münzen bekommt.
+Diamantenzuschläge bleiben dagegen fest: Ihr Wert hängt an den Preisen im
+Angebot, nicht am Fortschritt.
+
+**Die Serie zählt Kalendertage, der Zyklus läuft endlos.** Nach dem siebten Tag
+beginnt der Zyklus wieder bei eins, die Serie zählt weiter. Ein Zyklusende, das
+die Serie beendet, würde den Spieler für sein Durchhalten bestrafen. Achievements
+hängen deshalb am Bestwert und nicht an der laufenden Serie — eine später
+gerissene Serie darf ein erreichtes Achievement nicht wieder entziehen.
+
+**Serienschutz ist ein Verbrauchsgut, kein Dauerschutz.** Ein einmal gekaufter
+Dauerschutz wäre ein einziger Kauf, danach nie wieder — und die Serie hätte ihre
+Bedeutung verloren, weil sie nicht mehr reißen kann. Der Preis entspricht genau
+der Diamantensumme eines vollständigen Zyklus: Eine lückenlose Woche trägt genau
+eine Ladung. Ein Test sichert dieses Gleichgewicht ab, damit eine
+Balancing-Änderung an einer der beiden Stellen auffällt.
+
+**Der Tagesbonus wird nicht automatisch gutgeschrieben.** Anders als
+Achievements: Das Abholen ist ein bewusst gesetzter Moment, und der Zyklus wirkt
+nur, wenn der Spieler sieht, wie weit er gekommen ist. Ein still gutgeschriebener
+Bonus wäre für ihn nicht von einem Fehler zu unterscheiden. Wegtippen lässt den
+Anspruch bestehen — er verfällt nicht.
+
+**Der Stand des Tagesbonus liegt in einer eigenen Tabelle, nicht in Spalten von
+`game_state`.** Zusätzliche Spalten wären bei einem alten Spielstand mit ihrem
+Standardwert vorhanden und würden die signierte Zeichenkette verändern; jeder
+Spielstand aus Version 4 würde beim nächsten Start als manipuliert gelten. Eine
+eigene Tabelle ist dort schlicht leer, und ein leerer Abschnitt trägt nichts bei.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

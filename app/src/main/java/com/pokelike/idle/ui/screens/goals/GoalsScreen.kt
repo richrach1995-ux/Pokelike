@@ -13,7 +13,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -25,10 +27,15 @@ import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -51,6 +58,7 @@ fun GoalsRoute(
         uiState = uiState,
         onTabSelected = viewModel::onTabSelected,
         onClaim = { quest -> viewModel.onClaim(quest) },
+        onBuyProtection = { viewModel.onBuyProtection() },
         modifier = modifier,
     )
 }
@@ -61,6 +69,7 @@ fun GoalsScreen(
     uiState: GoalsUiState,
     onTabSelected: (GoalsTab) -> Unit,
     onClaim: (QuestType) -> Unit,
+    onBuyProtection: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val dimens = PokelikeTheme.dimens
@@ -99,7 +108,12 @@ fun GoalsScreen(
         }
 
         when (uiState.selectedTab) {
-            GoalsTab.QUESTS -> QuestList(uiState = uiState, onClaim = onClaim)
+            GoalsTab.QUESTS -> QuestList(
+                uiState = uiState,
+                onClaim = onClaim,
+                onBuyProtection = onBuyProtection,
+            )
+
             GoalsTab.ACHIEVEMENTS -> AchievementList(rows = uiState.achievements)
         }
     }
@@ -110,6 +124,7 @@ fun GoalsScreen(
 private fun QuestList(
     uiState: GoalsUiState,
     onClaim: (QuestType) -> Unit,
+    onBuyProtection: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val dimens = PokelikeTheme.dimens
@@ -119,6 +134,10 @@ private fun QuestList(
         contentPadding = PaddingValues(dimens.spaceMd),
         verticalArrangement = Arrangement.spacedBy(dimens.spaceSm),
     ) {
+        item(key = "streak") {
+            StreakCard(row = uiState.streak, onBuyProtection = onBuyProtection)
+        }
+
         uiState.questsByPeriod.forEach { (period, rows) ->
             if (rows.isEmpty()) return@forEach
 
@@ -133,6 +152,122 @@ private fun QuestList(
 
             items(items = rows, key = { row -> row.type.id }) { row ->
                 QuestCard(row = row, onClaim = onClaim)
+            }
+        }
+    }
+}
+
+/**
+ * Stand der Anmeldeserie mit Kauf des Serienschutzes.
+ *
+ * Der Kauf fragt nach. Fuenfzig Diamanten sind ein spuerbarer Betrag, und ein
+ * Knopf, der ihn ohne Rueckfrage abbucht, waere bei einem Fehlgriff genau die
+ * Art von Aergernis, die Spieler das Spiel loeschen laesst. Die Rueckfrage
+ * nennt Preis und Wirkung vollstaendig.
+ */
+@Composable
+private fun StreakCard(
+    row: StreakRow,
+    onBuyProtection: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val dimens = PokelikeTheme.dimens
+    val gameColors = PokelikeTheme.gameColors
+
+    var isConfirming by rememberSaveable { mutableStateOf(false) }
+
+    if (isConfirming) {
+        AlertDialog(
+            onDismissRequest = { isConfirming = false },
+            title = { Text(text = stringResource(R.string.streak_confirm_title)) },
+            text = {
+                Text(
+                    text = stringResource(
+                        R.string.streak_confirm_message,
+                        row.protectionPrice,
+                    ),
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        isConfirming = false
+                        onBuyProtection()
+                    },
+                ) {
+                    Text(text = stringResource(R.string.streak_confirm_action))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { isConfirming = false }) {
+                    Text(text = stringResource(R.string.streak_cancel))
+                }
+            },
+        )
+    }
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = gameColors.elevatedSurface),
+    ) {
+        Row(
+            modifier = Modifier.padding(dimens.spaceMd),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                imageVector = Icons.Filled.LocalFireDepartment,
+                contentDescription = null,
+                tint = if (row.streak > 0) gameColors.coin else gameColors.rarityCommon,
+                modifier = Modifier.size(dimens.minTouchTarget),
+            )
+
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(start = dimens.spaceMd),
+            ) {
+                Text(
+                    text = stringResource(R.string.streak_card_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+                Text(
+                    text = stringResource(
+                        R.string.streak_card_current,
+                        row.streak,
+                        row.longestStreak,
+                    ),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    text = if (row.protectionCharges == 0) {
+                        stringResource(R.string.streak_card_protection_none)
+                    } else {
+                        val charges = row.protectionCharges
+                        pluralStringResource(
+                            R.plurals.streak_card_protection,
+                            charges,
+                            charges,
+                        )
+                    },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = gameColors.diamond,
+                )
+            }
+
+            Button(
+                onClick = { isConfirming = true },
+                enabled = row.canBuyProtection,
+                modifier = Modifier.padding(start = dimens.spaceSm),
+            ) {
+                Text(
+                    text = if (row.isProtectionFull) {
+                        stringResource(R.string.streak_buy_full)
+                    } else {
+                        stringResource(R.string.streak_buy_protection, row.protectionPrice)
+                    },
+                )
             }
         }
     }
@@ -296,6 +431,14 @@ private fun GoalsScreenPreview() {
             GoalsScreen(
                 uiState = GoalsUiState(
                     selectedTab = GoalsTab.QUESTS,
+                    streak = StreakRow(
+                        streak = 5,
+                        longestStreak = 12,
+                        protectionCharges = 1,
+                        protectionPrice = "50",
+                        canBuyProtection = true,
+                        isProtectionFull = false,
+                    ),
                     questsByPeriod = mapOf(
                         QuestPeriod.DAILY to listOf(
                             QuestRow(
@@ -327,11 +470,12 @@ private fun GoalsScreenPreview() {
                         ),
                     ),
                     unlockedCount = 1,
-                    totalCount = 20,
+                    totalCount = 22,
                     claimableCount = 1,
                 ),
                 onTabSelected = {},
                 onClaim = {},
+                onBuyProtection = {},
             )
         }
     }

@@ -59,6 +59,16 @@ data class Dimens(
 
     /** Hoehe des ablaufenden Combo-Balkens. */
     val comboBarHeight: Dp = 6.dp,
+
+    /**
+     * Kantenlaenge einer Kachel im Zyklus des Tagesbonus.
+     *
+     * Bewusst kleiner als [minTouchTarget]: Die Kacheln sind reine Anzeige und
+     * werden nicht angetippt. Bei Beruehrungsgroesse waere die Leiste aus
+     * sieben Kacheln breiter als ein Dialog auf einem schmalen Geraet, und die
+     * letzten Tage wuerden abgeschnitten - ausgerechnet der wichtigste.
+     */
+    val cycleTileSize: Dp = 36.dp,
 )
 
 /**

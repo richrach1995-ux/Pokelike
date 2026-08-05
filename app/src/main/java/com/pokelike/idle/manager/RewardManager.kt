@@ -12,10 +12,15 @@ import javax.inject.Singleton
  * Sammelt Belohnungsmeldungen aus allen Quellen.
  *
  * Ohne diese Stelle braechte jede Quelle ihr eigenes Popup mit: Achievements,
- * Quests, Login-Bonus, Events und Battle Pass. Ein Spieler, der nach einer
+ * Quests und spaeter Events und Battle Pass. Ein Spieler, der nach einer
  * laengeren Pause zurueckkehrt, muesste sich dann durch ein halbes Dutzend
  * Dialoge tippen, bevor er das Spiel sieht. Hier laufen alle zusammen und
  * werden als eine Meldung gezeigt.
+ *
+ * Der taegliche Bonus laeuft bewusst nicht hierueber: Er wird nicht
+ * gutgeschrieben, sondern abgeholt, und hat mit der Zyklusleiste einen eigenen
+ * Dialog. Ihn zusaetzlich anzumelden hiesse, direkt nach dem Abholen ein
+ * zweites Popup mit derselben Zahl zu zeigen.
  *
  * Die Belohnungen sind zum Zeitpunkt der Meldung bereits gutgeschrieben -
  * siehe [PendingReward]. Diese Klasse verwaltet ausschliesslich die Anzeige.

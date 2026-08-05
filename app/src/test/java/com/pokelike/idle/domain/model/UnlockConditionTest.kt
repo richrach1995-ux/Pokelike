@@ -98,6 +98,18 @@ class UnlockConditionTest {
     }
 
     @Test
+    fun `LoginStreak prueft den Bestwert und nicht die laufende Serie`() {
+        // Sonst entzoege eine gerissene Serie ein bereits erreichtes
+        // Achievement wieder.
+        val brokenStreak = GameState.newGame(nowMillis = 0L).copy(
+            login = LoginState(streak = 1, longestStreak = 7, lastClaimedAtMillis = 1L),
+        )
+        val condition = UnlockCondition.LoginStreak(7)
+
+        assertThat(condition.isMet(brokenStreak)).isTrue()
+    }
+
+    @Test
     fun `weist unsinnige Angaben ab`() {
         assertFailsWith<IllegalArgumentException> { UnlockCondition.TotalClicks(-1L) }
         assertFailsWith<IllegalArgumentException> {
@@ -107,6 +119,7 @@ class UnlockConditionTest {
         assertFailsWith<IllegalArgumentException> {
             UnlockCondition.LifetimeCoins(BigNumber.of(-1))
         }
+        assertFailsWith<IllegalArgumentException> { UnlockCondition.LoginStreak(-1) }
         assertFailsWith<IllegalArgumentException> { UnlockCondition.All(emptyList()) }
     }
 }

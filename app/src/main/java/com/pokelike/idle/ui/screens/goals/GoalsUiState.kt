@@ -46,6 +46,34 @@ data class AchievementRow(
 )
 
 /**
+ * Kopfzeile ueber der Quest-Liste: Stand der Anmeldeserie.
+ *
+ * Hier und nicht im Dialog des Tagesbonus, weil der Dialog nur an Tagen
+ * erscheint, an denen etwas abzuholen ist. Der Serienschutz muss aber auch
+ * danach noch kaufbar sein - der Spieler weiss meist erst nach dem Abholen,
+ * dass er morgen keine Zeit haben wird.
+ *
+ * @property streak Laufende Serie in Tagen.
+ * @property longestStreak Bestwert.
+ * @property protectionCharges Vorrat an Serienschutz.
+ * @property protectionPrice Preis einer Ladung, bereits formatiert.
+ * @property canBuyProtection Ob ein Kauf jetzt moeglich ist. Falsch bei
+ *   vollem Vorrat und bei zu wenig Diamanten.
+ * @property isProtectionFull Ob der Vorrat voll ist. Von [canBuyProtection]
+ *   getrennt, damit die Oberflaeche den Grund benennen kann, statt nur einen
+ *   ausgegrauten Knopf zu zeigen.
+ */
+@Immutable
+data class StreakRow(
+    val streak: Int = 0,
+    val longestStreak: Int = 0,
+    val protectionCharges: Int = 0,
+    val protectionPrice: String = "",
+    val canBuyProtection: Boolean = false,
+    val isProtectionFull: Boolean = false,
+)
+
+/**
  * Anzeigezustand des Ziele-Bildschirms.
  *
  * @property questsByPeriod Quests nach Zeitraum gegliedert.
@@ -58,6 +86,7 @@ data class AchievementRow(
 @Immutable
 data class GoalsUiState(
     val selectedTab: GoalsTab = GoalsTab.QUESTS,
+    val streak: StreakRow = StreakRow(),
     val questsByPeriod: Map<QuestPeriod, List<QuestRow>> = emptyMap(),
     val achievements: List<AchievementRow> = emptyList(),
     val unlockedCount: Int = 0,

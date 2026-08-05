@@ -2,6 +2,7 @@ package com.pokelike.idle.data.database.mapper
 
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
+import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.QuestBaselineEntity
@@ -17,6 +18,7 @@ import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
+import com.pokelike.idle.domain.model.LoginState
 import com.pokelike.idle.domain.model.QuestBaseline
 import com.pokelike.idle.domain.model.QuestMetric
 import com.pokelike.idle.domain.model.QuestPeriod
@@ -45,6 +47,8 @@ data class PersistedGameState(
     val questBaselines: List<QuestBaselineEntity>,
     val questBaselineValues: List<QuestBaselineValueEntity>,
     val questClaims: List<QuestClaimEntity>,
+    /** `null`, wenn der Spieler den Tagesbonus noch nie abgeholt hat. */
+    val dailyLogin: DailyLoginEntity?,
 )
 
 /**
@@ -82,6 +86,7 @@ class GameStateMapper @Inject constructor(
             }
         }
         val questClaims = state.quests.claimed.map { QuestClaimEntity(questId = it.id) }
+        val dailyLogin = buildDailyLoginRow(state)
 
         val unsigned = GameStateEntity(
             schemaVersion = state.schemaVersion,
@@ -108,6 +113,7 @@ class GameStateMapper @Inject constructor(
                         questBaselines = questBaselines,
                         questBaselineValues = questBaselineValues,
                         questClaims = questClaims,
+                        dailyLogin = dailyLogin,
                     ),
                 ),
             ),
@@ -118,6 +124,7 @@ class GameStateMapper @Inject constructor(
             questBaselines = questBaselines,
             questBaselineValues = questBaselineValues,
             questClaims = questClaims,
+            dailyLogin = dailyLogin,
         )
     }
 
@@ -138,6 +145,7 @@ class GameStateMapper @Inject constructor(
         questBaselines: List<QuestBaselineEntity> = emptyList(),
         questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
         questClaims: List<QuestClaimEntity> = emptyList(),
+        dailyLogin: DailyLoginEntity? = null,
     ): GameState? {
         val unsigned = entity.copy(signature = "")
         val payload = canonicalPayload(
@@ -149,6 +157,7 @@ class GameStateMapper @Inject constructor(
             questBaselines = questBaselines,
             questBaselineValues = questBaselineValues,
             questClaims = questClaims,
+            dailyLogin = dailyLogin,
         )
         if (!saveSignature.verify(payload, entity.signature)) return null
 
@@ -159,6 +168,7 @@ class GameStateMapper @Inject constructor(
             upgrades = readUpgrades(upgrades),
             achievements = readAchievements(achievements),
             quests = readQuests(questBaselines, questBaselineValues, questClaims),
+            login = readLogin(dailyLogin),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -266,6 +276,47 @@ class GameStateMapper @Inject constructor(
         )
     }
 
+    /**
+     * Erzeugt die Zeile des taeglichen Bonus.
+     *
+     * Liefert `null`, solange nichts zu sichern ist. Eine Zeile mit lauter
+     * Nullwerten zu schreiben waere nicht dasselbe: Sie wuerde die Pruefsumme
+     * veraendern und damit jeden Spielstand aus einer aelteren Version
+     * ungueltig machen.
+     */
+    private fun buildDailyLoginRow(state: GameState): DailyLoginEntity? {
+        val login = state.login
+        if (login == LoginState.EMPTY) return null
+
+        return DailyLoginEntity(
+            streak = login.streak,
+            longestStreak = login.longestStreak,
+            lastClaimedAtMillis = login.lastClaimedAtMillis,
+            protectionCharges = login.protectionCharges,
+        )
+    }
+
+    /**
+     * Liest den Stand des taeglichen Bonus.
+     *
+     * Die Werte werden bei null abgeschnitten. Negative Zahlen koennen nur aus
+     * einer beschaedigten Datei stammen, und [LoginState] wuerde sie
+     * zurueckweisen - eine Ausnahme mitten im Ladevorgang waere die
+     * schlechteste Antwort, denn sie verhinderte den Start der App.
+     */
+    private fun readLogin(row: DailyLoginEntity?): LoginState {
+        if (row == null) return LoginState.EMPTY
+
+        val streak = row.streak.coerceAtLeast(0)
+
+        return LoginState(
+            streak = streak,
+            longestStreak = row.longestStreak.coerceAtLeast(streak),
+            lastClaimedAtMillis = row.lastClaimedAtMillis,
+            protectionCharges = row.protectionCharges.coerceAtLeast(0),
+        )
+    }
+
     private fun toRows(
         bucket: ResourceBucket,
         amounts: Map<ResourceType, BigNumber>,
@@ -324,6 +375,7 @@ class GameStateMapper @Inject constructor(
         questBaselines: List<QuestBaselineEntity> = emptyList(),
         questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
         questClaims: List<QuestClaimEntity> = emptyList(),
+        dailyLogin: DailyLoginEntity? = null,
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -387,5 +439,27 @@ class GameStateMapper @Inject constructor(
             .forEach { row ->
                 append("|questclaim:").append(row.questId)
             }
+
+        // Ein Spielstand ohne Anmeldeserie hat hier keine Zeile und traegt
+        // deshalb nichts bei - genau wie ein Spielstand ohne Gebaeude. Die
+        // Serie liegt unter der Pruefsumme, weil sie ueber Diamanten
+        // entscheidet: Ein von Hand hochgesetzter Wert waere sonst eine
+        // beliebige Menge Premiumwaehrung.
+        dailyLogin?.let { row ->
+            append("|login=").append(row.streak)
+            append(':').append(row.longestStreak)
+            append(':').append(row.lastClaimedAtMillis ?: NEVER_CLAIMED_MARKER)
+            append(':').append(row.protectionCharges)
+        }
+    }
+
+    private companion object {
+        /**
+         * Platzhalter fuer "noch nie abgeholt" in der Pruefsumme.
+         *
+         * Ein leeres Feld waere nicht von der Zahl null zu unterscheiden, und
+         * beides muss verschiedene Pruefsummen ergeben.
+         */
+        const val NEVER_CLAIMED_MARKER = "never"
     }
 }

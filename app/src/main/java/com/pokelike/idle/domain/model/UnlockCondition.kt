@@ -127,6 +127,23 @@ sealed interface UnlockCondition {
     }
 
     /**
+     * Mindestlaenge der Anmeldeserie.
+     *
+     * Geprueft wird der Bestwert und nicht die laufende Serie: Eine spaeter
+     * gerissene Serie wuerde sonst ein bereits freigeschaltetes Achievement
+     * wieder entziehen - der Spieler haette es erreicht und danach verloren,
+     * ohne etwas falsch gemacht zu haben.
+     */
+    data class LoginStreak(val required: Int) : UnlockCondition {
+        init {
+            require(required >= 0) { "Negative Serienlaenge: $required" }
+        }
+
+        override fun isMet(state: GameState): Boolean =
+            state.login.longestStreak >= required
+    }
+
+    /**
      * Alle Teilbedingungen muessen erfuellt sein.
      *
      * Erlaubt zusammengesetzte Anforderungen, ohne dafuer eigene

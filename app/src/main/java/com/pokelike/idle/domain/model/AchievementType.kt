@@ -168,6 +168,23 @@ enum class AchievementType(
         category = AchievementCategory.PROGRESSION,
         condition = UnlockCondition.PrestigeCount(5),
         reward = diamonds(200),
+    ),
+
+    // --- Treue ------------------------------------------------------------
+
+    /** Eine vollstaendige Woche - genau ein Durchlauf des Belohnungszyklus. */
+    WEEK_STREAK(
+        id = "week_streak",
+        category = AchievementCategory.PROGRESSION,
+        condition = UnlockCondition.LoginStreak(7),
+        reward = diamonds(25),
+    ),
+
+    MONTH_STREAK(
+        id = "month_streak",
+        category = AchievementCategory.PROGRESSION,
+        condition = UnlockCondition.LoginStreak(30),
+        reward = diamonds(150),
     );
 
     companion object {

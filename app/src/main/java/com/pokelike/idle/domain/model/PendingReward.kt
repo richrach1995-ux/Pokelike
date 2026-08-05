@@ -7,9 +7,10 @@ package com.pokelike.idle.domain.model
  * gehoert in die UI-Schicht, damit das Domaenenmodell frei von
  * Ressourcenverweisen bleibt und in einer reinen JVM-Umgebung uebersetzbar ist.
  *
- * Kuenftige Quellen - Login-Bonus, Events, Battle Pass - kommen als weitere
- * Auspraegungen hinzu und landen ohne weiteres Zutun in derselben
- * Benachrichtigung.
+ * Kuenftige Quellen - Events, Battle Pass - kommen als weitere Auspraegungen
+ * hinzu und landen ohne weiteres Zutun in derselben Benachrichtigung. Der
+ * taegliche Bonus gehoert ausdruecklich nicht dazu: Er wird abgeholt statt
+ * gutgeschrieben und bringt seinen eigenen Dialog mit.
  */
 sealed interface RewardSource {
 

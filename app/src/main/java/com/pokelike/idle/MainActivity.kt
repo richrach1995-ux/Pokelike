@@ -10,6 +10,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pokelike.idle.ui.MainViewModel
 import com.pokelike.idle.ui.PokelikeApp
+import com.pokelike.idle.ui.components.DailyRewardDialog
 import com.pokelike.idle.ui.components.OfflineProgressDialog
 import com.pokelike.idle.ui.components.RewardDialog
 import com.pokelike.idle.ui.theme.PokelikeTheme
@@ -58,25 +59,35 @@ class MainActivity : AppCompatActivity() {
             PokelikeTheme(darkTheme = uiState.settings.themeMode.resolveIsDark()) {
                 PokelikeApp()
 
-                // Der Willkommensdialog liegt bewusst hier und nicht in einem
-                // einzelnen Bildschirm: Er gilt fuer die gesamte Sitzung und
-                // soll unabhaengig davon erscheinen, welcher Tab zuletzt offen
-                // war.
-                uiState.offlineEarned?.let { earned ->
-                    OfflineProgressDialog(
-                        earnedText = earned,
+                // Die Startdialoge liegen bewusst hier und nicht in einem
+                // einzelnen Bildschirm: Sie gelten fuer die gesamte Sitzung und
+                // sollen unabhaengig davon erscheinen, welcher Tab zuletzt
+                // offen war.
+                //
+                // Die Rangfolge ist fest, weil beim Start alle drei zugleich
+                // anfallen koennen: erst was in der Abwesenheit angefallen ist,
+                // dann der Tagesbonus - er verlangt eine Handlung und darf
+                // nicht uebersehen werden -, zuletzt die Meldungen ueber
+                // bereits gutgeschriebene Belohnungen. Gleichzeitig gezeigt
+                // wuerden sie einander ueberdecken.
+                val offlineEarned = uiState.offlineEarned
+                val dailyReward = uiState.dailyReward
+
+                when {
+                    offlineEarned != null -> OfflineProgressDialog(
+                        earnedText = offlineEarned,
                         durationText = uiState.offlineDuration,
                         wasCapped = uiState.offlineWasCapped,
                         onDismiss = viewModel::onOfflineProgressDismissed,
                     )
-                }
 
-                // Nachrangig zum Willkommensdialog: Erst erfaehrt der Spieler,
-                // was in seiner Abwesenheit angefallen ist, danach, was er
-                // erreicht hat. Zwei Dialoge gleichzeitig wuerden sich
-                // ueberdecken.
-                if (uiState.offlineEarned == null) {
-                    RewardDialog(
+                    dailyReward != null -> DailyRewardDialog(
+                        uiState = dailyReward,
+                        onClaim = viewModel::onDailyRewardClaimed,
+                        onDismiss = viewModel::onDailyRewardDismissed,
+                    )
+
+                    else -> RewardDialog(
                         items = uiState.rewards,
                         onDismiss = viewModel::onRewardsDismissed,
                     )

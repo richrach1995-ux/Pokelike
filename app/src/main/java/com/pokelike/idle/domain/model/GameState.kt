@@ -27,6 +27,7 @@ import com.pokelike.idle.config.GameConfig
  * @property upgrades Gekaufte Upgrades.
  * @property achievements Freigeschaltete Achievements.
  * @property quests Stand des Quest-Systems.
+ * @property login Serie und Vorrat des taeglichen Bonus.
  * @property statistics Lebenslange Kennzahlen.
  * @property createdAtMillis Zeitpunkt des ersten Starts (Systemzeit).
  * @property lastSeenAtMillis Zeitpunkt der letzten Sicherung (Systemzeit).
@@ -39,6 +40,7 @@ data class GameState(
     val upgrades: UpgradeInventory = UpgradeInventory.EMPTY,
     val achievements: AchievementInventory = AchievementInventory.EMPTY,
     val quests: QuestState = QuestState.EMPTY,
+    val login: LoginState = LoginState.EMPTY,
     val statistics: GameStatistics = GameStatistics(),
     val createdAtMillis: Long = 0L,
     val lastSeenAtMillis: Long = 0L,
@@ -119,6 +121,11 @@ data class GameState(
             // und nicht den laufenden Durchlauf.
             achievements = achievements,
             quests = quests,
+            // Die Anmeldeserie erst recht: Sie zaehlt Kalendertage und hat mit
+            // dem Spielfortschritt nichts zu tun. Ein Prestige, das sie
+            // zuruecksetzt, wuerde den Spieler dafuer bestrafen, das
+            // Kernsystem des Spiels zu benutzen.
+            login = login,
             statistics = statistics.copy(
                 prestigeCount = statistics.prestigeCount + 1,
                 lifetimeEarned = statistics.lifetimeEarned + ResourceBundle.single(
@@ -138,11 +145,12 @@ data class GameState(
          * alter Spielstand nicht mehr unveraendert gelesen werden kann.
          *
          * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades,
-         * Version 4 Achievements und Quests. Jedes Mal laesst sich ein aelterer
-         * Spielstand unveraendert weiterlesen und startet mit leerem Bestand -
-         * deshalb ist keine Umwandlung noetig, nur diese Kennzeichnung.
+         * Version 4 Achievements und Quests, Version 5 den taeglichen Bonus.
+         * Jedes Mal laesst sich ein aelterer Spielstand unveraendert
+         * weiterlesen und startet mit leerem Bestand - deshalb ist keine
+         * Umwandlung noetig, nur diese Kennzeichnung.
          */
-        const val CURRENT_SCHEMA_VERSION: Int = 4
+        const val CURRENT_SCHEMA_VERSION: Int = 5
 
         /**
          * Spielstand fuer einen neuen Spieler.

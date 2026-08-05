@@ -143,10 +143,38 @@
     <string name="achievement_five_upgrades">5 Upgrades</string>
     <string name="achievement_first_prestige">Erster Neuanfang</string>
     <string name="achievement_fifth_prestige">Fünfter Neuanfang</string>
+    <string name="achievement_week_streak">Eine Woche am Stück</string>
+    <string name="achievement_month_streak">30 Tage am Stück</string>
 
     <!-- Belohnungen -->
     <string name="reward_title">Belohnung erhalten</string>
     <string name="reward_confirm">Weiter</string>
+
+    <!-- Täglicher Bonus -->
+    <string name="daily_title">Täglicher Bonus</string>
+    <string name="daily_streak">Tag %1$d deiner Serie</string>
+    <string name="daily_claim">Abholen</string>
+    <string name="daily_later">Später</string>
+    <string name="daily_day_claimed">Tag %1$d abgeholt</string>
+    <string name="daily_streak_broken">Deine Serie war unterbrochen und beginnt neu.</string>
+    <plurals name="daily_protection_used">
+        <item quantity="one">Dein Serienschutz hat einen Tag überbrückt.</item>
+        <item quantity="other">Dein Serienschutz hat %1$d Tage überbrückt.</item>
+    </plurals>
+
+    <string name="streak_card_title">Anmeldeserie</string>
+    <string name="streak_card_current">Aktuell %1$d Tage, Bestwert %2$d</string>
+    <plurals name="streak_card_protection">
+        <item quantity="one">%1$d Ladung Serienschutz</item>
+        <item quantity="other">%1$d Ladungen Serienschutz</item>
+    </plurals>
+    <string name="streak_card_protection_none">Kein Serienschutz</string>
+    <string name="streak_buy_protection">Schutz kaufen · %1$s</string>
+    <string name="streak_buy_full">Vorrat voll</string>
+    <string name="streak_confirm_title">Serienschutz kaufen?</string>
+    <string name="streak_confirm_message">Für %1$s erhältst du eine Ladung Serienschutz. Sie überbrückt einen ausgelassenen Tag, ohne dass deine Serie reißt, und wird dabei verbraucht.</string>
+    <string name="streak_confirm_action">Kaufen</string>
+    <string name="streak_cancel">Abbrechen</string>
 
     <!-- Prestige -->
     <string name="prestige_points_label">Prestige-Punkte</string>

@@ -91,6 +91,31 @@ object DatabaseMigrations {
         }
     }
 
+    /**
+     * Ergaenzt die Tabelle des taeglichen Bonus.
+     *
+     * `lastClaimedAtMillis` ist als einzige Spalte nullbar: `null` bedeutet,
+     * dass noch nie abgeholt wurde. Ein Ersatzwert wie null Millisekunden
+     * waere der 1. Januar 1970 und damit ein gueltiger Zeitpunkt - die
+     * Unterscheidung "nie" gegen "vor sehr langer Zeit" ginge verloren.
+     */
+    val MIGRATION_4_5 = object : Migration(4, 5) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `daily_login` " +
+                    "(`id` INTEGER NOT NULL, `streak` INTEGER NOT NULL, " +
+                    "`longestStreak` INTEGER NOT NULL, " +
+                    "`lastClaimedAtMillis` INTEGER, " +
+                    "`protectionCharges` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+            )
+        }
+    }
+
     /** Alle Migrationen in der Reihenfolge ihrer Versionen. */
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+    val ALL: Array<Migration> = arrayOf(
+        MIGRATION_1_2,
+        MIGRATION_2_3,
+        MIGRATION_3_4,
+        MIGRATION_4_5,
+    )
 }

@@ -247,4 +247,26 @@ object GameConfig {
      * Der Bonus wirkt auf Klickertrag und Leerlaufeinkommen gleichermassen.
      */
     const val PRESTIGE_BONUS_PER_POINT: Double = 0.02
+
+    // --- Taeglicher Bonus -------------------------------------------------
+
+    /**
+     * Preis einer Ladung Serienschutz in Diamanten.
+     *
+     * Der Betrag entspricht genau der Diamantensumme eines vollstaendigen
+     * Zyklus (siehe `DailyRewardType`). Eine lueckenlose Woche bezahlt damit
+     * genau eine Ladung - der Spieler kann das System aus sich heraus tragen,
+     * ohne dass es zur reinen Selbstbedienung wird.
+     */
+    const val STREAK_PROTECTION_PRICE_DIAMONDS: Long = 50L
+
+    /**
+     * Hoechstzahl gleichzeitig gehaltener Ladungen.
+     *
+     * Ohne Deckel liesse sich ein Vorrat fuer Monate anlegen, und die Serie
+     * waere keine Aussage mehr ueber regelmaessiges Spielen. Drei Ladungen
+     * decken eine uebliche Abwesenheit ab - ein verlaengertes Wochenende,
+     * einen Kurzurlaub - und nicht mehr.
+     */
+    const val STREAK_PROTECTION_MAX_CHARGES: Int = 3
 }

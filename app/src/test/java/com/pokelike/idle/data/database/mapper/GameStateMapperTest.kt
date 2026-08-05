@@ -14,6 +14,7 @@ import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
+import com.pokelike.idle.domain.model.LoginState
 import com.pokelike.idle.domain.model.QuestBaseline
 import com.pokelike.idle.domain.model.QuestMetric
 import com.pokelike.idle.domain.model.QuestPeriod
@@ -476,6 +477,109 @@ class GameStateMapperTest {
         )
 
         assertThat(restored).isEqualTo(sampleState)
+    }
+
+    // --- Taeglicher Bonus -------------------------------------------------
+
+    @Test
+    fun `stellt die Anmeldeserie wieder her`() {
+        val state = sampleState.copy(
+            login = LoginState(
+                streak = 5,
+                longestStreak = 12,
+                lastClaimedAtMillis = 1_700_000_000_000L,
+                protectionCharges = 2,
+            ),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            dailyLogin = persisted.dailyLogin,
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `schreibt ohne Anmeldeserie keine Zeile`() {
+        // Grundlage der Vertraeglichkeit mit Version 4: Eine Zeile mit lauter
+        // Nullwerten wuerde die Pruefsumme veraendern, und jeder aeltere
+        // Spielstand wuerde beim naechsten Start als manipuliert gelten.
+        val persisted = mapper.toPersisted(sampleState)
+
+        assertThat(persisted.dailyLogin).isNull()
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Anmeldeserie unveraendert`() {
+        val persisted = mapper.toPersisted(sampleState)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+            dailyLogin = null,
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit hochgesetzter Serie`() {
+        // Die Serie entscheidet ueber den Tag des Zyklus und damit ueber
+        // Diamanten. Ohne Abdeckung durch die Pruefsumme liesse sich der
+        // grosse Abschlusstag beliebig oft einstellen.
+        val state = sampleState.copy(
+            login = LoginState(streak = 1, longestStreak = 1, lastClaimedAtMillis = 1L),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.dailyLogin?.copy(streak = 7)
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                dailyLogin = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit erfundenem Serienschutz`() {
+        val state = sampleState.copy(
+            login = LoginState(streak = 1, longestStreak = 1, lastClaimedAtMillis = 1L),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.dailyLogin?.copy(protectionCharges = 99)
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                dailyLogin = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `unterscheidet nie abgeholt von der Zeit null`() {
+        // Beide Faelle duerfen nicht dieselbe Pruefsumme ergeben, sonst liesse
+        // sich der eine gegen den anderen tauschen.
+        val never = sampleState.copy(login = LoginState(protectionCharges = 1))
+        val atZero = sampleState.copy(
+            login = LoginState(streak = 1, longestStreak = 1, lastClaimedAtMillis = 0L),
+        )
+
+        val neverPersisted = mapper.toPersisted(never)
+        val zeroPersisted = mapper.toPersisted(atZero)
+
+        assertThat(neverPersisted.state.signature)
+            .isNotEqualTo(zeroPersisted.state.signature)
     }
 
     @Test

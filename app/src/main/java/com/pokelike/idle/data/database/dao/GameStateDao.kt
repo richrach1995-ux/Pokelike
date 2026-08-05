@@ -8,6 +8,7 @@ import androidx.room.Transaction
 import androidx.room.Upsert
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
+import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.QuestBaselineEntity
 import com.pokelike.idle.data.database.entity.QuestBaselineValueEntity
@@ -60,6 +61,9 @@ abstract class GameStateDao {
     @Query("SELECT * FROM quest_claims")
     abstract suspend fun findQuestClaims(): List<QuestClaimEntity>
 
+    @Query("SELECT * FROM daily_login LIMIT 1")
+    abstract suspend fun findDailyLogin(): DailyLoginEntity?
+
     /**
      * Schreibt den vollstaendigen Spielstand in einem Zug.
      *
@@ -84,6 +88,7 @@ abstract class GameStateDao {
         questBaselines: List<QuestBaselineEntity>,
         questBaselineValues: List<QuestBaselineValueEntity>,
         questClaims: List<QuestClaimEntity>,
+        dailyLogin: DailyLoginEntity?,
     ) {
         upsertState(state)
         deleteAllResources()
@@ -100,6 +105,11 @@ abstract class GameStateDao {
         insertQuestBaselineValues(questBaselineValues)
         deleteAllQuestClaims()
         insertQuestClaims(questClaims)
+        // Loeschen und nur bei Bedarf neu schreiben: Ein Spielstand ohne
+        // Anmeldeserie muss eine leere Tabelle hinterlassen, sonst bliebe eine
+        // Zeile mit Standardwerten stehen und veraenderte die Pruefsumme.
+        deleteDailyLogin()
+        if (dailyLogin != null) insertDailyLogin(dailyLogin)
     }
 
     /**
@@ -118,6 +128,7 @@ abstract class GameStateDao {
         deleteAllQuestBaselines()
         deleteAllQuestBaselineValues()
         deleteAllQuestClaims()
+        deleteDailyLogin()
     }
 
     @Upsert
@@ -164,6 +175,12 @@ abstract class GameStateDao {
 
     @Query("DELETE FROM quest_claims")
     abstract suspend fun deleteAllQuestClaims()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertDailyLogin(dailyLogin: DailyLoginEntity)
+
+    @Query("DELETE FROM daily_login")
+    abstract suspend fun deleteDailyLogin()
 
     @Query("DELETE FROM game_state")
     abstract suspend fun deleteState()
