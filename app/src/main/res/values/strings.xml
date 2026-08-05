@@ -194,6 +194,12 @@
     <string name="booster_buy">%1$s 💎</string>
     <string name="booster_at_maximum">Voll</string>
 
+    <!-- Belohnungsvideos -->
+    <string name="ad_free_booster_title">Gratis-Booster</string>
+    <string name="ad_free_booster_description">Video ansehen und %1$s erhalten.</string>
+    <string name="ad_watch">Ansehen</string>
+    <string name="ad_failed">Gerade nicht verfügbar — versuch es später noch einmal.</string>
+
     <!-- Prestige -->
     <string name="prestige_points_label">Prestige-Punkte</string>
     <string name="prestige_current_bonus">Aktueller Bonus</string>

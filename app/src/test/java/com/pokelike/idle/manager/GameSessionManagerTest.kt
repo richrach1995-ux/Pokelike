@@ -15,11 +15,14 @@ import com.pokelike.idle.domain.usecases.CalculatePrestigeUseCase
 import com.pokelike.idle.domain.usecases.CheckAchievementsUseCase
 import com.pokelike.idle.domain.usecases.ClaimDailyRewardUseCase
 import com.pokelike.idle.domain.usecases.EvaluateDailyRewardUseCase
+import com.pokelike.idle.domain.usecases.GrantAdRewardUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
 import com.pokelike.idle.domain.usecases.PurchaseBoosterUseCase
 import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
 import com.pokelike.idle.domain.usecases.StartBoosterUseCase
+import com.pokelike.idle.testing.FakeAdSource
 import com.pokelike.idle.testing.FakeGameRepository
+import com.pokelike.idle.testing.RecordingGameLogger
 import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.FakeRandomProvider
 import com.pokelike.idle.testing.TestDispatcherProvider
@@ -96,6 +99,16 @@ class GameSessionManagerTest {
             timeSource = timeSource,
             purchaseBooster = PurchaseBoosterUseCase(StartBoosterUseCase()),
         )
+        val rewardedAdManager = RewardedAdManager(
+            scope = scope,
+            dispatchers = dispatchers,
+            gameClock = clock,
+            repository = repository,
+            timeSource = timeSource,
+            adSource = FakeAdSource(),
+            grantAdReward = GrantAdRewardUseCase(StartBoosterUseCase()),
+            logger = RecordingGameLogger(),
+        )
         val evaluateDailyReward = EvaluateDailyRewardUseCase(CalculateIncomeUseCase())
         val dailyRewardManager = DailyRewardManager(
             repository = repository,
@@ -120,6 +133,7 @@ class GameSessionManagerTest {
                 calculateOfflineProgress = CalculateOfflineProgressUseCase(),
                 achievementManager = achievementManager,
                 boosterManager = boosterManager,
+                rewardedAdManager = rewardedAdManager,
                 dailyRewardManager = dailyRewardManager,
                 rolloverQuests = RolloverQuestsUseCase(),
             ),

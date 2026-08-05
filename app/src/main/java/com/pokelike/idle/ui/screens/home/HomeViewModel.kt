@@ -9,6 +9,7 @@ import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.usecases.BoosterPurchaseResult
 import com.pokelike.idle.manager.BoosterManager
 import com.pokelike.idle.manager.ClickManager
+import com.pokelike.idle.manager.RewardedAdManager
 import com.pokelike.idle.manager.IdleIncomeManager
 import com.pokelike.idle.manager.ModifierManager
 import com.pokelike.idle.util.DispatcherProvider
@@ -37,6 +38,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val clickManager: ClickManager,
     private val boosterManager: BoosterManager,
+    private val rewardedAdManager: RewardedAdManager,
     idleIncomeManager: IdleIncomeManager,
     modifierManager: ModifierManager,
     gameRepository: GameRepository,
@@ -138,6 +140,43 @@ class HomeViewModel @Inject constructor(
             started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
             initialValue = emptyList(),
         )
+
+    /**
+     * Das Angebot des Belohnungsvideos.
+     *
+     * Eigener Fluss wie die Booster: Er haengt am Ladezustand des Werbe-SDK
+     * und nicht am Spielstand, und beides zusammenzufuehren hiesse, ihn
+     * zehnmal pro Sekunde neu zu bilden.
+     */
+    val adOffer: StateFlow<AdOffer> = rewardedAdManager.status
+        .map { status ->
+            AdOffer(
+                isReady = status.isReady,
+                isLoading = status.isLoading,
+                isShowing = status.isShowing,
+                cooldownText = status.cooldownRemainingMillis
+                    .takeIf { it > 0L }
+                    ?.let(durationFormatter::formatCompact),
+                lastFailed = status.lastFailed,
+            )
+        }
+        .flowOn(dispatchers.default)
+        .distinctUntilChanged()
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
+            initialValue = AdOffer(),
+        )
+
+    /** Startet ein Belohnungsvideo. */
+    fun onWatchAd() {
+        rewardedAdManager.show()
+    }
+
+    /** Bestaetigt, dass der Fehlerhinweis gezeigt wurde. */
+    fun onAdFailureShown() {
+        rewardedAdManager.consumeFailure()
+    }
 
     /**
      * Kauft einen Booster.

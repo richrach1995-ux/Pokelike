@@ -8,6 +8,7 @@ import androidx.room.Transaction
 import androidx.room.Upsert
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
+import com.pokelike.idle.data.database.entity.AdCooldownEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
@@ -68,6 +69,9 @@ abstract class GameStateDao {
     @Query("SELECT * FROM active_boosters")
     abstract suspend fun findActiveBoosters(): List<ActiveBoosterEntity>
 
+    @Query("SELECT * FROM ad_cooldowns")
+    abstract suspend fun findAdCooldowns(): List<AdCooldownEntity>
+
     /**
      * Schreibt den vollstaendigen Spielstand in einem Zug.
      *
@@ -94,6 +98,7 @@ abstract class GameStateDao {
         questClaims: List<QuestClaimEntity>,
         dailyLogin: DailyLoginEntity?,
         boosters: List<ActiveBoosterEntity>,
+        adCooldowns: List<AdCooldownEntity>,
     ) {
         upsertState(state)
         deleteAllResources()
@@ -117,6 +122,8 @@ abstract class GameStateDao {
         if (dailyLogin != null) insertDailyLogin(dailyLogin)
         deleteAllBoosters()
         insertBoosters(boosters)
+        deleteAllAdCooldowns()
+        insertAdCooldowns(adCooldowns)
     }
 
     /**
@@ -137,6 +144,7 @@ abstract class GameStateDao {
         deleteAllQuestClaims()
         deleteDailyLogin()
         deleteAllBoosters()
+        deleteAllAdCooldowns()
     }
 
     @Upsert
@@ -192,6 +200,12 @@ abstract class GameStateDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract suspend fun insertBoosters(boosters: List<ActiveBoosterEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertAdCooldowns(cooldowns: List<AdCooldownEntity>)
+
+    @Query("DELETE FROM ad_cooldowns")
+    abstract suspend fun deleteAllAdCooldowns()
 
     @Query("DELETE FROM active_boosters")
     abstract suspend fun deleteAllBoosters()

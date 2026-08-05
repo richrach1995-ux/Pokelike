@@ -3,6 +3,7 @@ package com.pokelike.idle.data.database.mapper
 import com.google.common.truth.Truth.assertThat
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
+import com.pokelike.idle.data.database.entity.AdCooldownEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
@@ -10,6 +11,7 @@ import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.AchievementInventory
 import com.pokelike.idle.domain.model.AchievementType
+import com.pokelike.idle.domain.model.AdState
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BoosterState
 import com.pokelike.idle.domain.model.BoosterType
@@ -26,6 +28,7 @@ import com.pokelike.idle.domain.model.QuestType
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.model.RewardedAdPlacement
 import com.pokelike.idle.domain.model.UpgradeInventory
 import com.pokelike.idle.domain.model.UpgradeType
 import org.junit.Test
@@ -748,6 +751,116 @@ class GameStateMapperTest {
         )
 
         assertThat(restored).isEqualTo(state)
+    }
+
+    // --- Werbe-Wartezeiten -------------------------------------------------
+
+    @Test
+    fun `stellt die Wartezeit eines Videos wieder her`() {
+        val state = sampleState.copy(
+            ads = AdState.EMPTY.withCooldownStarted(
+                RewardedAdPlacement.BOOSTER_REWARD,
+                boosterNow,
+            ),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            adCooldowns = persisted.adCooldowns,
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Wartezeit unveraendert`() {
+        // Vertraeglichkeit mit Version 6: Ohne laufende Wartezeit ist die
+        // Tabelle leer und traegt zur Pruefsumme nichts bei.
+        val persisted = mapper.toPersisted(sampleState)
+
+        assertThat(persisted.adCooldowns).isEmpty()
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                adCooldowns = emptyList(),
+            ),
+        ).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit entfernter Wartezeit`() {
+        // Die Wartezeit ist das einzige, was die Wirtschaft des Spiels vor
+        // unbegrenzter Werbebelohnung schuetzt. Eine geloeschte Zeile waere ein
+        // Booster im Minutentakt.
+        val state = sampleState.copy(
+            ads = AdState.EMPTY.withCooldownStarted(
+                RewardedAdPlacement.BOOSTER_REWARD,
+                boosterNow,
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                adCooldowns = emptyList(),
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit vorgezogener Wartezeit`() {
+        val state = sampleState.copy(
+            ads = AdState.EMPTY.withCooldownStarted(
+                RewardedAdPlacement.BOOSTER_REWARD,
+                boosterNow,
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.adCooldowns.map { row -> row.copy(availableAtMillis = 0L) }
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                adCooldowns = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit unbekannter Werbestelle`() {
+        val persisted = mapper.toPersisted(sampleState)
+        val withUnknown = listOf(
+            AdCooldownEntity(
+                placementId = "stelle_aus_der_zukunft",
+                availableAtMillis = boosterNow,
+            ),
+        )
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(
+                    entity = unsigned,
+                    resources = persisted.resources,
+                    adCooldowns = withUnknown,
+                ),
+            ),
+        )
+
+        val restored = mapper.toDomain(
+            entity = resigned,
+            resources = persisted.resources,
+            adCooldowns = withUnknown,
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
     }
 
     @Test

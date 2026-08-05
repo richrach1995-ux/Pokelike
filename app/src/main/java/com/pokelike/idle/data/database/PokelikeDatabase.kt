@@ -5,6 +5,7 @@ import androidx.room.RoomDatabase
 import com.pokelike.idle.data.database.dao.GameStateDao
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
+import com.pokelike.idle.data.database.entity.AdCooldownEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
@@ -42,6 +43,7 @@ import com.pokelike.idle.data.database.entity.UpgradeEntity
         QuestClaimEntity::class,
         DailyLoginEntity::class,
         ActiveBoosterEntity::class,
+        AdCooldownEntity::class,
     ],
     version = PokelikeDatabase.DATABASE_VERSION,
     exportSchema = true,
@@ -56,10 +58,11 @@ abstract class PokelikeDatabase : RoomDatabase() {
          * Version 2 hat die Tabelle `buildings` ergaenzt, Version 3 die
          * Tabelle `upgrades`, Version 4 Achievements, Quests und einen Zaehler
          * in `game_state`, Version 5 die Tabelle `daily_login`, Version 6 die
-         * Tabelle `active_boosters`. Die zugehoerigen Migrationen stehen in
+         * Tabelle `active_boosters`, Version 7 die Tabelle `ad_cooldowns`. Die
+         * zugehoerigen Migrationen stehen in
          * [com.pokelike.idle.data.database.migration.DatabaseMigrations].
          */
-        const val DATABASE_VERSION: Int = 6
+        const val DATABASE_VERSION: Int = 7
 
         /**
          * Dateiname der Datenbank.

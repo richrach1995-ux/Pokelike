@@ -80,6 +80,7 @@ class GameRepositoryImpl @Inject constructor(
                         questClaims = dao.findQuestClaims(),
                         dailyLogin = dao.findDailyLogin(),
                         boosters = dao.findActiveBoosters(),
+                        adCooldowns = dao.findAdCooldowns(),
                     ).also { state ->
                         if (state == null) {
                             logger.warn(TAG, "Spielstand hat die Integritaetspruefung nicht bestanden")
@@ -139,6 +140,7 @@ class GameRepositoryImpl @Inject constructor(
                         questClaims = persisted.questClaims,
                         dailyLogin = persisted.dailyLogin,
                         boosters = persisted.boosters,
+                        adCooldowns = persisted.adCooldowns,
                     )
                     true
                 } catch (throwable: Throwable) {
@@ -172,6 +174,7 @@ class GameRepositoryImpl @Inject constructor(
                 questClaims = persisted.questClaims,
                 dailyLogin = persisted.dailyLogin,
                 boosters = persisted.boosters,
+                adCooldowns = persisted.adCooldowns,
             )
         }
 

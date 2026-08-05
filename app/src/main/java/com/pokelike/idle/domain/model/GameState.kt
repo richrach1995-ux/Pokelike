@@ -28,6 +28,7 @@ import com.pokelike.idle.config.GameConfig
  * @property achievements Freigeschaltete Achievements.
  * @property quests Stand des Quest-Systems.
  * @property login Serie und Vorrat des taeglichen Bonus.
+ * @property ads Wartezeiten der Belohnungsvideos.
  * @property boosters Laufende Booster. Sie laufen in Echtzeit ab und werden
  *   deshalb mitgesichert - eine Restlaufzeit, die den Neustart der App nicht
  *   ueberdauert, waere keine Echtzeit.
@@ -45,6 +46,7 @@ data class GameState(
     val quests: QuestState = QuestState.EMPTY,
     val login: LoginState = LoginState.EMPTY,
     val boosters: BoosterState = BoosterState.EMPTY,
+    val ads: AdState = AdState.EMPTY,
     val statistics: GameStatistics = GameStatistics(),
     val createdAtMillis: Long = 0L,
     val lastSeenAtMillis: Long = 0L,
@@ -134,6 +136,10 @@ data class GameState(
             // tun. Einen bezahlten Booster beim Prestige zu loeschen waere eine
             // Enteignung mitten im laufenden Kauf.
             boosters = boosters,
+            // Die Wartezeit der Videos ebenfalls: Sie schuetzt die Wirtschaft
+            // des Spiels, und ein Prestige waere sonst der Weg, sie zu
+            // umgehen.
+            ads = ads,
             statistics = statistics.copy(
                 prestigeCount = statistics.prestigeCount + 1,
                 lifetimeEarned = statistics.lifetimeEarned + ResourceBundle.single(
@@ -154,11 +160,12 @@ data class GameState(
          *
          * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades,
          * Version 4 Achievements und Quests, Version 5 den taeglichen Bonus,
-         * Version 6 die laufenden Booster. Jedes Mal laesst sich ein aelterer
-         * Spielstand unveraendert weiterlesen und startet mit leerem Bestand -
-         * deshalb ist keine Umwandlung noetig, nur diese Kennzeichnung.
+         * Version 6 die laufenden Booster, Version 7 die Wartezeiten der
+         * Belohnungsvideos. Jedes Mal laesst sich ein aelterer Spielstand
+         * unveraendert weiterlesen und startet mit leerem Bestand - deshalb ist
+         * keine Umwandlung noetig, nur diese Kennzeichnung.
          */
-        const val CURRENT_SCHEMA_VERSION: Int = 6
+        const val CURRENT_SCHEMA_VERSION: Int = 7
 
         /**
          * Spielstand fuer einen neuen Spieler.

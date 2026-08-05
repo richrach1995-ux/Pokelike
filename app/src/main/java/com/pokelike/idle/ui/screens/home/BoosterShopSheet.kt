@@ -7,7 +7,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PlayCircle
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -38,7 +43,9 @@ import com.pokelike.idle.ui.theme.PokelikeTheme
 @Composable
 fun BoosterShopSheet(
     offers: List<BoosterOffer>,
+    adOffer: AdOffer,
     onBuy: (BoosterType) -> Unit,
+    onWatchAd: () -> Unit,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -62,8 +69,95 @@ fun BoosterShopSheet(
                 color = MaterialTheme.colorScheme.onSurface,
             )
 
+            // Das Videoangebot steht oben und nicht bei den Kaeufen: Es ist der
+            // Weg, der niemanden etwas kostet, und Spieler, die nie zahlen,
+            // sollen ihn zuerst sehen.
+            AdOfferCard(offer = adOffer, onWatchAd = onWatchAd)
+
             offers.forEach { offer ->
                 BoosterOfferRow(offer = offer, onBuy = onBuy)
+            }
+        }
+    }
+}
+
+/**
+ * Das Belohnungsvideo als eigene Karte.
+ *
+ * Der Knopf hat vier Zustaende, und alle vier sind sichtbar zu machen: bereit,
+ * laedt, laeuft gerade, Wartezeit. Ein Knopf, der bei drei davon gleich
+ * aussieht, laesst den Spieler tippen und nichts geschehen sehen - der
+ * haeufigste Grund, warum Videoangebote als kaputt wahrgenommen werden.
+ */
+@Composable
+private fun AdOfferCard(
+    offer: AdOffer,
+    onWatchAd: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val dimens = PokelikeTheme.dimens
+    val gameColors = PokelikeTheme.gameColors
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = gameColors.elevatedSurface),
+    ) {
+        Row(
+            modifier = Modifier.padding(dimens.spaceMd),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                imageVector = Icons.Filled.PlayCircle,
+                contentDescription = null,
+                tint = gameColors.positive,
+                modifier = Modifier.size(dimens.minTouchTarget),
+            )
+
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(horizontal = dimens.spaceMd),
+            ) {
+                Text(
+                    text = stringResource(R.string.ad_free_booster_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+                Text(
+                    text = stringResource(
+                        R.string.ad_free_booster_description,
+                        stringResource(offer.rewardedBooster.nameRes),
+                    ),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+
+                if (offer.lastFailed) {
+                    Text(
+                        text = stringResource(R.string.ad_failed),
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
+            }
+
+            when {
+                // Der laufende Ladevorgang bekommt einen eigenen Anzeiger statt
+                // eines abgeblendeten Knopfes: Der Spieler soll erkennen, dass
+                // etwas geschieht und Warten sich lohnt.
+                offer.isLoading || offer.isShowing -> CircularProgressIndicator(
+                    modifier = Modifier.size(dimens.boosterIconSize),
+                )
+
+                else -> Button(
+                    onClick = onWatchAd,
+                    enabled = offer.isReady,
+                ) {
+                    Text(
+                        text = offer.cooldownText
+                            ?: stringResource(R.string.ad_watch),
+                    )
+                }
             }
         }
     }

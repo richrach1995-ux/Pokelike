@@ -54,6 +54,7 @@ class GameSessionManager @Inject constructor(
     private val calculateOfflineProgress: CalculateOfflineProgressUseCase,
     private val achievementManager: AchievementManager,
     private val boosterManager: BoosterManager,
+    private val rewardedAdManager: RewardedAdManager,
     private val dailyRewardManager: DailyRewardManager,
     private val rolloverQuests: RolloverQuestsUseCase,
 ) {
@@ -98,6 +99,7 @@ class GameSessionManager @Inject constructor(
                     // Abwesenheit abgelaufen ist, darf sie nicht mehr
                     // beeinflussen.
                     boosterManager.refresh()
+                    rewardedAdManager.refresh()
 
                     applyOfflineProgress(repository.gameState.value.lastSeenAtMillis)
                 }
@@ -117,6 +119,7 @@ class GameSessionManager @Inject constructor(
                 idleIncomeManager.start()
                 achievementManager.start()
                 boosterManager.start()
+                rewardedAdManager.start()
 
                 // Sofortige Pruefung, damit ein offline erreichtes Achievement
                 // beim Oeffnen gemeldet wird und nicht erst eine Sekunde spaeter.
@@ -148,6 +151,7 @@ class GameSessionManager @Inject constructor(
                 idleIncomeManager.stop()
                 achievementManager.stop()
                 boosterManager.stop()
+                rewardedAdManager.stop()
 
                 if (repository.isLoaded.value) {
                     val now = timeSource.wallClock()

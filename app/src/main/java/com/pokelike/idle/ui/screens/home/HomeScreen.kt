@@ -55,6 +55,7 @@ fun HomeRoute(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val boosters by viewModel.boosters.collectAsStateWithLifecycle()
     val boosterOffers by viewModel.boosterOffers.collectAsStateWithLifecycle()
+    val adOffer by viewModel.adOffer.collectAsStateWithLifecycle()
 
     val haptics = LocalHapticFeedback.current
 
@@ -65,8 +66,17 @@ fun HomeRoute(
     if (isShopOpen) {
         BoosterShopSheet(
             offers = boosterOffers,
+            adOffer = adOffer,
             onBuy = { type -> viewModel.onBuyBooster(type) },
-            onDismiss = { isShopOpen = false },
+            onWatchAd = viewModel::onWatchAd,
+            onDismiss = {
+                isShopOpen = false
+                // Ein Fehlerhinweis gilt fuer den Versuch, nicht fuer die
+                // Sitzung. Bliebe er stehen, begruesste er den Spieler beim
+                // naechsten Oeffnen mit einer Meldung ueber ein Netzproblem,
+                // das es laengst nicht mehr gibt.
+                viewModel.onAdFailureShown()
+            },
         )
     }
 

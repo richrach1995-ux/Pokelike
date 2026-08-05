@@ -15,8 +15,10 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 8. Achievements, Quests und eine zentrale Belohnungsmeldung
 9. Täglicher Bonus mit Serie und kaufbarem Serienschutz
 10. Booster mit Echtzeit-Laufzeit und Booster-Angebot
+11. Belohnungsvideos: Schnittstelle, Nachbildung, Wartezeit
 
-Als Nächstes: Rewarded Ads als zweiter Weg zu Boostern.
+Als Nächstes: die AdMob-Anbindung hinter der bestehenden Schnittstelle —
+sobald das Projekt einmal in Android Studio gebaut wurde.
 
 ---
 
@@ -59,6 +61,7 @@ maschinenspezifischen Pfad.
 
 ```
 com.pokelike.idle
+├── ads/        Grenze zum Werbe-SDK: Schnittstelle und Nachbildung
 ├── config/     Balancing- und Laufzeitkonstanten (GameConfig)
 ├── data/
 │   ├── database/    Room-Entities, DAO, Mapper
@@ -68,13 +71,13 @@ com.pokelike.idle
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
 │   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Ziele,
-│   │                Tagesbonus, Booster, Spielstand
+│   │                Tagesbonus, Booster, Werbestellen, Spielstand
 │   ├── repository/ Schnittstellen
 │   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline, Ziele,
-│                    Tagesbonus, Booster
+│                    Tagesbonus, Booster, Werbebelohnung
 ├── manager/    Prozessweite Dienste (Uhr, Autosave, Klicks, Einkommen,
 │            Modifikatoren, Achievements, Belohnungen, Tagesbonus, Booster,
-│            Sitzung)
+│            Belohnungsvideos, Sitzung)
 ├── ui/
 │   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige,
 │   │                Belohnungs- und Tagesbonusdialog
@@ -84,9 +87,9 @@ com.pokelike.idle
 └── util/       Querschnittswerkzeuge (Zeit, Dispatcher, Formatierung)
 ```
 
-Weitere Pakete (`billing/`, `ads/`, `analytics/`, `events/`) kommen in den
-folgenden Schritten hinzu, sobald das jeweilige System implementiert wird —
-jeweils mit echtem Inhalt statt als leeres Gerüst.
+Weitere Pakete (`billing/`, `analytics/`, `events/`) kommen in den folgenden
+Schritten hinzu, sobald das jeweilige System implementiert wird — jeweils mit
+echtem Inhalt statt als leeres Gerüst.
 
 Prestige, Quests und Achievements haben bewusst **kein** eigenes Top-Level-Paket
 bekommen. Sie bestehen aus einem deklarativen Katalog (`domain/model/`), Regeln
@@ -376,6 +379,33 @@ bezahlte Belohnung, die verpufft. Gedeckelt auf das Vierfache der
 Grundlaufzeit, damit der Booster ein Ereignis bleibt und nicht zum Normalzustand
 wird; ein Kauf, der wegen des Deckels wirkungslos bliebe, wird vorher
 abgewiesen statt abgebucht.
+
+**Das Werbe-SDK taucht an genau einer Stelle auf.** `RewardedAdSource` ist die
+Grenze; alles darüber — Wartezeit, Belohnung, Anzeige — kennt nur diese
+Schnittstelle. Werbevermittler werden gewechselt, und ein SDK, das sich durch
+ViewModels und Use Cases zieht, macht daraus ein Umbauprojekt statt eines
+Austauschs. Die Schnittstelle kennt bewusst **keine** `Activity`: Sie
+hereinzureichen hieße, sie durch Manager und ViewModels durchzureichen, und
+damit entstünde genau die Kopplung, die sie verhindern soll.
+
+**Die Nachbildung ist kein Platzhalter.** `FakeRewardedAdSource` lässt das
+Laden dauern, gelegentlich fehlschlagen und den Spieler abbrechen — die drei
+Eigenschaften, an denen die Anzeige tatsächlich hängt. Eine Nachbildung, die
+immer sofort erfolgreich ist, ließe die zugehörigen Anzeigepfade ungetestet,
+bis sie beim echten SDK erstmals auftreten.
+
+**Vier Ausgänge statt eines Wahrheitswerts.** Belohnung erhalten, abgebrochen,
+nicht bereit, fehlgeschlagen — sie führen zu vier verschiedenen Reaktionen. Wer
+abbricht, hat nichts falsch gemacht und bekommt keine Fehlermeldung; wer kein
+Netz hat, soll genau das erfahren und nicht glauben, das Angebot sei
+verschwunden.
+
+**Die Wartezeit beginnt erst mit der Gutschrift.** Sie ist der Preis der
+Belohnung, nicht die Strafe für einen Abbruch oder für fehlendes Netz. Sie
+liegt im Spielstand und unter der Prüfsumme: Im Arbeitsspeicher wäre sie durch
+Schließen und Öffnen der App zu umgehen, und ohne Signatur wäre eine gelöschte
+Zeile ein Booster im Minutentakt. Sie überlebt auch den Prestige-Reset — sonst
+wäre der Reset der Weg, sie zu umgehen.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

@@ -129,6 +129,23 @@ object DatabaseMigrations {
         }
     }
 
+    /**
+     * Ergaenzt die Tabelle der Video-Wartezeiten.
+     *
+     * Sie gehoert in den Spielstand und nicht in den Arbeitsspeicher: Eine
+     * Wartezeit, die den Neustart der App nicht ueberdauert, waere durch
+     * Schliessen und Oeffnen zu umgehen.
+     */
+    val MIGRATION_6_7 = object : Migration(6, 7) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `ad_cooldowns` " +
+                    "(`placementId` TEXT NOT NULL, `availableAtMillis` INTEGER NOT NULL, " +
+                    "PRIMARY KEY(`placementId`))",
+            )
+        }
+    }
+
     /** Alle Migrationen in der Reihenfolge ihrer Versionen. */
     val ALL: Array<Migration> = arrayOf(
         MIGRATION_1_2,
@@ -136,5 +153,6 @@ object DatabaseMigrations {
         MIGRATION_3_4,
         MIGRATION_4_5,
         MIGRATION_5_6,
+        MIGRATION_6_7,
     )
 }

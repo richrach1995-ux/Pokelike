@@ -2,6 +2,7 @@ package com.pokelike.idle.ui.screens.home
 
 import androidx.compose.runtime.Immutable
 import com.pokelike.idle.domain.model.BoosterType
+import com.pokelike.idle.domain.model.RewardedAdPlacement
 
 /**
  * Ein laufender Booster in der Anzeige.
@@ -15,6 +16,28 @@ data class BoosterRow(
     val type: BoosterType,
     val remainingText: String,
     val progress: Float,
+)
+
+/**
+ * Das Angebot eines Belohnungsvideos.
+ *
+ * @property rewardedBooster Booster, den das Video einbringt.
+ * @property isReady Ob jetzt getippt werden kann.
+ * @property isLoading Ob gerade ein Video geladen wird.
+ * @property isShowing Ob gerade eines laeuft.
+ * @property cooldownText Verbleibende Wartezeit, `null` wenn keine laeuft.
+ * @property lastFailed Ob der letzte Versuch gescheitert ist. Der Spieler soll
+ *   erfahren, dass kein Netz da war, statt zu glauben, das Angebot sei
+ *   verschwunden.
+ */
+@Immutable
+data class AdOffer(
+    val rewardedBooster: BoosterType = RewardedAdPlacement.BOOSTER_REWARD.rewardedBooster,
+    val isReady: Boolean = false,
+    val isLoading: Boolean = false,
+    val isShowing: Boolean = false,
+    val cooldownText: String? = null,
+    val lastFailed: Boolean = false,
 )
 
 /**

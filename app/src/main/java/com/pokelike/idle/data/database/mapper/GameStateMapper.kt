@@ -2,6 +2,7 @@ package com.pokelike.idle.data.database.mapper
 
 import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
+import com.pokelike.idle.data.database.entity.AdCooldownEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
@@ -15,6 +16,7 @@ import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.AchievementInventory
 import com.pokelike.idle.domain.model.AchievementType
 import com.pokelike.idle.domain.model.ActiveBooster
+import com.pokelike.idle.domain.model.AdState
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BoosterState
 import com.pokelike.idle.domain.model.BoosterType
@@ -31,6 +33,7 @@ import com.pokelike.idle.domain.model.QuestType
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.model.RewardedAdPlacement
 import com.pokelike.idle.domain.model.UpgradeInventory
 import com.pokelike.idle.domain.model.UpgradeType
 import javax.inject.Inject
@@ -54,6 +57,7 @@ data class PersistedGameState(
     /** `null`, wenn der Spieler den Tagesbonus noch nie abgeholt hat. */
     val dailyLogin: DailyLoginEntity?,
     val boosters: List<ActiveBoosterEntity>,
+    val adCooldowns: List<AdCooldownEntity>,
 )
 
 /**
@@ -92,6 +96,9 @@ class GameStateMapper @Inject constructor(
         }
         val questClaims = state.quests.claimed.map { QuestClaimEntity(questId = it.id) }
         val dailyLogin = buildDailyLoginRow(state)
+        val adCooldowns = state.ads.availableAtMillis.map { (placement, availableAt) ->
+            AdCooldownEntity(placementId = placement.id, availableAtMillis = availableAt)
+        }
         val boosters = state.boosters.active.values.map { booster ->
             ActiveBoosterEntity(
                 boosterId = booster.type.id,
@@ -127,6 +134,7 @@ class GameStateMapper @Inject constructor(
                         questClaims = questClaims,
                         dailyLogin = dailyLogin,
                         boosters = boosters,
+                        adCooldowns = adCooldowns,
                     ),
                 ),
             ),
@@ -139,6 +147,7 @@ class GameStateMapper @Inject constructor(
             questClaims = questClaims,
             dailyLogin = dailyLogin,
             boosters = boosters,
+            adCooldowns = adCooldowns,
         )
     }
 
@@ -161,6 +170,7 @@ class GameStateMapper @Inject constructor(
         questClaims: List<QuestClaimEntity> = emptyList(),
         dailyLogin: DailyLoginEntity? = null,
         boosters: List<ActiveBoosterEntity> = emptyList(),
+        adCooldowns: List<AdCooldownEntity> = emptyList(),
     ): GameState? {
         val unsigned = entity.copy(signature = "")
         val payload = canonicalPayload(
@@ -174,6 +184,7 @@ class GameStateMapper @Inject constructor(
             questClaims = questClaims,
             dailyLogin = dailyLogin,
             boosters = boosters,
+            adCooldowns = adCooldowns,
         )
         if (!saveSignature.verify(payload, entity.signature)) return null
 
@@ -186,6 +197,7 @@ class GameStateMapper @Inject constructor(
             quests = readQuests(questBaselines, questBaselineValues, questClaims),
             login = readLogin(dailyLogin),
             boosters = readBoosters(boosters),
+            ads = readAdCooldowns(adCooldowns),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -360,6 +372,21 @@ class GameStateMapper @Inject constructor(
         },
     )
 
+    /**
+     * Liest die Wartezeiten der Videostellen.
+     *
+     * Unbekannte Schluessel werden uebergangen - dieselbe Ueberlegung wie bei
+     * Ressourcen, Gebaeuden, Upgrades und Boostern.
+     */
+    private fun readAdCooldowns(rows: List<AdCooldownEntity>): AdState = AdState(
+        availableAtMillis = buildMap {
+            rows.forEach { row ->
+                val placement = RewardedAdPlacement.fromId(row.placementId) ?: return@forEach
+                put(placement, row.availableAtMillis)
+            }
+        },
+    )
+
     private fun toRows(
         bucket: ResourceBucket,
         amounts: Map<ResourceType, BigNumber>,
@@ -420,6 +447,7 @@ class GameStateMapper @Inject constructor(
         questClaims: List<QuestClaimEntity> = emptyList(),
         dailyLogin: DailyLoginEntity? = null,
         boosters: List<ActiveBoosterEntity> = emptyList(),
+        adCooldowns: List<AdCooldownEntity> = emptyList(),
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -505,6 +533,17 @@ class GameStateMapper @Inject constructor(
                 append("|booster:").append(row.boosterId)
                 append('=').append(row.startedAtMillis)
                 append('-').append(row.endsAtMillis)
+            }
+
+        // Die Wartezeit liegt unter der Pruefsumme, weil sie das einzige ist,
+        // was die Wirtschaft des Spiels vor unbegrenzter Werbebelohnung
+        // schuetzt. Eine von Hand geloeschte Zeile waere ein Booster im
+        // Minutentakt.
+        adCooldowns
+            .sortedBy { it.placementId }
+            .forEach { row ->
+                append("|adcooldown:").append(row.placementId)
+                append('=').append(row.availableAtMillis)
             }
     }
 
