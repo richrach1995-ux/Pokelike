@@ -44,6 +44,7 @@ import com.pokelike.idle.R
 import com.pokelike.idle.domain.model.AchievementType
 import com.pokelike.idle.domain.model.QuestPeriod
 import com.pokelike.idle.domain.model.QuestType
+import com.pokelike.idle.ui.components.RewardPart
 import com.pokelike.idle.ui.theme.PokelikeTheme
 
 /** Einstiegspunkt des Ziele-Bildschirms im Navigationsgraphen. */
