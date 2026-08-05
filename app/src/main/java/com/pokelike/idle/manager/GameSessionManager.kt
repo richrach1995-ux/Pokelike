@@ -4,6 +4,7 @@ import com.pokelike.idle.di.ApplicationScope
 import com.pokelike.idle.domain.model.OfflineProgress
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
+import com.pokelike.idle.domain.usecases.CalculateModifiersUseCase
 import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
 import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
 import com.pokelike.idle.util.DispatcherProvider
@@ -48,10 +49,11 @@ class GameSessionManager @Inject constructor(
     private val autosaveManager: AutosaveManager,
     private val clickManager: ClickManager,
     private val idleIncomeManager: IdleIncomeManager,
-    private val modifierManager: ModifierManager,
+    private val calculateModifiers: CalculateModifiersUseCase,
     private val calculateIncome: CalculateIncomeUseCase,
     private val calculateOfflineProgress: CalculateOfflineProgressUseCase,
     private val achievementManager: AchievementManager,
+    private val boosterManager: BoosterManager,
     private val dailyRewardManager: DailyRewardManager,
     private val rolloverQuests: RolloverQuestsUseCase,
 ) {
@@ -90,8 +92,14 @@ class GameSessionManager @Inject constructor(
         scope.launch(dispatchers.default) {
             transitionLock.withLock {
                 if (!repository.isLoaded.value) {
-                    val loaded = repository.load(timeSource.wallClock())
-                    applyOfflineProgress(loaded.lastSeenAtMillis)
+                    repository.load(timeSource.wallClock())
+
+                    // Vor der Offline-Berechnung: Ein Booster, der waehrend der
+                    // Abwesenheit abgelaufen ist, darf sie nicht mehr
+                    // beeinflussen.
+                    boosterManager.refresh()
+
+                    applyOfflineProgress(repository.gameState.value.lastSeenAtMillis)
                 }
 
                 // Der Tageswechsel wird beim Wechsel in den Vordergrund
@@ -108,6 +116,7 @@ class GameSessionManager @Inject constructor(
                 clickManager.start()
                 idleIncomeManager.start()
                 achievementManager.start()
+                boosterManager.start()
 
                 // Sofortige Pruefung, damit ein offline erreichtes Achievement
                 // beim Oeffnen gemeldet wird und nicht erst eine Sekunde spaeter.
@@ -138,6 +147,7 @@ class GameSessionManager @Inject constructor(
                 clickManager.stop()
                 idleIncomeManager.stop()
                 achievementManager.stop()
+                boosterManager.stop()
 
                 if (repository.isLoaded.value) {
                     val now = timeSource.wallClock()
@@ -162,7 +172,17 @@ class GameSessionManager @Inject constructor(
      */
     private fun applyOfflineProgress(lastSeenAtMillis: Long) {
         val state = repository.gameState.value
-        val modifiers = modifierManager.modifiers.value
+
+        // Die Modifikatoren werden hier aus dem Spielstand berechnet und nicht
+        // bei ModifierManager abgefragt. Dessen Wert wird nebenlaeufig
+        // fortgeschrieben und ist unmittelbar nach dem Laden moeglicherweise
+        // noch der Ausgangswert - der Offline-Ertrag fiele dann so aus, als
+        // haette der Spieler kein einziges Upgrade.
+        //
+        // Booster bleiben ausgenommen: Sie belohnen aktives Spielen. Wuerden
+        // sie auch bei geschlossener App zahlen, waere das Schliessen der App
+        // die beste Art, einen Booster zu nutzen.
+        val modifiers = calculateModifiers(state, includeBoosters = false)
 
         val progress = calculateOfflineProgress(
             lastSeenAtMillis = lastSeenAtMillis,

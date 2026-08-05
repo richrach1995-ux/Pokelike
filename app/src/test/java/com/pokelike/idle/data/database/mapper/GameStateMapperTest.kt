@@ -2,6 +2,7 @@ package com.pokelike.idle.data.database.mapper
 
 import com.google.common.truth.Truth.assertThat
 import com.pokelike.idle.data.database.entity.AchievementEntity
+import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
@@ -10,6 +11,8 @@ import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.AchievementInventory
 import com.pokelike.idle.domain.model.AchievementType
 import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BoosterState
+import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
@@ -48,6 +51,9 @@ class GameStateMapperTest {
         createdAtMillis = 1_700_000_000_000L,
         lastSeenAtMillis = 1_700_000_999_000L,
     )
+
+    /** Fester Startzeitpunkt fuer Booster in den Testfaellen. */
+    private val boosterNow = 1_700_000_000_000L
 
     @Test
     fun `stellt einen Spielstand unveraendert wieder her`() {
@@ -580,6 +586,168 @@ class GameStateMapperTest {
 
         assertThat(neverPersisted.state.signature)
             .isNotEqualTo(zeroPersisted.state.signature)
+    }
+
+    // --- Booster ----------------------------------------------------------
+
+    @Test
+    fun `stellt laufende Booster wieder her`() {
+        val state = sampleState.copy(
+            boosters = BoosterState.EMPTY
+                .withStarted(BoosterType.DOUBLE_CLICKS, boosterNow)
+                .withStarted(BoosterType.LUCKY_HOUR, boosterNow),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            boosters = persisted.boosters,
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Booster unveraendert`() {
+        // Vertraeglichkeit mit Version 5: Ohne laufenden Booster ist die
+        // Tabelle leer und traegt zur Pruefsumme nichts bei.
+        val persisted = mapper.toPersisted(sampleState)
+
+        assertThat(persisted.boosters).isEmpty()
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                boosters = emptyList(),
+            ),
+        ).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit verlaengertem Booster`() {
+        // Ein von Hand nach hinten gesetzter Endzeitpunkt waere ein
+        // dauerhafter Multiplikator zum Nulltarif.
+        val state = sampleState.copy(
+            boosters = BoosterState.EMPTY.withStarted(BoosterType.DOUBLE_INCOME, boosterNow),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.boosters.map { row ->
+            row.copy(endsAtMillis = row.endsAtMillis + 365L * 24L * 60L * 60L * 1_000L)
+        }
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                boosters = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit erfundenem Booster`() {
+        val persisted = mapper.toPersisted(sampleState)
+
+        val tampered = listOf(
+            ActiveBoosterEntity(
+                boosterId = BoosterType.GOLD_RUSH.id,
+                startedAtMillis = boosterNow,
+                endsAtMillis = boosterNow + 1_000_000L,
+            ),
+        )
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                boosters = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit unbekanntem Booster`() {
+        val persisted = mapper.toPersisted(sampleState)
+        val withUnknown = listOf(
+            ActiveBoosterEntity(
+                boosterId = "booster_aus_der_zukunft",
+                startedAtMillis = boosterNow,
+                endsAtMillis = boosterNow + 1_000L,
+            ),
+        )
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(
+                    entity = unsigned,
+                    resources = persisted.resources,
+                    boosters = withUnknown,
+                ),
+            ),
+        )
+
+        val restored = mapper.toDomain(
+            entity = resigned,
+            resources = persisted.resources,
+            boosters = withUnknown,
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit verdrehten Zeitpunkten`() {
+        // ActiveBooster wuerde sie zurueckweisen, und eine Ausnahme mitten im
+        // Ladevorgang verhinderte den Start der App.
+        val persisted = mapper.toPersisted(sampleState)
+        val broken = listOf(
+            ActiveBoosterEntity(
+                boosterId = BoosterType.GOLD_RUSH.id,
+                startedAtMillis = boosterNow,
+                endsAtMillis = boosterNow - 1L,
+            ),
+        )
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(
+                    entity = unsigned,
+                    resources = persisted.resources,
+                    boosters = broken,
+                ),
+            ),
+        )
+
+        assertThat(
+            mapper.toDomain(
+                entity = resigned,
+                resources = persisted.resources,
+                boosters = broken,
+            ),
+        ).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `ist unabhaengig von der Reihenfolge der Booster-Zeilen`() {
+        val state = sampleState.copy(
+            boosters = BoosterState.EMPTY
+                .withStarted(BoosterType.DOUBLE_CLICKS, boosterNow)
+                .withStarted(BoosterType.DOUBLE_INCOME, boosterNow)
+                .withStarted(BoosterType.GOLD_RUSH, boosterNow),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            boosters = persisted.boosters.reversed(),
+        )
+
+        assertThat(restored).isEqualTo(state)
     }
 
     @Test

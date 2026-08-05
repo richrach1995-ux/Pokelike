@@ -2,6 +2,8 @@ package com.pokelike.idle.manager
 
 import com.google.common.truth.Truth.assertThat
 import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BoosterState
+import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
@@ -14,7 +16,9 @@ import com.pokelike.idle.domain.usecases.CheckAchievementsUseCase
 import com.pokelike.idle.domain.usecases.ClaimDailyRewardUseCase
 import com.pokelike.idle.domain.usecases.EvaluateDailyRewardUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
+import com.pokelike.idle.domain.usecases.PurchaseBoosterUseCase
 import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
+import com.pokelike.idle.domain.usecases.StartBoosterUseCase
 import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.FakeRandomProvider
@@ -45,6 +49,7 @@ class GameSessionManagerTest {
         val repository: FakeGameRepository,
         val clock: GameClock,
         val dailyReward: DailyRewardManager,
+        val boosters: BoosterManager,
     )
 
     private fun TestScope.createFixture(
@@ -83,6 +88,14 @@ class GameSessionManagerTest {
             rewardManager = RewardManager(),
             checkAchievements = CheckAchievementsUseCase(),
         )
+        val boosterManager = BoosterManager(
+            scope = scope,
+            dispatchers = dispatchers,
+            gameClock = clock,
+            repository = repository,
+            timeSource = timeSource,
+            purchaseBooster = PurchaseBoosterUseCase(StartBoosterUseCase()),
+        )
         val evaluateDailyReward = EvaluateDailyRewardUseCase(CalculateIncomeUseCase())
         val dailyRewardManager = DailyRewardManager(
             repository = repository,
@@ -102,16 +115,18 @@ class GameSessionManagerTest {
                 autosaveManager = autosave,
                 clickManager = clickManager,
                 idleIncomeManager = incomeManager,
-                modifierManager = modifierManager,
+                calculateModifiers = CalculateModifiersUseCase(CalculatePrestigeUseCase()),
                 calculateIncome = CalculateIncomeUseCase(),
                 calculateOfflineProgress = CalculateOfflineProgressUseCase(),
                 achievementManager = achievementManager,
+                boosterManager = boosterManager,
                 dailyRewardManager = dailyRewardManager,
                 rolloverQuests = RolloverQuestsUseCase(),
             ),
             repository = repository,
             clock = clock,
             dailyReward = dailyRewardManager,
+            boosters = boosterManager,
         )
     }
 
@@ -263,6 +278,77 @@ class GameSessionManagerTest {
         assertThat(fixture.repository.gameState.value[ResourceType.COINS])
             .isEqualTo(BigNumber.ZERO)
         assertThat(fixture.session.offlineProgress.value).isNull()
+    }
+
+    // --- Booster ----------------------------------------------------------
+
+    @Test
+    fun `raeumt abgelaufene Booster beim Wechsel in den Vordergrund weg`() = runTest {
+        val expiredAt = WALL_CLOCK_BASE - BoosterType.GOLD_RUSH.durationMillis - 1_000L
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            boosters = BoosterState.EMPTY.withStarted(BoosterType.GOLD_RUSH, expiredAt),
+            lastSeenAtMillis = WALL_CLOCK_BASE,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        assertThat(fixture.repository.gameState.value.boosters.isEmpty).isTrue()
+        assertThat(fixture.boosters.active.value).isEmpty()
+    }
+
+    @Test
+    fun `behaelt einen noch laufenden Booster`() = runTest {
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            boosters = BoosterState.EMPTY.withStarted(
+                BoosterType.LUCKY_HOUR,
+                WALL_CLOCK_BASE - 60_000L,
+            ),
+            lastSeenAtMillis = WALL_CLOCK_BASE,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        assertThat(fixture.boosters.active.value.map { it.type })
+            .containsExactly(BoosterType.LUCKY_HOUR)
+    }
+
+    @Test
+    fun `laesst Booster den Offline-Ertrag unberuehrt`() = runTest {
+        // Wuerden Booster auch bei geschlossener App zahlen, waere das
+        // Schliessen der App die beste Art, einen Booster zu nutzen.
+        val buildings = BuildingInventory.of(BuildingType.CURSOR to 10)
+        val saved = GameState.newGame(nowMillis = 0L).copy(
+            buildings = buildings,
+            // Bewusst noch laufend: Ein bereits abgelaufener Booster wuerde
+            // schon durch das Aufraeumen verschwinden, und der Test pruefte
+            // dann etwas anderes als das, was er soll.
+            boosters = BoosterState.EMPTY.withStarted(
+                BoosterType.DOUBLE_INCOME,
+                WALL_CLOCK_BASE - 10L * 60L * 1_000L,
+            ),
+            lastSeenAtMillis = WALL_CLOCK_BASE - ONE_HOUR,
+        )
+        val fixture = createFixture(
+            backgroundScope,
+            FakeGameRepository(stateToLoad = saved),
+        )
+
+        fixture.session.onEnterForeground()
+        runCurrent()
+
+        // Derselbe Betrag wie ohne Booster: 3600 Sekunden * 10 * 0.5 = 18.000
+        assertThat(fixture.repository.gameState.value[ResourceType.COINS].toDouble())
+            .isWithin(TOLERANCE).of(18_000.0)
     }
 
     // --- Taeglicher Bonus ------------------------------------------------

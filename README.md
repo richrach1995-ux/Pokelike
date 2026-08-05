@@ -14,8 +14,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 7. Prestige mit Wurzelformel und dauerhaftem Bonus
 8. Achievements, Quests und eine zentrale Belohnungsmeldung
 9. Täglicher Bonus mit Serie und kaufbarem Serienschutz
+10. Booster mit Echtzeit-Laufzeit und Booster-Angebot
 
-Als Nächstes: Booster mit begrenzter Laufzeit.
+Als Nächstes: Rewarded Ads als zweiter Weg zu Boostern.
 
 ---
 
@@ -67,12 +68,13 @@ com.pokelike.idle
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
 │   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Ziele,
-│   │                Tagesbonus, Spielstand
+│   │                Tagesbonus, Booster, Spielstand
 │   ├── repository/ Schnittstellen
 │   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline, Ziele,
-│                    Tagesbonus
+│                    Tagesbonus, Booster
 ├── manager/    Prozessweite Dienste (Uhr, Autosave, Klicks, Einkommen,
-│            Modifikatoren, Achievements, Belohnungen, Tagesbonus, Sitzung)
+│            Modifikatoren, Achievements, Belohnungen, Tagesbonus, Booster,
+│            Sitzung)
 ├── ui/
 │   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige,
 │   │                Belohnungs- und Tagesbonusdialog
@@ -230,7 +232,7 @@ Enum mit Zahlenfeldern müsste alle denkbaren Felder führen, von denen bei jede
 Bedingung die meisten bedeutungslos wären. Eine neue Bedingungsart ist eine neue
 Klasse — bestehende bleiben unberührt.
 
-**`GameModifiers` als einzige Zwischenschicht.** Upgrades — und später Booster,
+**`GameModifiers` als einzige Zwischenschicht.** Upgrades, Booster — und später
 Events, Prestige-Boni, Skins — verändern ausschließlich dieses Objekt. Klick,
 Einkommen, Preise und Offline lesen daraus und kennen keine einzige Quelle.
 Ohne die Schicht wäre eine neue Quelle eine Änderung an vier Stellen.
@@ -342,6 +344,38 @@ Anspruch bestehen — er verfällt nicht.
 Standardwert vorhanden und würden die signierte Zeichenkette verändern; jeder
 Spielstand aus Version 4 würde beim nächsten Start als manipuliert gelten. Eine
 eigene Tabelle ist dort schlicht leer, und ein leerer Abschnitt trägt nichts bei.
+
+**Ein Booster ist ein Upgrade auf Zeit — und benutzt dieselbe Wirkungsart.**
+`BoosterType` trägt einen `UpgradeEffect`, und `CalculateModifiersUseCase`
+wirft Upgrades und laufende Booster in denselben Topf. Zwei getrennte
+Auswertungen wären zwei Kopien derselben Balancing-Regeln, die früher oder
+später auseinanderlaufen; so wirkt eine neue Wirkungsart ohne weiteres Zutun in
+beiden Systemen.
+
+**Booster laufen in Echtzeit, ihr Ablaufen ist eine Änderung des Spielstands.**
+Gespeichert werden absolute Zeitpunkte der Systemuhr — die monotone Uhr steht
+bei beendetem Prozess nicht zur Verfügung. `BoosterManager` entfernt
+abgelaufene Booster im Sekundentakt aus dem Spielstand, statt jede Leseseite
+die Uhrzeit prüfen zu lassen. Damit bekommen Modifikatoren, Anzeige und
+Autosave das Ablaufen gleichermaßen mit, und `CalculateModifiersUseCase` bleibt
+eine reine Funktion des Spielstands ohne Zeitparameter.
+
+Ein Zurückstellen der Geräteuhr verlängert einen Booster nicht: Die
+Restlaufzeit ist auf die gewährte Laufzeit gedeckelt. Mehr als „Booster neu
+starten" ist damit nicht zu holen — und genau das kann der Spieler ohnehin
+kaufen.
+
+**Booster wirken nicht auf den Offline-Ertrag.** Sie belohnen aktives Spielen.
+Würden sie auch bei geschlossener App zahlen, wäre das Schließen der App die
+beste Art, einen Booster zu nutzen. Der Offline-Pfad ruft deshalb
+`calculateModifiers(state, includeBoosters = false)` — Upgrades bleiben davon
+unberührt, denn ein Offline-Upgrade wurde genau dafür gekauft.
+
+**Ein zweiter Start verlängert, statt zu verfallen.** Alles andere wäre eine
+bezahlte Belohnung, die verpufft. Gedeckelt auf das Vierfache der
+Grundlaufzeit, damit der Booster ein Ereignis bleibt und nicht zum Normalzustand
+wird; ein Kauf, der wegen des Deckels wirkungslos bliebe, wird vorher
+abgewiesen statt abgebucht.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

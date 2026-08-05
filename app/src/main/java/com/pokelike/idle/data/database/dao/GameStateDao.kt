@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
 import com.pokelike.idle.data.database.entity.AchievementEntity
+import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
@@ -64,6 +65,9 @@ abstract class GameStateDao {
     @Query("SELECT * FROM daily_login LIMIT 1")
     abstract suspend fun findDailyLogin(): DailyLoginEntity?
 
+    @Query("SELECT * FROM active_boosters")
+    abstract suspend fun findActiveBoosters(): List<ActiveBoosterEntity>
+
     /**
      * Schreibt den vollstaendigen Spielstand in einem Zug.
      *
@@ -89,6 +93,7 @@ abstract class GameStateDao {
         questBaselineValues: List<QuestBaselineValueEntity>,
         questClaims: List<QuestClaimEntity>,
         dailyLogin: DailyLoginEntity?,
+        boosters: List<ActiveBoosterEntity>,
     ) {
         upsertState(state)
         deleteAllResources()
@@ -110,6 +115,8 @@ abstract class GameStateDao {
         // Zeile mit Standardwerten stehen und veraenderte die Pruefsumme.
         deleteDailyLogin()
         if (dailyLogin != null) insertDailyLogin(dailyLogin)
+        deleteAllBoosters()
+        insertBoosters(boosters)
     }
 
     /**
@@ -129,6 +136,7 @@ abstract class GameStateDao {
         deleteAllQuestBaselineValues()
         deleteAllQuestClaims()
         deleteDailyLogin()
+        deleteAllBoosters()
     }
 
     @Upsert
@@ -181,6 +189,12 @@ abstract class GameStateDao {
 
     @Query("DELETE FROM daily_login")
     abstract suspend fun deleteDailyLogin()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertBoosters(boosters: List<ActiveBoosterEntity>)
+
+    @Query("DELETE FROM active_boosters")
+    abstract suspend fun deleteAllBoosters()
 
     @Query("DELETE FROM game_state")
     abstract suspend fun deleteState()

@@ -169,12 +169,30 @@
         <item quantity="other">%1$d Ladungen Serienschutz</item>
     </plurals>
     <string name="streak_card_protection_none">Kein Serienschutz</string>
-    <string name="streak_buy_protection">Schutz kaufen · %1$s</string>
+    <string name="streak_buy_protection">Schutz · %1$s 💎</string>
     <string name="streak_buy_full">Vorrat voll</string>
     <string name="streak_confirm_title">Serienschutz kaufen?</string>
-    <string name="streak_confirm_message">Für %1$s erhältst du eine Ladung Serienschutz. Sie überbrückt einen ausgelassenen Tag, ohne dass deine Serie reißt, und wird dabei verbraucht.</string>
+    <string name="streak_confirm_message">Für %1$s Diamanten erhältst du eine Ladung Serienschutz. Sie überbrückt einen ausgelassenen Tag, ohne dass deine Serie reißt, und wird dabei verbraucht.</string>
     <string name="streak_confirm_action">Kaufen</string>
     <string name="streak_cancel">Abbrechen</string>
+
+    <!-- Booster -->
+    <string name="booster_double_clicks">Klickrausch</string>
+    <string name="booster_double_clicks_description">Doppelter Ertrag pro Klick.</string>
+    <string name="booster_double_income">Überstunden</string>
+    <string name="booster_double_income_description">Doppeltes Einkommen aus allen Gebäuden.</string>
+    <string name="booster_lucky_hour">Glücksstunde</string>
+    <string name="booster_lucky_hour_description">20 Prozentpunkte mehr Chance auf kritische Treffer.</string>
+    <string name="booster_gold_rush">Goldrausch</string>
+    <string name="booster_gold_rush_description">Fünffaches Einkommen — kurz und heftig.</string>
+
+    <string name="booster_shop_title">Booster</string>
+    <string name="booster_shop_open">Booster kaufen</string>
+    <string name="booster_none_active">Kein Booster aktiv</string>
+    <string name="booster_duration">Laufzeit %1$s</string>
+    <string name="booster_running">Läuft noch %1$s</string>
+    <string name="booster_buy">%1$s 💎</string>
+    <string name="booster_at_maximum">Voll</string>
 
     <!-- Prestige -->
     <string name="prestige_points_label">Prestige-Punkte</string>

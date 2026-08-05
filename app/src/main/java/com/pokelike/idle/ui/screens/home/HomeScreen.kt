@@ -13,7 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -24,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pokelike.idle.R
+import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.ui.components.ClickButton
 import com.pokelike.idle.ui.components.ComboIndicator
 import com.pokelike.idle.ui.components.FloatingText
@@ -49,8 +53,22 @@ fun HomeRoute(
     // collectAsState liefe sie im Hintergrund weiter und wuerde Arbeit fuer
     // eine Anzeige verrichten, die niemand sieht.
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val boosters by viewModel.boosters.collectAsStateWithLifecycle()
+    val boosterOffers by viewModel.boosterOffers.collectAsStateWithLifecycle()
 
     val haptics = LocalHapticFeedback.current
+
+    // Reine Darstellung: Ob das Blatt offen ist, ueberdauert eine Drehung,
+    // gehoert aber nicht in den Spielstand.
+    var isShopOpen by rememberSaveable { mutableStateOf(false) }
+
+    if (isShopOpen) {
+        BoosterShopSheet(
+            offers = boosterOffers,
+            onBuy = { type -> viewModel.onBuyBooster(type) },
+            onDismiss = { isShopOpen = false },
+        )
+    }
 
     // Die schwebenden Hinweise sind reine Darstellung und gehoeren deshalb
     // hierher und nicht in das ViewModel: Sie ueberleben eine Drehung nicht,
@@ -61,6 +79,8 @@ fun HomeRoute(
 
     HomeScreen(
         uiState = uiState,
+        boosters = boosters,
+        onOpenBoosterShop = { isShopOpen = true },
         floatingTexts = floatingTexts,
         onClick = {
             val outcome = viewModel.onClick()
@@ -105,6 +125,8 @@ fun HomeRoute(
 @Composable
 fun HomeScreen(
     uiState: HomeUiState,
+    boosters: List<BoosterRow>,
+    onOpenBoosterShop: () -> Unit,
     floatingTexts: List<FloatingText>,
     onClick: () -> Unit,
     onFloatingTextFinished: (Long) -> Unit,
@@ -155,6 +177,12 @@ fun HomeScreen(
             count = uiState.comboCount,
             multiplierText = uiState.comboMultiplier,
             remainingFraction = uiState.comboRemaining,
+            modifier = Modifier.padding(top = dimens.spaceLg),
+        )
+
+        BoosterBar(
+            boosters = boosters,
+            onOpenShop = onOpenBoosterShop,
             modifier = Modifier.padding(top = dimens.spaceLg),
         )
     }
@@ -241,6 +269,14 @@ private fun HomeScreenDarkPreview() {
                     comboRemaining = 0.6f,
                     coinsPerSecond = "4.82K",
                 ),
+                boosters = listOf(
+                    BoosterRow(
+                        type = BoosterType.DOUBLE_INCOME,
+                        remainingText = "12:31",
+                        progress = 0.42f,
+                    ),
+                ),
+                onOpenBoosterShop = {},
                 floatingTexts = emptyList(),
                 onClick = {},
                 onFloatingTextFinished = {},
@@ -265,6 +301,8 @@ private fun HomeScreenLightPreview() {
                     comboRemaining = 0f,
                     coinsPerSecond = "312.5",
                 ),
+                boosters = emptyList(),
+                onOpenBoosterShop = {},
                 floatingTexts = emptyList(),
                 onClick = {},
                 onFloatingTextFinished = {},

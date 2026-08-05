@@ -111,11 +111,30 @@ object DatabaseMigrations {
         }
     }
 
+    /**
+     * Ergaenzt die Tabelle der laufenden Booster.
+     *
+     * Gespeichert werden absolute Zeitpunkte und keine Restlaufzeit: Booster
+     * laufen in Echtzeit ab, und eine Restlaufzeit muesste bei jedem Speichern
+     * fortgeschrieben werden - vergisst ein Pfad das, laeuft der Booster
+     * unbegrenzt weiter.
+     */
+    val MIGRATION_5_6 = object : Migration(5, 6) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `active_boosters` " +
+                    "(`boosterId` TEXT NOT NULL, `startedAtMillis` INTEGER NOT NULL, " +
+                    "`endsAtMillis` INTEGER NOT NULL, PRIMARY KEY(`boosterId`))",
+            )
+        }
+    }
+
     /** Alle Migrationen in der Reihenfolge ihrer Versionen. */
     val ALL: Array<Migration> = arrayOf(
         MIGRATION_1_2,
         MIGRATION_2_3,
         MIGRATION_3_4,
         MIGRATION_4_5,
+        MIGRATION_5_6,
     )
 }

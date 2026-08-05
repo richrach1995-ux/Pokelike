@@ -15,7 +15,7 @@ import com.pokelike.idle.config.GameConfig
  * - Der Offline-Fortschritt ist eine reine Funktion `(Zustand, Zeit) -> Zustand`
  *   und laesst sich ohne Datenbank und ohne Android testen.
  *
- * Booster und Events kommen in den folgenden Schritten als weitere Felder
+ * Events und Skins kommen in den folgenden Schritten als weitere Felder
  * hinzu - jeweils dann, wenn das zugehoerige System tatsaechlich existiert.
  *
  * @property schemaVersion Version des Spielstandformats. Wird beim Laden
@@ -28,6 +28,9 @@ import com.pokelike.idle.config.GameConfig
  * @property achievements Freigeschaltete Achievements.
  * @property quests Stand des Quest-Systems.
  * @property login Serie und Vorrat des taeglichen Bonus.
+ * @property boosters Laufende Booster. Sie laufen in Echtzeit ab und werden
+ *   deshalb mitgesichert - eine Restlaufzeit, die den Neustart der App nicht
+ *   ueberdauert, waere keine Echtzeit.
  * @property statistics Lebenslange Kennzahlen.
  * @property createdAtMillis Zeitpunkt des ersten Starts (Systemzeit).
  * @property lastSeenAtMillis Zeitpunkt der letzten Sicherung (Systemzeit).
@@ -41,6 +44,7 @@ data class GameState(
     val achievements: AchievementInventory = AchievementInventory.EMPTY,
     val quests: QuestState = QuestState.EMPTY,
     val login: LoginState = LoginState.EMPTY,
+    val boosters: BoosterState = BoosterState.EMPTY,
     val statistics: GameStatistics = GameStatistics(),
     val createdAtMillis: Long = 0L,
     val lastSeenAtMillis: Long = 0L,
@@ -126,6 +130,10 @@ data class GameState(
             // zuruecksetzt, wuerde den Spieler dafuer bestrafen, das
             // Kernsystem des Spiels zu benutzen.
             login = login,
+            // Booster laufen in Echtzeit und haben mit dem Durchlauf nichts zu
+            // tun. Einen bezahlten Booster beim Prestige zu loeschen waere eine
+            // Enteignung mitten im laufenden Kauf.
+            boosters = boosters,
             statistics = statistics.copy(
                 prestigeCount = statistics.prestigeCount + 1,
                 lifetimeEarned = statistics.lifetimeEarned + ResourceBundle.single(
@@ -145,12 +153,12 @@ data class GameState(
          * alter Spielstand nicht mehr unveraendert gelesen werden kann.
          *
          * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades,
-         * Version 4 Achievements und Quests, Version 5 den taeglichen Bonus.
-         * Jedes Mal laesst sich ein aelterer Spielstand unveraendert
-         * weiterlesen und startet mit leerem Bestand - deshalb ist keine
-         * Umwandlung noetig, nur diese Kennzeichnung.
+         * Version 4 Achievements und Quests, Version 5 den taeglichen Bonus,
+         * Version 6 die laufenden Booster. Jedes Mal laesst sich ein aelterer
+         * Spielstand unveraendert weiterlesen und startet mit leerem Bestand -
+         * deshalb ist keine Umwandlung noetig, nur diese Kennzeichnung.
          */
-        const val CURRENT_SCHEMA_VERSION: Int = 5
+        const val CURRENT_SCHEMA_VERSION: Int = 6
 
         /**
          * Spielstand fuer einen neuen Spieler.

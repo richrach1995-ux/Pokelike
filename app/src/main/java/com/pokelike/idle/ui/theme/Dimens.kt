@@ -69,6 +69,18 @@ data class Dimens(
      * letzten Tage wuerden abgeschnitten - ausgerechnet der wichtigste.
      */
     val cycleTileSize: Dp = 36.dp,
+
+    /** Kantenlaenge des Sinnbilds eines laufenden Boosters. */
+    val boosterIconSize: Dp = 24.dp,
+
+    /**
+     * Breite der Restlaufzeit eines Boosters.
+     *
+     * Fest und nicht vom Inhalt abgeleitet: Die Anzeige zaehlt jede Sekunde
+     * herunter, und eine mitwandernde Breite liesse die gesamte Leiste bei
+     * jedem Stellenwechsel springen.
+     */
+    val boosterTimerWidth: Dp = 52.dp,
 )
 
 /**

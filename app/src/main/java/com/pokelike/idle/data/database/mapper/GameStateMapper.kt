@@ -1,6 +1,7 @@
 package com.pokelike.idle.data.database.mapper
 
 import com.pokelike.idle.data.database.entity.AchievementEntity
+import com.pokelike.idle.data.database.entity.ActiveBoosterEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.DailyLoginEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
@@ -13,7 +14,10 @@ import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
 import com.pokelike.idle.domain.model.AchievementInventory
 import com.pokelike.idle.domain.model.AchievementType
+import com.pokelike.idle.domain.model.ActiveBooster
 import com.pokelike.idle.domain.model.BigNumber
+import com.pokelike.idle.domain.model.BoosterState
+import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
@@ -49,6 +53,7 @@ data class PersistedGameState(
     val questClaims: List<QuestClaimEntity>,
     /** `null`, wenn der Spieler den Tagesbonus noch nie abgeholt hat. */
     val dailyLogin: DailyLoginEntity?,
+    val boosters: List<ActiveBoosterEntity>,
 )
 
 /**
@@ -87,6 +92,13 @@ class GameStateMapper @Inject constructor(
         }
         val questClaims = state.quests.claimed.map { QuestClaimEntity(questId = it.id) }
         val dailyLogin = buildDailyLoginRow(state)
+        val boosters = state.boosters.active.values.map { booster ->
+            ActiveBoosterEntity(
+                boosterId = booster.type.id,
+                startedAtMillis = booster.startedAtMillis,
+                endsAtMillis = booster.endsAtMillis,
+            )
+        }
 
         val unsigned = GameStateEntity(
             schemaVersion = state.schemaVersion,
@@ -114,6 +126,7 @@ class GameStateMapper @Inject constructor(
                         questBaselineValues = questBaselineValues,
                         questClaims = questClaims,
                         dailyLogin = dailyLogin,
+                        boosters = boosters,
                     ),
                 ),
             ),
@@ -125,6 +138,7 @@ class GameStateMapper @Inject constructor(
             questBaselineValues = questBaselineValues,
             questClaims = questClaims,
             dailyLogin = dailyLogin,
+            boosters = boosters,
         )
     }
 
@@ -146,6 +160,7 @@ class GameStateMapper @Inject constructor(
         questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
         questClaims: List<QuestClaimEntity> = emptyList(),
         dailyLogin: DailyLoginEntity? = null,
+        boosters: List<ActiveBoosterEntity> = emptyList(),
     ): GameState? {
         val unsigned = entity.copy(signature = "")
         val payload = canonicalPayload(
@@ -158,6 +173,7 @@ class GameStateMapper @Inject constructor(
             questBaselineValues = questBaselineValues,
             questClaims = questClaims,
             dailyLogin = dailyLogin,
+            boosters = boosters,
         )
         if (!saveSignature.verify(payload, entity.signature)) return null
 
@@ -169,6 +185,7 @@ class GameStateMapper @Inject constructor(
             achievements = readAchievements(achievements),
             quests = readQuests(questBaselines, questBaselineValues, questClaims),
             login = readLogin(dailyLogin),
+            boosters = readBoosters(boosters),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -317,6 +334,32 @@ class GameStateMapper @Inject constructor(
         )
     }
 
+    /**
+     * Liest die laufenden Booster.
+     *
+     * Unbekannte Schluessel werden uebergangen - dieselbe Ueberlegung wie bei
+     * Ressourcen, Gebaeuden und Upgrades. Zeilen mit verdrehten Zeitpunkten
+     * ebenfalls: [ActiveBooster] wuerde sie zurueckweisen, und eine Ausnahme
+     * mitten im Ladevorgang verhinderte den Start der App.
+     */
+    private fun readBoosters(rows: List<ActiveBoosterEntity>): BoosterState = BoosterState(
+        active = buildMap {
+            rows.forEach { row ->
+                val type = BoosterType.fromId(row.boosterId) ?: return@forEach
+                if (row.endsAtMillis < row.startedAtMillis) return@forEach
+
+                put(
+                    type,
+                    ActiveBooster(
+                        type = type,
+                        startedAtMillis = row.startedAtMillis,
+                        endsAtMillis = row.endsAtMillis,
+                    ),
+                )
+            }
+        },
+    )
+
     private fun toRows(
         bucket: ResourceBucket,
         amounts: Map<ResourceType, BigNumber>,
@@ -376,6 +419,7 @@ class GameStateMapper @Inject constructor(
         questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
         questClaims: List<QuestClaimEntity> = emptyList(),
         dailyLogin: DailyLoginEntity? = null,
+        boosters: List<ActiveBoosterEntity> = emptyList(),
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -451,6 +495,17 @@ class GameStateMapper @Inject constructor(
             append(':').append(row.lastClaimedAtMillis ?: NEVER_CLAIMED_MARKER)
             append(':').append(row.protectionCharges)
         }
+
+        // Booster liegen unter der Pruefsumme, weil sie den Ertrag
+        // vervielfachen: Ein von Hand eingetragener Endzeitpunkt weit in der
+        // Zukunft waere ein dauerhafter Multiplikator zum Nulltarif.
+        boosters
+            .sortedBy { it.boosterId }
+            .forEach { row ->
+                append("|booster:").append(row.boosterId)
+                append('=').append(row.startedAtMillis)
+                append('-').append(row.endsAtMillis)
+            }
     }
 
     private companion object {

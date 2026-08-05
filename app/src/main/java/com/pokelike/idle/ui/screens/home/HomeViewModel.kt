@@ -2,13 +2,17 @@ package com.pokelike.idle.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.domain.model.ClickOutcome
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
+import com.pokelike.idle.domain.usecases.BoosterPurchaseResult
+import com.pokelike.idle.manager.BoosterManager
 import com.pokelike.idle.manager.ClickManager
 import com.pokelike.idle.manager.IdleIncomeManager
 import com.pokelike.idle.manager.ModifierManager
 import com.pokelike.idle.util.DispatcherProvider
+import com.pokelike.idle.util.DurationFormatter
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -16,6 +20,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import java.util.Locale
 import javax.inject.Inject
@@ -31,10 +36,12 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val clickManager: ClickManager,
+    private val boosterManager: BoosterManager,
     idleIncomeManager: IdleIncomeManager,
     modifierManager: ModifierManager,
     gameRepository: GameRepository,
     private val numberFormatter: NumberFormatter,
+    private val durationFormatter: DurationFormatter,
     dispatchers: DispatcherProvider,
 ) : ViewModel() {
 
@@ -67,6 +74,78 @@ class HomeViewModel @Inject constructor(
             started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
             initialValue = HomeUiState(),
         )
+
+    /**
+     * Laufende Booster.
+     *
+     * Bewusst ein eigener Fluss und nicht Teil von [uiState]. Zwei Gruende:
+     * [uiState] aendert sich bei laufender Combo zehnmal pro Sekunde, die
+     * Restlaufzeiten dagegen einmal pro Sekunde - zusammengefuehrt wuerde die
+     * Zeitformatierung zehnmal so oft laufen wie noetig. Und `combine` mit
+     * typsicheren Ueberladungen endet bei fuenf Fluessen; ein sechster zwaenge
+     * zur Variante mit `Array<Any?>` und verloere jede Typpruefung.
+     */
+    val boosters: StateFlow<List<BoosterRow>> = boosterManager.active
+        .map { snapshots ->
+            snapshots.map { snapshot ->
+                BoosterRow(
+                    type = snapshot.type,
+                    remainingText = durationFormatter.formatCompact(snapshot.remainingMillis),
+                    progress = snapshot.progress,
+                )
+            }
+        }
+        .flowOn(dispatchers.default)
+        .distinctUntilChanged()
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
+            initialValue = emptyList(),
+        )
+
+    /**
+     * Das Booster-Angebot.
+     *
+     * Haengt am Spielstand, weil sich die Kaufbarkeit mit jedem Diamanten
+     * aendert. [distinctUntilChanged] filtert die grosse Mehrheit der
+     * Aenderungen weg: Der Muenzstand steigt zehnmal pro Sekunde, an den
+     * Angeboten aendert das nichts.
+     */
+    val boosterOffers: StateFlow<List<BoosterOffer>> = combine(
+        gameRepository.gameState,
+        boosterManager.active,
+    ) { gameState, active ->
+        val running = active.associateBy { it.type }
+
+        BoosterType.entries.map { type ->
+            val remaining = running[type]?.remainingMillis
+            val isAtMaximum = (remaining ?: 0L) >= type.maxStackedDurationMillis
+
+            BoosterOffer(
+                type = type,
+                priceText = numberFormatter.format(type.price[ResourceType.DIAMONDS]),
+                durationText = durationFormatter.formatCompact(type.durationMillis),
+                canBuy = !isAtMaximum && gameState.resources.canAfford(type.price),
+                isAtMaximum = isAtMaximum,
+                remainingText = remaining?.let { durationFormatter.formatCompact(it) },
+            )
+        }
+    }
+        .flowOn(dispatchers.default)
+        .distinctUntilChanged()
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(STOP_TIMEOUT_MS),
+            initialValue = emptyList(),
+        )
+
+    /**
+     * Kauft einen Booster.
+     *
+     * @return `true`, wenn der Kauf gelungen ist.
+     */
+    fun onBuyBooster(type: BoosterType): Boolean =
+        boosterManager.purchase(type) is BoosterPurchaseResult.Success
 
     /**
      * Verarbeitet einen Klick und liefert das Ergebnis fuer die Rueckmeldung.

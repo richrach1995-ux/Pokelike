@@ -269,4 +269,20 @@ object GameConfig {
      * einen Kurzurlaub - und nicht mehr.
      */
     const val STREAK_PROTECTION_MAX_CHARGES: Int = 3
+
+    // --- Booster ----------------------------------------------------------
+
+    /**
+     * Wie oft sich die Laufzeit eines Boosters stapeln laesst.
+     *
+     * Ein zweiter Booster derselben Art verlaengert die Restlaufzeit, statt
+     * verworfen zu werden - alles andere waere eine verfallene Belohnung. Ohne
+     * Deckel liesse sich daraus aber ein Dauerzustand machen: Wer zwanzig
+     * Booster hintereinander startet, spielt zehn Stunden mit doppeltem
+     * Einkommen, und der Booster waere kein Ereignis mehr, sondern der
+     * Normalfall.
+     *
+     * Vier bedeutet: hoechstens die vierfache Grundlaufzeit auf einmal.
+     */
+    const val BOOSTER_MAX_STACK_FACTOR: Int = 4
 }
