@@ -3,8 +3,12 @@ package com.pokelike.idle.data.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.pokelike.idle.data.database.dao.GameStateDao
+import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
+import com.pokelike.idle.data.database.entity.QuestBaselineEntity
+import com.pokelike.idle.data.database.entity.QuestBaselineValueEntity
+import com.pokelike.idle.data.database.entity.QuestClaimEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.database.entity.UpgradeEntity
 
@@ -30,6 +34,10 @@ import com.pokelike.idle.data.database.entity.UpgradeEntity
         ResourceEntity::class,
         BuildingEntity::class,
         UpgradeEntity::class,
+        AchievementEntity::class,
+        QuestBaselineEntity::class,
+        QuestBaselineValueEntity::class,
+        QuestClaimEntity::class,
     ],
     version = PokelikeDatabase.DATABASE_VERSION,
     exportSchema = true,
@@ -42,10 +50,11 @@ abstract class PokelikeDatabase : RoomDatabase() {
 
         /**
          * Version 2 hat die Tabelle `buildings` ergaenzt, Version 3 die
-         * Tabelle `upgrades`. Die zugehoerigen Migrationen stehen in
+         * Tabelle `upgrades`, Version 4 Achievements, Quests und einen Zaehler
+         * in `game_state`. Die zugehoerigen Migrationen stehen in
          * [com.pokelike.idle.data.database.migration.DatabaseMigrations].
          */
-        const val DATABASE_VERSION: Int = 3
+        const val DATABASE_VERSION: Int = 4
 
         /**
          * Dateiname der Datenbank.

@@ -6,8 +6,12 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
+import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
+import com.pokelike.idle.data.database.entity.QuestBaselineEntity
+import com.pokelike.idle.data.database.entity.QuestBaselineValueEntity
+import com.pokelike.idle.data.database.entity.QuestClaimEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.database.entity.UpgradeEntity
 
@@ -44,6 +48,18 @@ abstract class GameStateDao {
     @Query("SELECT * FROM upgrades")
     abstract suspend fun findUpgrades(): List<UpgradeEntity>
 
+    @Query("SELECT * FROM achievements")
+    abstract suspend fun findAchievements(): List<AchievementEntity>
+
+    @Query("SELECT * FROM quest_baselines")
+    abstract suspend fun findQuestBaselines(): List<QuestBaselineEntity>
+
+    @Query("SELECT * FROM quest_baseline_values")
+    abstract suspend fun findQuestBaselineValues(): List<QuestBaselineValueEntity>
+
+    @Query("SELECT * FROM quest_claims")
+    abstract suspend fun findQuestClaims(): List<QuestClaimEntity>
+
     /**
      * Schreibt den vollstaendigen Spielstand in einem Zug.
      *
@@ -64,6 +80,10 @@ abstract class GameStateDao {
         resources: List<ResourceEntity>,
         buildings: List<BuildingEntity>,
         upgrades: List<UpgradeEntity>,
+        achievements: List<AchievementEntity>,
+        questBaselines: List<QuestBaselineEntity>,
+        questBaselineValues: List<QuestBaselineValueEntity>,
+        questClaims: List<QuestClaimEntity>,
     ) {
         upsertState(state)
         deleteAllResources()
@@ -72,6 +92,14 @@ abstract class GameStateDao {
         insertBuildings(buildings)
         deleteAllUpgrades()
         insertUpgrades(upgrades)
+        deleteAllAchievements()
+        insertAchievements(achievements)
+        deleteAllQuestBaselines()
+        insertQuestBaselines(questBaselines)
+        deleteAllQuestBaselineValues()
+        insertQuestBaselineValues(questBaselineValues)
+        deleteAllQuestClaims()
+        insertQuestClaims(questClaims)
     }
 
     /**
@@ -86,6 +114,10 @@ abstract class GameStateDao {
         deleteAllResources()
         deleteAllBuildings()
         deleteAllUpgrades()
+        deleteAllAchievements()
+        deleteAllQuestBaselines()
+        deleteAllQuestBaselineValues()
+        deleteAllQuestClaims()
     }
 
     @Upsert
@@ -108,6 +140,30 @@ abstract class GameStateDao {
 
     @Query("DELETE FROM upgrades")
     abstract suspend fun deleteAllUpgrades()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertAchievements(achievements: List<AchievementEntity>)
+
+    @Query("DELETE FROM achievements")
+    abstract suspend fun deleteAllAchievements()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertQuestBaselines(baselines: List<QuestBaselineEntity>)
+
+    @Query("DELETE FROM quest_baselines")
+    abstract suspend fun deleteAllQuestBaselines()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertQuestBaselineValues(values: List<QuestBaselineValueEntity>)
+
+    @Query("DELETE FROM quest_baseline_values")
+    abstract suspend fun deleteAllQuestBaselineValues()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    abstract suspend fun insertQuestClaims(claims: List<QuestClaimEntity>)
+
+    @Query("DELETE FROM quest_claims")
+    abstract suspend fun deleteAllQuestClaims()
 
     @Query("DELETE FROM game_state")
     abstract suspend fun deleteState()

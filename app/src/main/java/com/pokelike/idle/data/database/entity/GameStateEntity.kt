@@ -32,6 +32,7 @@ data class GameStateEntity(
     val totalPlayTimeMillis: Long,
     val sessionCount: Int,
     val prestigeCount: Int,
+    val totalBuildingsPurchased: Long,
     val signature: String,
 ) {
     companion object {

@@ -11,6 +11,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pokelike.idle.ui.MainViewModel
 import com.pokelike.idle.ui.PokelikeApp
 import com.pokelike.idle.ui.components.OfflineProgressDialog
+import com.pokelike.idle.ui.components.RewardDialog
 import com.pokelike.idle.ui.theme.PokelikeTheme
 import com.pokelike.idle.ui.theme.resolveIsDark
 import dagger.hilt.android.AndroidEntryPoint
@@ -67,6 +68,17 @@ class MainActivity : AppCompatActivity() {
                         durationText = uiState.offlineDuration,
                         wasCapped = uiState.offlineWasCapped,
                         onDismiss = viewModel::onOfflineProgressDismissed,
+                    )
+                }
+
+                // Nachrangig zum Willkommensdialog: Erst erfaehrt der Spieler,
+                // was in seiner Abwesenheit angefallen ist, danach, was er
+                // erreicht hat. Zwei Dialoge gleichzeitig wuerden sich
+                // ueberdecken.
+                if (uiState.offlineEarned == null) {
+                    RewardDialog(
+                        items = uiState.rewards,
+                        onDismiss = viewModel::onRewardsDismissed,
                     )
                 }
             }

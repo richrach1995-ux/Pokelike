@@ -2,10 +2,12 @@ package com.pokelike.idle.ui.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Upgrade
+import androidx.compose.material.icons.outlined.EmojiEvents
 import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.material.icons.outlined.AutoAwesome
@@ -68,6 +70,14 @@ sealed interface PokelikeDestination {
         override val unselectedIcon: ImageVector = Icons.Outlined.Upgrade
     }
 
+    /** Quests und Achievements. */
+    data object Goals : PokelikeDestination {
+        override val route: String = "goals"
+        override val labelRes: Int = R.string.nav_goals
+        override val selectedIcon: ImageVector = Icons.Filled.EmojiEvents
+        override val unselectedIcon: ImageVector = Icons.Outlined.EmojiEvents
+    }
+
     /** Prestige mit Punkteuebersicht und Reset. */
     data object Prestige : PokelikeDestination {
         override val route: String = "prestige"
@@ -88,6 +98,6 @@ sealed interface PokelikeDestination {
          * [PokelikeBottomBar]); bei einem einzigen Ziel gaebe es nichts zu
          * waehlen, und sie wuerde nur Hoehe kosten.
          */
-        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades, Prestige)
+        val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades, Goals, Prestige)
     }
 }

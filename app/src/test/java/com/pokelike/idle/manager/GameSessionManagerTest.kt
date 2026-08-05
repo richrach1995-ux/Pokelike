@@ -8,7 +8,9 @@ import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
 import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
+import com.pokelike.idle.domain.usecases.CheckAchievementsUseCase
 import com.pokelike.idle.domain.usecases.PerformClickUseCase
+import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
 import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.modifierManagerFor
 import com.pokelike.idle.testing.FakeRandomProvider
@@ -68,6 +70,14 @@ class GameSessionManagerTest {
             modifierManager = modifierManager,
             calculateIncome = CalculateIncomeUseCase(),
         )
+        val achievementManager = AchievementManager(
+            scope = scope,
+            dispatchers = dispatchers,
+            gameClock = clock,
+            repository = repository,
+            rewardManager = RewardManager(),
+            checkAchievements = CheckAchievementsUseCase(),
+        )
 
         return Fixture(
             session = GameSessionManager(
@@ -82,6 +92,8 @@ class GameSessionManagerTest {
                 modifierManager = modifierManager,
                 calculateIncome = CalculateIncomeUseCase(),
                 calculateOfflineProgress = CalculateOfflineProgressUseCase(),
+                achievementManager = achievementManager,
+                rolloverQuests = RolloverQuestsUseCase(),
             ),
             repository = repository,
             clock = clock,

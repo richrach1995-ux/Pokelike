@@ -15,9 +15,8 @@ import com.pokelike.idle.config.GameConfig
  * - Der Offline-Fortschritt ist eine reine Funktion `(Zustand, Zeit) -> Zustand`
  *   und laesst sich ohne Datenbank und ohne Android testen.
  *
- * Booster, Quests und Achievements kommen in den folgenden Schritten als
- * weitere Felder hinzu - jeweils dann, wenn das zugehoerige System
- * tatsaechlich existiert.
+ * Booster und Events kommen in den folgenden Schritten als weitere Felder
+ * hinzu - jeweils dann, wenn das zugehoerige System tatsaechlich existiert.
  *
  * @property schemaVersion Version des Spielstandformats. Wird beim Laden
  *   geprueft, um eine Migration anzustossen. Ohne dieses Feld liesse sich ein
@@ -26,6 +25,8 @@ import com.pokelike.idle.config.GameConfig
  * @property resources Aktueller Kontostand.
  * @property buildings Besitzstand an Gebaeuden.
  * @property upgrades Gekaufte Upgrades.
+ * @property achievements Freigeschaltete Achievements.
+ * @property quests Stand des Quest-Systems.
  * @property statistics Lebenslange Kennzahlen.
  * @property createdAtMillis Zeitpunkt des ersten Starts (Systemzeit).
  * @property lastSeenAtMillis Zeitpunkt der letzten Sicherung (Systemzeit).
@@ -36,6 +37,8 @@ data class GameState(
     val resources: ResourcePool = ResourcePool.EMPTY,
     val buildings: BuildingInventory = BuildingInventory.EMPTY,
     val upgrades: UpgradeInventory = UpgradeInventory.EMPTY,
+    val achievements: AchievementInventory = AchievementInventory.EMPTY,
+    val quests: QuestState = QuestState.EMPTY,
     val statistics: GameStatistics = GameStatistics(),
     val createdAtMillis: Long = 0L,
     val lastSeenAtMillis: Long = 0L,
@@ -112,6 +115,10 @@ data class GameState(
             // Neuanfang schneller laeuft als der vorige Durchlauf - ohne sie
             // waere Prestige eine reine Bestrafung.
             upgrades = upgrades,
+            // Achievements und Quests ebenfalls: Sie messen die Lebensleistung
+            // und nicht den laufenden Durchlauf.
+            achievements = achievements,
+            quests = quests,
             statistics = statistics.copy(
                 prestigeCount = statistics.prestigeCount + 1,
                 lifetimeEarned = statistics.lifetimeEarned + ResourceBundle.single(
@@ -130,12 +137,12 @@ data class GameState(
          * Muss erhoeht werden, sobald sich die Struktur so aendert, dass ein
          * alter Spielstand nicht mehr unveraendert gelesen werden kann.
          *
-         * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades.
-         * Beide Male laesst sich ein aelterer Spielstand unveraendert
-         * weiterlesen und startet mit leerem Bestand - deshalb ist keine
-         * Umwandlung noetig, nur diese Kennzeichnung.
+         * Version 2 hat den Gebaeudebestand ergaenzt, Version 3 die Upgrades,
+         * Version 4 Achievements und Quests. Jedes Mal laesst sich ein aelterer
+         * Spielstand unveraendert weiterlesen und startet mit leerem Bestand -
+         * deshalb ist keine Umwandlung noetig, nur diese Kennzeichnung.
          */
-        const val CURRENT_SCHEMA_VERSION: Int = 3
+        const val CURRENT_SCHEMA_VERSION: Int = 4
 
         /**
          * Spielstand fuer einen neuen Spieler.

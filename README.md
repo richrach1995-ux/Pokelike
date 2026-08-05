@@ -12,8 +12,9 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 5. Gebäude, Idle-Einkommen, Offline-Fortschritt
 6. Upgrades mit Freischaltbedingungen
 7. Prestige mit Wurzelformel und dauerhaftem Bonus
+8. Achievements, Quests und eine zentrale Belohnungsmeldung
 
-Als Nächstes: Achievements und Quests.
+Als Nächstes: täglicher Login-Bonus.
 
 ---
 
@@ -64,23 +65,30 @@ com.pokelike.idle
 │   └── security/    Signatur des Spielstands
 ├── di/         Hilt-Module und Qualifier
 ├── domain/
-│   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Spielstand
+│   ├── model/      Zahlentyp, Ressourcen, Gebäude, Upgrades, Ziele, Spielstand
 │   ├── repository/ Schnittstellen
-│   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline
+│   └── usecases/   Klick, Einkommen, Käufe, Modifikatoren, Offline, Ziele
 ├── manager/    Prozessweite Dienste (Uhr, Autosave, Klicks, Einkommen,
-│            Modifikatoren, Sitzung)
+│            Modifikatoren, Achievements, Belohnungen, Sitzung)
 ├── ui/
-│   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige
+│   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige,
+│   │                Belohnungsdialog
 │   ├── navigation/  Zielregistry, NavHost, untere Leiste
 │   ├── screens/     Bildschirme, je Feature ein Unterpaket
 │   └── theme/       Farben, Typografie, Abstände
 └── util/       Querschnittswerkzeuge (Zeit, Dispatcher, Formatierung)
 ```
 
-Weitere Pakete (`billing/`, `ads/`, `analytics/`, `events/`, `quests/`,
-`achievements/`, `prestige/`) kommen in den folgenden Schritten hinzu, sobald
-das jeweilige System implementiert wird — jeweils mit echtem Inhalt statt als
-leeres Gerüst.
+Weitere Pakete (`billing/`, `ads/`, `analytics/`, `events/`) kommen in den
+folgenden Schritten hinzu, sobald das jeweilige System implementiert wird —
+jeweils mit echtem Inhalt statt als leeres Gerüst.
+
+Prestige, Quests und Achievements haben bewusst **kein** eigenes Top-Level-Paket
+bekommen. Sie bestehen aus einem deklarativen Katalog (`domain/model/`), Regeln
+(`domain/usecases/`) und Anzeige (`ui/screens/`) — dieselbe Dreiteilung wie
+Gebäude und Upgrades. Ein Paket je Spielsystem würde diese Schichtung
+durchschneiden und wäre der erste Schritt zu Feature-Silos, die jeweils ihre
+eigene Persistenz und ihre eigenen Regeln mitbringen.
 
 ---
 
@@ -261,6 +269,38 @@ nahezu null und trüge keine Information mehr.
 
 **Reset nur über Bestätigungsdialog, der den Verlust benennt.** Ein Dialog, der
 nur den Gewinn nennt, wäre im Ergebnis eine Falle.
+
+**Quest-Fortschritt als Differenz zu einem Ausgangswert.** Eine Tagesquest
+speichert keinen eigenen Zähler, sondern nur den Stand der Messgröße zu Beginn
+des Zeitraums; der Fortschritt ist die Differenz zum aktuellen Stand.
+Zurücksetzen heißt damit: Ausgangswert neu setzen. Bei eigenen Zählern je Quest
+müsste jede neue Quest eine neue Spalte oder Zeile bekommen und beim
+Zurücksetzen einzeln angefasst werden — und jeder vergessene Zähler wäre eine
+Quest, die sich nie wieder erledigen lässt.
+
+**Zeiträume nach Kalendertag, nicht nach 24-Stunden-Fenster.** Der Wechsel wird
+über `java.time` in der Zeitzone des Geräts bestimmt. Ein rollendes Fenster
+würde den Zeitpunkt, zu dem neue Quests erscheinen, mit jedem Tag nach hinten
+schieben. Eine zurückgestellte Uhr löst kein Zurücksetzen aus: Der Zeitraum
+beginnt nur neu, wenn der aktuelle Kalendertag *nach* dem gespeicherten liegt.
+
+**Belohnungen werden sofort gutgeschrieben, gemeldet wird getrennt.** Wären
+Gutschrift und Meldung ein gemeinsamer Schritt, ginge die Belohnung verloren,
+sobald die App zwischen Freischaltung und Dialog beendet wird. `RewardManager`
+ist deshalb eine reine Benachrichtigungsschlange; Achievements, Quests und
+später Login-Bonus, Events und Battle Pass melden dort an und teilen sich einen
+Dialog.
+
+**Ein Bildschirm für Quests und Achievements.** Beides sind Ziele mit
+Belohnung, und zwei Einträge in der unteren Leiste hätten sie auf sechs
+gebracht — Material Design empfiehlt drei bis fünf.
+
+**Alle Zieltabellen liegen unter der Prüfsumme.** Achievements zahlen Diamanten
+aus, Abholvermerke verhindern doppelte Quest-Belohnungen, und ein kleinerer
+Ausgangswert bedeutet mehr Fortschritt. Jede dieser Tabellen wäre ohne
+Signatur ein direkter Weg, sich Premiumwährung einzutragen. Die Abschnitte
+werden dabei *angehängt*, nie eingefügt: Ein Spielstand aus Version 3 ergibt
+weiterhin dieselbe Prüfsumme.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

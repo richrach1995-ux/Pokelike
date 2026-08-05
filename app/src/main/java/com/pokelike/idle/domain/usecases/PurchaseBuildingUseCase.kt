@@ -97,7 +97,10 @@ class PurchaseBuildingUseCase @Inject constructor(
             ?: return PurchaseResult.NotAffordable
 
         return PurchaseResult.Success(
-            state = paidState.copy(buildings = paidState.buildings.plus(building, count)),
+            state = paidState.copy(
+                buildings = paidState.buildings.plus(building, count),
+                statistics = paidState.statistics.withBuildingsPurchased(count),
+            ),
             building = building,
             count = count,
             paid = price,

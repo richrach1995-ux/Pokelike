@@ -1,16 +1,27 @@
 package com.pokelike.idle.data.database.mapper
 
+import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.GameStateEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
+import com.pokelike.idle.data.database.entity.QuestBaselineEntity
+import com.pokelike.idle.data.database.entity.QuestBaselineValueEntity
+import com.pokelike.idle.data.database.entity.QuestClaimEntity
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
+import com.pokelike.idle.domain.model.AchievementInventory
+import com.pokelike.idle.domain.model.AchievementType
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
+import com.pokelike.idle.domain.model.QuestBaseline
+import com.pokelike.idle.domain.model.QuestMetric
+import com.pokelike.idle.domain.model.QuestPeriod
+import com.pokelike.idle.domain.model.QuestState
+import com.pokelike.idle.domain.model.QuestType
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
@@ -30,6 +41,10 @@ data class PersistedGameState(
     val resources: List<ResourceEntity>,
     val buildings: List<BuildingEntity>,
     val upgrades: List<UpgradeEntity>,
+    val achievements: List<AchievementEntity>,
+    val questBaselines: List<QuestBaselineEntity>,
+    val questBaselineValues: List<QuestBaselineValueEntity>,
+    val questClaims: List<QuestClaimEntity>,
 )
 
 /**
@@ -51,6 +66,22 @@ class GameStateMapper @Inject constructor(
         val resources = buildResourceRows(state)
         val buildings = buildBuildingRows(state)
         val upgrades = state.upgrades.asSet().map { UpgradeEntity(upgradeId = it.id) }
+        val achievements = state.achievements.asSet()
+            .map { AchievementEntity(achievementId = it.id) }
+        val questBaselines = state.quests.baselines.map { (period, baseline) ->
+            QuestBaselineEntity(period = period.id, startedAtMillis = baseline.startedAtMillis)
+        }
+        val questBaselineValues = state.quests.baselines.flatMap { (period, baseline) ->
+            baseline.values.map { (metric, value) ->
+                QuestBaselineValueEntity(
+                    period = period.id,
+                    metric = metric.id,
+                    mantissa = value.mantissa,
+                    exponent = value.exponent,
+                )
+            }
+        }
+        val questClaims = state.quests.claimed.map { QuestClaimEntity(questId = it.id) }
 
         val unsigned = GameStateEntity(
             schemaVersion = state.schemaVersion,
@@ -61,18 +92,32 @@ class GameStateMapper @Inject constructor(
             totalPlayTimeMillis = state.statistics.totalPlayTimeMillis,
             sessionCount = state.statistics.sessionCount,
             prestigeCount = state.statistics.prestigeCount,
+            totalBuildingsPurchased = state.statistics.totalBuildingsPurchased,
             signature = "",
         )
 
         return PersistedGameState(
             state = unsigned.copy(
                 signature = saveSignature.sign(
-                    canonicalPayload(unsigned, resources, buildings, upgrades),
+                    canonicalPayload(
+                        entity = unsigned,
+                        resources = resources,
+                        buildings = buildings,
+                        upgrades = upgrades,
+                        achievements = achievements,
+                        questBaselines = questBaselines,
+                        questBaselineValues = questBaselineValues,
+                        questClaims = questClaims,
+                    ),
                 ),
             ),
             resources = resources,
             buildings = buildings,
             upgrades = upgrades,
+            achievements = achievements,
+            questBaselines = questBaselines,
+            questBaselineValues = questBaselineValues,
+            questClaims = questClaims,
         )
     }
 
@@ -89,9 +134,22 @@ class GameStateMapper @Inject constructor(
         resources: List<ResourceEntity>,
         buildings: List<BuildingEntity> = emptyList(),
         upgrades: List<UpgradeEntity> = emptyList(),
+        achievements: List<AchievementEntity> = emptyList(),
+        questBaselines: List<QuestBaselineEntity> = emptyList(),
+        questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
+        questClaims: List<QuestClaimEntity> = emptyList(),
     ): GameState? {
         val unsigned = entity.copy(signature = "")
-        val payload = canonicalPayload(unsigned, resources, buildings, upgrades)
+        val payload = canonicalPayload(
+            entity = unsigned,
+            resources = resources,
+            buildings = buildings,
+            upgrades = upgrades,
+            achievements = achievements,
+            questBaselines = questBaselines,
+            questBaselineValues = questBaselineValues,
+            questClaims = questClaims,
+        )
         if (!saveSignature.verify(payload, entity.signature)) return null
 
         return GameState(
@@ -99,6 +157,8 @@ class GameStateMapper @Inject constructor(
             resources = ResourcePool.of(readBucket(resources, ResourceBucket.CURRENT)),
             buildings = readBuildings(buildings),
             upgrades = readUpgrades(upgrades),
+            achievements = readAchievements(achievements),
+            quests = readQuests(questBaselines, questBaselineValues, questClaims),
             statistics = GameStatistics(
                 totalClicks = entity.totalClicks,
                 totalCriticalClicks = entity.totalCriticalClicks,
@@ -111,6 +171,7 @@ class GameStateMapper @Inject constructor(
                 totalPlayTimeMillis = entity.totalPlayTimeMillis,
                 sessionCount = entity.sessionCount,
                 prestigeCount = entity.prestigeCount,
+                totalBuildingsPurchased = entity.totalBuildingsPurchased,
             ),
             createdAtMillis = entity.createdAtMillis,
             lastSeenAtMillis = entity.lastSeenAtMillis,
@@ -156,6 +217,54 @@ class GameStateMapper @Inject constructor(
         UpgradeInventory.of(
             upgrades.mapNotNull { row -> UpgradeType.fromId(row.upgradeId) }.toSet(),
         )
+
+    /** Liest die freigeschalteten Achievements. Unbekannte werden uebergangen. */
+    private fun readAchievements(rows: List<AchievementEntity>): AchievementInventory =
+        AchievementInventory.of(
+            rows.mapNotNull { row -> AchievementType.fromId(row.achievementId) }.toSet(),
+        )
+
+    /**
+     * Setzt den Quest-Stand zusammen.
+     *
+     * Ausgangswerte ohne zugehoerigen Zeitraum werden uebergangen: Sie koennen
+     * nur aus einer beschaedigten oder haendisch veraenderten Datenbank stammen,
+     * und ein Zeitraum ohne Startzeitpunkt waere nicht auswertbar.
+     */
+    private fun readQuests(
+        baselines: List<QuestBaselineEntity>,
+        values: List<QuestBaselineValueEntity>,
+        claims: List<QuestClaimEntity>,
+    ): QuestState {
+        val valuesByPeriod = values.groupBy { it.period }
+
+        val restoredBaselines = buildMap {
+            baselines.forEach { row ->
+                val period = QuestPeriod.entries.firstOrNull { it.id == row.period }
+                    ?: return@forEach
+
+                val metricValues = buildMap {
+                    valuesByPeriod[row.period].orEmpty().forEach { value ->
+                        val metric = QuestMetric.fromId(value.metric) ?: return@forEach
+                        put(metric, BigNumber.of(value.mantissa, value.exponent))
+                    }
+                }
+
+                put(
+                    period,
+                    QuestBaseline(
+                        startedAtMillis = row.startedAtMillis,
+                        values = metricValues,
+                    ),
+                )
+            }
+        }
+
+        return QuestState(
+            baselines = restoredBaselines,
+            claimed = claims.mapNotNull { QuestType.fromId(it.questId) }.toSet(),
+        )
+    }
 
     private fun toRows(
         bucket: ResourceBucket,
@@ -211,6 +320,10 @@ class GameStateMapper @Inject constructor(
         resources: List<ResourceEntity>,
         buildings: List<BuildingEntity> = emptyList(),
         upgrades: List<UpgradeEntity> = emptyList(),
+        achievements: List<AchievementEntity> = emptyList(),
+        questBaselines: List<QuestBaselineEntity> = emptyList(),
+        questBaselineValues: List<QuestBaselineValueEntity> = emptyList(),
+        questClaims: List<QuestClaimEntity> = emptyList(),
     ): String = buildString {
         append("v=").append(entity.schemaVersion)
         append("|created=").append(entity.createdAtMillis)
@@ -220,6 +333,7 @@ class GameStateMapper @Inject constructor(
         append("|play=").append(entity.totalPlayTimeMillis)
         append("|sessions=").append(entity.sessionCount)
         append("|prestige=").append(entity.prestigeCount)
+        append("|bought=").append(entity.totalBuildingsPurchased)
 
         resources
             .sortedWith(compareBy({ it.bucket }, { it.resourceId }))
@@ -246,6 +360,32 @@ class GameStateMapper @Inject constructor(
             .sortedBy { it.upgradeId }
             .forEach { row ->
                 append("|upgrade:").append(row.upgradeId)
+            }
+
+        achievements
+            .sortedBy { it.achievementId }
+            .forEach { row ->
+                append("|achievement:").append(row.achievementId)
+            }
+
+        questBaselines
+            .sortedBy { it.period }
+            .forEach { row ->
+                append("|questperiod:").append(row.period)
+                append('=').append(row.startedAtMillis)
+            }
+
+        questBaselineValues
+            .sortedWith(compareBy({ it.period }, { it.metric }))
+            .forEach { row ->
+                append("|questbase:").append(row.period).append(':').append(row.metric)
+                append('=').append(row.mantissa).append('^').append(row.exponent)
+            }
+
+        questClaims
+            .sortedBy { it.questId }
+            .forEach { row ->
+                append("|questclaim:").append(row.questId)
             }
     }
 }

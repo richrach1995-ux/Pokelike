@@ -54,6 +54,43 @@ object DatabaseMigrations {
         }
     }
 
+    /**
+     * Version 3 auf 4: Achievements und Quests.
+     *
+     * Die einzige bisherige Migration, die eine bestehende Tabelle anfasst:
+     * `game_state` bekommt einen Zaehler fuer je gekaufte Gebaeude. Er wird mit
+     * null vorbelegt - fuer Altbestaende ist das die einzig moegliche Antwort,
+     * denn die Zahl laesst sich rueckwirkend nicht ermitteln. Der aktuelle
+     * Bestand waere ein falscher Ersatz: Er faellt beim Prestige auf null.
+     */
+    val MIGRATION_3_4 = object : Migration(3, 4) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "ALTER TABLE `game_state` ADD COLUMN `totalBuildingsPurchased` " +
+                    "INTEGER NOT NULL DEFAULT 0",
+            )
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `achievements` " +
+                    "(`achievementId` TEXT NOT NULL, PRIMARY KEY(`achievementId`))",
+            )
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `quest_baselines` " +
+                    "(`period` TEXT NOT NULL, `startedAtMillis` INTEGER NOT NULL, " +
+                    "PRIMARY KEY(`period`))",
+            )
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `quest_baseline_values` " +
+                    "(`period` TEXT NOT NULL, `metric` TEXT NOT NULL, " +
+                    "`mantissa` REAL NOT NULL, `exponent` INTEGER NOT NULL, " +
+                    "PRIMARY KEY(`period`, `metric`))",
+            )
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `quest_claims` " +
+                    "(`questId` TEXT NOT NULL, PRIMARY KEY(`questId`))",
+            )
+        }
+    }
+
     /** Alle Migrationen in der Reihenfolge ihrer Versionen. */
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3)
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
 }

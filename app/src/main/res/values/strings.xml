@@ -12,6 +12,7 @@
     <string name="nav_home">Spiel</string>
     <string name="nav_buildings">Gebäude</string>
     <string name="nav_upgrades">Upgrades</string>
+    <string name="nav_goals">Ziele</string>
     <string name="nav_prestige">Prestige</string>
 
     <!-- Startbildschirm -->
@@ -21,6 +22,9 @@
     <!-- Ressourcen -->
     <string name="resource_coins">Münzen</string>
     <string name="resource_diamonds">Diamanten</string>
+    <string name="resource_tickets">Tickets</string>
+    <string name="resource_event_tokens">Event-Token</string>
+    <string name="resource_prestige_points">Prestige-Punkte</string>
 
     <!-- Klick-System -->
     <string name="combo_label">Combo %1$d · %2$s</string>
@@ -97,6 +101,52 @@
     <string name="upgrade_night_shift_description">Offline fallen 25 Prozentpunkte mehr Ertrag an.</string>
     <string name="upgrade_dream_factory">Traumfabrik</string>
     <string name="upgrade_dream_factory_description">Offline fallen weitere 25 Prozentpunkte mehr Ertrag an.</string>
+
+    <!-- Ziele -->
+    <string name="goals_tab_quests">Quests (%1$d)</string>
+    <string name="goals_tab_achievements">Erfolge %1$d/%2$d</string>
+    <string name="goals_claim">Abholen</string>
+    <string name="goals_claimed">Bereits abgeholt</string>
+
+    <string name="quest_period_daily">Täglich</string>
+    <string name="quest_period_weekly">Wöchentlich</string>
+    <string name="quest_period_lifetime">Dauerhaft</string>
+
+    <string name="quest_daily_hundred_clicks">100 Klicks</string>
+    <string name="quest_daily_five_hundred_clicks">500 Klicks</string>
+    <string name="quest_daily_ten_buildings">10 Gebäude kaufen</string>
+    <string name="quest_daily_twenty_criticals">20 kritische Treffer</string>
+    <string name="quest_weekly_five_thousand_clicks">5.000 Klicks</string>
+    <string name="quest_weekly_hundred_buildings">100 Gebäude kaufen</string>
+    <string name="quest_weekly_million_coins">Eine Million Münzen verdienen</string>
+    <string name="quest_lifetime_ten_thousand_clicks">10.000 Klicks insgesamt</string>
+    <string name="quest_lifetime_five_upgrades">5 Upgrades besitzen</string>
+    <string name="quest_lifetime_thousand_buildings">1.000 Gebäude kaufen</string>
+
+    <string name="achievement_first_click">Erster Klick</string>
+    <string name="achievement_hundred_clicks">100 Klicks</string>
+    <string name="achievement_thousand_clicks">1.000 Klicks</string>
+    <string name="achievement_ten_thousand_clicks">10.000 Klicks</string>
+    <string name="achievement_first_critical">Erster kritischer Treffer</string>
+    <string name="achievement_hundred_criticals">100 kritische Treffer</string>
+    <string name="achievement_thousand_coins">1.000 Münzen verdient</string>
+    <string name="achievement_hundred_thousand_coins">100.000 Münzen verdient</string>
+    <string name="achievement_million_coins">Eine Million Münzen verdient</string>
+    <string name="achievement_billion_coins">Eine Milliarde Münzen verdient</string>
+    <string name="achievement_trillion_coins">Eine Billion Münzen verdient</string>
+    <string name="achievement_first_building">Erstes Gebäude</string>
+    <string name="achievement_ten_buildings">10 Gebäude gekauft</string>
+    <string name="achievement_hundred_buildings">100 Gebäude gekauft</string>
+    <string name="achievement_thousand_buildings">1.000 Gebäude gekauft</string>
+    <string name="achievement_all_building_types">Von jedem Gebäude eines</string>
+    <string name="achievement_first_upgrade">Erstes Upgrade</string>
+    <string name="achievement_five_upgrades">5 Upgrades</string>
+    <string name="achievement_first_prestige">Erster Neuanfang</string>
+    <string name="achievement_fifth_prestige">Fünfter Neuanfang</string>
+
+    <!-- Belohnungen -->
+    <string name="reward_title">Belohnung erhalten</string>
+    <string name="reward_confirm">Weiter</string>
 
     <!-- Prestige -->
     <string name="prestige_points_label">Prestige-Punkte</string>

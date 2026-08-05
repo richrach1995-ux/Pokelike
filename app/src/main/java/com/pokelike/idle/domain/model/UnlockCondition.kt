@@ -56,6 +56,50 @@ sealed interface UnlockCondition {
             state.buildings[building] >= required
     }
 
+    /** Mindestzahl kritischer Treffer ueber die gesamte Spielzeit. */
+    data class TotalCriticalClicks(val required: Long) : UnlockCondition {
+        init {
+            require(required >= 0L) { "Negative Anzahl: $required" }
+        }
+
+        override fun isMet(state: GameState): Boolean =
+            state.statistics.totalCriticalClicks >= required
+    }
+
+    /**
+     * Mindestzahl je gekaufter Gebaeude.
+     *
+     * Bezieht sich auf den nur steigenden Zaehler, nicht auf den Bestand:
+     * Letzterer faellt beim Prestige-Reset auf null.
+     */
+    data class BuildingsPurchased(val required: Long) : UnlockCondition {
+        init {
+            require(required >= 0L) { "Negative Anzahl: $required" }
+        }
+
+        override fun isMet(state: GameState): Boolean =
+            state.statistics.totalBuildingsPurchased >= required
+    }
+
+    /** Mindestzahl gekaufter Upgrades. */
+    data class UpgradesOwned(val required: Int) : UnlockCondition {
+        init {
+            require(required >= 0) { "Negative Anzahl: $required" }
+        }
+
+        override fun isMet(state: GameState): Boolean = state.upgrades.count >= required
+    }
+
+    /** Mindestzahl abgeschlossener Prestige-Durchlaeufe. */
+    data class PrestigeCount(val required: Int) : UnlockCondition {
+        init {
+            require(required >= 0) { "Negative Anzahl: $required" }
+        }
+
+        override fun isMet(state: GameState): Boolean =
+            state.statistics.prestigeCount >= required
+    }
+
     /** Mindestzahl an Gebaeuden insgesamt, unabhaengig von der Art. */
     data class TotalBuildings(val required: Int) : UnlockCondition {
         init {

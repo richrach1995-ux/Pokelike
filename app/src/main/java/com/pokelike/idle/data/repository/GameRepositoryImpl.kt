@@ -74,6 +74,10 @@ class GameRepositoryImpl @Inject constructor(
                         resources = dao.findResources(),
                         buildings = dao.findBuildings(),
                         upgrades = dao.findUpgrades(),
+                        achievements = dao.findAchievements(),
+                        questBaselines = dao.findQuestBaselines(),
+                        questBaselineValues = dao.findQuestBaselineValues(),
+                        questClaims = dao.findQuestClaims(),
                     ).also { state ->
                         if (state == null) {
                             logger.warn(TAG, "Spielstand hat die Integritaetspruefung nicht bestanden")
@@ -123,11 +127,15 @@ class GameRepositoryImpl @Inject constructor(
                 try {
                     val persisted = mapper.toPersisted(snapshot)
                     dao.saveState(
-                persisted.state,
-                persisted.resources,
-                persisted.buildings,
-                persisted.upgrades,
-            )
+                        state = persisted.state,
+                        resources = persisted.resources,
+                        buildings = persisted.buildings,
+                        upgrades = persisted.upgrades,
+                        achievements = persisted.achievements,
+                        questBaselines = persisted.questBaselines,
+                        questBaselineValues = persisted.questBaselineValues,
+                        questClaims = persisted.questClaims,
+                    )
                     true
                 } catch (throwable: Throwable) {
                     // Der Fortschritt bleibt im Arbeitsspeicher erhalten, und
@@ -150,10 +158,14 @@ class GameRepositoryImpl @Inject constructor(
             dao.clearAll()
             val persisted = mapper.toPersisted(fresh)
             dao.saveState(
-                persisted.state,
-                persisted.resources,
-                persisted.buildings,
-                persisted.upgrades,
+                state = persisted.state,
+                resources = persisted.resources,
+                buildings = persisted.buildings,
+                upgrades = persisted.upgrades,
+                achievements = persisted.achievements,
+                questBaselines = persisted.questBaselines,
+                questBaselineValues = persisted.questBaselineValues,
+                questClaims = persisted.questClaims,
             )
         }
 

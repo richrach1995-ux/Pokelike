@@ -5,6 +5,7 @@ import com.pokelike.idle.domain.model.OfflineProgress
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.usecases.CalculateIncomeUseCase
 import com.pokelike.idle.domain.usecases.CalculateOfflineProgressUseCase
+import com.pokelike.idle.domain.usecases.RolloverQuestsUseCase
 import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.TimeSource
 import kotlinx.coroutines.CoroutineScope
@@ -50,6 +51,8 @@ class GameSessionManager @Inject constructor(
     private val modifierManager: ModifierManager,
     private val calculateIncome: CalculateIncomeUseCase,
     private val calculateOfflineProgress: CalculateOfflineProgressUseCase,
+    private val achievementManager: AchievementManager,
+    private val rolloverQuests: RolloverQuestsUseCase,
 ) {
 
     private val _offlineProgress = MutableStateFlow<OfflineProgress?>(null)
@@ -89,10 +92,25 @@ class GameSessionManager @Inject constructor(
                     val loaded = repository.load(timeSource.wallClock())
                     applyOfflineProgress(loaded.lastSeenAtMillis)
                 }
+
+                // Der Tageswechsel wird beim Wechsel in den Vordergrund
+                // geprueft, nicht fortlaufend. Ein Spieler, der die App ueber
+                // Mitternacht offen liegen laesst, bekommt seine neuen Quests
+                // damit erst beim naechsten Hinsehen - das ist unschaedlich und
+                // spart eine Pruefung in jedem Takt.
+                repository.update { state ->
+                    rolloverQuests(state, timeSource.wallClock())
+                }
+
                 gameClock.start()
                 autosaveManager.start()
                 clickManager.start()
                 idleIncomeManager.start()
+                achievementManager.start()
+
+                // Sofortige Pruefung, damit ein offline erreichtes Achievement
+                // beim Oeffnen gemeldet wird und nicht erst eine Sekunde spaeter.
+                achievementManager.checkNow()
             }
         }
     }
@@ -112,6 +130,7 @@ class GameSessionManager @Inject constructor(
                 autosaveManager.stop()
                 clickManager.stop()
                 idleIncomeManager.stop()
+                achievementManager.stop()
 
                 if (repository.isLoaded.value) {
                     val now = timeSource.wallClock()

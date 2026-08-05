@@ -1,16 +1,24 @@
 package com.pokelike.idle.data.database.mapper
 
 import com.google.common.truth.Truth.assertThat
+import com.pokelike.idle.data.database.entity.AchievementEntity
 import com.pokelike.idle.data.database.entity.BuildingEntity
 import com.pokelike.idle.data.database.entity.ResourceBucket
 import com.pokelike.idle.data.database.entity.ResourceEntity
 import com.pokelike.idle.data.database.entity.UpgradeEntity
 import com.pokelike.idle.data.security.SaveSignature
+import com.pokelike.idle.domain.model.AchievementInventory
+import com.pokelike.idle.domain.model.AchievementType
 import com.pokelike.idle.domain.model.BigNumber
 import com.pokelike.idle.domain.model.BuildingInventory
 import com.pokelike.idle.domain.model.BuildingType
 import com.pokelike.idle.domain.model.GameState
 import com.pokelike.idle.domain.model.GameStatistics
+import com.pokelike.idle.domain.model.QuestBaseline
+import com.pokelike.idle.domain.model.QuestMetric
+import com.pokelike.idle.domain.model.QuestPeriod
+import com.pokelike.idle.domain.model.QuestState
+import com.pokelike.idle.domain.model.QuestType
 import com.pokelike.idle.domain.model.ResourceBundle
 import com.pokelike.idle.domain.model.ResourcePool
 import com.pokelike.idle.domain.model.ResourceType
@@ -272,6 +280,202 @@ class GameStateMapperTest {
         )
 
         assertThat(restored).isEqualTo(state)
+    }
+
+    // --- Ziele ------------------------------------------------------------
+
+    @Test
+    fun `stellt Achievements und Quests wieder her`() {
+        val state = sampleState.copy(
+            achievements = AchievementInventory.of(
+                AchievementType.FIRST_CLICK,
+                AchievementType.MILLION_COINS,
+            ),
+            quests = QuestState(
+                baselines = mapOf(
+                    QuestPeriod.DAILY to QuestBaseline(
+                        startedAtMillis = 1_700_000_000_000L,
+                        values = mapOf(
+                            QuestMetric.CLICKS to BigNumber.of(12_000),
+                            QuestMetric.COINS_EARNED to BigNumber.of(3.5, 20),
+                        ),
+                    ),
+                    QuestPeriod.WEEKLY to QuestBaseline(
+                        startedAtMillis = 1_699_000_000_000L,
+                        values = mapOf(QuestMetric.CLICKS to BigNumber.of(9_000)),
+                    ),
+                ),
+                claimed = setOf(QuestType.DAILY_HUNDRED_CLICKS),
+            ),
+        )
+
+        val persisted = mapper.toPersisted(state)
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+            achievements = persisted.achievements,
+            questBaselines = persisted.questBaselines,
+            questBaselineValues = persisted.questBaselineValues,
+            questClaims = persisted.questClaims,
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit nachtraeglich eingetragenem Achievement`() {
+        // Achievements zahlen Diamanten aus. Ohne Abdeckung durch die
+        // Pruefsumme liesse sich die Belohnung beliebig oft eintragen.
+        val persisted = mapper.toPersisted(sampleState)
+
+        val tampered = listOf(AchievementEntity(achievementId = AchievementType.FIRST_CLICK.id))
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                achievements = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit zurueckgesetztem Ausgangswert`() {
+        // Ein kleinerer Ausgangswert bedeutet mehr Fortschritt: Genau so
+        // liessen sich Tagesquests beliebig oft abschliessen.
+        val state = sampleState.copy(
+            quests = QuestState(
+                baselines = mapOf(
+                    QuestPeriod.DAILY to QuestBaseline(
+                        startedAtMillis = 1_700_000_000_000L,
+                        values = mapOf(QuestMetric.CLICKS to BigNumber.of(12_000)),
+                    ),
+                ),
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val tampered = persisted.questBaselineValues.map { row -> row.copy(mantissa = 1.0) }
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                questBaselines = persisted.questBaselines,
+                questBaselineValues = tampered,
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `verwirft einen Spielstand mit entferntem Abholvermerk`() {
+        // Ohne den Vermerk liesse sich dieselbe Quest im selben Zeitraum
+        // beliebig oft abholen.
+        val state = sampleState.copy(
+            quests = QuestState(claimed = setOf(QuestType.DAILY_HUNDRED_CLICKS)),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        assertThat(
+            mapper.toDomain(
+                entity = persisted.state,
+                resources = persisted.resources,
+                questClaims = emptyList(),
+            ),
+        ).isNull()
+    }
+
+    @Test
+    fun `liest einen Spielstand ohne Ziele unveraendert`() {
+        // Dieselbe Vertraeglichkeitsregel wie bei Gebaeuden und Upgrades: Die
+        // vier Zielabschnitte werden angehaengt, nie eingefuegt. Ein Stand aus
+        // Version 3 ergibt deshalb weiterhin dieselbe Pruefsumme.
+        val persisted = mapper.toPersisted(sampleState)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+            achievements = emptyList(),
+            questBaselines = emptyList(),
+            questBaselineValues = emptyList(),
+            questClaims = emptyList(),
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
+    }
+
+    @Test
+    fun `ist unabhaengig von der Reihenfolge der Zielzeilen`() {
+        val state = sampleState.copy(
+            achievements = AchievementInventory.of(
+                AchievementType.FIRST_CLICK,
+                AchievementType.FIRST_BUILDING,
+                AchievementType.FIRST_UPGRADE,
+            ),
+            quests = QuestState(
+                baselines = mapOf(
+                    QuestPeriod.DAILY to QuestBaseline(
+                        startedAtMillis = 1_700_000_000_000L,
+                        values = mapOf(
+                            QuestMetric.CLICKS to BigNumber.of(12_000),
+                            QuestMetric.CRITICAL_CLICKS to BigNumber.of(600),
+                            QuestMetric.UPGRADES_OWNED to BigNumber.of(4),
+                        ),
+                    ),
+                ),
+                claimed = setOf(
+                    QuestType.DAILY_HUNDRED_CLICKS,
+                    QuestType.WEEKLY_MILLION_COINS,
+                ),
+            ),
+        )
+        val persisted = mapper.toPersisted(state)
+
+        val restored = mapper.toDomain(
+            entity = persisted.state,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+            achievements = persisted.achievements.reversed(),
+            questBaselines = persisted.questBaselines.reversed(),
+            questBaselineValues = persisted.questBaselineValues.reversed(),
+            questClaims = persisted.questClaims.reversed(),
+        )
+
+        assertThat(restored).isEqualTo(state)
+    }
+
+    @Test
+    fun `uebergeht Zeilen mit unbekanntem Ziel`() {
+        val persisted = mapper.toPersisted(sampleState)
+        val withUnknown = listOf(AchievementEntity(achievementId = "ziel_aus_der_zukunft"))
+
+        val unsigned = persisted.state.copy(signature = "")
+        val resigned = unsigned.copy(
+            signature = SaveSignature().sign(
+                mapper.canonicalPayload(
+                    entity = unsigned,
+                    resources = persisted.resources,
+                    buildings = persisted.buildings,
+                    upgrades = persisted.upgrades,
+                    achievements = withUnknown,
+                ),
+            ),
+        )
+
+        val restored = mapper.toDomain(
+            entity = resigned,
+            resources = persisted.resources,
+            buildings = persisted.buildings,
+            upgrades = persisted.upgrades,
+            achievements = withUnknown,
+        )
+
+        assertThat(restored).isEqualTo(sampleState)
     }
 
     @Test

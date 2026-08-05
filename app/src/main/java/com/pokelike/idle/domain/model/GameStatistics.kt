@@ -21,6 +21,11 @@ package com.pokelike.idle.domain.model
  * @property totalPlayTimeMillis Aktive Spielzeit, ohne Hintergrundzeit.
  * @property sessionCount Anzahl der Sitzungen. Grundlage der Retentionsanalyse.
  * @property prestigeCount Abgeschlossene Prestige-Durchlaeufe.
+ * @property totalBuildingsPurchased Je gekaufte Gebaeude.
+ *
+ *   Bewusst ein eigener, nur steigender Zaehler und nicht der aktuelle
+ *   Bestand: Der faellt beim Prestige-Reset auf null zurueck. Ein Ziel wie
+ *   "kaufe hundert Gebaeude" waere damit nach jedem Reset wieder offen.
  */
 data class GameStatistics(
     val totalClicks: Long = 0L,
@@ -30,6 +35,7 @@ data class GameStatistics(
     val totalPlayTimeMillis: Long = 0L,
     val sessionCount: Int = 0,
     val prestigeCount: Int = 0,
+    val totalBuildingsPurchased: Long = 0L,
 ) {
 
     /**
@@ -54,6 +60,16 @@ data class GameStatistics(
     /** Verbucht ausgegebene Ressourcen. */
     fun withSpent(bundle: ResourceBundle): GameStatistics =
         if (bundle.isEmpty) this else copy(lifetimeSpent = lifetimeSpent + bundle)
+
+    /** Verbucht gekaufte Gebaeude. */
+    fun withBuildingsPurchased(count: Int): GameStatistics {
+        require(count >= 0) { "Negative Anzahl: $count" }
+        return if (count == 0) {
+            this
+        } else {
+            copy(totalBuildingsPurchased = totalBuildingsPurchased + count)
+        }
+    }
 
     /** Schreibt die aktive Spielzeit fort. */
     fun withPlayTime(additionalMillis: Long): GameStatistics {

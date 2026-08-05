@@ -6,9 +6,15 @@ import androidx.lifecycle.viewModelScope
 import com.pokelike.idle.domain.model.GameSettings
 import com.pokelike.idle.domain.model.OfflineProgress
 import com.pokelike.idle.domain.model.ResourceType
+import com.pokelike.idle.domain.model.RewardSource
 import com.pokelike.idle.domain.repository.GameRepository
 import com.pokelike.idle.domain.repository.SettingsRepository
 import com.pokelike.idle.manager.GameSessionManager
+import com.pokelike.idle.manager.RewardManager
+import com.pokelike.idle.ui.components.RewardLineItem
+import com.pokelike.idle.ui.components.RewardPart
+import com.pokelike.idle.ui.components.toRewardParts
+import com.pokelike.idle.ui.screens.goals.nameRes
 import com.pokelike.idle.util.DurationFormatter
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,6 +34,8 @@ import javax.inject.Inject
  *   nichts anzuzeigen ist.
  * @property offlineDuration Dauer der Abwesenheit, formatiert.
  * @property offlineWasCapped Ob die Obergrenze gegriffen hat.
+ * @property rewards Anliegende Belohnungsmeldungen. Die Betraege sind bereits
+ *   gutgeschrieben; der Dialog meldet nur.
  */
 @Immutable
 data class MainUiState(
@@ -36,6 +44,7 @@ data class MainUiState(
     val offlineEarned: String? = null,
     val offlineDuration: String = "",
     val offlineWasCapped: Boolean = false,
+    val rewards: List<RewardLineItem> = emptyList(),
 )
 
 /**
@@ -50,6 +59,7 @@ class MainViewModel @Inject constructor(
     settingsRepository: SettingsRepository,
     gameRepository: GameRepository,
     private val sessionManager: GameSessionManager,
+    private val rewardManager: RewardManager,
     private val numberFormatter: NumberFormatter,
     private val durationFormatter: DurationFormatter,
 ) : ViewModel() {
@@ -66,10 +76,20 @@ class MainViewModel @Inject constructor(
         settingsRepository.settings,
         gameRepository.isLoaded,
         sessionManager.offlineProgress,
-    ) { settings, isLoaded, offline ->
+        rewardManager.pending,
+    ) { settings, isLoaded, offline, pendingRewards ->
         MainUiState(
             settings = settings,
             isReady = isLoaded,
+            rewards = pendingRewards.map { reward ->
+                RewardLineItem(
+                    titleRes = when (val source = reward.source) {
+                        is RewardSource.Achievement -> source.type.nameRes
+                        is RewardSource.Quest -> source.type.nameRes
+                    },
+                    reward = reward.bundle.toRewardParts(numberFormatter),
+                )
+            },
             offlineEarned = offline?.let { formatEarned(it) },
             offlineDuration = offline?.let {
                 durationFormatter.formatCompact(it.creditedMillis)
@@ -85,6 +105,11 @@ class MainViewModel @Inject constructor(
     /** Bestaetigt, dass der Willkommensdialog gezeigt wurde. */
     fun onOfflineProgressDismissed() {
         sessionManager.consumeOfflineProgress()
+    }
+
+    /** Bestaetigt, dass die Belohnungsmeldung gezeigt wurde. */
+    fun onRewardsDismissed() {
+        rewardManager.consumeAll()
     }
 
     /**
