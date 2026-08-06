@@ -32,6 +32,9 @@ import androidx.compose.runtime.Immutable
  * @property comboMultiplier Wirksamer Combo-Faktor, formatiert.
  * @property comboRemaining Verbleibender Anteil des Combo-Fensters.
  * @property coinsPerSecond Leerlaufeinkommen aus Gebaeuden, formatiert.
+ * @property vibrationEnabled Ob bei kritischen Treffern geruettelt werden soll.
+ *   Gehoert hierher und nicht in den Composable: Der Bildschirm liest
+ *   ausschliesslich aus diesem Objekt und fragt keine Einstellung selbst ab.
  */
 @Immutable
 data class HomeUiState(
@@ -43,4 +46,5 @@ data class HomeUiState(
     val comboMultiplier: String = "1.00x",
     val comboRemaining: Float = 0f,
     val coinsPerSecond: String = "0",
+    val vibrationEnabled: Boolean = true,
 )

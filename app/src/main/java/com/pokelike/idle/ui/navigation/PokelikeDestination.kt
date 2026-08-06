@@ -3,11 +3,13 @@ package com.pokelike.idle.ui.navigation
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Upgrade
 import androidx.compose.material.icons.outlined.EmojiEvents
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Store
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.material.icons.outlined.AutoAwesome
@@ -78,6 +80,21 @@ sealed interface PokelikeDestination {
         override val unselectedIcon: ImageVector = Icons.Outlined.EmojiEvents
     }
 
+    /**
+     * Einstellungen.
+     *
+     * Bewusst nicht in der unteren Leiste: Material empfiehlt dort drei bis
+     * fuenf Eintraege, und Einstellungen werden selten geoeffnet. Der Zugang
+     * liegt deshalb in der oberen Leiste, wo er auf jedem Bildschirm erreichbar
+     * ist, ohne einen Platz unten zu belegen.
+     */
+    data object Settings : PokelikeDestination {
+        override val route: String = "settings"
+        override val labelRes: Int = R.string.nav_settings
+        override val selectedIcon: ImageVector = Icons.Filled.Settings
+        override val unselectedIcon: ImageVector = Icons.Outlined.Settings
+    }
+
     /** Prestige mit Punkteuebersicht und Reset. */
     data object Prestige : PokelikeDestination {
         override val route: String = "prestige"
@@ -99,5 +116,23 @@ sealed interface PokelikeDestination {
          * waehlen, und sie wuerde nur Hoehe kosten.
          */
         val bottomBarDestinations: List<PokelikeDestination> = listOf(Home, Buildings, Upgrades, Goals, Prestige)
+
+        /**
+         * Alle Ziele, auch die ausserhalb der unteren Leiste.
+         *
+         * Grundlage von [fromRoute]. Getrennt gefuehrt, weil
+         * [bottomBarDestinations] eine Anzeigereihenfolge beschreibt und keine
+         * Vollstaendigkeit.
+         */
+        private val all: List<PokelikeDestination> = bottomBarDestinations + Settings
+
+        /**
+         * Findet ein Ziel anhand seiner Route.
+         *
+         * Liefert `null` waehrend des allerersten Aufbaus, bevor der
+         * NavController einen Eintrag hat.
+         */
+        fun fromRoute(route: String?): PokelikeDestination? =
+            all.firstOrNull { it.route == route }
     }
 }

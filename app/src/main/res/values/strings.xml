@@ -14,6 +14,8 @@
     <string name="nav_upgrades">Upgrades</string>
     <string name="nav_goals">Ziele</string>
     <string name="nav_prestige">Prestige</string>
+    <string name="nav_settings">Einstellungen</string>
+    <string name="action_back">Zurück</string>
 
     <!-- Startbildschirm -->
     <string name="home_coins_per_click">%1$s pro Klick</string>
@@ -220,8 +222,31 @@
     <string name="offline_capped">Die Obergrenze war erreicht — länger als acht Stunden wird nicht angerechnet.</string>
     <string name="offline_collect">Einsammeln</string>
 
+    <!-- Einstellungen -->
+    <string name="settings_section_appearance">Darstellung</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Hell</string>
+    <string name="settings_theme_dark">Dunkel</string>
+
+    <string name="settings_section_game">Spiel</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="settings_vibration_description">Kurzes Rütteln bei kritischen Treffern.</string>
+
+    <string name="settings_section_save">Spielstand</string>
+    <string name="settings_reset_description">Löscht deinen gesamten Fortschritt und beginnt ein neues Spiel.</string>
+    <string name="settings_reset_action">Spielstand löschen</string>
+    <string name="settings_reset_confirm_title">Wirklich alles löschen?</string>
+    <string name="settings_reset_confirm_message">Münzen, Diamanten, Gebäude, Upgrades, Erfolge, Quests, deine Anmeldeserie und alle laufenden Booster gehen verloren.
+
+Das lässt sich nicht rückgängig machen — anders als beim Prestige bekommst du dafür nichts.</string>
+    <string name="settings_reset_confirm_action">Endgültig löschen</string>
+    <string name="settings_reset_cancel">Abbrechen</string>
+
+    <string name="settings_section_about">Über</string>
+    <string name="settings_version">App-Version</string>
+    <string name="settings_save_version">Spielstandformat</string>
+
     <!-- Barrierefreiheit -->
-    <string name="cd_app_logo">Pokelike Logo</string>
     <string name="click_button_description">Münzen sammeln</string>
     <string name="click_button_action">Klicken</string>
 

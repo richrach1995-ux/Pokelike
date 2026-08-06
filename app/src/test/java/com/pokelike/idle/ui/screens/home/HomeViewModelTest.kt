@@ -17,6 +17,7 @@ import com.pokelike.idle.manager.RewardedAdManager
 import com.pokelike.idle.testing.FakeAdSource
 import com.pokelike.idle.testing.FakeGameRepository
 import com.pokelike.idle.testing.FakeRandomProvider
+import com.pokelike.idle.testing.FakeSettingsRepository
 import com.pokelike.idle.testing.MainDispatcherRule
 import com.pokelike.idle.testing.RecordingGameLogger
 import com.pokelike.idle.testing.TestDispatcherProvider
@@ -96,6 +97,7 @@ class HomeViewModelTest {
                 ),
                 modifierManager = modifierManager,
                 gameRepository = repository,
+                settingsRepository = FakeSettingsRepository(),
                 numberFormatter = NumberFormatter(),
                 durationFormatter = DurationFormatter(),
                 dispatchers = dispatchers,

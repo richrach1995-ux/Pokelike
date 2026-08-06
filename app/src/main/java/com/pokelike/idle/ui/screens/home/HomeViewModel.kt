@@ -6,6 +6,7 @@ import com.pokelike.idle.domain.model.BoosterType
 import com.pokelike.idle.domain.model.ClickOutcome
 import com.pokelike.idle.domain.model.ResourceType
 import com.pokelike.idle.domain.repository.GameRepository
+import com.pokelike.idle.domain.repository.SettingsRepository
 import com.pokelike.idle.domain.usecases.BoosterPurchaseResult
 import com.pokelike.idle.manager.BoosterManager
 import com.pokelike.idle.manager.ClickManager
@@ -16,6 +17,7 @@ import com.pokelike.idle.util.DispatcherProvider
 import com.pokelike.idle.util.DurationFormatter
 import com.pokelike.idle.util.NumberFormatter
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -42,12 +44,24 @@ class HomeViewModel @Inject constructor(
     idleIncomeManager: IdleIncomeManager,
     modifierManager: ModifierManager,
     gameRepository: GameRepository,
+    settingsRepository: SettingsRepository,
     private val numberFormatter: NumberFormatter,
     private val durationFormatter: DurationFormatter,
     dispatchers: DispatcherProvider,
 ) : ViewModel() {
 
-    val uiState: StateFlow<HomeUiState> = combine(
+    /**
+     * Die haptische Einstellung als eigener Fluss.
+     *
+     * Nicht Teil des grossen `combine`: Dessen typsichere Ueberladungen enden
+     * bei fuenf Fluessen, und ein sechster zwaenge zur Variante mit
+     * `Array<Any?>`. Zusammengefuehrt wird erst im Anzeigezustand.
+     */
+    private val vibrationEnabled: Flow<Boolean> = settingsRepository.settings
+        .map { it.vibrationEnabled }
+        .distinctUntilChanged()
+
+    private val gameUiState: Flow<HomeUiState> = combine(
         gameRepository.gameState,
         gameRepository.isLoaded,
         clickManager.combo,
@@ -66,6 +80,13 @@ class HomeViewModel @Inject constructor(
             comboRemaining = combo.remainingFraction,
             coinsPerSecond = numberFormatter.format(incomePerSecond),
         )
+    }
+
+    val uiState: StateFlow<HomeUiState> = combine(
+        gameUiState,
+        vibrationEnabled,
+    ) { state, isVibrationEnabled ->
+        state.copy(vibrationEnabled = isVibrationEnabled)
     }
         // Formatierung gehoert nicht auf den UI-Thread: Bei laufender Combo
         // aendert sich der Zustand zehnmal pro Sekunde.

@@ -16,9 +16,13 @@ Dieses Repository befindet sich im Aufbau. Fertiggestellt sind:
 9. Täglicher Bonus mit Serie und kaufbarem Serienschutz
 10. Booster mit Echtzeit-Laufzeit und Booster-Angebot
 11. Belohnungsvideos: Schnittstelle, Nachbildung, Wartezeit
+12. Einstellungen, obere Leiste, Löschen des Spielstands
 
-Als Nächstes: die AdMob-Anbindung hinter der bestehenden Schnittstelle —
-sobald das Projekt einmal in Android Studio gebaut wurde.
+Als Nächstes: Ton — Klangeffekte für Klicks, Käufe und Belohnungen. Danach die
+AdMob-Anbindung hinter der bestehenden Schnittstelle.
+
+Ein Debug-APK entsteht bei jedem Push automatisch und hängt als Artefakt am
+[jeweiligen Build](https://github.com/richrach1995-ux/Pokelike/actions).
 
 ---
 
@@ -81,7 +85,7 @@ com.pokelike.idle
 ├── ui/
 │   ├── components/  Klick-Button, schwebender Text, Combo-Anzeige,
 │   │                Belohnungs- und Tagesbonusdialog
-│   ├── navigation/  Zielregistry, NavHost, untere Leiste
+│   ├── navigation/  Zielregistry, NavHost, obere und untere Leiste
 │   ├── screens/     Bildschirme, je Feature ein Unterpaket
 │   └── theme/       Farben, Typografie, Abstände
 └── util/       Querschnittswerkzeuge (Zeit, Dispatcher, Formatierung)
@@ -406,6 +410,21 @@ liegt im Spielstand und unter der Prüfsumme: Im Arbeitsspeicher wäre sie durch
 Schließen und Öffnen der App zu umgehen, und ohne Signatur wäre eine gelöschte
 Zeile ein Booster im Minutentakt. Sie überlebt auch den Prestige-Reset — sonst
 wäre der Reset der Weg, sie zu umgehen.
+
+**Einstellungen liegen in der oberen Leiste, nicht in der unteren.** Material
+empfiehlt dort drei bis fünf Einträge, und mit fünf Spielbereichen ist die
+untere Leiste voll. Einstellungen werden selten geöffnet, müssen aber von
+überall erreichbar sein — genau der Fall, für den die obere Leiste da ist.
+
+**Nur Einstellungen, die etwas bewirken.** `GameSettings` führt seit dem ersten
+Schritt auch Musik, Klangeffekte und eine Bildratenanzeige. Sie stehen bewusst
+**nicht** auf dem Bildschirm, solange es nichts gibt, das sie ausliest. Ein
+Schalter ohne Wirkung ist schlimmer als ein fehlender: Der Spieler stellt ihn
+um, bemerkt keinen Unterschied und hält die App für kaputt.
+
+**Jede Änderung wird sofort geschrieben.** Kein „Speichern"-Knopf: Er ließe den
+Spieler rätseln, ob seine Auswahl schon gilt, und wer den Bildschirm über die
+Zurück-Taste verlässt, verlöre sie.
 
 **Kein Dynamic Color.** Bei einem Spiel trägt Farbe Information: Gold bedeutet
 Münzen, Violett bedeutet Event-Token. Eine vom Systemhintergrund abgeleitete

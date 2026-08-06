@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.pokelike.idle.ui.navigation.PokelikeBottomBar
 import com.pokelike.idle.ui.navigation.PokelikeDestination
 import com.pokelike.idle.ui.navigation.PokelikeNavHost
+import com.pokelike.idle.ui.navigation.PokelikeTopBar
 
 /**
  * Wurzel-Composable der App.
@@ -31,10 +32,26 @@ fun PokelikeApp(modifier: Modifier = Modifier) {
     // weiss, welcher Tab hervorzuheben ist.
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
+    val currentDestination = PokelikeDestination.fromRoute(currentRoute)
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
+        topBar = {
+            PokelikeTopBar(
+                destination = currentDestination,
+                onOpenSettings = {
+                    // Bewusst ohne popUpTo: Die Einstellungen liegen ueber dem
+                    // aktuellen Tab, und die Zurueck-Taste soll genau dorthin
+                    // zurueckfuehren. Ein Tab-Wechsel wuerde stattdessen den
+                    // Backstack flach halten und den Weg zurueck verlieren.
+                    navController.navigate(PokelikeDestination.Settings.route) {
+                        launchSingleTop = true
+                    }
+                },
+                onNavigateBack = { navController.popBackStack() },
+            )
+        },
         bottomBar = {
             PokelikeBottomBar(
                 currentRoute = currentRoute,

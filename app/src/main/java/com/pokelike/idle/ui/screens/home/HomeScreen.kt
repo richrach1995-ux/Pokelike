@@ -95,11 +95,12 @@ fun HomeRoute(
         onClick = {
             val outcome = viewModel.onClick()
 
-            // Haptische Rueckmeldung nur bei kritischen Treffern. Bei jedem
-            // Klick zu vibrieren wuerde bei mehreren Klicks pro Sekunde zu
-            // einem Dauerbrummen verschmelzen, das den Akku belastet und den
-            // besonderen Moment entwertet.
-            if (outcome.wasCritical) {
+            // Haptische Rueckmeldung nur bei kritischen Treffern, und nur wenn
+            // der Spieler sie eingeschaltet hat. Bei jedem Klick zu vibrieren
+            // wuerde bei mehreren Klicks pro Sekunde zu einem Dauerbrummen
+            // verschmelzen, das den Akku belastet und den besonderen Moment
+            // entwertet.
+            if (outcome.wasCritical && uiState.vibrationEnabled) {
                 haptics.performHapticFeedback(HapticFeedbackType.LongPress)
             }
 

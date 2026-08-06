@@ -10,6 +10,7 @@ import com.pokelike.idle.ui.screens.buildings.BuildingsRoute
 import com.pokelike.idle.ui.screens.goals.GoalsRoute
 import com.pokelike.idle.ui.screens.home.HomeRoute
 import com.pokelike.idle.ui.screens.prestige.PrestigeRoute
+import com.pokelike.idle.ui.screens.settings.SettingsRoute
 import com.pokelike.idle.ui.screens.upgrades.UpgradesRoute
 
 /**
@@ -35,6 +36,7 @@ fun PokelikeNavHost(
         upgradesScreen()
         goalsScreen()
         prestigeScreen()
+        settingsScreen()
     }
 }
 
@@ -69,6 +71,13 @@ private fun NavGraphBuilder.upgradesScreen() {
 private fun NavGraphBuilder.goalsScreen() {
     composable(route = PokelikeDestination.Goals.route) {
         GoalsRoute()
+    }
+}
+
+/** Registriert die Einstellungen. */
+private fun NavGraphBuilder.settingsScreen() {
+    composable(route = PokelikeDestination.Settings.route) {
+        SettingsRoute()
     }
 }
 
